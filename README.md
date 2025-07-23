@@ -6,6 +6,7 @@ bun prep
 # Benchmark after build
 bun bench:node # Benchmark with node
 bun bench:bun # Benchmark with bun
+bun bench:all # Benchmark all runtimes
 ```
 
 Previous results are in [results](./results) directory.
