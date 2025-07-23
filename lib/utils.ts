@@ -22,5 +22,3 @@ export const format = {
   success: pc.greenBright,
   error: pc.redBright,
 };
-
-console.log('Runtime:', format.header(RUNTIME) + '\n');
