@@ -76,15 +76,12 @@ try {
           // @ts-expect-error Unset the prop
           o.name = undefined;
           return c;
-        })
+        })[0]
       ]
     );
 
   writeFileSync(
     `results/${utils.RUNTIME}.json`,
-    JSON.stringify(
-      Object.fromEntries(props),
-      null, 2
-    )
+    JSON.stringify(Object.fromEntries(props), null, 2)
   );
 }
