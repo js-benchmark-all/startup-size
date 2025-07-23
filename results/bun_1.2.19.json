@@ -1,28 +1,28 @@
 {
   "validators/references/jit": {
     "ajv": {
-      "ns": 478850837,
+      "ns": 491810489,
       "size": {
         "minified": 117817,
         "gzipped": 33410
       }
     },
     "arktype": {
-      "ns": 168717982,
+      "ns": 181142597,
       "size": {
         "minified": 166361,
         "gzipped": 48686
       }
     },
     "stnl": {
-      "ns": 2968687,
+      "ns": 3008029,
       "size": {
         "minified": 2921,
         "gzipped": 1199
       }
     },
     "typebox": {
-      "ns": 12224225,
+      "ns": 26178523,
       "size": {
         "minified": 93338,
         "gzipped": 21740

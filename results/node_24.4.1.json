@@ -1,1 +1,32 @@
-{}
+{
+  "validators/references/jit": {
+    "ajv": {
+      "ns": 385620518,
+      "size": {
+        "minified": 117817,
+        "gzipped": 33410
+      }
+    },
+    "arktype": {
+      "ns": 187709935,
+      "size": {
+        "minified": 166361,
+        "gzipped": 48686
+      }
+    },
+    "stnl": {
+      "ns": 2305387,
+      "size": {
+        "minified": 2921,
+        "gzipped": 1199
+      }
+    },
+    "typebox": {
+      "ns": 8911799,
+      "size": {
+        "minified": 93338,
+        "gzipped": 21740
+      }
+    }
+  }
+}

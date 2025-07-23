@@ -69,15 +69,22 @@ try {
 {
   const props = Object.entries(CATEGORIES)
     .map(
-      ([key, value]) => [
-        key,
-        Object.groupBy(value!, (o) => {
+      ([key, value]) => {
+        const props = Object.groupBy(value!, (o) => {
           const c = o.name;
           // @ts-expect-error Unset the prop
           o.name = undefined;
           return c;
-        })[0]
-      ]
+        });
+
+        return [
+          key,
+          Object.fromEntries(
+            Object.entries(props)
+              .map(([key, value]) => [key, value![0]])
+          )
+        ];
+      }
     );
 
   writeFileSync(
