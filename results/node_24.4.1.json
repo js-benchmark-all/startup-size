@@ -2,7 +2,7 @@
   {
     "name": "ajv",
     "category": "validators/references/jit",
-    "ns": 475727812,
+    "ns": 377229497,
     "size": {
       "minified": 117817,
       "gzipped": 33410
@@ -11,7 +11,7 @@
   {
     "name": "arktype",
     "category": "validators/references/jit",
-    "ns": 165041443,
+    "ns": 186119354,
     "size": {
       "minified": 166361,
       "gzipped": 48686
@@ -20,7 +20,7 @@
   {
     "name": "stnl",
     "category": "validators/references/jit",
-    "ns": 2776254,
+    "ns": 1605646,
     "size": {
       "minified": 2921,
       "gzipped": 1199
@@ -29,7 +29,7 @@
   {
     "name": "typebox",
     "category": "validators/references/jit",
-    "ns": 12383929,
+    "ns": 8621706,
     "size": {
       "minified": 93338,
       "gzipped": 21740

@@ -1,6 +1,8 @@
 import { build, type OutputChunk } from 'rolldown';
+import { installDependencies } from "nypm";
 
-import * as filters from './lib/filters.js';
+import * as filters from './lib/filters.ts';
+import * as utils from './lib/utils.ts';
 
 const OUTPUT_DIR = import.meta.dir + '/.startup/';
 const BUNDLED_DIR = OUTPUT_DIR + 'bundled/';
@@ -18,6 +20,32 @@ const extractNameCategory = (path: string) => {
 
   return { name, category };
 }
+
+// Install dependencies
+await Promise.all(
+  Array.from(
+    new Bun.Glob('**/package.json').scanSync({
+      cwd: SRC,
+      absolute: true,
+      followSymlinks: false,
+    })
+  ).map(
+    (path) => {
+      // No node_modules paths
+      if (path.includes('/node_modules/')) return;
+
+      const cwd = path.slice(0, -'/package.json'.length);
+      const name = cwd.slice(SRC.length);
+      if (!filters.install(name)) return;
+
+      console.log('Install dependencies:', utils.format.name(name));
+      return installDependencies({
+        cwd,
+        silent: true
+      });
+    }
+  ).filter((o) => o != null)
+);
 
 // Only build necessary files
 const files = Array.from(

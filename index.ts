@@ -1,5 +1,5 @@
 import allResults from './.startup/_.js';
-import * as utils from './lib/utils.js';
+import * as utils from './lib/utils.ts';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
 const CATEGORIES = Object.groupBy(allResults, (o) => o.category);
@@ -31,8 +31,9 @@ const COMPARISONS = [
 
 // Print results
 for (const category in CATEGORIES) {
+  console.log(utils.format.header(category) + ':');
   for (const comparison of COMPARISONS) {
-    console.log(utils.format.header(category) + ':', comparison.label);
+    console.log('  ' + comparison.label + ':');
 
     const results = CATEGORIES[category]!.toSorted(
       (a, b) => comparison.getter(a) - comparison.getter(b),
@@ -42,7 +43,7 @@ for (const category in CATEGORIES) {
     for (let i = 0; i < results.length; i++) {
       const res = comparison.getter(results[i]);
       console.log(
-        `  ${utils.format.name(results[i].name)}: ${comparison.formatter(
+        `    ${utils.format.name(results[i].name)}: ${comparison.formatter(
           res as any as never,
         )}${
           i === 0 ? '' : ` - ${utils.format.multiplier(res / baseline)} ${comparison.diff}`
@@ -54,9 +55,9 @@ for (const category in CATEGORIES) {
 
 try {
   mkdirSync('results');
-} finally {
-  writeFileSync(
-    `results/${utils.RUNTIME}.json`,
-    JSON.stringify(allResults, null, 2)
-  );
-}
+} catch {}
+
+writeFileSync(
+  `results/${utils.RUNTIME}.json`,
+  JSON.stringify(allResults, null, 2)
+);
