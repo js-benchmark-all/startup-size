@@ -1,0 +1,38 @@
+[
+  {
+    "name": "ajv",
+    "category": "validators/references/jit",
+    "ns": 1460796372,
+    "size": {
+      "minified": 117817,
+      "gzipped": 33410
+    }
+  },
+  {
+    "name": "arktype",
+    "category": "validators/references/jit",
+    "ns": 703912512,
+    "size": {
+      "minified": 158416,
+      "gzipped": 45929
+    }
+  },
+  {
+    "name": "stnl",
+    "category": "validators/references/jit",
+    "ns": 13022826,
+    "size": {
+      "minified": 2921,
+      "gzipped": 1199
+    }
+  },
+  {
+    "name": "typebox",
+    "category": "validators/references/jit",
+    "ns": 62025509,
+    "size": {
+      "minified": 93338,
+      "gzipped": 21740
+    }
+  }
+]

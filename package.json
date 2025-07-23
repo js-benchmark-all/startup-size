@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "dependencies": {
+    "mitata": "^1.0.34",
+    "picocolors": "^1.1.1",
+    "rolldown": "^1.0.0-beta.29",
+    "typescript": "^5",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "@sinclair/typebox": "^0.34.38",
+    "ajv": "^8.17.1",
+    "arktype": "^2.1.20",
+    "stnl": "^1.1.6"
+  },
+  "scripts": {
+    "prep": "bun build.ts",
+    "bench:bun": "BUN_JSC_useDFGJIT=0 bun index.ts",
+    "bench:node": "node --no-opt --expose-gc index.ts"
+  }
+}
