@@ -4,7 +4,12 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 
 const CATEGORIES = Object.groupBy(
   RESULTS,
-  (o) => o.category
+  (o) => {
+    const c = o.category;
+    // @ts-expect-error Unset the prop
+    o.category = undefined;
+    return c;
+  }
 );
 const COMPARISONS = [
   {
@@ -61,7 +66,25 @@ try {
   mkdirSync('results');
 } catch {}
 
-writeFileSync(
-  `results/${utils.RUNTIME}.json`,
-  JSON.stringify(CATEGORIES, null, 2)
-);
+{
+  const props = Object.entries(CATEGORIES)
+    .map(
+      ([key, value]) => [
+        key,
+        Object.groupBy(value!, (o) => {
+          const c = o.name;
+          // @ts-expect-error Unset the prop
+          o.name = undefined;
+          return c;
+        })
+      ]
+    );
+
+  writeFileSync(
+    `results/${utils.RUNTIME}.json`,
+    JSON.stringify(
+      Object.fromEntries(props),
+      null, 2
+    )
+  );
+}

@@ -1,40 +1,40 @@
 {
-  "validators/references/jit": [
-    {
-      "name": "ajv",
-      "category": "validators/references/jit",
-      "ns": 482827004,
-      "size": {
-        "minified": 117817,
-        "gzipped": 33410
+  "validators/references/jit": {
+    "ajv": [
+      {
+        "ns": 480743947,
+        "size": {
+          "minified": 117817,
+          "gzipped": 33410
+        }
       }
-    },
-    {
-      "name": "arktype",
-      "category": "validators/references/jit",
-      "ns": 160917590,
-      "size": {
-        "minified": 166361,
-        "gzipped": 48686
+    ],
+    "arktype": [
+      {
+        "ns": 165478401,
+        "size": {
+          "minified": 166361,
+          "gzipped": 48686
+        }
       }
-    },
-    {
-      "name": "stnl",
-      "category": "validators/references/jit",
-      "ns": 2786096,
-      "size": {
-        "minified": 2921,
-        "gzipped": 1199
+    ],
+    "stnl": [
+      {
+        "ns": 2534407,
+        "size": {
+          "minified": 2921,
+          "gzipped": 1199
+        }
       }
-    },
-    {
-      "name": "typebox",
-      "category": "validators/references/jit",
-      "ns": 12690482,
-      "size": {
-        "minified": 93338,
-        "gzipped": 21740
+    ],
+    "typebox": [
+      {
+        "ns": 12051935,
+        "size": {
+          "minified": 93338,
+          "gzipped": 21740
+        }
       }
-    }
-  ]
+    ]
+  }
 }
