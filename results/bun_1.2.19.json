@@ -1,47 +1,63 @@
 {
   "validators/references/jit": {
     "ajv": {
-      "ns": 471689289,
+      "ns": 497260019,
       "size": {
-        "minified": 117817,
-        "gzipped": 33410
+        "minified": 118559,
+        "gzipped": 33846
       }
     },
     "arktype": {
-      "ns": 164995894,
+      "ns": 167557304,
       "size": {
         "minified": 166361,
         "gzipped": 48686
       }
     },
     "stnl": {
-      "ns": 1769460,
+      "ns": 1605245,
       "size": {
         "minified": 2921,
         "gzipped": 1199
       }
     },
     "typebox": {
-      "ns": 13277241,
+      "ns": 24349662,
       "size": {
-        "minified": 93338,
-        "gzipped": 21740
+        "minified": 94080,
+        "gzipped": 22176
       }
     }
   },
   "web-frameworks/jit": {
     "elysia": {
-      "ns": 25183797,
+      "ns": 63786470,
       "size": {
-        "minified": 270823,
-        "gzipped": 69558
+        "minified": 325141,
+        "gzipped": 85997
       }
     },
     "mapl": {
-      "ns": 3371028,
+      "ns": 3431215,
       "size": {
         "minified": 5324,
         "gzipped": 2280
+      }
+    }
+  },
+  "web-frameworks/jitless": {
+    "hono-quick": {
+      "ns": 7864272,
+      "size": {
+        "minified": 19403,
+        "gzipped": 7445
+      }
+    },
+    "hono-tiny": {
+      "ns": 1174457,
+      "size": {
+        "minified": 14112,
+        "gzipped": 5488
       }
     }
   }

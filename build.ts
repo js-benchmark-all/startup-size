@@ -1,12 +1,18 @@
-import { build, type OutputChunk } from 'rolldown';
+import { build } from 'rolldown';
 import { installDependencies } from "nypm";
 
 import * as filters from './lib/filters.ts';
 import * as utils from './lib/utils.ts';
 
+import { rmSync, readFileSync } from 'node:fs';
+
 const OUTPUT_DIR = import.meta.dir + '/.startup/';
 const BUNDLED_DIR = OUTPUT_DIR + 'bundled/';
 const SRC = import.meta.dir + '/src/';
+
+try {
+  rmSync(BUNDLED_DIR, { recursive: true });
+} catch {}
 
 // Extract case name and category
 const extractNameCategory = (path: string) => {
@@ -47,6 +53,14 @@ await Promise.all(
   ).filter((o) => o != null)
 );
 
+// Store calculated chunks
+const chunks: Record<string, {
+  size: {
+    minified: number,
+    gzipped: number
+  }
+}> = {};
+
 // Only build necessary files
 const files = Array.from(
   new Bun.Glob('**/*.case.ts').scanSync({
@@ -72,19 +86,39 @@ const buildOutput = (
         removeWhitespace: true,
         mangle: true,
       },
+      inlineDynamicImports: true,
+      banner: '// @bun',
+      advancedChunks: {
+        maxSize: Number.MAX_SAFE_INTEGER
+      }
     },
+    logLevel: 'silent'
   })
 ).output
   .map((o) => {
     if (o.type !== 'chunk' || o.facadeModuleId == null || !o.isEntry) return;
 
+    // Calculate file size & chunk size
+    const size = {
+      minified: Buffer.from(o.code).byteLength,
+      gzipped: Bun.gzipSync(o.code).byteLength,
+    };
+    for (const chunk of o.imports) {
+      const chunkInfo = chunks[chunk] ??= {
+        size: {
+          minified: Bun.file(BUNDLED_DIR + chunk).size,
+          gzipped: Bun.gzipSync(readFileSync(BUNDLED_DIR + chunk)).byteLength
+        }
+      }
+
+      size.minified += chunkInfo.size.minified;
+      size.gzipped += chunkInfo.size.gzipped;
+    }
+
     return {
       ...extractNameCategory(o.facadeModuleId),
       bundled: BUNDLED_DIR + o.fileName,
-      size: {
-        minified: Buffer.from(o.code).byteLength,
-        gzipped: Bun.gzipSync(o.code).byteLength,
-      },
+      size
     };
   })
   .filter((o) => o != null);
