@@ -76,7 +76,7 @@ const buildOutput = (
   })
 ).output
   .map((o) => {
-    if (o.type !== 'chunk' || o.facadeModuleId == null) return;
+    if (o.type !== 'chunk' || o.facadeModuleId == null || !o.isEntry) return;
 
     return {
       ...extractNameCategory(o.facadeModuleId),

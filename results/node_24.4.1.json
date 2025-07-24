@@ -1,31 +1,47 @@
 {
   "validators/references/jit": {
     "ajv": {
-      "ns": 385620518,
+      "ns": 370919100,
       "size": {
         "minified": 117817,
         "gzipped": 33410
       }
     },
     "arktype": {
-      "ns": 187709935,
+      "ns": 187089458,
       "size": {
         "minified": 166361,
         "gzipped": 48686
       }
     },
     "stnl": {
-      "ns": 2305387,
+      "ns": 1861981,
       "size": {
         "minified": 2921,
         "gzipped": 1199
       }
     },
     "typebox": {
-      "ns": 8911799,
+      "ns": 7946441,
       "size": {
         "minified": 93338,
         "gzipped": 21740
+      }
+    }
+  },
+  "web-frameworks/jit": {
+    "elysia": {
+      "ns": 22271593,
+      "size": {
+        "minified": 270823,
+        "gzipped": 69558
+      }
+    },
+    "mapl": {
+      "ns": 2808168,
+      "size": {
+        "minified": 5324,
+        "gzipped": 2280
       }
     }
   }
