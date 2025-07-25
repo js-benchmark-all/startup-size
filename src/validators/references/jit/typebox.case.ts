@@ -61,4 +61,4 @@ const mod = Type.Module({
   }),
 }).Import('project');
 
-Function(TypeCompiler.Code(mod, []))();
+export default Function(TypeCompiler.Code(mod, []))();

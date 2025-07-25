@@ -1,6 +1,6 @@
 import { type } from 'arktype';
 
-type.module({
+export default type.module({
   project: {
     id: 'uuid',
     name: 'string',

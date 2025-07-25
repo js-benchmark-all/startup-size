@@ -12,6 +12,7 @@
     "prep": "bun build.ts",
     "bench:bun": "BUN_JSC_useDFGJIT=0 bun index.ts",
     "bench:node": "node --no-opt --expose-gc index.ts",
-    "bench:all": "bun bench:bun && bun bench:node"
+    "bench:deno": "deno run --allow-all --v8-flags=--no-opt,--expose-gc index.ts",
+    "bench:all": "bun bench:bun && bun bench:node && bun bench:deno"
   }
 }

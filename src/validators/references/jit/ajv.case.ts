@@ -1,6 +1,6 @@
 import Ajv from 'ajv/dist/jtd';
 
-new Ajv().compile({
+export default new Ajv().compile({
   definitions: {
     uuid: {
       type: 'string',

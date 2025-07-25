@@ -1,6 +1,6 @@
 import { t, build } from 'stnl';
 
-build.json.assert.compile(
+export default build.json.assert.compile(
   t.scope(
     t.dict(
       {

@@ -1,9 +1,14 @@
 {
   "type": "module",
   "dependencies": {
+    "@badrap/valita": "^0.4.5",
+    "@effect/schema": "^0.75.5",
     "@sinclair/typebox": "^0.34.38",
     "ajv": "^8.17.1",
     "arktype": "^2.1.20",
-    "stnl": "^1.1.6"
+    "stnl": "^1.1.6",
+    "sury": "^11.0.0-alpha.0",
+    "valibot": "^1.1.0",
+    "zod": "^4.0.10"
   }
 }
