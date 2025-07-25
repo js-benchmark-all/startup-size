@@ -1,6 +1,6 @@
 import { router, compile, handle } from '@mapl/web';
 
-await compile(
+compile(
   router([], [
     handle.get('/', () => 'Hi'),
     handle.get('/user/*', (id) => id),

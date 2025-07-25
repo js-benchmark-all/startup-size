@@ -127,6 +127,8 @@ const buildOutput = (
 await Bun.write(
   OUTPUT_DIR + '_.js',
   `// @bun
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
 const n = (() => {
   try {
     Bun.nanoseconds();
@@ -161,8 +163,9 @@ let s, e;
 ${buildOutput
   .map(
     (o) => `gc();
+require.cache = {};
 s = n();
-await import(${JSON.stringify(o.bundled)});
+require(${JSON.stringify(o.bundled)});
 e = n();
 results.push({
   name: ${JSON.stringify(o.name)},

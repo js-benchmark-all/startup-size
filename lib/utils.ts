@@ -1,4 +1,5 @@
 import pc from 'picocolors';
+import { writeFile } from 'node:fs';
 
 export const RUNTIME = globalThis.Bun
   ? `bun_${process.versions.bun}`
@@ -12,6 +13,12 @@ const createUnitFormat = (units: string[], sep: number) => (n: number) => {
   }
   return pc.yellowBright(n.toFixed(2) + units[i]);
 };
+
+export const writeFileAsync = (path: string, content: string) =>
+  writeFile(path, content, (err: any) => {
+    if (err !== null)
+      console.log(format.header(path));
+  });
 
 export const format = {
   time: createUnitFormat(['ns', 'us', 'ms', 's'], 1000),

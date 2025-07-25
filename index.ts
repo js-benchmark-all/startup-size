@@ -1,6 +1,6 @@
 import RESULTS from './.startup/_.js';
 import * as utils from './lib/utils.ts';
-import { mkdir, writeFile } from 'node:fs';
+import { mkdir } from 'node:fs';
 
 const CATEGORIES = Object.groupBy(
   RESULTS,
@@ -83,18 +83,20 @@ for (const category in CATEGORIES) {
       }
     );
 
+  utils.writeFileAsync(
+    `./all-results/${utils.RUNTIME}.json`,
+    JSON.stringify(props, null, 2)
+  );
+
   for (const [category, result] of props) {
     const resultDir = 'src/' + category + '/.results/';
 
     mkdir(resultDir, (err) => {
       if (err !== null && err.code === 'ENOENT') throw err;
 
-      writeFile(
+      utils.writeFileAsync(
         `${resultDir}${utils.RUNTIME}.json`,
-        JSON.stringify(result, null, 2),
-        (err) => {
-          if (err !== null) throw err;
-        }
+        JSON.stringify(result, null, 2)
       );
     });
   }
