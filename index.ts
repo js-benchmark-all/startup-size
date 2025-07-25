@@ -1,6 +1,6 @@
 import RESULTS from './.startup/_.js';
 import * as utils from './lib/utils.ts';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdir, writeFile } from 'node:fs';
 
 const CATEGORIES = Object.groupBy(
   RESULTS,
@@ -62,10 +62,6 @@ for (const category in CATEGORIES) {
   }
 }
 
-try {
-  mkdirSync('results');
-} catch {}
-
 {
   const props = Object.entries(CATEGORIES)
     .map(
@@ -87,8 +83,19 @@ try {
       }
     );
 
-  writeFileSync(
-    `results/${utils.RUNTIME}.json`,
-    JSON.stringify(Object.fromEntries(props), null, 2)
-  );
+  for (const [category, result] of props) {
+    const resultDir = 'src/' + category + '/.results/';
+
+    mkdir(resultDir, (err) => {
+      if (err !== null && err.code === 'ENOENT') throw err;
+
+      writeFile(
+        `${resultDir}${utils.RUNTIME}.json`,
+        JSON.stringify(result, null, 2),
+        (err) => {
+          if (err !== null) throw err;
+        }
+      );
+    });
+  }
 }

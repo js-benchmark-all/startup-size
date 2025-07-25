@@ -1,0 +1,16 @@
+{
+  "hono-quick": {
+    "ns": 6877562,
+    "size": {
+      "minified": 19403,
+      "gzipped": 7445
+    }
+  },
+  "hono-tiny": {
+    "ns": 1173623,
+    "size": {
+      "minified": 14112,
+      "gzipped": 5488
+    }
+  }
+}

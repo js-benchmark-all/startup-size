@@ -97,6 +97,7 @@ const buildOutput = (
 ).output
   .map((o) => {
     if (o.type !== 'chunk' || o.facadeModuleId == null || !o.isEntry) return;
+    console.log('Built entry:', utils.format.header(o.fileName));
 
     // Calculate file size & chunk size
     const size = {
