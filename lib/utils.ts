@@ -1,5 +1,5 @@
 import pc from 'picocolors';
-import { writeFile } from 'node:fs';
+import { mkdir, writeFile } from 'node:fs';
 
 export const RUNTIME = globalThis.Bun
   ? `bun_${process.versions.bun}`
@@ -14,11 +14,19 @@ const createUnitFormat = (units: string[], sep: number) => (n: number) => {
   return pc.yellowBright(n.toFixed(2) + units[i]);
 };
 
-export const writeFileAsync = (path: string, content: string) =>
+export const tryWriteAsync = (path: string, content: string) =>
   writeFile(path, content, (err: any) => {
     if (err !== null)
-      console.log(format.header(path));
+      console.log('Failed to write file', format.header(path));
   });
+
+export const tryMkdirAsync = (path: string, success: () => any) => {
+  mkdir(path, (err) => {
+    if (err !== null && err.code === 'ENOENT')
+      return console.log('Failed to create directory:', format.header(path));
+    success();
+  });
+}
 
 export const format = {
   time: createUnitFormat(['ns', 'us', 'ms', 's'], 1000),

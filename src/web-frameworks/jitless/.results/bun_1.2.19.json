@@ -1,13 +1,13 @@
 {
   "hono-quick": {
-    "ns": 4994867,
+    "ns": 6287248,
     "size": {
       "minified": 19397,
       "gzipped": 7443
     }
   },
   "hono-tiny": {
-    "ns": 899076,
+    "ns": 1008632,
     "size": {
       "minified": 14106,
       "gzipped": 5486

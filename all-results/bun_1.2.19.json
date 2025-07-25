@@ -1,0 +1,153 @@
+[
+  [
+    "validators/references/jit",
+    {
+      "ajv": {
+        "ns": 474349828,
+        "size": {
+          "minified": 118586,
+          "gzipped": 33855
+        }
+      },
+      "arktype": {
+        "ns": 157782578,
+        "size": {
+          "minified": 166447,
+          "gzipped": 48802
+        }
+      },
+      "stnl": {
+        "ns": 1590086,
+        "size": {
+          "minified": 3183,
+          "gzipped": 1400
+        }
+      },
+      "typebox": {
+        "ns": 16112328,
+        "size": {
+          "minified": 94456,
+          "gzipped": 23218
+        }
+      }
+    }
+  ],
+  [
+    "validators/simple/jit",
+    {
+      "arktype": {
+        "ns": 3922223,
+        "size": {
+          "minified": 165976,
+          "gzipped": 48612
+        }
+      },
+      "stnl": {
+        "ns": 430479,
+        "size": {
+          "minified": 2750,
+          "gzipped": 1213
+        }
+      },
+      "sury": {
+        "ns": 9955647,
+        "size": {
+          "minified": 50096,
+          "gzipped": 16258
+        }
+      },
+      "typebox": {
+        "ns": 1272432,
+        "size": {
+          "minified": 93704,
+          "gzipped": 22992
+        }
+      }
+    }
+  ],
+  [
+    "validators/simple/jitless",
+    {
+      "effect-schema": {
+        "ns": 36752386,
+        "size": {
+          "minified": 279251,
+          "gzipped": 81881
+        }
+      },
+      "typebox": {
+        "ns": 413148,
+        "size": {
+          "minified": 55475,
+          "gzipped": 14271
+        }
+      },
+      "valibot": {
+        "ns": 940297,
+        "size": {
+          "minified": 4041,
+          "gzipped": 1374
+        }
+      },
+      "valita": {
+        "ns": 2997603,
+        "size": {
+          "minified": 15048,
+          "gzipped": 4727
+        }
+      },
+      "zod-mini": {
+        "ns": 8185685,
+        "size": {
+          "minified": 42231,
+          "gzipped": 11351
+        }
+      },
+      "zod": {
+        "ns": 3782469,
+        "size": {
+          "minified": 53522,
+          "gzipped": 14660
+        }
+      }
+    }
+  ],
+  [
+    "web-frameworks/jit",
+    {
+      "elysia": {
+        "ns": 26158467,
+        "size": {
+          "minified": 325135,
+          "gzipped": 85994
+        }
+      },
+      "mapl": {
+        "ns": 2718065,
+        "size": {
+          "minified": 5318,
+          "gzipped": 2278
+        }
+      }
+    }
+  ],
+  [
+    "web-frameworks/jitless",
+    {
+      "hono-quick": {
+        "ns": 6287248,
+        "size": {
+          "minified": 19397,
+          "gzipped": 7443
+        }
+      },
+      "hono-tiny": {
+        "ns": 1008632,
+        "size": {
+          "minified": 14106,
+          "gzipped": 5486
+        }
+      }
+    }
+  ]
+]
