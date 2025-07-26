@@ -85,7 +85,7 @@ for (const category in CATEGORIES) {
   utils.tryMkdirAsync('./all-results', () =>
     utils.tryWriteAsync(
       `./all-results/${utils.RUNTIME}.json`,
-      JSON.stringify(props, null, 2)
+      JSON.stringify(Object.fromEntries(props), null, 2)
     )
   );
 
