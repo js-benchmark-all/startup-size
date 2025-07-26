@@ -2,26 +2,29 @@ Runtime: bun[1.2.19]
 
 web-frameworks:
   startup time:
-    mapl: 3.38ms
-    hono-tiny: 4.61ms - 1.36x slower
-    hono-quick: 5.88ms - 1.74x slower
-    elysia: 27.84ms - 8.23x slower
+    itty: 2.50ms
+    mapl: 3.52ms - 1.41x slower
+    hono-tiny: 5.22ms - 2.09x slower
+    hono-quick: 5.68ms - 2.27x slower
+    elysia: 27.37ms - 10.94x slower
   minified size:
-    mapl: 5.32kb
-    hono-tiny: 12.73kb - 2.39x bigger
-    hono-quick: 18.96kb - 3.57x bigger
-    elysia: 325.05kb - 61.12x bigger
+    itty: 3.83kb
+    mapl: 5.32kb - 1.39x bigger
+    hono-tiny: 12.73kb - 3.33x bigger
+    hono-quick: 18.96kb - 4.96x bigger
+    elysia: 325.05kb - 84.94x bigger
   gzipped size:
-    mapl: 2.28kb
-    hono-tiny: 4.77kb - 2.10x bigger
-    hono-quick: 6.81kb - 2.99x bigger
-    elysia: 85.83kb - 37.68x bigger
+    itty: 1.61kb
+    mapl: 2.28kb - 1.42x bigger
+    hono-tiny: 4.77kb - 2.97x bigger
+    hono-quick: 6.81kb - 4.24x bigger
+    elysia: 85.83kb - 53.44x bigger
 validators/references:
   startup time:
-    stnl: 2.19ms
-    typebox: 12.85ms - 5.87x slower
-    arktype: 176.00ms - 80.34x slower
-    ajv: 473.02ms - 215.93x slower
+    stnl: 1.90ms
+    typebox: 12.14ms - 6.39x slower
+    arktype: 178.35ms - 93.84x slower
+    ajv: 469.40ms - 246.97x slower
   minified size:
     stnl: 2.95kb
     typebox: 93.43kb - 31.69x bigger
@@ -34,15 +37,15 @@ validators/references:
     arktype: 48.70kb - 40.02x bigger
 validators/simple:
   startup time:
-    valibot: 960.13us
-    stnl: 1.11ms - 1.16x slower
-    valita: 3.06ms - 3.19x slower
-    zod-mini: 3.53ms - 3.68x slower
-    typebox: 3.90ms - 4.06x slower
-    sury: 10.05ms - 10.47x slower
-    zod: 12.84ms - 13.37x slower
-    effect-schema: 37.63ms - 39.19x slower
-    arktype: 160.33ms - 166.99x slower
+    valibot: 943.86us
+    stnl: 1.22ms - 1.29x slower
+    valita: 3.14ms - 3.33x slower
+    zod-mini: 3.47ms - 3.67x slower
+    typebox: 3.90ms - 4.14x slower
+    sury: 9.99ms - 10.58x slower
+    zod: 10.14ms - 10.74x slower
+    effect-schema: 37.38ms - 39.61x slower
+    arktype: 159.49ms - 168.97x slower
   minified size:
     stnl: 2.49kb
     valibot: 4.04kb - 1.62x bigger
