@@ -1,0 +1,30 @@
+{
+  "stnl": {
+    "ns": 1110172,
+    "size": {
+      "minified": 2491,
+      "gzipped": 1025
+    }
+  },
+  "arktype": {
+    "ns": 168448640,
+    "size": {
+      "minified": 165919,
+      "gzipped": 48511
+    }
+  },
+  "typebox": {
+    "ns": 9124116,
+    "size": {
+      "minified": 92696,
+      "gzipped": 21745
+    }
+  },
+  "sury": {
+    "ns": 9844060,
+    "size": {
+      "minified": 50096,
+      "gzipped": 16258
+    }
+  }
+}

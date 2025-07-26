@@ -1,0 +1,44 @@
+{
+  "zod-mini": {
+    "ns": 4345672,
+    "size": {
+      "minified": 12216,
+      "gzipped": 4325
+    }
+  },
+  "valita": {
+    "ns": 2936192,
+    "size": {
+      "minified": 15048,
+      "gzipped": 4727
+    }
+  },
+  "effect-schema": {
+    "ns": 44779306,
+    "size": {
+      "minified": 279251,
+      "gzipped": 81881
+    }
+  },
+  "valibot": {
+    "ns": 911409,
+    "size": {
+      "minified": 4041,
+      "gzipped": 1374
+    }
+  },
+  "typebox": {
+    "ns": 4236254,
+    "size": {
+      "minified": 54709,
+      "gzipped": 13885
+    }
+  },
+  "zod": {
+    "ns": 10138355,
+    "size": {
+      "minified": 49778,
+      "gzipped": 12756
+    }
+  }
+}
