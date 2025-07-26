@@ -1,31 +1,27 @@
 Runtime: node[v24.4.1]_v8[13.6.233.10-node.17]
 
-web-frameworks/jit:
+web-frameworks:
   startup time:
-    mapl: 2.66ms
-    elysia: 72.68ms - 27.31x slower
+    mapl: 2.51ms
+    hono-tiny: 2.87ms - 1.14x slower
+    hono-quick: 3.25ms - 1.30x slower
+    elysia: 71.70ms - 28.54x slower
   minified size:
     mapl: 5.32kb
+    hono-tiny: 12.73kb - 2.39x bigger
+    hono-quick: 18.96kb - 3.57x bigger
     elysia: 325.05kb - 61.12x bigger
   gzipped size:
     mapl: 2.28kb
+    hono-tiny: 4.77kb - 2.10x bigger
+    hono-quick: 6.81kb - 2.99x bigger
     elysia: 85.83kb - 37.68x bigger
-web-frameworks/jitless:
+validators/references:
   startup time:
-    hono-tiny: 2.92ms
-    hono-quick: 3.25ms - 1.11x slower
-  minified size:
-    hono-tiny: 12.73kb
-    hono-quick: 18.96kb - 1.49x bigger
-  gzipped size:
-    hono-tiny: 4.77kb
-    hono-quick: 6.81kb - 1.43x bigger
-validators/references/jit:
-  startup time:
-    stnl: 1.63ms
-    typebox: 8.08ms - 4.95x slower
-    arktype: 153.51ms - 94.06x slower
-    ajv: 350.46ms - 214.75x slower
+    stnl: 1.60ms
+    typebox: 8.18ms - 5.12x slower
+    arktype: 149.52ms - 93.51x slower
+    ajv: 348.81ms - 218.14x slower
   minified size:
     stnl: 2.95kb
     typebox: 93.43kb - 31.69x bigger
@@ -36,53 +32,37 @@ validators/references/jit:
     typebox: 21.77kb - 17.89x bigger
     ajv: 33.73kb - 27.71x bigger
     arktype: 48.70kb - 40.02x bigger
-validators/simple/jit:
+validators/simple:
   startup time:
-    stnl: 1.33ms
-    sury: 4.96ms - 3.73x slower
-    typebox: 6.57ms - 4.94x slower
-    arktype: 118.56ms - 89.09x slower
+    valibot: 1.16ms
+    stnl: 1.60ms - 1.38x slower
+    valita: 1.92ms - 1.66x slower
+    zod-mini: 3.76ms - 3.24x slower
+    typebox: 4.04ms - 3.48x slower
+    sury: 5.32ms - 4.58x slower
+    zod: 6.20ms - 5.34x slower
+    effect-schema: 31.74ms - 27.34x slower
+    arktype: 121.09ms - 104.29x slower
   minified size:
     stnl: 2.49kb
+    valibot: 4.04kb - 1.62x bigger
+    zod-mini: 12.22kb - 4.90x bigger
+    valita: 15.05kb - 6.04x bigger
+    zod: 49.78kb - 19.98x bigger
     sury: 50.10kb - 20.11x bigger
-    typebox: 92.70kb - 37.21x bigger
+    typebox: 54.71kb - 21.96x bigger
     arktype: 165.92kb - 66.61x bigger
+    effect-schema: 279.25kb - 112.10x bigger
   gzipped size:
     stnl: 1.02kb
+    valibot: 1.37kb - 1.34x bigger
+    zod-mini: 4.33kb - 4.22x bigger
+    valita: 4.73kb - 4.61x bigger
+    zod: 12.76kb - 12.44x bigger
+    typebox: 13.88kb - 13.55x bigger
     sury: 16.26kb - 15.86x bigger
-    typebox: 21.75kb - 21.21x bigger
     arktype: 48.51kb - 47.33x bigger
-validators/simple/jitless:
-  startup time:
-    valibot: 1.11ms
-    valita: 1.96ms - 1.77x slower
-    zod-mini: 3.98ms - 3.60x slower
-    typebox: 4.09ms - 3.70x slower
-    zod: 6.30ms - 5.70x slower
-    effect-schema: 31.71ms - 28.69x slower
-  minified size:
-    valibot: 4.04kb
-    zod-mini: 12.22kb - 3.02x bigger
-    valita: 15.05kb - 3.72x bigger
-    zod: 49.78kb - 12.32x bigger
-    typebox: 54.71kb - 13.54x bigger
-    effect-schema: 279.25kb - 69.10x bigger
-  gzipped size:
-    valibot: 1.37kb
-    zod-mini: 4.33kb - 3.15x bigger
-    valita: 4.73kb - 3.44x bigger
-    zod: 12.76kb - 9.28x bigger
-    typebox: 13.88kb - 10.11x bigger
-    effect-schema: 81.88kb - 59.59x bigger
-Directory created: src/web-frameworks/jit/.results/
-Directory created: src/web-frameworks/jitless/.results/
-Directory created: src/validators/references/jit/.results/
-Directory created: src/validators/simple/jit/.results/
-Directory created: src/validators/simple/jitless/.results/
-Directory created: ./all-results
-File written successfully: src/web-frameworks/jit/.results/node[v24.4.1]_v8[13.6.233.10-node.17].json
-File written successfully: src/web-frameworks/jitless/.results/node[v24.4.1]_v8[13.6.233.10-node.17].json
-File written successfully: src/validators/simple/jit/.results/node[v24.4.1]_v8[13.6.233.10-node.17].json
-File written successfully: ./all-results/node[v24.4.1]_v8[13.6.233.10-node.17].json
-File written successfully: src/validators/references/jit/.results/node[v24.4.1]_v8[13.6.233.10-node.17].json
-File written successfully: src/validators/simple/jitless/.results/node[v24.4.1]_v8[13.6.233.10-node.17].json
+    effect-schema: 81.88kb - 79.88x bigger
+
+Directory created: ./.results/
+File written successfully: ./.results/node[v24.4.1]_v8[13.6.233.10-node.17].json

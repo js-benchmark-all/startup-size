@@ -1,31 +1,27 @@
 Runtime: bun[1.2.19]
 
-web-frameworks/jit:
+web-frameworks:
   startup time:
-    mapl: 3.71ms
-    elysia: 27.18ms - 7.32x slower
+    mapl: 3.38ms
+    hono-tiny: 4.61ms - 1.36x slower
+    hono-quick: 5.88ms - 1.74x slower
+    elysia: 27.84ms - 8.23x slower
   minified size:
     mapl: 5.32kb
+    hono-tiny: 12.73kb - 2.39x bigger
+    hono-quick: 18.96kb - 3.57x bigger
     elysia: 325.05kb - 61.12x bigger
   gzipped size:
     mapl: 2.28kb
+    hono-tiny: 4.77kb - 2.10x bigger
+    hono-quick: 6.81kb - 2.99x bigger
     elysia: 85.83kb - 37.68x bigger
-web-frameworks/jitless:
+validators/references:
   startup time:
-    hono-tiny: 5.03ms
-    hono-quick: 5.36ms - 1.07x slower
-  minified size:
-    hono-tiny: 12.73kb
-    hono-quick: 18.96kb - 1.49x bigger
-  gzipped size:
-    hono-tiny: 4.77kb
-    hono-quick: 6.81kb - 1.43x bigger
-validators/references/jit:
-  startup time:
-    stnl: 1.99ms
-    typebox: 12.39ms - 6.23x slower
-    arktype: 176.37ms - 88.78x slower
-    ajv: 466.66ms - 234.90x slower
+    stnl: 2.19ms
+    typebox: 12.85ms - 5.87x slower
+    arktype: 176.00ms - 80.34x slower
+    ajv: 473.02ms - 215.93x slower
   minified size:
     stnl: 2.95kb
     typebox: 93.43kb - 31.69x bigger
@@ -36,53 +32,37 @@ validators/references/jit:
     typebox: 21.77kb - 17.89x bigger
     ajv: 33.73kb - 27.71x bigger
     arktype: 48.70kb - 40.02x bigger
-validators/simple/jit:
+validators/simple:
   startup time:
-    stnl: 1.12ms
-    typebox: 9.18ms - 8.21x slower
-    sury: 9.89ms - 8.85x slower
-    arktype: 165.70ms - 148.12x slower
+    valibot: 960.13us
+    stnl: 1.11ms - 1.16x slower
+    valita: 3.06ms - 3.19x slower
+    zod-mini: 3.53ms - 3.68x slower
+    typebox: 3.90ms - 4.06x slower
+    sury: 10.05ms - 10.47x slower
+    zod: 12.84ms - 13.37x slower
+    effect-schema: 37.63ms - 39.19x slower
+    arktype: 160.33ms - 166.99x slower
   minified size:
     stnl: 2.49kb
+    valibot: 4.04kb - 1.62x bigger
+    zod-mini: 12.22kb - 4.90x bigger
+    valita: 15.05kb - 6.04x bigger
+    zod: 49.78kb - 19.98x bigger
     sury: 50.10kb - 20.11x bigger
-    typebox: 92.70kb - 37.21x bigger
+    typebox: 54.71kb - 21.96x bigger
     arktype: 165.92kb - 66.61x bigger
+    effect-schema: 279.25kb - 112.10x bigger
   gzipped size:
     stnl: 1.02kb
+    valibot: 1.37kb - 1.34x bigger
+    zod-mini: 4.33kb - 4.22x bigger
+    valita: 4.73kb - 4.61x bigger
+    zod: 12.76kb - 12.44x bigger
+    typebox: 13.88kb - 13.55x bigger
     sury: 16.26kb - 15.86x bigger
-    typebox: 21.75kb - 21.21x bigger
     arktype: 48.51kb - 47.33x bigger
-validators/simple/jitless:
-  startup time:
-    valibot: 903.80us
-    valita: 2.95ms - 3.26x slower
-    zod-mini: 3.70ms - 4.09x slower
-    typebox: 4.19ms - 4.64x slower
-    zod: 10.54ms - 11.66x slower
-    effect-schema: 42.47ms - 47.00x slower
-  minified size:
-    valibot: 4.04kb
-    zod-mini: 12.22kb - 3.02x bigger
-    valita: 15.05kb - 3.72x bigger
-    zod: 49.78kb - 12.32x bigger
-    typebox: 54.71kb - 13.54x bigger
-    effect-schema: 279.25kb - 69.10x bigger
-  gzipped size:
-    valibot: 1.37kb
-    zod-mini: 4.33kb - 3.15x bigger
-    valita: 4.73kb - 3.44x bigger
-    zod: 12.76kb - 9.28x bigger
-    typebox: 13.88kb - 10.11x bigger
-    effect-schema: 81.88kb - 59.59x bigger
-Directory created: ./all-results
-Directory created: src/web-frameworks/jit/.results/
-Directory created: src/validators/simple/jit/.results/
-Directory created: src/validators/simple/jitless/.results/
-Directory created: src/web-frameworks/jitless/.results/
-Directory created: src/validators/references/jit/.results/
-File written successfully: ./all-results/bun[1.2.19].json
-File written successfully: src/web-frameworks/jit/.results/bun[1.2.19].json
-File written successfully: src/validators/simple/jit/.results/bun[1.2.19].json
-File written successfully: src/validators/simple/jitless/.results/bun[1.2.19].json
-File written successfully: src/web-frameworks/jitless/.results/bun[1.2.19].json
-File written successfully: src/validators/references/jit/.results/bun[1.2.19].json
+    effect-schema: 81.88kb - 79.88x bigger
+
+Directory created: ./.results/
+File written successfully: ./.results/bun[1.2.19].json

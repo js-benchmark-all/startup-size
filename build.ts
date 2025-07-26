@@ -4,20 +4,15 @@ import { installDependencies } from "nypm";
 import * as filters from './lib/filters.ts';
 import * as utils from './lib/utils.ts';
 
-import { rmSync, readFileSync } from 'node:fs';
-
-const OUTPUT_DIR = import.meta.dir + '/.startup/';
-const BUNDLED_DIR = OUTPUT_DIR + 'bundled/';
-const SRC = import.meta.dir + '/src/';
-const TSCONFIG = import.meta.dir + '/tsconfig.json';
+import { rmSync } from 'node:fs';
 
 try {
-  rmSync(BUNDLED_DIR, { recursive: true });
+  rmSync(utils.BUNDLED_DIR, { recursive: true });
 } catch {}
 
 // Extract case name and category
 const extractNameCategory = (path: string) => {
-  const relativePath = path.slice(SRC.length).slice(0, -'.case.ts'.length);
+  const relativePath = path.slice(utils.SRC.length).slice(0, -'.case.ts'.length);
 
   let name = relativePath;
   if (name.endsWith('/index')) name = name.slice(0, -'/index'.length);
@@ -34,7 +29,7 @@ const extractNameCategory = (path: string) => {
 await Promise.all(
   Array.from(
     new Bun.Glob('**/package.json').scanSync({
-      cwd: SRC,
+      cwd: utils.SRC,
       absolute: true,
       followSymlinks: false,
     })
@@ -44,7 +39,7 @@ await Promise.all(
       if (path.includes('/node_modules/')) return;
 
       const cwd = path.slice(0, -'/package.json'.length);
-      const name = cwd.slice(SRC.length);
+      const name = cwd.slice(utils.SRC.length);
       if (!filters.install(name)) return;
 
       console.log('Install dependencies:', utils.format.name(name));
@@ -59,7 +54,7 @@ await Promise.all(
 // Only build necessary files
 const files = Array.from(
   new Bun.Glob('**/*.case.ts').scanSync({
-    cwd: SRC,
+    cwd: utils.SRC,
     absolute: true,
   }),
 ).filter((path) => {
@@ -77,12 +72,12 @@ const buildOutput = (
           const input = await rolldown({
             input: casePath,
             resolve: {
-              tsconfigFilename: TSCONFIG,
+              tsconfigFilename: utils.TSCONFIG,
             },
             logLevel: 'silent',
           });
 
-          const outputPath = BUNDLED_DIR + i + '.js';
+          const outputPath = utils.BUNDLED_DIR + i + '.js';
           const output = (await input.write({
             inlineDynamicImports: true,
             file: outputPath,
@@ -115,7 +110,7 @@ const buildOutput = (
 ).filter((o) => o != null);
 
 await Bun.write(
-  OUTPUT_DIR + '_.js',
+  utils.OUTPUT_DIR + '_.js',
   `// @bun
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
@@ -172,7 +167,7 @@ export default results;`,
 );
 
 await Bun.write(
-  OUTPUT_DIR + '_.d.ts',
+  utils.OUTPUT_DIR + '_.d.ts',
   `declare const results: {
   name: string,
   category: string,

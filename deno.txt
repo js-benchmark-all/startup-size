@@ -1,31 +1,27 @@
 Runtime: deno[2.4.2]_v8[13.7.152.14-rusty]
 
-web-frameworks/jit:
+web-frameworks:
   startup time:
-    mapl: 2.31ms
-    elysia: 39.92ms - 17.29x slower
+    mapl: 2.23ms
+    hono-tiny: 2.69ms - 1.20x slower
+    hono-quick: 3.02ms - 1.35x slower
+    elysia: 39.25ms - 17.57x slower
   minified size:
     mapl: 5.32kb
+    hono-tiny: 12.73kb - 2.39x bigger
+    hono-quick: 18.96kb - 3.57x bigger
     elysia: 325.05kb - 61.12x bigger
   gzipped size:
     mapl: 2.28kb
+    hono-tiny: 4.77kb - 2.10x bigger
+    hono-quick: 6.81kb - 2.99x bigger
     elysia: 85.83kb - 37.68x bigger
-web-frameworks/jitless:
+validators/references:
   startup time:
-    hono-tiny: 2.78ms
-    hono-quick: 3.03ms - 1.09x slower
-  minified size:
-    hono-tiny: 12.73kb
-    hono-quick: 18.96kb - 1.49x bigger
-  gzipped size:
-    hono-tiny: 4.77kb
-    hono-quick: 6.81kb - 1.43x bigger
-validators/references/jit:
-  startup time:
-    stnl: 1.77ms
-    typebox: 8.48ms - 4.80x slower
-    arktype: 157.55ms - 89.21x slower
-    ajv: 348.42ms - 197.28x slower
+    stnl: 1.76ms
+    typebox: 10.54ms - 6.00x slower
+    arktype: 157.91ms - 89.96x slower
+    ajv: 342.96ms - 195.39x slower
   minified size:
     stnl: 2.95kb
     typebox: 93.43kb - 31.69x bigger
@@ -36,53 +32,37 @@ validators/references/jit:
     typebox: 21.77kb - 17.89x bigger
     ajv: 33.73kb - 27.71x bigger
     arktype: 48.70kb - 40.02x bigger
-validators/simple/jit:
+validators/simple:
   startup time:
-    stnl: 1.90ms
-    sury: 5.08ms - 2.67x slower
-    typebox: 7.50ms - 3.95x slower
-    arktype: 129.24ms - 68.00x slower
+    valibot: 1.51ms
+    stnl: 1.69ms - 1.12x slower
+    valita: 2.25ms - 1.49x slower
+    zod-mini: 4.15ms - 2.74x slower
+    typebox: 4.39ms - 2.90x slower
+    sury: 5.12ms - 3.38x slower
+    zod: 6.34ms - 4.19x slower
+    effect-schema: 54.70ms - 36.13x slower
+    arktype: 131.92ms - 87.12x slower
   minified size:
     stnl: 2.49kb
+    valibot: 4.04kb - 1.62x bigger
+    zod-mini: 12.22kb - 4.90x bigger
+    valita: 15.05kb - 6.04x bigger
+    zod: 49.78kb - 19.98x bigger
     sury: 50.10kb - 20.11x bigger
-    typebox: 92.70kb - 37.21x bigger
+    typebox: 54.71kb - 21.96x bigger
     arktype: 165.92kb - 66.61x bigger
+    effect-schema: 279.25kb - 112.10x bigger
   gzipped size:
     stnl: 1.02kb
+    valibot: 1.37kb - 1.34x bigger
+    zod-mini: 4.33kb - 4.22x bigger
+    valita: 4.73kb - 4.61x bigger
+    zod: 12.76kb - 12.44x bigger
+    typebox: 13.88kb - 13.55x bigger
     sury: 16.26kb - 15.86x bigger
-    typebox: 21.75kb - 21.21x bigger
     arktype: 48.51kb - 47.33x bigger
-validators/simple/jitless:
-  startup time:
-    valibot: 1.24ms
-    valita: 2.03ms - 1.63x slower
-    typebox: 3.92ms - 3.15x slower
-    zod-mini: 3.95ms - 3.18x slower
-    zod: 6.31ms - 5.08x slower
-    effect-schema: 48.32ms - 38.88x slower
-  minified size:
-    valibot: 4.04kb
-    zod-mini: 12.22kb - 3.02x bigger
-    valita: 15.05kb - 3.72x bigger
-    zod: 49.78kb - 12.32x bigger
-    typebox: 54.71kb - 13.54x bigger
-    effect-schema: 279.25kb - 69.10x bigger
-  gzipped size:
-    valibot: 1.37kb
-    zod-mini: 4.33kb - 3.15x bigger
-    valita: 4.73kb - 3.44x bigger
-    zod: 12.76kb - 9.28x bigger
-    typebox: 13.88kb - 10.11x bigger
-    effect-schema: 81.88kb - 59.59x bigger
-Directory created: ./all-results
-Directory created: src/web-frameworks/jit/.results/
-Directory created: src/web-frameworks/jitless/.results/
-Directory created: src/validators/references/jit/.results/
-Directory created: src/validators/simple/jit/.results/
-Directory created: src/validators/simple/jitless/.results/
-File written successfully: ./all-results/deno[2.4.2]_v8[13.7.152.14-rusty].json
-File written successfully: src/web-frameworks/jit/.results/deno[2.4.2]_v8[13.7.152.14-rusty].json
-File written successfully: src/web-frameworks/jitless/.results/deno[2.4.2]_v8[13.7.152.14-rusty].json
-File written successfully: src/validators/references/jit/.results/deno[2.4.2]_v8[13.7.152.14-rusty].json
-File written successfully: src/validators/simple/jitless/.results/deno[2.4.2]_v8[13.7.152.14-rusty].json
-File written successfully: src/validators/simple/jit/.results/deno[2.4.2]_v8[13.7.152.14-rusty].json
+    effect-schema: 81.88kb - 79.88x bigger
+
+Directory created: ./.results/
+File written successfully: ./.results/deno[2.4.2]_v8[13.7.152.14-rusty].json

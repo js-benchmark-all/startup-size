@@ -36,7 +36,6 @@ const COMPARISONS = [
   diff: string;
 }[];
 
-// Print results
 console.log('Runtime:', utils.format.header(utils.RUNTIME) + '\n');
 
 for (const category in CATEGORIES) {
@@ -62,6 +61,8 @@ for (const category in CATEGORIES) {
 }
 
 {
+  console.log();
+
   const props = Object.entries(CATEGORIES)
     .map(
       ([key, value]) => {
@@ -82,21 +83,10 @@ for (const category in CATEGORIES) {
       }
     );
 
-  utils.tryMkdirAsync('./all-results', () =>
+  utils.tryMkdirAsync(utils.ALL_RESULTS, () =>
     utils.tryWriteAsync(
-      `./all-results/${utils.RUNTIME}.json`,
+      `${utils.ALL_RESULTS}${utils.RUNTIME}.json`,
       JSON.stringify(Object.fromEntries(props), null, 2)
     )
   );
-
-  for (const [category, result] of props) {
-    const resultDir = 'src/' + category + '/.results/';
-
-    utils.tryMkdirAsync(resultDir, () => {
-      utils.tryWriteAsync(
-        `${resultDir}${utils.RUNTIME}.json`,
-        JSON.stringify(result, null, 2)
-      );
-    });
-  }
 }
