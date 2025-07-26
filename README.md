@@ -9,6 +9,6 @@ bun bench:bun # Benchmark with bun
 bun bench:all # Benchmark all runtimes
 ```
 
-Previous results are in [results](./results) directory.
+Previous results are in [results](./.results) directory and in `.log` files.
 
 To filter out tests, see [filters.ts](./lib/filters.ts).
