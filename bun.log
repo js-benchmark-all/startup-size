@@ -1,12 +1,12 @@
-Runtime: deno[2.4.2]_v8[13.7.152.14-rusty]
+Runtime: bun[1.2.19]
 
 web-frameworks:
   startup time:
-    itty: 2.95ms
-    mapl: 3.93ms - 1.33x slower
-    hono-tiny: 6.51ms - 2.20x slower
-    hono-quick: 6.70ms - 2.27x slower
-    elysia: 40.76ms - 13.80x slower
+    itty: 2.56ms
+    mapl: 3.46ms - 1.35x slower
+    hono-tiny: 4.62ms - 1.81x slower
+    hono-quick: 5.75ms - 2.25x slower
+    elysia: 27.89ms - 10.91x slower
   minified size:
     itty: 3.83kb
     mapl: 5.32kb - 1.39x bigger
@@ -21,10 +21,10 @@ web-frameworks:
     elysia: 85.83kb - 53.44x bigger
 validators/references:
   startup time:
-    stnl: 2.58ms
-    typebox: 25.12ms - 9.72x slower
-    arktype: 194.18ms - 75.16x slower
-    ajv: 382.70ms - 148.12x slower
+    stnl: 1.90ms
+    typebox: 11.70ms - 6.16x slower
+    arktype: 172.07ms - 90.61x slower
+    ajv: 464.84ms - 244.79x slower
   minified size:
     stnl: 2.95kb
     typebox: 93.43kb - 31.69x bigger
@@ -37,15 +37,15 @@ validators/references:
     arktype: 48.70kb - 40.02x bigger
 validators/simple:
   startup time:
-    valibot: 2.68ms
-    stnl: 2.78ms - 1.04x slower
-    valita: 5.07ms - 1.89x slower
-    zod-mini: 6.28ms - 2.34x slower
-    typebox: 14.52ms - 5.41x slower
-    sury: 14.91ms - 5.55x slower
-    zod: 15.91ms - 5.93x slower
-    effect-schema: 105.88ms - 39.44x slower
-    arktype: 158.78ms - 59.15x slower
+    valibot: 943.43us
+    stnl: 1.10ms - 1.17x slower
+    valita: 2.98ms - 3.16x slower
+    zod-mini: 3.62ms - 3.84x slower
+    typebox: 4.11ms - 4.35x slower
+    sury: 10.07ms - 10.68x slower
+    zod: 11.96ms - 12.68x slower
+    effect-schema: 38.21ms - 40.50x slower
+    arktype: 167.88ms - 177.95x slower
   minified size:
     stnl: 2.49kb
     valibot: 4.04kb - 1.62x bigger
@@ -68,4 +68,4 @@ validators/simple:
     effect-schema: 81.88kb - 79.88x bigger
 
 Directory created: ./.results/
-File written successfully: ./.results/deno[2.4.2]_v8[13.7.152.14-rusty].json
+File written successfully: ./.results/bun[1.2.19].json

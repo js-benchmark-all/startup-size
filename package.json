@@ -16,6 +16,6 @@
     "bench:node": "node --no-opt --expose-gc index.ts",
     "bench:deno": "deno run --allow-all --v8-flags=--no-opt,--expose-gc index.ts",
     "bench:all": "bun clean && bun bench:bun && bun bench:node && bun bench:deno",
-    "bench:all:file": "bun bench:bun > bun.txt && bun bench:node > node.txt && bun bench:deno > deno.txt"
+    "bench:all:file": "bun bench:bun > bun.log && bun bench:node > node.log && bun bench:deno > deno.log"
   }
 }
