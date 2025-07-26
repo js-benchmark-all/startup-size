@@ -1,27 +1,27 @@
 {
   "stnl": {
-    "ns": 2323697,
+    "ns": 1592570,
     "size": {
       "minified": 2491,
       "gzipped": 1025
     }
   },
   "arktype": {
-    "ns": 131172880,
+    "ns": 119921289,
     "size": {
       "minified": 165919,
       "gzipped": 48511
     }
   },
   "typebox": {
-    "ns": 7263937,
+    "ns": 6630629,
     "size": {
       "minified": 92696,
       "gzipped": 21745
     }
   },
   "sury": {
-    "ns": 5045036,
+    "ns": 4867483,
     "size": {
       "minified": 50096,
       "gzipped": 16258

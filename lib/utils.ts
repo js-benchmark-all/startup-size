@@ -2,8 +2,10 @@ import pc from 'picocolors';
 import { mkdir, writeFile } from 'node:fs';
 
 export const RUNTIME = globalThis.Bun
-  ? `bun_${process.versions.bun}`
-  : `node_${process.versions.node}`;
+  ? `bun_${Bun.version}`
+  : globalThis.Deno
+    ? `deno_${Deno.version.deno}_v8_${Deno.version.v8}`
+    : `node_${process.version}_v8_${process.versions.v8}`;
 
 const createUnitFormat = (units: string[], sep: number) => (n: number) => {
   let i = 0;
