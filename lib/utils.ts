@@ -14,7 +14,7 @@ export const RESULT_DIRNAME = '.results/';
 export const ALL_RESULTS = ROOT_DIR + '/' + RESULT_DIRNAME;
 
 export const OUTPUT_DIR = ROOT_DIR + '/.startup/';
-export const BUNDLED_DIR = ROOT_DIR + '/bundled/';
+export const BUNDLED_DIR = OUTPUT_DIR + '/bundled/';
 
 export const SRC = ROOT_DIR + '/src/';
 export const TSCONFIG = ROOT_DIR + '/tsconfig.json';
