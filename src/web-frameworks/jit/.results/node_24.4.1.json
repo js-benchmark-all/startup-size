@@ -1,13 +1,13 @@
 {
   "elysia": {
-    "ns": 23281523,
+    "ns": 74545176,
     "size": {
-      "minified": 325135,
-      "gzipped": 85994
+      "minified": 325053,
+      "gzipped": 85832
     }
   },
   "mapl": {
-    "ns": 3167707,
+    "ns": 2583324,
     "size": {
       "minified": 5318,
       "gzipped": 2278

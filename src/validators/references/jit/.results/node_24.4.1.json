@@ -1,30 +1,30 @@
 {
-  "ajv": {
-    "ns": 372846694,
+  "stnl": {
+    "ns": 1689095,
     "size": {
-      "minified": 118586,
-      "gzipped": 33855
+      "minified": 2948,
+      "gzipped": 1217
     }
   },
   "arktype": {
-    "ns": 187216467,
+    "ns": 155883775,
     "size": {
-      "minified": 166447,
-      "gzipped": 48802
-    }
-  },
-  "stnl": {
-    "ns": 2360068,
-    "size": {
-      "minified": 3183,
-      "gzipped": 1400
+      "minified": 166390,
+      "gzipped": 48700
     }
   },
   "typebox": {
-    "ns": 9319345,
+    "ns": 8206546,
     "size": {
-      "minified": 94456,
-      "gzipped": 23218
+      "minified": 93431,
+      "gzipped": 21769
+    }
+  },
+  "ajv": {
+    "ns": 355254882,
+    "size": {
+      "minified": 118368,
+      "gzipped": 33725
     }
   }
 }

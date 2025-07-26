@@ -1,4 +1,4 @@
-import { build } from 'rolldown';
+import { build, rolldown } from 'rolldown';
 import { installDependencies } from "nypm";
 
 import * as filters from './lib/filters.ts';
@@ -9,6 +9,7 @@ import { rmSync, readFileSync } from 'node:fs';
 const OUTPUT_DIR = import.meta.dir + '/.startup/';
 const BUNDLED_DIR = OUTPUT_DIR + 'bundled/';
 const SRC = import.meta.dir + '/src/';
+const TSCONFIG = import.meta.dir + '/tsconfig.json';
 
 try {
   rmSync(BUNDLED_DIR, { recursive: true });
@@ -16,7 +17,9 @@ try {
 
 // Extract case name and category
 const extractNameCategory = (path: string) => {
-  let name = path.slice(SRC.length).slice(0, -'.case.ts'.length);
+  const relativePath = path.slice(SRC.length).slice(0, -'.case.ts'.length);
+
+  let name = relativePath;
   if (name.endsWith('/index')) name = name.slice(0, -'/index'.length);
 
   // Parse to path and category
@@ -24,7 +27,7 @@ const extractNameCategory = (path: string) => {
   const category = nameParts.slice(0, -1).join('/');
   name = nameParts[nameParts.length - 1];
 
-  return { name, category };
+  return { name, category, relativePath };
 }
 
 // Install dependencies
@@ -53,14 +56,6 @@ await Promise.all(
   ).filter((o) => o != null)
 );
 
-// Store calculated chunks
-const chunks: Record<string, {
-  size: {
-    minified: number,
-    gzipped: number
-  }
-}> = {};
-
 // Only build necessary files
 const files = Array.from(
   new Bun.Glob('**/*.case.ts').scanSync({
@@ -72,57 +67,52 @@ const files = Array.from(
   return filters.includeCase(props.name, props.category);
 });
 
-// Retrieve information about cases
 const buildOutput = (
-  await build({
-    input: files,
-    resolve: {
-      tsconfigFilename: import.meta.dir + '/tsconfig.json',
-    },
-    output: {
-      dir: BUNDLED_DIR,
-      minify: {
-        compress: false,
-        removeWhitespace: true,
-        mangle: true,
-      },
-      inlineDynamicImports: true,
-      banner: '// @bun',
-      advancedChunks: {
-        maxSize: Number.MAX_SAFE_INTEGER
-      }
-    },
-    logLevel: 'silent'
-  })
-).output
-  .map((o) => {
-    if (o.type !== 'chunk' || o.facadeModuleId == null || !o.isEntry) return;
-    console.log('Built entry:', utils.format.header(o.fileName));
+  await Promise.all(
+    files.map(
+      async (casePath, i) => {
+        const props = extractNameCategory(casePath);
 
-    // Calculate file size & chunk size
-    const size = {
-      minified: Buffer.from(o.code).byteLength,
-      gzipped: Bun.gzipSync(o.code).byteLength,
-    };
-    for (const chunk of o.imports) {
-      const chunkInfo = chunks[chunk] ??= {
-        size: {
-          minified: Bun.file(BUNDLED_DIR + chunk).size,
-          gzipped: Bun.gzipSync(readFileSync(BUNDLED_DIR + chunk)).byteLength
+        try {
+          const input = await rolldown({
+            input: casePath,
+            resolve: {
+              tsconfigFilename: TSCONFIG,
+            },
+            logLevel: 'silent',
+          });
+
+          const outputPath = BUNDLED_DIR + i + '.js';
+          const output = (await input.write({
+            inlineDynamicImports: true,
+            file: outputPath,
+            minify: {
+              compress: false,
+              removeWhitespace: true,
+              mangle: true,
+            },
+            banner: '// @bun',
+          })).output[0];
+
+          const info = {
+            ...props,
+            bundled: outputPath,
+            size: {
+              minified: Buffer.from(output.code).byteLength,
+              gzipped: Bun.gzipSync(output.code).byteLength,
+            }
+          };
+
+          console.log('Built:', utils.format.header(props.relativePath));
+          return info;
+        } catch (e) {
+          console.error(e);
+          console.error('Failed to build:', utils.format.header(props.relativePath));
         }
       }
-
-      size.minified += chunkInfo.size.minified;
-      size.gzipped += chunkInfo.size.gzipped;
-    }
-
-    return {
-      ...extractNameCategory(o.facadeModuleId),
-      bundled: BUNDLED_DIR + o.fileName,
-      size
-    };
-  })
-  .filter((o) => o != null);
+    )
+  )
+).filter((o) => o != null);
 
 await Bun.write(
   OUTPUT_DIR + '_.js',

@@ -1,44 +1,44 @@
 {
-  "effect-schema": {
-    "ns": 36752386,
+  "zod-mini": {
+    "ns": 3344463,
     "size": {
-      "minified": 279251,
-      "gzipped": 81881
-    }
-  },
-  "typebox": {
-    "ns": 413148,
-    "size": {
-      "minified": 55475,
-      "gzipped": 14271
-    }
-  },
-  "valibot": {
-    "ns": 940297,
-    "size": {
-      "minified": 4041,
-      "gzipped": 1374
+      "minified": 12216,
+      "gzipped": 4325
     }
   },
   "valita": {
-    "ns": 2997603,
+    "ns": 2955826,
     "size": {
       "minified": 15048,
       "gzipped": 4727
     }
   },
-  "zod-mini": {
-    "ns": 8185685,
+  "effect-schema": {
+    "ns": 44862739,
     "size": {
-      "minified": 42231,
-      "gzipped": 11351
+      "minified": 279251,
+      "gzipped": 81881
+    }
+  },
+  "valibot": {
+    "ns": 960978,
+    "size": {
+      "minified": 4041,
+      "gzipped": 1374
+    }
+  },
+  "typebox": {
+    "ns": 8862282,
+    "size": {
+      "minified": 54709,
+      "gzipped": 13885
     }
   },
   "zod": {
-    "ns": 3782469,
+    "ns": 9041863,
     "size": {
-      "minified": 53522,
-      "gzipped": 14660
+      "minified": 49778,
+      "gzipped": 12756
     }
   }
 }

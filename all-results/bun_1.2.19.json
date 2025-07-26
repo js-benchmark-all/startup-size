@@ -1,129 +1,16 @@
 [
   [
-    "validators/references/jit",
-    {
-      "ajv": {
-        "ns": 474349828,
-        "size": {
-          "minified": 118586,
-          "gzipped": 33855
-        }
-      },
-      "arktype": {
-        "ns": 157782578,
-        "size": {
-          "minified": 166447,
-          "gzipped": 48802
-        }
-      },
-      "stnl": {
-        "ns": 1590086,
-        "size": {
-          "minified": 3183,
-          "gzipped": 1400
-        }
-      },
-      "typebox": {
-        "ns": 16112328,
-        "size": {
-          "minified": 94456,
-          "gzipped": 23218
-        }
-      }
-    }
-  ],
-  [
-    "validators/simple/jit",
-    {
-      "arktype": {
-        "ns": 3922223,
-        "size": {
-          "minified": 165976,
-          "gzipped": 48612
-        }
-      },
-      "stnl": {
-        "ns": 430479,
-        "size": {
-          "minified": 2750,
-          "gzipped": 1213
-        }
-      },
-      "sury": {
-        "ns": 9955647,
-        "size": {
-          "minified": 50096,
-          "gzipped": 16258
-        }
-      },
-      "typebox": {
-        "ns": 1272432,
-        "size": {
-          "minified": 93704,
-          "gzipped": 22992
-        }
-      }
-    }
-  ],
-  [
-    "validators/simple/jitless",
-    {
-      "effect-schema": {
-        "ns": 36752386,
-        "size": {
-          "minified": 279251,
-          "gzipped": 81881
-        }
-      },
-      "typebox": {
-        "ns": 413148,
-        "size": {
-          "minified": 55475,
-          "gzipped": 14271
-        }
-      },
-      "valibot": {
-        "ns": 940297,
-        "size": {
-          "minified": 4041,
-          "gzipped": 1374
-        }
-      },
-      "valita": {
-        "ns": 2997603,
-        "size": {
-          "minified": 15048,
-          "gzipped": 4727
-        }
-      },
-      "zod-mini": {
-        "ns": 8185685,
-        "size": {
-          "minified": 42231,
-          "gzipped": 11351
-        }
-      },
-      "zod": {
-        "ns": 3782469,
-        "size": {
-          "minified": 53522,
-          "gzipped": 14660
-        }
-      }
-    }
-  ],
-  [
     "web-frameworks/jit",
     {
       "elysia": {
-        "ns": 26158467,
+        "ns": 68221495,
         "size": {
-          "minified": 325135,
-          "gzipped": 85994
+          "minified": 325053,
+          "gzipped": 85832
         }
       },
       "mapl": {
-        "ns": 2718065,
+        "ns": 2956335,
         "size": {
           "minified": 5318,
           "gzipped": 2278
@@ -134,18 +21,131 @@
   [
     "web-frameworks/jitless",
     {
-      "hono-quick": {
-        "ns": 6287248,
+      "hono-tiny": {
+        "ns": 4705780,
         "size": {
-          "minified": 19397,
-          "gzipped": 7443
+          "minified": 12726,
+          "gzipped": 4773
         }
       },
-      "hono-tiny": {
-        "ns": 1008632,
+      "hono-quick": {
+        "ns": 6293315,
         "size": {
-          "minified": 14106,
-          "gzipped": 5486
+          "minified": 18965,
+          "gzipped": 6809
+        }
+      }
+    }
+  ],
+  [
+    "validators/references/jit",
+    {
+      "stnl": {
+        "ns": 2042047,
+        "size": {
+          "minified": 2948,
+          "gzipped": 1217
+        }
+      },
+      "arktype": {
+        "ns": 188848870,
+        "size": {
+          "minified": 166390,
+          "gzipped": 48700
+        }
+      },
+      "typebox": {
+        "ns": 20068287,
+        "size": {
+          "minified": 93431,
+          "gzipped": 21769
+        }
+      },
+      "ajv": {
+        "ns": 482603166,
+        "size": {
+          "minified": 118368,
+          "gzipped": 33725
+        }
+      }
+    }
+  ],
+  [
+    "validators/simple/jit",
+    {
+      "stnl": {
+        "ns": 1150887,
+        "size": {
+          "minified": 2491,
+          "gzipped": 1025
+        }
+      },
+      "arktype": {
+        "ns": 184859433,
+        "size": {
+          "minified": 165919,
+          "gzipped": 48511
+        }
+      },
+      "typebox": {
+        "ns": 16979139,
+        "size": {
+          "minified": 92696,
+          "gzipped": 21745
+        }
+      },
+      "sury": {
+        "ns": 8574371,
+        "size": {
+          "minified": 50096,
+          "gzipped": 16258
+        }
+      }
+    }
+  ],
+  [
+    "validators/simple/jitless",
+    {
+      "zod-mini": {
+        "ns": 3344463,
+        "size": {
+          "minified": 12216,
+          "gzipped": 4325
+        }
+      },
+      "valita": {
+        "ns": 2955826,
+        "size": {
+          "minified": 15048,
+          "gzipped": 4727
+        }
+      },
+      "effect-schema": {
+        "ns": 44862739,
+        "size": {
+          "minified": 279251,
+          "gzipped": 81881
+        }
+      },
+      "valibot": {
+        "ns": 960978,
+        "size": {
+          "minified": 4041,
+          "gzipped": 1374
+        }
+      },
+      "typebox": {
+        "ns": 8862282,
+        "size": {
+          "minified": 54709,
+          "gzipped": 13885
+        }
+      },
+      "zod": {
+        "ns": 9041863,
+        "size": {
+          "minified": 49778,
+          "gzipped": 12756
         }
       }
     }
