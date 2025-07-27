@@ -2,29 +2,29 @@ Runtime: deno[2.4.2]_v8[13.7.152.14-rusty]
 
 web-frameworks:
   startup time:
-    itty: 2.03ms
-    mapl: 2.54ms - 1.25x slower
-    hono-tiny: 2.91ms - 1.43x slower
-    hono-quick: 3.16ms - 1.55x slower
-    elysia: 40.75ms - 20.04x slower
+    itty: 5.88ms
+    hono-tiny: 7.53ms - 1.28x slower
+    hono-quick: 8.65ms - 1.47x slower
+    mapl: 18.41ms - 3.13x slower
+    elysia: 109.03ms - 18.53x slower
   minified size:
     itty: 3.83kb
-    mapl: 5.32kb - 1.39x bigger
+    mapl: 5.37kb - 1.40x bigger
     hono-tiny: 12.73kb - 3.33x bigger
     hono-quick: 18.96kb - 4.96x bigger
     elysia: 325.05kb - 84.94x bigger
   gzipped size:
     itty: 1.61kb
-    mapl: 2.28kb - 1.42x bigger
+    mapl: 2.29kb - 1.43x bigger
     hono-tiny: 4.77kb - 2.97x bigger
     hono-quick: 6.81kb - 4.24x bigger
     elysia: 85.83kb - 53.44x bigger
 validators/references:
   startup time:
-    stnl: 1.78ms
-    typebox: 8.72ms - 4.91x slower
-    arktype: 169.43ms - 95.39x slower
-    ajv: 363.78ms - 204.82x slower
+    stnl: 5.60ms
+    typebox: 28.67ms - 5.12x slower
+    arktype: 486.90ms - 86.88x slower
+    ajv: 1.04s - 186.10x slower
   minified size:
     stnl: 2.95kb
     typebox: 93.43kb - 31.69x bigger
@@ -37,15 +37,15 @@ validators/references:
     arktype: 48.70kb - 40.02x bigger
 validators/simple:
   startup time:
-    valibot: 1.76ms
-    stnl: 1.90ms - 1.08x slower
-    valita: 2.04ms - 1.16x slower
-    zod-mini: 3.68ms - 2.09x slower
-    typebox: 4.10ms - 2.33x slower
-    sury: 5.12ms - 2.91x slower
-    zod: 6.66ms - 3.79x slower
-    effect-schema: 49.00ms - 27.87x slower
-    arktype: 127.44ms - 72.48x slower
+    valibot: 3.37ms
+    stnl: 5.09ms - 1.51x slower
+    valita: 6.67ms - 1.98x slower
+    zod-mini: 12.10ms - 3.59x slower
+    typebox: 13.47ms - 3.99x slower
+    sury: 17.17ms - 5.09x slower
+    zod: 22.10ms - 6.55x slower
+    effect-schema: 147.13ms - 43.60x slower
+    arktype: 361.14ms - 107.02x slower
   minified size:
     stnl: 2.49kb
     valibot: 4.04kb - 1.62x bigger

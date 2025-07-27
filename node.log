@@ -2,29 +2,29 @@ Runtime: node[v24.4.1]_v8[13.6.233.10-node.17]
 
 web-frameworks:
   startup time:
-    itty: 1.71ms
-    mapl: 2.44ms - 1.42x slower
-    hono-tiny: 2.87ms - 1.68x slower
-    hono-quick: 3.27ms - 1.91x slower
-    elysia: 71.23ms - 41.62x slower
+    itty: 5.35ms
+    mapl: 7.60ms - 1.42x slower
+    hono-tiny: 7.83ms - 1.46x slower
+    hono-quick: 8.95ms - 1.67x slower
+    elysia: 189.41ms - 35.43x slower
   minified size:
     itty: 3.83kb
-    mapl: 5.32kb - 1.39x bigger
+    mapl: 5.37kb - 1.40x bigger
     hono-tiny: 12.73kb - 3.33x bigger
     hono-quick: 18.96kb - 4.96x bigger
     elysia: 325.05kb - 84.94x bigger
   gzipped size:
     itty: 1.61kb
-    mapl: 2.28kb - 1.42x bigger
+    mapl: 2.29kb - 1.43x bigger
     hono-tiny: 4.77kb - 2.97x bigger
     hono-quick: 6.81kb - 4.24x bigger
     elysia: 85.83kb - 53.44x bigger
 validators/references:
   startup time:
-    stnl: 1.60ms
-    typebox: 8.21ms - 5.12x slower
-    arktype: 149.56ms - 93.29x slower
-    ajv: 352.49ms - 219.86x slower
+    stnl: 4.77ms
+    typebox: 25.30ms - 5.30x slower
+    arktype: 407.74ms - 85.47x slower
+    ajv: 981.02ms - 205.65x slower
   minified size:
     stnl: 2.95kb
     typebox: 93.43kb - 31.69x bigger
@@ -37,15 +37,15 @@ validators/references:
     arktype: 48.70kb - 40.02x bigger
 validators/simple:
   startup time:
-    valibot: 1.26ms
-    stnl: 1.57ms - 1.25x slower
-    valita: 1.89ms - 1.51x slower
-    zod-mini: 3.85ms - 3.07x slower
-    typebox: 4.13ms - 3.29x slower
-    sury: 4.90ms - 3.90x slower
-    zod: 6.27ms - 4.99x slower
-    effect-schema: 32.35ms - 25.74x slower
-    arktype: 120.74ms - 96.09x slower
+    valibot: 2.68ms
+    stnl: 5.11ms - 1.91x slower
+    valita: 6.44ms - 2.40x slower
+    typebox: 11.66ms - 4.35x slower
+    zod-mini: 13.42ms - 5.01x slower
+    sury: 15.12ms - 5.64x slower
+    zod: 19.98ms - 7.46x slower
+    effect-schema: 93.82ms - 35.02x slower
+    arktype: 325.43ms - 121.47x slower
   minified size:
     stnl: 2.49kb
     valibot: 4.04kb - 1.62x bigger
