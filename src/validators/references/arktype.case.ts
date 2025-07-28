@@ -1,6 +1,6 @@
 import { type } from 'arktype';
 
-export default type.module({
+const mod = type.module({
   project: {
     id: 'uuid',
     name: 'string',
@@ -46,4 +46,6 @@ export default type.module({
     is_active: 'boolean',
     'last_login?': 'string',
   },
-}).project;
+});
+
+export default mod.project;

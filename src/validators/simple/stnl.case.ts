@@ -1,6 +1,6 @@
 import { t, build } from 'stnl';
 
-export default build.json.assert.compile(
+export default build.json.assert(
   t.dict({
     number: t.float,
     negNumber: t.float,

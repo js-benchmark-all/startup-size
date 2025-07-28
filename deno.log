@@ -2,11 +2,11 @@ Runtime: deno[2.4.2]_v8[13.7.152.14-rusty]
 
 web-frameworks:
   startup time:
-    itty: 1.94ms
-    mapl: 2.47ms - 1.28x slower
-    hono-tiny: 2.86ms - 1.48x slower
-    hono-quick: 3.07ms - 1.58x slower
-    elysia: 39.44ms - 20.37x slower
+    itty: 1.95ms
+    mapl: 2.54ms - 1.30x slower
+    hono-quick: 3.12ms - 1.60x slower
+    hono-tiny: 3.30ms - 1.69x slower
+    elysia: 41.23ms - 21.13x slower
   minified size:
     itty: 3.83kb
     mapl: 5.37kb - 1.40x bigger
@@ -21,51 +21,51 @@ web-frameworks:
     elysia: 85.83kb - 53.44x bigger
 validators/references:
   startup time:
-    stnl: 1.77ms
-    typebox: 9.40ms - 5.32x slower
-    arktype: 160.38ms - 90.87x slower
-    ajv: 348.88ms - 197.66x slower
+    stnl: 2.67ms
+    typebox: 9.73ms - 3.65x slower
+    arktype: 167.09ms - 62.66x slower
+    ajv: 357.05ms - 133.90x slower
   minified size:
-    stnl: 2.95kb
-    typebox: 93.43kb - 31.69x bigger
-    ajv: 118.37kb - 40.15x bigger
-    arktype: 166.39kb - 56.44x bigger
+    stnl: 2.98kb
+    typebox: 93.43kb - 31.35x bigger
+    ajv: 118.37kb - 39.72x bigger
+    arktype: 166.40kb - 55.84x bigger
   gzipped size:
-    stnl: 1.22kb
-    typebox: 21.77kb - 17.89x bigger
-    ajv: 33.73kb - 27.71x bigger
-    arktype: 48.70kb - 40.02x bigger
+    stnl: 1.24kb
+    typebox: 21.77kb - 17.58x bigger
+    ajv: 33.73kb - 27.24x bigger
+    arktype: 48.70kb - 39.34x bigger
 validators/simple:
   startup time:
-    stnl: 1.68ms
-    valibot: 1.76ms - 1.05x slower
-    valita: 2.04ms - 1.22x slower
-    zod-mini: 3.92ms - 2.34x slower
-    typebox: 4.44ms - 2.65x slower
-    sury: 5.21ms - 3.11x slower
-    zod: 6.67ms - 3.98x slower
-    effect-schema: 49.33ms - 29.44x slower
-    arktype: 128.86ms - 76.91x slower
+    valibot: 1.63ms
+    stnl: 2.02ms - 1.24x slower
+    zod-mini: 3.85ms - 2.36x slower
+    typebox: 4.11ms - 2.51x slower
+    sury: 4.89ms - 2.99x slower
+    valita: 5.30ms - 3.24x slower
+    zod: 6.68ms - 4.09x slower
+    effect-schema: 51.13ms - 31.28x slower
+    arktype: 134.26ms - 82.15x slower
   minified size:
-    stnl: 2.49kb
-    valibot: 4.04kb - 1.62x bigger
-    zod-mini: 12.22kb - 4.90x bigger
-    valita: 15.05kb - 6.04x bigger
-    zod: 49.78kb - 19.98x bigger
-    sury: 50.10kb - 20.11x bigger
-    typebox: 54.71kb - 21.96x bigger
-    arktype: 165.92kb - 66.61x bigger
-    effect-schema: 279.25kb - 112.10x bigger
+    stnl: 2.51kb
+    valibot: 4.04kb - 1.61x bigger
+    zod-mini: 12.22kb - 4.86x bigger
+    valita: 15.08kb - 6.00x bigger
+    zod: 49.78kb - 19.81x bigger
+    sury: 50.10kb - 19.93x bigger
+    typebox: 54.71kb - 21.77x bigger
+    arktype: 165.92kb - 66.02x bigger
+    effect-schema: 279.25kb - 111.12x bigger
   gzipped size:
-    stnl: 1.02kb
-    valibot: 1.37kb - 1.34x bigger
-    zod-mini: 4.33kb - 4.22x bigger
-    valita: 4.73kb - 4.61x bigger
-    zod: 12.76kb - 12.44x bigger
-    typebox: 13.88kb - 13.55x bigger
-    sury: 16.26kb - 15.86x bigger
-    arktype: 48.51kb - 47.33x bigger
-    effect-schema: 81.88kb - 79.88x bigger
+    stnl: 1.04kb
+    valibot: 1.37kb - 1.32x bigger
+    zod-mini: 4.33kb - 4.15x bigger
+    valita: 4.74kb - 4.56x bigger
+    zod: 12.76kb - 12.25x bigger
+    typebox: 13.88kb - 13.34x bigger
+    sury: 16.26kb - 15.62x bigger
+    arktype: 48.51kb - 46.60x bigger
+    effect-schema: 81.88kb - 78.66x bigger
 
 Directory created: ./.results/
 File written successfully: ./.results/deno[2.4.2]_v8[13.7.152.14-rusty].json

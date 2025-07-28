@@ -1,6 +1,6 @@
 import { array, boolean, number, object, string } from '@badrap/valita';
 
-object({
+export default object({
   number: number(),
   negNumber: number(),
   maxNumber: number(),
