@@ -1,134 +1,254 @@
 {
   "web-frameworks": {
-    "elysia": {
-      "ns": 41230303,
-      "size": {
-        "minified": 325053,
-        "gzipped": 85832
-      }
-    },
-    "hono-tiny": {
-      "ns": 3298076,
-      "size": {
-        "minified": 12726,
-        "gzipped": 4773
-      }
-    },
-    "hono-quick": {
-      "ns": 3115157,
-      "size": {
-        "minified": 18965,
-        "gzipped": 6809
-      }
-    },
-    "itty": {
-      "ns": 1950904,
-      "size": {
-        "minified": 3827,
-        "gzipped": 1606
-      }
-    },
-    "mapl": {
-      "ns": 2537927,
-      "size": {
-        "minified": 5365,
-        "gzipped": 2294
-      }
-    }
+    "startup time": [
+      [
+        "hono-tiny",
+        2973341
+      ],
+      [
+        "itty",
+        3130883
+      ],
+      [
+        "hono-quick",
+        3140612
+      ],
+      [
+        "mapl",
+        3949301
+      ],
+      [
+        "elysia",
+        39890024
+      ],
+      [
+        "oak",
+        49150881
+      ]
+    ],
+    "minified size": [
+      [
+        "itty",
+        3827
+      ],
+      [
+        "mapl",
+        5387
+      ],
+      [
+        "hono-tiny",
+        12726
+      ],
+      [
+        "hono-quick",
+        18965
+      ],
+      [
+        "oak",
+        267178
+      ],
+      [
+        "elysia",
+        325053
+      ]
+    ],
+    "gzipped size": [
+      [
+        "itty",
+        1606
+      ],
+      [
+        "mapl",
+        2308
+      ],
+      [
+        "hono-tiny",
+        4773
+      ],
+      [
+        "hono-quick",
+        6809
+      ],
+      [
+        "oak",
+        59295
+      ],
+      [
+        "elysia",
+        85832
+      ]
+    ]
   },
   "validators/references": {
-    "stnl": {
-      "ns": 2666475,
-      "size": {
-        "minified": 2980,
-        "gzipped": 1238
-      }
-    },
-    "arktype": {
-      "ns": 167088494,
-      "size": {
-        "minified": 166402,
-        "gzipped": 48705
-      }
-    },
-    "typebox": {
-      "ns": 9730434,
-      "size": {
-        "minified": 93431,
-        "gzipped": 21769
-      }
-    },
-    "ajv": {
-      "ns": 357045524,
-      "size": {
-        "minified": 118368,
-        "gzipped": 33725
-      }
-    }
+    "startup time": [
+      [
+        "stnl",
+        2687022
+      ],
+      [
+        "typebox",
+        24308232
+      ],
+      [
+        "arktype",
+        187014227
+      ],
+      [
+        "ajv",
+        372544298
+      ]
+    ],
+    "minified size": [
+      [
+        "stnl",
+        2980
+      ],
+      [
+        "typebox",
+        93431
+      ],
+      [
+        "ajv",
+        118368
+      ],
+      [
+        "arktype",
+        166402
+      ]
+    ],
+    "gzipped size": [
+      [
+        "stnl",
+        1238
+      ],
+      [
+        "typebox",
+        21769
+      ],
+      [
+        "ajv",
+        33725
+      ],
+      [
+        "arktype",
+        48705
+      ]
+    ]
   },
   "validators/simple": {
-    "zod-mini": {
-      "ns": 3853627,
-      "size": {
-        "minified": 12216,
-        "gzipped": 4325
-      }
-    },
-    "stnl": {
-      "ns": 2022314,
-      "size": {
-        "minified": 2513,
-        "gzipped": 1041
-      }
-    },
-    "valita": {
-      "ns": 5296321,
-      "size": {
-        "minified": 15077,
-        "gzipped": 4744
-      }
-    },
-    "arktype": {
-      "ns": 134263668,
-      "size": {
-        "minified": 165919,
-        "gzipped": 48511
-      }
-    },
-    "effect-schema": {
-      "ns": 51130742,
-      "size": {
-        "minified": 279251,
-        "gzipped": 81881
-      }
-    },
-    "valibot": {
-      "ns": 1634447,
-      "size": {
-        "minified": 4041,
-        "gzipped": 1374
-      }
-    },
-    "typebox": {
-      "ns": 4108347,
-      "size": {
-        "minified": 54709,
-        "gzipped": 13885
-      }
-    },
-    "zod": {
-      "ns": 6683743,
-      "size": {
-        "minified": 49778,
-        "gzipped": 12756
-      }
-    },
-    "sury": {
-      "ns": 4886951,
-      "size": {
-        "minified": 50096,
-        "gzipped": 16258
-      }
-    }
+    "startup time": [
+      [
+        "valibot",
+        2514729
+      ],
+      [
+        "stnl",
+        2690310
+      ],
+      [
+        "valita",
+        5146544
+      ],
+      [
+        "zod-mini",
+        6181277
+      ],
+      [
+        "typebox",
+        14135611
+      ],
+      [
+        "zod",
+        14485217
+      ],
+      [
+        "sury",
+        14631736
+      ],
+      [
+        "effect-schema",
+        109776743
+      ],
+      [
+        "arktype",
+        147986121
+      ]
+    ],
+    "minified size": [
+      [
+        "stnl",
+        2513
+      ],
+      [
+        "valibot",
+        4041
+      ],
+      [
+        "zod-mini",
+        12216
+      ],
+      [
+        "valita",
+        15077
+      ],
+      [
+        "zod",
+        49778
+      ],
+      [
+        "sury",
+        50096
+      ],
+      [
+        "typebox",
+        54709
+      ],
+      [
+        "arktype",
+        165919
+      ],
+      [
+        "effect-schema",
+        279251
+      ]
+    ],
+    "gzipped size": [
+      [
+        "stnl",
+        1041
+      ],
+      [
+        "valibot",
+        1374
+      ],
+      [
+        "zod-mini",
+        4325
+      ],
+      [
+        "valita",
+        4744
+      ],
+      [
+        "zod",
+        12756
+      ],
+      [
+        "typebox",
+        13885
+      ],
+      [
+        "sury",
+        16258
+      ],
+      [
+        "arktype",
+        48511
+      ],
+      [
+        "effect-schema",
+        81881
+      ]
+    ]
   }
 }

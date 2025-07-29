@@ -37,11 +37,18 @@ const COMPARISONS = [
 }[];
 
 console.log('Runtime:', utils.format.header(utils.RUNTIME) + '\n');
+const allSortedResults: Record<string, any> = {};
 
 for (const category in CATEGORIES) {
+  // Stored results
+  const categoryResults = allSortedResults[category] = {} as any;
+
   console.log(utils.format.header(category) + ':');
 
   for (const comparison of COMPARISONS) {
+    // Stored result of this label
+    const comparisonResult = categoryResults[comparison.label] = [] as any[];
+
     console.log('  ' + utils.format.header(comparison.label) + ':');
 
     // Sort by selected prop
@@ -52,41 +59,24 @@ for (const category in CATEGORIES) {
     const baseline = comparison.getter(results[0]);
     for (let i = 0; i < results.length; i++) {
       const res = comparison.getter(results[i]);
+
+      // Log result
       console.log(
         `    ${utils.format.name(results[i].name)}: ${comparison.formatter(res)}` +
           (i === 0 ? '' : ` - ${utils.format.multiplier(res / baseline)} ${comparison.diff}`),
       );
+
+      // Store result
+      comparisonResult.push([results[i].name, res]);
     }
   }
-}
 
-{
   console.log();
-
-  const props = Object.entries(CATEGORIES)
-    .map(
-      ([key, value]) => {
-        const props = Object.groupBy(value!, (o) => {
-          const c = o.name;
-          // @ts-expect-error Unset the prop
-          o.name = undefined;
-          return c;
-        });
-
-        return [
-          key,
-          Object.fromEntries(
-            Object.entries(props)
-              .map(([key, value]) => [key, value![0]])
-          )
-        ];
-      }
-    );
-
-  utils.tryMkdirAsync(utils.ALL_RESULTS, () =>
-    utils.tryWriteAsync(
-      `${utils.ALL_RESULTS}${utils.RUNTIME}.json`,
-      JSON.stringify(Object.fromEntries(props), null, 2)
-    )
-  );
 }
+
+utils.tryMkdirAsync(utils.ALL_RESULTS, () =>
+  utils.tryWriteAsync(
+    `${utils.ALL_RESULTS}${utils.RUNTIME}.json`,
+    JSON.stringify(allSortedResults, null, 2)
+  )
+);
