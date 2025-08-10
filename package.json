@@ -12,9 +12,10 @@
   "scripts": {
     "prep": "bun build.ts",
     "clean": "bun clean.ts",
+    "collect": "bun collect.ts",
     "bench:bun": "bun index.ts",
     "bench:node": "node --expose-gc index.ts",
     "bench:deno": "deno run --allow-all --v8-flags=--expose-gc index.ts",
-    "bench:all": "bun clean && bun bench:bun && bun bench:node && bun bench:deno"
+    "bench:all": "bun clean && bun bench:bun && bun bench:node && bun bench:deno && bun collect"
   }
 }

@@ -13,4 +13,4 @@ await Promise.all(
 );
 
 // Result for displaying
-Bun.write(utils.ALL_RESULTS + 'index.json', JSON.stringify(res));
+await Bun.write(utils.ALL_RESULTS + 'index.json', JSON.stringify(res));

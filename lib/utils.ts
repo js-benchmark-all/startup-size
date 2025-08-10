@@ -22,10 +22,10 @@ export const TSCONFIG = ROOT_DIR + '/tsconfig.json';
 export const CWD = process.cwd();
 
 export const RUNTIME = globalThis.Bun
-  ? `bun[${Bun.version}]`
+  ? `bun-${Bun.version}`
   : globalThis.Deno
-    ? `deno[${Deno.version.deno}]_v8[${Deno.version.v8}]`
-    : `node[${process.version}]_v8[${process.versions.v8}]`;
+    ? `deno-${Deno.version.deno}]`
+    : `node-${process.versions.node}`;
 
 export const relativePath = (dir: string) => relative('.', dir);
 
