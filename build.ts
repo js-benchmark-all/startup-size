@@ -150,7 +150,13 @@ const gc = (() => {
 for (let i = 0; i < 100; i++) n();
 
 const results = [];
-let s, e;
+let s = 0, e = 0;
+for (let i = 0; i < 50; i++) {
+  s = n();
+  e = n();
+  s = e - s;
+  gc();
+}
 ${buildOutput
   .map(
     (o) => `gc();
