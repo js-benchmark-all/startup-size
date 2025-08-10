@@ -168,7 +168,7 @@ e = n();
 results.push({
   name: ${JSON.stringify(o.name)},
   category: ${JSON.stringify(o.category)},
-  ns: e - s
+  startup: e - s
 });`,
   )
   .join('\n')}
@@ -180,13 +180,13 @@ await Bun.write(
   `declare const results: {
   name: string,
   category: string,
-  ns: number
+  startup: number
 }[];
 export default results;`,
 );
 
 await Bun.write(
-  utils.OUTPUT_DIR + 'sizes.json',
+  utils.ALL_RESULTS + 'size.json',
   JSON.stringify(
     buildOutput.map((o) => ({
       name: o.name,

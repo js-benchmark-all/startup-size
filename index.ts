@@ -13,7 +13,7 @@ const CATEGORIES = Object.groupBy(
 const COMPARISONS = [
   {
     label: 'startup time',
-    getter: (o) => o.ns,
+    getter: (o) => o.startup,
     formatter: utils.format.time,
     diff: 'slower'
   }
