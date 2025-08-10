@@ -2,121 +2,161 @@
     {
         "name": "itty",
         "category": "web-frameworks",
-        "minified": 3827,
-        "gzipped": 1606
+        "size": {
+            "minified": 3827,
+            "gzipped": 1606
+        }
     },
     {
         "name": "mapl",
         "category": "web-frameworks",
-        "minified": 5387,
-        "gzipped": 2312
+        "size": {
+            "minified": 5387,
+            "gzipped": 2312
+        }
     },
     {
         "name": "elysia",
         "category": "web-frameworks",
-        "minified": 325053,
-        "gzipped": 85832
+        "size": {
+            "minified": 325053,
+            "gzipped": 85832
+        }
     },
     {
         "name": "oak",
         "category": "web-frameworks",
-        "minified": 267178,
-        "gzipped": 59295
+        "size": {
+            "minified": 267178,
+            "gzipped": 59295
+        }
     },
     {
         "name": "hono-tiny",
         "category": "web-frameworks",
-        "minified": 12726,
-        "gzipped": 4773
+        "size": {
+            "minified": 12726,
+            "gzipped": 4773
+        }
     },
     {
         "name": "hono",
         "category": "web-frameworks",
-        "minified": 21436,
-        "gzipped": 7598
+        "size": {
+            "minified": 21436,
+            "gzipped": 7598
+        }
     },
     {
         "name": "hono-quick",
         "category": "web-frameworks",
-        "minified": 18965,
-        "gzipped": 6809
+        "size": {
+            "minified": 18965,
+            "gzipped": 6809
+        }
     },
     {
         "name": "arktype",
         "category": "validators/references",
-        "minified": 158457,
-        "gzipped": 45949
+        "size": {
+            "minified": 158457,
+            "gzipped": 45949
+        }
     },
     {
         "name": "ajv",
         "category": "validators/references",
-        "minified": 118368,
-        "gzipped": 33725
+        "size": {
+            "minified": 118368,
+            "gzipped": 33725
+        }
     },
     {
         "name": "stnl",
         "category": "validators/references",
-        "minified": 2980,
-        "gzipped": 1238
+        "size": {
+            "minified": 2980,
+            "gzipped": 1238
+        }
     },
     {
         "name": "typebox",
         "category": "validators/references",
-        "minified": 93431,
-        "gzipped": 21769
+        "size": {
+            "minified": 93431,
+            "gzipped": 21769
+        }
     },
     {
         "name": "valibot",
         "category": "validators/simple",
-        "minified": 4041,
-        "gzipped": 1374
+        "size": {
+            "minified": 4041,
+            "gzipped": 1374
+        }
     },
     {
         "name": "zod-mini",
         "category": "validators/simple",
-        "minified": 12216,
-        "gzipped": 4325
+        "size": {
+            "minified": 12216,
+            "gzipped": 4325
+        }
     },
     {
         "name": "effect-schema",
         "category": "validators/simple",
-        "minified": 279251,
-        "gzipped": 81881
+        "size": {
+            "minified": 279251,
+            "gzipped": 81881
+        }
     },
     {
         "name": "valita",
         "category": "validators/simple",
-        "minified": 15077,
-        "gzipped": 4744
+        "size": {
+            "minified": 15077,
+            "gzipped": 4744
+        }
     },
     {
         "name": "sury",
         "category": "validators/simple",
-        "minified": 50096,
-        "gzipped": 16258
+        "size": {
+            "minified": 50096,
+            "gzipped": 16258
+        }
     },
     {
         "name": "arktype",
         "category": "validators/simple",
-        "minified": 157974,
-        "gzipped": 45754
+        "size": {
+            "minified": 157974,
+            "gzipped": 45754
+        }
     },
     {
         "name": "zod",
         "category": "validators/simple",
-        "minified": 49778,
-        "gzipped": 12756
+        "size": {
+            "minified": 49778,
+            "gzipped": 12756
+        }
     },
     {
         "name": "stnl",
         "category": "validators/simple",
-        "minified": 2513,
-        "gzipped": 1041
+        "size": {
+            "minified": 2513,
+            "gzipped": 1041
+        }
     },
     {
         "name": "typebox",
         "category": "validators/simple",
-        "minified": 54709,
-        "gzipped": 13885
+        "size": {
+            "minified": 54709,
+            "gzipped": 13885
+        }
     }
 ]

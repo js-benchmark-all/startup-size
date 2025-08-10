@@ -191,7 +191,7 @@ utils.tryWriteAsync(
     buildOutput.map((o) => ({
       name: o.name,
       category: o.category,
-      ...o.size
+      size: o.size
     })),
     null, 4
   )
