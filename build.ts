@@ -1,10 +1,11 @@
-import { build, rolldown } from 'rolldown';
+import { rolldown } from 'rolldown';
 import { installDependencies } from "nypm";
 
 import * as filters from './lib/filters.ts';
 import * as utils from './lib/utils.ts';
 
 import { rmSync } from 'node:fs';
+import { relative } from 'node:path';
 
 try {
   rmSync(utils.BUNDLED_DIR, { recursive: true });
@@ -42,7 +43,7 @@ await Promise.all(
       const name = cwd.slice(utils.SRC.length);
       if (!filters.install(name)) return;
 
-      console.log('Install dependencies:', utils.format.name(name));
+      console.log('Installing dependencies for', utils.format.name(name));
       return installDependencies({
         cwd,
         silent: true
@@ -98,7 +99,12 @@ const buildOutput = (
             }
           };
 
-          console.log('Built:', utils.format.header(props.relativePath));
+          console.log(
+            'Built',
+            utils.format.name(props.relativePath),
+            'to',
+            utils.format.relativePath(outputPath)
+          );
           return info;
         } catch (e) {
           console.error(e);

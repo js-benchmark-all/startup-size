@@ -5,6 +5,7 @@ bun prep
 
 # Benchmark after build
 bun bench:node # Benchmark with node
+bun bench:deno # Benchmark with deno
 bun bench:bun # Benchmark with bun
 bun bench:all # Benchmark all runtimes
 ```

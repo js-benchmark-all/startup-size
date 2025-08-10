@@ -1,6 +1,6 @@
 import pc from 'picocolors';
 import { mkdir, rm, writeFile } from 'node:fs';
-import { resolve, dirname } from 'node:path/posix';
+import { resolve, dirname, relative } from 'node:path/posix';
 import { fileURLToPath } from 'node:url';
 
 const ROOT_DIR = resolve(
@@ -14,10 +14,12 @@ export const RESULT_DIRNAME = '.results/';
 export const ALL_RESULTS = ROOT_DIR + '/' + RESULT_DIRNAME;
 
 export const OUTPUT_DIR = ROOT_DIR + '/.startup/';
-export const BUNDLED_DIR = OUTPUT_DIR + '/bundled/';
+export const BUNDLED_DIR = OUTPUT_DIR + 'bundled/';
 
 export const SRC = ROOT_DIR + '/src/';
 export const TSCONFIG = ROOT_DIR + '/tsconfig.json';
+
+export const CWD = process.cwd();
 
 export const RUNTIME = globalThis.Bun
   ? `bun[${Bun.version}]`
@@ -25,7 +27,7 @@ export const RUNTIME = globalThis.Bun
     ? `deno[${Deno.version.deno}]_v8[${Deno.version.v8}]`
     : `node[${process.version}]_v8[${process.versions.v8}]`;
 
-export const relativePath = (dir: string) => dir.startsWith(ROOT_DIR) ? '.' + dir.slice(ROOT_DIR.length) : dir;
+export const relativePath = (dir: string) => relative('.', dir);
 
 const createUnitFormat = (units: string[], sep: number) => (n: number) => {
   let i = 0;
