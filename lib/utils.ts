@@ -24,7 +24,7 @@ export const CWD = process.cwd();
 export const RUNTIME = globalThis.Bun
   ? `bun-${Bun.version}`
   : globalThis.Deno
-    ? `deno-${Deno.version.deno}]`
+    ? `deno-${Deno.version.deno}`
     : `node-${process.versions.node}`;
 
 export const relativePath = (dir: string) => relative('.', dir);
