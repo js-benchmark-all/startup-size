@@ -160,23 +160,15 @@ for (let i = 0; i < 100; i++) {
 ${buildOutput
   .map(
     (o) => `
-a = 0;
-for (let i = 0; i < ${RUNS}; i++) {
-  require.cache = {};
-  gc();
-  s = n();
-  require(${JSON.stringify(o.bundled)});
-  e = n();
-  a += e - s;
-}
+require.cache = {};
+gc();
+s = n();
+require(${JSON.stringify(o.bundled)});
+e = n();
 results.push({
   name: ${JSON.stringify(o.name)},
   category: ${JSON.stringify(o.category)},
-  ns: a / ${RUNS},
-  size: {
-    minified: ${o.size.minified},
-    gzipped: ${o.size.gzipped}
-  }
+  ns: e - s
 });`,
   )
   .join('\n')}
@@ -188,11 +180,19 @@ await Bun.write(
   `declare const results: {
   name: string,
   category: string,
-  ns: number,
-  size: {
-    minified: number,
-    gzipped: number
-  }
+  ns: number
 }[];
 export default results;`,
+);
+
+await Bun.write(
+  utils.OUTPUT_DIR + 'sizes.json',
+  JSON.stringify(
+    buildOutput.map((o) => ({
+      name: o.name,
+      category: o.category,
+      ...o.size
+    })),
+    null, 4
+  )
 );

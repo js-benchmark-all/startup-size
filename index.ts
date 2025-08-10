@@ -16,18 +16,6 @@ const COMPARISONS = [
     getter: (o) => o.ns,
     formatter: utils.format.time,
     diff: 'slower'
-  },
-  {
-    label: 'minified size',
-    getter: (o) => o.size.minified,
-    formatter: utils.format.byte,
-    diff: 'bigger'
-  },
-  {
-    label: 'gzipped size',
-    getter: (o) => o.size.gzipped,
-    formatter: utils.format.byte,
-    diff: 'bigger',
   }
 ] satisfies {
   label: string,
