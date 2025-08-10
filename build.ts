@@ -116,7 +116,7 @@ const buildOutput = (
   )
 ).filter((o) => o != null);
 
-await Bun.write(
+utils.tryWriteAsync(
   utils.OUTPUT_DIR + '_.js',
   `// @bun
 import { createRequire } from 'node:module';
@@ -175,7 +175,7 @@ results.push({
 export default results;`,
 );
 
-await Bun.write(
+utils.tryWriteAsync(
   utils.OUTPUT_DIR + '_.d.ts',
   `declare const results: {
   name: string,
@@ -185,7 +185,7 @@ await Bun.write(
 export default results;`,
 );
 
-await Bun.write(
+utils.tryWriteAsync(
   utils.ALL_RESULTS + 'size.json',
   JSON.stringify(
     buildOutput.map((o) => ({
