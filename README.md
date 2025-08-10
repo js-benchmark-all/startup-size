@@ -10,6 +10,8 @@ bun bench:bun # Benchmark with bun
 bun bench:all # Benchmark all runtimes
 ```
 
-Previous results are in [results](./.results) directory and in `.log` files.
+Interactive results are on https://js-benchmark-all.pages.dev/startup-size.
+
+Raw results are in [results](./.results) directory.
 
 To filter out tests, see [filters.ts](./lib/filters.ts).
