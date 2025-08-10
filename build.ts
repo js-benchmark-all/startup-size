@@ -28,13 +28,13 @@ const extractNameCategory = (path: string) => {
 
 // Install dependencies
 await Promise.all(
-  Array.from(
-    new Bun.Glob('**/package.json').scanSync({
+  [
+    ...new Bun.Glob('**/package.json').scanSync({
       cwd: utils.SRC,
       absolute: true,
       followSymlinks: false,
     })
-  ).map(
+  ].map(
     (path) => {
       // No node_modules paths
       if (path.includes('/node_modules/')) return;
@@ -53,12 +53,12 @@ await Promise.all(
 );
 
 // Only build necessary files
-const files = Array.from(
-  new Bun.Glob('**/*.case.ts').scanSync({
+const files = [
+  ...new Bun.Glob('**/*.case.ts').scanSync({
     cwd: utils.SRC,
     absolute: true,
   }),
-).filter((path) => {
+].filter((path) => {
   const props = extractNameCategory(path);
   return filters.includeCase(props.name, props.category);
 });
