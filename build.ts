@@ -5,7 +5,8 @@ import * as filters from './lib/filters.ts';
 import * as utils from './lib/utils.ts';
 
 import { rmSync } from 'node:fs';
-import { relative } from 'node:path';
+
+const RUNS = 50;
 
 try {
   rmSync(utils.BUNDLED_DIR, { recursive: true });
@@ -147,11 +148,10 @@ const gc = (() => {
   try { return (globalThis.tjs.engine.gc.run(), () => globalThis.tjs.engine.gc.run()); } catch { }
   return Object.assign(globalThis.Graal ? () => new Uint8Array(2 ** 29) : () => new Uint8Array(2 ** 30), { fallback: true });
 })();
-for (let i = 0; i < 100; i++) n();
 
 const results = [];
-let s = 0, e = 0;
-for (let i = 0; i < 50; i++) {
+let s = 0, e = 0, a = 0;
+for (let i = 0; i < 100; i++) {
   s = n();
   e = n();
   s = e - s;
@@ -159,15 +159,20 @@ for (let i = 0; i < 50; i++) {
 }
 ${buildOutput
   .map(
-    (o) => `gc();
-require.cache = {};
-s = n();
-require(${JSON.stringify(o.bundled)});
-e = n();
+    (o) => `
+a = 0;
+for (let i = 0; i < ${RUNS}; i++) {
+  require.cache = {};
+  gc();
+  s = n();
+  require(${JSON.stringify(o.bundled)});
+  e = n();
+  a += e - s;
+}
 results.push({
   name: ${JSON.stringify(o.name)},
   category: ${JSON.stringify(o.category)},
-  ns: e - s,
+  ns: a / ${RUNS},
   size: {
     minified: ${o.size.minified},
     gzipped: ${o.size.gzipped}
