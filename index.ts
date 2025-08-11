@@ -62,9 +62,7 @@ for (const category in CATEGORIES) {
   console.log();
 }
 
-utils.tryMkdirAsync(utils.ALL_RESULTS, () =>
-  utils.tryWriteAsync(
-    `${utils.ALL_RESULTS}${utils.RUNTIME}.json`,
-    JSON.stringify(allSortedResults, null, 2)
-  )
+utils.tryWriteAsync(
+  `${utils.ALL_RESULTS}${utils.RUNTIME}.json`,
+  JSON.stringify(allSortedResults, null, 2)
 );
