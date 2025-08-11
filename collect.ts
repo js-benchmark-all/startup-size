@@ -7,6 +7,8 @@ const list: Promise<any>[] = [];
 await Promise.all(
   [...new Bun.Glob('*.json').scanSync(utils.ALL_RESULTS)]
     .map(async (name) => {
+      if (name === 'size.json') return;
+
       const mod = await import(utils.ALL_RESULTS + name);
       res[basename(name, '.json')] = mod.default;
     })
