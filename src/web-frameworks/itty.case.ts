@@ -1,4 +1,5 @@
-import { IttyRouter, withParams } from 'itty-router';
+import { IttyRouter } from 'itty-router/IttyRouter';
+import { withParams } from 'itty-router/withParams';
 
 IttyRouter()
   .get('/', () => new Response('Hi'))
