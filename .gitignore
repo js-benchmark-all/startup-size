@@ -3,3 +3,6 @@ node_modules
 
 # Output
 .startup
+
+# Local scripts
+*.sh
