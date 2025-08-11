@@ -185,14 +185,16 @@ utils.tryWriteAsync(
 export default results;`,
 );
 
-utils.tryWriteAsync(
-  utils.ALL_RESULTS + 'size.json',
-  JSON.stringify(
-    buildOutput.map((o) => ({
-      name: o.name,
-      category: o.category,
-      size: o.size
-    })),
-    null, 4
-  )
-);
+utils.tryMkdirAsync(utils.ALL_RESULTS, () => {
+  utils.tryWriteAsync(
+    utils.ALL_RESULTS + 'size.json',
+    JSON.stringify(
+      buildOutput.map((o) => ({
+        name: o.name,
+        category: o.category,
+        size: o.size
+      })),
+      null, 4
+    )
+  );
+});

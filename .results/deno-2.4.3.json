@@ -1,0 +1,94 @@
+{
+  "web-frameworks": {
+    "startup time": [
+      [
+        "mapl",
+        3194190
+      ],
+      [
+        "hono-tiny",
+        3573960
+      ],
+      [
+        "hono-quick",
+        3845670
+      ],
+      [
+        "itty",
+        4108610
+      ],
+      [
+        "hono",
+        6535559
+      ],
+      [
+        "oak",
+        23136760
+      ],
+      [
+        "elysia",
+        44654859
+      ]
+    ]
+  },
+  "validators/references": {
+    "startup time": [
+      [
+        "stnl",
+        2570910
+      ],
+      [
+        "typebox",
+        18429230.00000024
+      ],
+      [
+        "arktype",
+        259789637
+      ],
+      [
+        "ajv",
+        522920174.00000024
+      ]
+    ]
+  },
+  "validators/simple": {
+    "startup time": [
+      [
+        "valibot",
+        1708379.9999997616
+      ],
+      [
+        "stnl",
+        2651210
+      ],
+      [
+        "sury",
+        6666940.000000238
+      ],
+      [
+        "zod-mini",
+        7584700
+      ],
+      [
+        "valita",
+        9635019
+      ],
+      [
+        "zod",
+        9834900
+      ],
+      [
+        "typebox",
+        10206890
+      ],
+      [
+        "effect-schema",
+        67179219
+      ],
+      [
+        "arktype",
+        223618958
+      ]
+    ]
+  }
+}
