@@ -19,8 +19,8 @@
         "name": "elysia",
         "category": "web-frameworks",
         "size": {
-            "minified": 325053,
-            "gzipped": 85832
+            "minified": 331013,
+            "gzipped": 86974
         }
     },
     {
@@ -35,24 +35,24 @@
         "name": "hono-tiny",
         "category": "web-frameworks",
         "size": {
-            "minified": 12726,
-            "gzipped": 4773
+            "minified": 12773,
+            "gzipped": 4802
         }
     },
     {
         "name": "hono",
         "category": "web-frameworks",
         "size": {
-            "minified": 21436,
-            "gzipped": 7598
+            "minified": 21527,
+            "gzipped": 7643
         }
     },
     {
         "name": "hono-quick",
         "category": "web-frameworks",
         "size": {
-            "minified": 18965,
-            "gzipped": 6809
+            "minified": 19036,
+            "gzipped": 6843
         }
     },
     {
