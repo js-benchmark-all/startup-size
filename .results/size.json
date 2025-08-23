@@ -1,7 +1,7 @@
 [
     {
         "name": "itty",
-        "category": "web-frameworks",
+        "category": "web-frameworks/wintercg",
         "size": {
             "minified": 908,
             "gzipped": 559
@@ -9,7 +9,7 @@
     },
     {
         "name": "mapl",
-        "category": "web-frameworks",
+        "category": "web-frameworks/wintercg",
         "size": {
             "minified": 5254,
             "gzipped": 2281
@@ -17,7 +17,7 @@
     },
     {
         "name": "elysia",
-        "category": "web-frameworks",
+        "category": "web-frameworks/wintercg",
         "size": {
             "minified": 331013,
             "gzipped": 86974
@@ -25,7 +25,7 @@
     },
     {
         "name": "oak",
-        "category": "web-frameworks",
+        "category": "web-frameworks/wintercg",
         "size": {
             "minified": 267178,
             "gzipped": 59295
@@ -33,7 +33,7 @@
     },
     {
         "name": "hono-tiny",
-        "category": "web-frameworks",
+        "category": "web-frameworks/wintercg",
         "size": {
             "minified": 12773,
             "gzipped": 4802
@@ -41,7 +41,7 @@
     },
     {
         "name": "hono",
-        "category": "web-frameworks",
+        "category": "web-frameworks/wintercg",
         "size": {
             "minified": 21527,
             "gzipped": 7643
@@ -49,7 +49,7 @@
     },
     {
         "name": "hono-quick",
-        "category": "web-frameworks",
+        "category": "web-frameworks/wintercg",
         "size": {
             "minified": 19036,
             "gzipped": 6843
