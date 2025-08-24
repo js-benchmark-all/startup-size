@@ -4,7 +4,7 @@ import { installDependencies } from "nypm";
 import * as filters from './lib/filters.ts';
 import * as utils from './lib/utils.ts';
 
-import { rmSync } from 'node:fs';
+import { rmSync, readFileSync } from 'node:fs';
 
 const RUNS = 50;
 
@@ -76,13 +76,14 @@ const buildOutput = (
             resolve: {
               tsconfigFilename: utils.TSCONFIG,
             },
-            logLevel: 'silent',
+            logLevel: 'silent'
           });
 
           const outputPath = utils.BUNDLED_DIR + i + '.js';
           const output = (await input.write({
             inlineDynamicImports: true,
             file: outputPath,
+            esModule: true,
             minify: {
               compress: false,
               removeWhitespace: true,
@@ -119,8 +120,6 @@ const buildOutput = (
 utils.tryWriteAsync(
   utils.OUTPUT_DIR + '_.js',
   `// @bun
-import { createRequire } from 'node:module';
-const require = createRequire(import.meta.url);
 const n = (() => {
   try {
     Bun.nanoseconds();
@@ -160,10 +159,9 @@ for (let i = 0; i < 100; i++) {
 ${buildOutput
   .map(
     (o) => `
-require.cache = {};
 gc();
 s = n();
-require(${JSON.stringify(o.bundled)});
+{${readFileSync(o.bundled, 'utf8')}}
 e = n();
 results.push({
   name: ${JSON.stringify(o.name)},
