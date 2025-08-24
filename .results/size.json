@@ -1,29 +1,5 @@
 [
     {
-        "name": "fastify",
-        "category": "web-frameworks/node",
-        "size": {
-            "minified": 507449,
-            "gzipped": 133045
-        }
-    },
-    {
-        "name": "express",
-        "category": "web-frameworks/node",
-        "size": {
-            "minified": 595262,
-            "gzipped": 225946
-        }
-    },
-    {
-        "name": "koa",
-        "category": "web-frameworks/node",
-        "size": {
-            "minified": 872773,
-            "gzipped": 265075
-        }
-    },
-    {
         "name": "itty",
         "category": "web-frameworks/wintercg",
         "size": {

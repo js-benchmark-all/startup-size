@@ -1,0 +1,94 @@
+{
+  "web-frameworks/wintercg": {
+    "startup time": [
+      [
+        "hono-quick",
+        8587151
+      ],
+      [
+        "hono-tiny",
+        10025209
+      ],
+      [
+        "mapl",
+        28969883
+      ],
+      [
+        "hono",
+        52646417
+      ],
+      [
+        "itty",
+        77493208
+      ],
+      [
+        "oak",
+        104865910
+      ],
+      [
+        "elysia",
+        159409717
+      ]
+    ]
+  },
+  "validators/references": {
+    "startup time": [
+      [
+        "stnl",
+        2689763
+      ],
+      [
+        "typebox",
+        44376053
+      ],
+      [
+        "arktype",
+        526827968
+      ],
+      [
+        "ajv",
+        931340790
+      ]
+    ]
+  },
+  "validators/simple": {
+    "startup time": [
+      [
+        "valibot",
+        1778577
+      ],
+      [
+        "stnl",
+        1915642
+      ],
+      [
+        "valita",
+        4879886
+      ],
+      [
+        "zod-mini",
+        5574930
+      ],
+      [
+        "zod",
+        16243233
+      ],
+      [
+        "sury",
+        17899290
+      ],
+      [
+        "typebox",
+        41846897
+      ],
+      [
+        "effect-schema",
+        68426228
+      ],
+      [
+        "arktype",
+        460036908
+      ]
+    ]
+  }
+}
