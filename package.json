@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "dependencies": {
+    "typescript": "^5",
+    "@types/bun": "latest",
+    "@types/deno": "^2.3.0",
+    "@types/node": "^24.3.0",
+    "mitata": "^1.0.34",
+    "picocolors": "^1.1.1",
+    "rolldown": "^1.0.0-beta.34"
+  },
+  "scripts": {
+    "task:build": "bun scripts/build.ts",
+    "task:start": "bun scripts/start.ts"
+  }
+}
