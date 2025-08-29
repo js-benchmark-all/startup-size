@@ -80,5 +80,5 @@ const RESULT_FILE = ROOT_DIR + '/result.json';
 export const writeResult = async (tag: string, newResult: any) => {
   const json = await Bun.file(RESULT_FILE).json();
   json[tag] = newResult;
-  return Bun.write(ROOT_DIR + '/result.json', JSON.stringify(json));
+  return Bun.write(ROOT_DIR + '/result.json', JSON.stringify(json, null, 2));
 }
