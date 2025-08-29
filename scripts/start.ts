@@ -1,7 +1,8 @@
 import INFO from "../.out/info.json";
 import { utils, config, format } from "../lib/index.ts";
 
-const STARTUP_RESULT = {} as any;
+import __RESULT from '../result.json';
+const STARTUP_RESULT = __RESULT['startup time'] ?? {} as any;
 
 let running = false;
 const run = async (
@@ -11,7 +12,7 @@ const run = async (
   console.log("runtime:", format.name(ID));
 
   // @ts-ignore
-  const results = (STARTUP_RESULT[ID] ??= {});
+  const results = (STARTUP_RESULT[ID] = {});
 
   for (const categoryName in INFO) {
     console.log("  category:", format.name(categoryName));
@@ -61,6 +62,8 @@ const run = async (
     }
 
     categoryResults.sort((a, b) => a.total - b.total);
+
+    // @ts-ignore
     results[categoryName] = {
       labels: categoryResults.map((v) => v.caseName),
       datasets: [
