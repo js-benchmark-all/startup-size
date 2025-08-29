@@ -5,7 +5,6 @@ import { rolldown } from "rolldown";
 import { writeFile } from "node:fs/promises";
 import { tryWriteAsync } from "../lib/utils.ts";
 
-import RESULT from '../result.json';
 const SIZE_RESULT = {} as any;
 
 try {
