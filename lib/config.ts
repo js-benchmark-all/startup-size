@@ -1,6 +1,6 @@
 import { $, spawn } from 'bun';
 
-export const RUNS = 10;
+export const RUNS = 50;
 
 const SPAWN_OPTIONS = {
   stderr: 'inherit',
