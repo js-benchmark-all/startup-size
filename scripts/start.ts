@@ -56,7 +56,7 @@ const run = async (
       // Add to results
       categoryResults.push({
         caseName,
-        values,
+        values: values.sort((a, b) => a - b),
         total: values.reduce((a, b) => a + b, 0),
       });
     }
