@@ -1,5 +1,5 @@
-import { Type } from '@sinclair/typebox';
-import { TypeCompiler } from '@sinclair/typebox/compiler';
+import { Type } from 'typebox';
+import { Compile } from 'typebox/compile';
 
 const mod = Type.Module({
   project: Type.Object({
@@ -59,6 +59,6 @@ const mod = Type.Module({
     is_active: Type.Boolean(),
     last_login: Type.Optional(Type.String()),
   }),
-}).Import('project');
+}).project;
 
-export default Function(TypeCompiler.Code(mod, []))();
+export default Compile(mod);

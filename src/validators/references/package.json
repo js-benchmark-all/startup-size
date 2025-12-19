@@ -1,9 +1,9 @@
 {
   "type": "module",
   "dependencies": {
-    "@sinclair/typebox": "^0.34.38",
+    "typebox": "1.0.64",
     "ajv": "^8.17.1",
-    "arktype": "^2.1.20",
-    "stnl": "^1.2.2"
+    "arktype": "^2.1.29",
+    "stnl": "^2.0.0"
   }
 }

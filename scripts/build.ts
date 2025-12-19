@@ -45,7 +45,6 @@ await Promise.all(
                 const entry = `${utils.BUNDLED_DIR}/${categoryIndex}_${caseIndex}.js`;
                 await writeFile(
                   entry,
-                  '// @bun\n' +
                   `import '${utils.TIMING_MOD}';` +
                   `import s from '${utils.TIMING_START}';` +
                   `import '${casePath}';` +
@@ -63,6 +62,7 @@ await Promise.all(
                 const outputCode = (await input.write({
                   inlineDynamicImports: true,
                   file: entry,
+                  banner: '// @bun',
                   minify: {
                     compress: false,
                     mangle: true

@@ -1,4 +1,4 @@
-import { t, build, compat } from 'stnl';
+import { t, toJSONAssert } from 'stnl';
 
 const schema = t.scope(
   t.dict(
@@ -17,8 +17,8 @@ const schema = t.scope(
   ),
   {
     uuid: t.string,
-    user_role: t.union(['admin', 'manager', 'developer', 'viewer']),
-    task_status: t.union(['todo', 'in_progress', 'review', 'done']),
+    user_role: t.discrete(['admin', 'manager', 'developer', 'viewer']),
+    task_status: t.discrete(['todo', 'in_progress', 'review', 'done']),
 
     comment: t.dict(
       {
@@ -62,4 +62,4 @@ const schema = t.scope(
   },
 );
 
-export default build.json.assert(schema);
+export default toJSONAssert.compile(schema);
