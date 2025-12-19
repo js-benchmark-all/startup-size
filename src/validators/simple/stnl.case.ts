@@ -1,6 +1,6 @@
-import { t, build } from 'stnl';
+import { t, toJSONAssert } from 'stnl';
 
-export default build.json.assert(
+export default toJSONAssert.compile(
   t.dict({
     number: t.float,
     negNumber: t.float,
