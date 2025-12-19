@@ -6,8 +6,8 @@
       "dependencies": {
         "ajv": "^8.17.1",
         "arktype": "^2.1.29",
-        "stnl": "^2.0.0",
-        "typebox": "latest",
+        "stnl": "^2.0.1",
+        "typebox": "1.0.64",
       },
     },
   },
@@ -30,7 +30,7 @@
 
     "require-from-string": ["require-from-string@2.0.2", "", {}, "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="],
 
-    "stnl": ["stnl@2.0.0", "", {}, "sha512-6w21+b3h5cQIf/LkrrnK5ZRAmetpOFYpTkk1fL3t40t9Y+MU89wAjvcbdQXp2hHGysUD/wVFduA3BDUMncFalQ=="],
+    "stnl": ["stnl@2.0.1", "", {}, "sha512-rRfaERnPZ5CO0IPMiEHay8THAXnWmPRlzRZF5GbSGUC84XiLvGQe/iizXymP8Ev8tYLfGhtsjGIoX+QmF6oNRg=="],
 
     "typebox": ["typebox@1.0.64", "", {}, "sha512-U6quDhQMzQRzBX8jvlE5mZlUnlMRTaZrG/QMAhOYVJ0D0rhq1iOXBQVSzBX0JgAh55jXQ7fWIv24i+lVimXcDw=="],
   }

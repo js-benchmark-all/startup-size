@@ -16,9 +16,8 @@ const info: any = {};
 await Promise.all(
   utils
     .scan('**/package.json', utils.SOURCES_DIR)
+    .filter((pkgPath) => !pkgPath.includes('/node_modules/'))
     .map(async (pkgPath, categoryIndex) => {
-      if (pkgPath.includes('/node_modules/')) return;
-
       const category = dirname(pkgPath);
       const categoryName = relative(utils.SOURCES_DIR, category);
 
@@ -45,10 +44,9 @@ await Promise.all(
                 const entry = `${utils.BUNDLED_DIR}/${categoryIndex}_${caseIndex}.js`;
                 await writeFile(
                   entry,
-                  `import '${utils.TIMING_MOD}';` +
-                  `import s from '${utils.TIMING_START}';` +
+                  `import { now, s } from '${utils.STARTUP_MOD}';` +
                   `import '${casePath}';` +
-                  'var e=__current();' +
+                  'var e = now();' +
                   `console.log("${utils.LOG_PREFIX}" + (e - s));`
                 );
 

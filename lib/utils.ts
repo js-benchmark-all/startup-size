@@ -12,8 +12,7 @@ export const ROOT_DIR = LIB_DIR + '/..';
 export const BUNDLED_DIR = ROOT_DIR + '/.out';
 export const SOURCES_DIR = ROOT_DIR + '/src';
 
-export const TIMING_MOD = LIB_DIR + '/timing/index.js';
-export const TIMING_START = LIB_DIR + '/timing/start.js';
+export const STARTUP_MOD = LIB_DIR + '/startup.js';
 
 export const relativePath = (dir: string) => relative('.', dir);
 

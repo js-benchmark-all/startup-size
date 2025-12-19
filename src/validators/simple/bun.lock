@@ -8,7 +8,7 @@
         "@effect/schema": "^0.75.5",
         "ajv": "^8.17.1",
         "arktype": "^2.1.29",
-        "stnl": "^2.0.0",
+        "stnl": "^2.0.1",
         "sury": "^11.0.0-alpha.4",
         "typebox": "1.0.64",
         "valibot": "^1.2.0",
@@ -47,7 +47,7 @@
 
     "require-from-string": ["require-from-string@2.0.2", "", {}, "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="],
 
-    "stnl": ["stnl@2.0.0", "", {}, "sha512-6w21+b3h5cQIf/LkrrnK5ZRAmetpOFYpTkk1fL3t40t9Y+MU89wAjvcbdQXp2hHGysUD/wVFduA3BDUMncFalQ=="],
+    "stnl": ["stnl@2.0.1", "", {}, "sha512-rRfaERnPZ5CO0IPMiEHay8THAXnWmPRlzRZF5GbSGUC84XiLvGQe/iizXymP8Ev8tYLfGhtsjGIoX+QmF6oNRg=="],
 
     "sury": ["sury@11.0.0-alpha.4", "", { "peerDependencies": { "rescript": "12.x" }, "optionalPeers": ["rescript"] }, "sha512-oeG/GJWZvQCKtGPpLbu0yCZudfr5LxycDo5kh7SJmKHDPCsEPJssIZL2Eb4Tl7g9aPEvIDuRrkS+L0pybsMEMA=="],
 
