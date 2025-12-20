@@ -1,4 +1,5 @@
 import INFO from "../.out/info.json";
+import RESULTS from "../result.json";
 import { config } from "../lib/config.ts";
 import { fmt } from "../lib/format.ts";
 import { writeCategoryResult } from "../lib/result.ts";
@@ -17,7 +18,8 @@ const percentile = (arr: number[], p: number) => {
   return arr[lower] * (1 - weight) + arr[upper] * weight;
 }
 
-const STARTUP_RESULT = {};
+// Dont override previous runs results
+const STARTUP_RESULT = RESULTS['startup time'] ??= {} as any;
 
 // @ts-ignore
 const results = (STARTUP_RESULT[runtimeId] = {});
