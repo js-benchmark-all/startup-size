@@ -44,6 +44,7 @@ for (const categoryName in INFO) {
       i <= config.runs;
       i++
     ) {
+      Bun.gc(true);
       const value = runFile(caseInfo);
       values.push(value);
       console.log(`      run ${i}:`, value);
