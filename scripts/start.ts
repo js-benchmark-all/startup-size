@@ -1,94 +1,85 @@
 import INFO from "../.out/info.json";
-import { utils, config, format } from "../lib/index.ts";
+import { config } from "../lib/config.ts";
+import { fmt } from "../lib/format.ts";
+import { writeCategoryResult } from "../lib/result.ts";
+import { runFile, runtimeId } from "../lib/runtime.ts";
 
-import __RESULT from '../result.json';
-const STARTUP_RESULT = __RESULT['startup time'] ?? {} as any;
+const percentile = (arr: number[], p: number) => {
+  const n = arr.length;
 
-let running = false;
-const run = async (
-  runtime: (typeof config.RUNTIMES)[keyof typeof config.RUNTIMES],
-) => {
-  const ID = (await runtime.id()).trim();
-  console.log("runtime:", format.name(ID));
+  const index = p * (n - 1);
+  const lower = Math.floor(index);
+  const upper = Math.ceil(index);
 
-  // @ts-ignore
-  const results = (STARTUP_RESULT[ID] = {});
+  if (upper >= n) return arr[lower];
 
-  for (const categoryName in INFO) {
-    console.log("  category:", format.name(categoryName));
+  const weight = index - lower;
+  return arr[lower] * (1 - weight) + arr[upper] * weight;
+}
 
-    const category = INFO[categoryName as keyof typeof INFO];
-    const categoryResults: {
-      caseName: string;
-      values: number[];
-      total: number;
-    }[] = [];
+const STARTUP_RESULT = {};
 
-    for (const caseName in category) {
-      console.log("    case:", format.name(caseName));
+// @ts-ignore
+const results = (STARTUP_RESULT[runtimeId] = {});
 
-      const values = [];
-      for (
-        let i = 0,
-          caseInfo: string = category[caseName as keyof typeof category];
-        i < config.RUNS;
-        i++
-      ) {
-        // Block until a process is done
-        while (running) await 0;
-        running = true;
+for (const categoryName in INFO) {
+  console.log("  category:", fmt.h2(categoryName));
 
-        const proc = runtime.run(caseInfo);
-        for await (const output of proc.stdout) {
-          const stringOutput = Buffer.from(output).toString();
+  const category = INFO[categoryName as keyof typeof INFO];
+  const categoryResults: {
+    caseName: string;
+    values: number[];
+    total: number;
+  }[] = [];
 
-          if (stringOutput.startsWith(utils.LOG_PREFIX)) {
-            values.push(+stringOutput.slice(utils.LOG_PREFIX.length));
-            break;
-          }
-        }
-        proc.kill();
+  for (const caseName in category) {
+    console.log("    case:", fmt.h2(caseName));
 
-        // Unblock
-        running = false;
-      }
-
-      // Add to results
-      categoryResults.push({
-        caseName,
-        values: values.sort((a, b) => a - b),
-        total: values.reduce((a, b) => a + b, 0),
-      });
+    const values = [];
+    for (
+      let i = 1,
+      caseInfo: string = category[caseName as keyof typeof category];
+      i <= config.runs;
+      i++
+    ) {
+      const value = runFile(caseInfo);
+      values.push(value);
+      console.log(`      run ${i}:`, value);
     }
 
-    categoryResults.sort((a, b) => a.total - b.total);
-
-    // @ts-ignore
-    results[categoryName] = {
-      labels: categoryResults.map((v) => v.caseName),
-      datasets: [
-        {
-          label: "average (ms)",
-          data: categoryResults.map((v) => utils.nsToMs(v.total / config.RUNS)),
-        },
-        ...[50, 75, 99, 999].map((p) => {
-          const label = `p${p} (ms)`;
-          p = +`0.${p}`;
-          return {
-            label,
-            data: categoryResults.map((v) =>
-              utils.nsToMs(utils.percentile(v.values, p)),
-            ),
-          };
-        }),
-      ],
-    };
+    // Add to results
+    categoryResults.push({
+      caseName,
+      values: values.sort((a, b) => a - b),
+      total: values.reduce((a, b) => a + b, 0),
+    });
   }
-};
 
-const RUNTIME =
-  config.RUNTIMES[process.argv[2] as keyof typeof config.RUNTIMES];
-if (RUNTIME != null) await run(RUNTIME);
-else for (const runtime of Object.values(config.RUNTIMES)) await run(runtime);
+  categoryResults.sort((a, b) => a.total - b.total);
 
-await utils.writeResult("startup time", STARTUP_RESULT);
+  // @ts-ignore
+  results[categoryName] = {
+    labels: categoryResults.map((v) => v.caseName),
+    datasets: [
+      {
+        label: "average (ms)",
+        // Ns to ms
+        data: categoryResults.map((v) =>
+          +(v.total / config.runs / 1e6).toFixed(2)
+        ),
+      },
+      ...[50, 75, 99, 999].map((p) => {
+        const label = `p${p} (ms)`;
+        p = +`0.${p}`;
+        return {
+          label,
+          data: categoryResults.map((v) =>
+            +(percentile(v.values, p) / 1e6).toFixed(2),
+          ),
+        };
+      }),
+    ],
+  };
+}
+
+await writeCategoryResult("startup time", STARTUP_RESULT);

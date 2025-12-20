@@ -1,5 +1,5 @@
 import pc from 'picocolors';
-import { relativePath } from './utils.ts';
+import { relative } from 'node:path/posix';
 
 const createUnitFormat = (units: string[], sep: number) => (n: number) => {
   let i = 0;
@@ -10,11 +10,13 @@ const createUnitFormat = (units: string[], sep: number) => (n: number) => {
   return pc.yellowBright(n.toFixed(2) + units[i]);
 };
 
-export const time = createUnitFormat(['ns', 'us', 'ms', 's'], 1000);
-export const byte = createUnitFormat(['b', 'kb', 'mb'], 1024);
-export const name = (name: string) => pc.bold(pc.cyan(name));
-export const multiplier = (x: number) => pc.greenBright(x.toFixed(2) + 'x');
-export const header = pc.bold;
-export const path = (path: string) => pc.bold(relativePath(path));
-export const success = pc.greenBright;
-export const error = pc.redBright;
+export const fmt = {
+  duration: createUnitFormat(['ns', 'us', 'ms', 's'], 1000),
+  byte: createUnitFormat(['b', 'kb', 'mb'], 1024),
+  h2: (name: string) => pc.bold(pc.cyan(name)),
+  multiplier: (x: number) => pc.greenBright(x.toFixed(2) + 'x'),
+  h1: pc.bold,
+  success: pc.greenBright,
+  error: pc.redBright,
+  relativePath: (abs: string) => pc.italic(pc.underline(relative('.', abs)))
+};
