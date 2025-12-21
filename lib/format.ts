@@ -12,6 +12,7 @@ const createUnitFormat = (units: string[], sep: number) => (n: number) => {
 
 export const fmt = {
   duration: createUnitFormat(['ns', 'us', 'ms', 's'], 1000),
+  percentage: (value: number) => pc.yellowBright((value * 100).toFixed(2) + '%'),
   byte: createUnitFormat(['b', 'kb', 'mb'], 1024),
   h2: (name: string) => pc.bold(pc.cyan(name)),
   multiplier: (x: number) => pc.greenBright(x.toFixed(2) + 'x'),

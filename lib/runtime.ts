@@ -1,30 +1,49 @@
-import { $, spawnSync } from 'bun';
+import { $, spawn, spawnSync } from 'bun';
 import { parseArgs } from 'node:util';
-import { readFileOutput } from './startup';
-import { fmt } from './format';
+import { readFileOutput } from './output.ts';
+import { fmt } from './format.ts';
 
-const SPAWN_OPTIONS = {
-  timeout: 5000,
-  stderr: 'inherit'
-} as const;
-const createRunner = (...commands: string[]) => (file: string) => readFileOutput(
-  spawnSync(commands.concat(file), SPAWN_OPTIONS).stdout.toString()
+const createStartupRunner = (...commands: string[]) => (file: string) => +readFileOutput(
+  spawnSync(commands.concat(file), {
+    timeout: 5000,
+    stderr: 'inherit'
+  }).stdout.toString()
 );
+const createBenchRunner = (...commands: string[]) => (file: string) => JSON.parse(
+  readFileOutput(
+    spawnSync(commands.concat(file), {
+      stderr: 'inherit'
+    }).stdout.toString()
+  )
+);
+
 const runtimes: Record<string, {
   id: () => Promise<string>,
-  run: (file: string) => number
+
+  /**
+   * Run a file and return the startup time
+   */
+  run: (file: string) => number,
+
+  /**
+   * Run a benchmark file and return raw mitata results
+   */
+  bench: (file: string) => Awaited<ReturnType<typeof import('mitata')['run']>>['benchmarks']
 }> = {
   bun: {
     id: async () => 'bun-' + (await $`bun -v`.text()).trim(),
-    run: createRunner('bun', 'run')
+    run: createStartupRunner('bun', 'run'),
+    bench: createBenchRunner('bun', 'run')
   },
   deno: {
     id: async () => 'deno-' + (await $`deno -v`.text()).split(' ').at(-1)!.trim(),
-    run: createRunner('deno', 'run', '--allow-net', '--allow-env')
+    run: createStartupRunner('deno', 'run', '--allow-net', '--allow-env'),
+    bench: createBenchRunner('deno', 'run', '--allow-net', '--allow-env', '--v8-flags=--expose-gc,--allow-natives-syntax')
   },
   node: {
     id: async () => 'node-' + (await $`node -v`.text()).slice(1).trim(),
-    run: createRunner('node')
+    run: createStartupRunner('node'),
+    bench: createBenchRunner('node', '--expose-gc', '--allow-natives-syntax')
   }
 };
 
@@ -38,7 +57,6 @@ const runtimeName = parseArgs({
   },
   strict: true
 }).values.runtime as any;
-
 const runtime = runtimes[runtimeName];
 if (runtime == null) {
   console.error('Unrecognized runtime:', runtimeName);
@@ -47,9 +65,14 @@ if (runtime == null) {
 }
 
 /**
- * Run a file and return result
+ * Run a file and return startup time
  */
 export const runFile = runtime.run;
+
+/**
+ * Run a file and return mitata results
+ */
+export const benchFile = runtime.bench;
 
 /**
  * Runtime ID

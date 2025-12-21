@@ -11,6 +11,8 @@
   },
   "scripts": {
     "startup:build": "bun startup/build.ts",
-    "startup:start": "bun startup/start.ts"
+    "startup:start": "bun startup/start.ts",
+    "runtime:build": "bun runtime/build.ts",
+    "runtime:start": "bun runtime/start.ts"
   }
 }
