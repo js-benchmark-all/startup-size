@@ -28,7 +28,7 @@ const runtimes: Record<string, {
   /**
    * Run a benchmark file and return raw mitata results
    */
-  bench: (file: string) => Awaited<ReturnType<typeof import('mitata')['run']>>['benchmarks']
+  bench: (file: string) => import('mitata').trial[]
 }> = {
   bun: {
     id: async () => 'bun-' + (await $`bun -v`.text()).trim(),

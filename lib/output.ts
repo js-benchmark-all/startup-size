@@ -11,9 +11,21 @@ export const runtimeFileContent = (file: string) => `
   import { run } from 'mitata';
   import ${JSON.stringify(file)};
 
-  run({ format: 'json' }).then((result) => {
-    console.log('$' + JSON.stringify(result.benchmarks));
+  run({ format: { json: { debug: false } } }).then((result) => {
+    console.log('$' + JSON.stringify(result.benchmarks.map(
+      (b) => {
+        b.kind = b.args = b.group = b.baseline = b.style = undefined;
+        b.runs.forEach((run) => {
+          const stats = run.stats;
+          stats.debug = stats.ticks = stats.counter
+            = stats.kind = stats.min = stats.max
+            = stats.avg = stats.p25 = stats.p50
+            = stats.p75 = stats.p99 = stats.p999 = undefined;
+        });
+        return b;
+      }
+    )));
   });
 `;
 
-export const readFileOutput = (fileOutput: string): string => fileOutput.slice(fileOutput.lastIndexOf('$') + 1);
+export const readFileOutput = (fileOutput: string) => fileOutput.slice(fileOutput.lastIndexOf('$') + 1);

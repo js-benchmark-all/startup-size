@@ -15,7 +15,3 @@ bun startup:start --runtime bun
 
 deno upgrade
 bun startup:start --runtime deno
-
-git add .
-git commit -m "Update results"
-git push origin dev

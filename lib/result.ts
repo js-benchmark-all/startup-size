@@ -1,4 +1,3 @@
-import { fmt } from "./format.ts";
 import { math } from "./math.ts";
 
 const FILE = import.meta.dir + '/../result.json';
