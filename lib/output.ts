@@ -15,6 +15,7 @@ export const runtimeFileContent = (file: string) => `
     console.log('$' + JSON.stringify(result.benchmarks.map(
       (b) => {
         b.kind = b.args = b.group = b.baseline = b.style = undefined;
+        b.runs = b.runs.filter((run) => run.stats != null);
         b.runs.forEach((run) => {
           const stats = run.stats;
           stats.debug = stats.ticks = stats.counter

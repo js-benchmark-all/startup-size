@@ -9,7 +9,7 @@ const DisplayName = Type.Optional(
   })
 );
 const Id = Type.Integer({
-  minimum: 1
+  minimum: 0
 });
 
 const assert = Compile(
