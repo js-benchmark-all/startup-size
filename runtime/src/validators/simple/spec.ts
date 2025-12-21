@@ -1,5 +1,5 @@
-import { bench } from "mitata";
-import { rand } from "../../../../lib/rand.ts";
+import { bench } from 'mitata';
+import valids from './tests.json';
 
 export interface Type {
   // min: 0, integer
@@ -38,23 +38,6 @@ const invalids = [
   { id: 17, displayName: "Two", health: 50, inventory: [{ id: -100, displayName: "Bad" }] },
   { id: 18, displayName: "X", health: 50, inventory: [] }
 ];
-
-const valids: Type[] = new Array(1000).fill(0).map(() => ({
-  id: rand.int(0, 128),
-  displayName: rand.chance(.9) ? rand.string(rand.ENGLISH_ALPHABET, rand.int(3, 10)) : undefined,
-  health: rand.float(0, 100),
-  inventory: rand.array(
-    rand.int(0, 30),
-    () => ({
-      id: rand.int(0, 128),
-      displayName: rand.chance(.9) ? rand.string(rand.ENGLISH_ALPHABET, rand.int(3, 10)) : undefined,
-      tags: rand.array(
-        rand.int(0, 2),
-        () => rand.item(['melee', 'projectile'])
-      )
-    })
-  )
-}))
 
 export const register = (name: string, fn: (item: any) => void | never) => {
   for (let i = 0; i < invalids.length; i++) {
