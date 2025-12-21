@@ -10,7 +10,7 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "task:build": "bun scripts/build.ts",
-    "task:start": "bun scripts/start.ts"
+    "startup:build": "bun startup/build.ts",
+    "startup:start": "bun startup/start.ts"
   }
 }

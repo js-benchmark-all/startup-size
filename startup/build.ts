@@ -1,16 +1,16 @@
 import { basename, dirname, relative, resolve } from "node:path";
 import { mkdirSync, rmSync } from "node:fs";
-import { build, rolldown } from "rolldown";
+import { build } from "rolldown";
 import { writeFile } from "node:fs/promises";
 import { scanFiles, tryWriteAsync } from "../lib/fs.ts";
 import { config } from "../lib/config.ts";
 import { fmt } from "../lib/format.ts";
-import { startupFileContent } from "../lib/startup";
+import { startupFileContent } from "../lib/startup.ts";
 import { writeCategoryResult } from "../lib/result.ts";
 
 const SIZE_RESULT = {} as any;
-const BUNDLED_DIR = import.meta.dir + '/../.out';
-const SRC_DIR = import.meta.dir + '/../src';
+const BUNDLED_DIR = import.meta.dir + '/.out';
+const SRC_DIR = import.meta.dir + '/src';
 
 try {
   rmSync(BUNDLED_DIR, { recursive: true });
@@ -66,7 +66,6 @@ await Promise.all(
                     output: {
                       inlineDynamicImports: true,
                       file: tmpFile,
-                      banner: '// @bun',
                       minify: true
                     }
                   })).output[0].code;
@@ -94,7 +93,7 @@ await Promise.all(
                   output: {
                     inlineDynamicImports: true,
                     file: entry,
-                    banner: '// @bun',
+                    postBanner: '// @bun',
                     minify: {
                       compress: false,
                       mangle: true

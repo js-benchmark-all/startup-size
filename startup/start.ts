@@ -1,4 +1,4 @@
-import INFO from "../.out/info.json";
+import INFO from "./.out/info.json";
 import RESULTS from "../result.json";
 import { config } from "../lib/config.ts";
 import { fmt } from "../lib/format.ts";
