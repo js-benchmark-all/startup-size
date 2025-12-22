@@ -14,5 +14,5 @@ register('typebox (aot)', (o) => {
 });
 
 register('typebox', (o) => {
-  if (!Value.Check(schema, o)) throw new Error()
+  if (!Value.Check(schema, o)) throw new Error();
 });

@@ -11,7 +11,8 @@ export interface Type {
     id: Id;
     displayName?: DisplayName;
     tags?: string[];
-  }[] & tags.MaxItems<30>;
-};
+  }[] &
+    tags.MaxItems<30>;
+}
 
 export default createIs<Type>();

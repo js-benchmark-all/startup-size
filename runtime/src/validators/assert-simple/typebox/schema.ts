@@ -24,7 +24,7 @@ export default Type.Object({
       tags: Type.Array(Type.String()),
     }),
     {
-      maxItems: 30
+      maxItems: 30,
     },
   ),
 });

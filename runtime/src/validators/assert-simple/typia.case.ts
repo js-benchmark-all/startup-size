@@ -1,4 +1,4 @@
-import { register } from "./spec.ts";
+import { register } from './spec.ts';
 import assert from './typia/schema.js';
 
 register('typia (aot)', (o) => {
