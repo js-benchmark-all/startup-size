@@ -1,4 +1,5 @@
 # Hide build output
+/assert-simple.json
 
 # Hide AOT compilation results
 /*/aot.ts
