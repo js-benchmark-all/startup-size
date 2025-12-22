@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { bench } from 'mitata';
-import valids from './tests.json';
+import valids from './assert-simple.json';
 
 export interface Type {
   // min: 0, integer
@@ -49,7 +49,7 @@ const invalids = [
   { id: 18, displayName: 'X', health: 50, inventory: [] },
 ];
 
-export const register = (name: string, fn: (item: any) => void | never) => {
+export default (name: string, fn: (item: any) => void | never) => {
   for (let i = 0; i < invalids.length; i++) {
     try {
       fn(invalids[i]);
@@ -70,7 +70,7 @@ export const register = (name: string, fn: (item: any) => void | never) => {
 
   // Its ok to do this cuz fn can throw so
   // this part wont be optimized out
-  bench(name, () => {
+  bench('assert-simple/' + name, () => {
     valids.forEach(fn);
   }).gc('inner');
 };

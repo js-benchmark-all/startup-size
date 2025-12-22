@@ -1,4 +1,4 @@
-/tests.json
+# Hide build output
 
 # Hide AOT compilation results
 /*/aot.ts

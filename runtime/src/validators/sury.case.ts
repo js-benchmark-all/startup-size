@@ -1,5 +1,5 @@
 import * as S from 'sury';
-import { register } from './spec.ts';
+import assertSimple from './assert-simple.spec.ts';
 
 interface Type {
   // min: 0, integer
@@ -21,7 +21,7 @@ interface Type {
 const DisplayName = S.optional(S.min(S.max(S.string, 24), 3));
 const Id = S.min(S.int32, 0);
 
-register(
+assertSimple(
   'sury (jit)',
   S.compile(
     S.schema({

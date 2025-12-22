@@ -1,4 +1,4 @@
-import { $, spawn, spawnSync } from 'bun';
+import { $, spawnSync } from 'bun';
 import { parseArgs } from 'node:util';
 import { readFileOutput } from './output.ts';
 import { fmt } from './format.ts';

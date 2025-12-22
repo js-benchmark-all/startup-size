@@ -57,31 +57,25 @@ export class SpeedCategoryResults {
 }
 
 import RESULTS from '../result.json';
-export const runSpeedCases = (
-  info: Record<string, Record<string, string>>,
-  name: string,
-  runtimeId: string,
-  callback: (
-    categoryName: string,
-    caseName: string,
-    caseInfo: string,
-    categoryResults: SpeedCategoryResults,
-  ) => void,
-) => {
+
+/**
+ * @example
+ * await using results = getCategoryResults('startup time', 'bun');
+ */
+export const getCategoryResults = (name: string, runtimeId: string): Record<string, {
+  labels: string[]
+  datasets: {
+    label: string,
+    data: number[]
+  }[]
+}> & AsyncDisposable => {
   // @ts-ignore
   const ALL_RUNTIME_RESULTS = (RESULTS[name] ??= {} as Record<string, any>);
   // @ts-ignore
   const results = (ALL_RUNTIME_RESULTS[runtimeId] = {} as Record<string, any>);
 
-  for (const categoryName in info) {
-    const category = info[categoryName];
-    const categoryResults = new SpeedCategoryResults();
-
-    for (const caseName in category)
-      callback(categoryName, caseName, category[caseName], categoryResults);
-
-    results[categoryName] = categoryResults.toChartJS();
-  }
-
-  return writeCategoryResult(name, ALL_RUNTIME_RESULTS);
-};
+  // @ts-ignore
+  results[Symbol.asyncDispose] = async () => writeCategoryResult(name, ALL_RUNTIME_RESULTS);
+  // @ts-ignore
+  return results;
+}

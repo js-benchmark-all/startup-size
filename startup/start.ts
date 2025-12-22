@@ -1,26 +1,30 @@
 import INFO from './.out/info.json';
 import config from './config.ts';
 import { fmt } from '../lib/format.ts';
-import { runSpeedCases } from '../lib/result.ts';
+import { getCategoryResults, SpeedCategoryResults } from '../lib/result.ts';
 import { runFile, runtimeId } from '../lib/runtime.ts';
 import { math } from '../lib/math.ts';
 
-await runSpeedCases(
-  INFO,
-  'startup time',
-  runtimeId,
-  (categoryName, caseName, caseInfo, results) => {
+await using results = getCategoryResults('startup time', runtimeId);
+
+for (const categoryName in INFO) {
+  const category = INFO[categoryName as keyof typeof INFO];
+  const categoryResults = new SpeedCategoryResults();
+
+  for (const caseName in category) {
     console.log('  case:', fmt.h1(categoryName + ' - ' + caseName));
 
     const values = [];
     for (let i = 1; i <= config.runs; i++) {
       Bun.gc(true);
-      const value = runFile(caseInfo);
+      const value = runFile(category[caseName as keyof typeof category]);
       values.push(value);
       console.log(`    run ${i}:`, fmt.duration(value));
     }
 
-    results.addAndSort(caseName, values);
+    categoryResults.addAndSort(caseName, values);
     console.log('    variance:', fmt.percentage(math.rsd(values)));
-  },
-);
+  }
+
+  results[categoryName] = categoryResults.toChartJS();
+}
