@@ -1,4 +1,4 @@
-import { math } from "./math.ts";
+import { math } from './math.ts';
 
 const FILE = import.meta.dir + '/../result.json';
 
@@ -6,7 +6,7 @@ export const writeCategoryResult = async (name: string, result: any) => {
   const results = await Bun.file(FILE).json();
   results[name] = result;
   await Bun.write(FILE, JSON.stringify(results, null, 2));
-}
+};
 
 export class SpeedCategoryResults {
   results: {
@@ -29,7 +29,7 @@ export class SpeedCategoryResults {
     this.results.push({
       caseName,
       values,
-      avg
+      avg,
     });
 
     return avg;
@@ -43,31 +43,35 @@ export class SpeedCategoryResults {
       labels: categoryResults.map((v) => v.caseName),
       datasets: [
         {
-          label: "average (ms)",
+          label: 'average (ms)',
           // Ns to ms
-          data: categoryResults.map((v) =>
-            +(v.avg / 1e6).toFixed(2)
-          ),
+          data: categoryResults.map((v) => +(v.avg / 1e6).toFixed(2)),
         },
-        ...[.50, .75, .99, .999].map((p) => (
-          {
-            label: `p${p * 100} (ms)`,
-            data: categoryResults.map((v) =>
-              +(math.percentile(v.values, p) / 1e6).toFixed(2),
-            ),
-          }
-        ))
-      ]
+        ...[0.5, 0.75, 0.99, 0.999].map((p) => ({
+          label: `p${p * 100} (ms)`,
+          data: categoryResults.map((v) => +(math.percentile(v.values, p) / 1e6).toFixed(2)),
+        })),
+      ],
     };
   }
 }
 
-import RESULTS from "../result.json";
-export const runSpeedCases = (info: Record<string, Record<string, string>>, name: string, runtimeId: string, callback: (categoryName: string, caseName: string, caseInfo: string, categoryResults: SpeedCategoryResults) => void) => {
+import RESULTS from '../result.json';
+export const runSpeedCases = (
+  info: Record<string, Record<string, string>>,
+  name: string,
+  runtimeId: string,
+  callback: (
+    categoryName: string,
+    caseName: string,
+    caseInfo: string,
+    categoryResults: SpeedCategoryResults,
+  ) => void,
+) => {
   // @ts-ignore
-  const ALL_RUNTIME_RESULTS = RESULTS[name] ??= {} as Record<string, any>;
+  const ALL_RUNTIME_RESULTS = (RESULTS[name] ??= {} as Record<string, any>);
   // @ts-ignore
-  const results = ALL_RUNTIME_RESULTS[runtimeId] = {} as Record<string, any>;
+  const results = (ALL_RUNTIME_RESULTS[runtimeId] = {} as Record<string, any>);
 
   for (const categoryName in info) {
     const category = info[categoryName];
@@ -80,4 +84,4 @@ export const runSpeedCases = (info: Record<string, Record<string, string>>, name
   }
 
   return writeCategoryResult(name, ALL_RUNTIME_RESULTS);
-}
+};

@@ -60,5 +60,5 @@ export default Compile(
       is_active: Type.Boolean(),
       last_login: Type.Optional(Type.String()),
     }),
-  }).project
+  }).project,
 );

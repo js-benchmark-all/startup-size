@@ -19,5 +19,5 @@ export const fmt = {
   h1: pc.bold,
   success: pc.greenBright,
   error: pc.redBright,
-  relativePath: (abs: string) => pc.italic(pc.underline(relative('.', abs)))
+  relativePath: (abs: string) => pc.italic(pc.underline(relative('.', abs))),
 };

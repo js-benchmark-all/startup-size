@@ -1,8 +1,8 @@
 {
   "type": "module",
   "dependencies": {
-    "typebox": "1.0.64",
     "arktype": "^2.1.29",
-    "stnl": "^2.0.1"
+    "stnl": "^2.0.1",
+    "typebox": "1.0.64"
   }
 }

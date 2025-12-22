@@ -21,11 +21,10 @@ export const math = {
   rsd: (arr: number[]) => {
     const mean = arr.reduce((a, b) => a + b, 0) / arr.length;
 
-    return Math.sqrt(
-      arr.reduce(
-        (prevSum, cur) => prevSum + (cur - mean) * (cur - mean),
-        0
-      ) / arr.length
-    ) / mean;
-  }
+    return (
+      Math.sqrt(
+        arr.reduce((prevSum, cur) => prevSum + (cur - mean) * (cur - mean), 0) / arr.length,
+      ) / mean
+    );
+  },
 };

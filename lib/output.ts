@@ -1,4 +1,4 @@
-import { run } from "mitata";
+import { run } from 'mitata';
 
 export const startupFileContent = (file: string) => `
   import { now, start } from '${import.meta.dir}/startup.js';
@@ -29,4 +29,5 @@ export const runtimeFileContent = (file: string) => `
   });
 `;
 
-export const readFileOutput = (fileOutput: string) => fileOutput.slice(fileOutput.lastIndexOf('$') + 1);
+export const readFileOutput = (fileOutput: string) =>
+  fileOutput.slice(fileOutput.lastIndexOf('$') + 1);

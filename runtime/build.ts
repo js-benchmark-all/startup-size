@@ -1,11 +1,11 @@
-import { basename, dirname, relative, resolve } from "node:path";
-import { mkdirSync, rmSync } from "node:fs";
-import { build } from "rolldown";
-import { writeFile } from "node:fs/promises";
-import { scanFiles, tryWriteAsync } from "../lib/fs.ts";
-import config from "./config.ts";
-import { fmt } from "../lib/format.ts";
-import { runtimeFileContent } from "../lib/output.ts";
+import { basename, dirname, relative, resolve } from 'node:path';
+import { mkdirSync, rmSync } from 'node:fs';
+import { build } from 'rolldown';
+import { writeFile } from 'node:fs/promises';
+import { scanFiles, tryWriteAsync } from '../lib/fs.ts';
+import config from './config.ts';
+import { fmt } from '../lib/format.ts';
+import { runtimeFileContent } from '../lib/output.ts';
 
 const BUNDLED_DIR = import.meta.dir + '/.out';
 const SRC_DIR = import.meta.dir + '/src';
@@ -18,12 +18,11 @@ mkdirSync(BUNDLED_DIR, { recursive: true });
 const info: any = {};
 
 await Promise.all(
-  scanFiles('**/*.build.ts', SRC_DIR)
-    .map(async (path) => {
-      console.log('Running build script:', fmt.relativePath(path));
-      await Bun.$`bun run ${path}`;
-      console.log('Build script finished:', fmt.relativePath(path));
-    })
+  scanFiles('**/*.build.ts', SRC_DIR).map(async (path) => {
+    console.log('Running build script:', fmt.relativePath(path));
+    await Bun.$`bun run ${path}`;
+    console.log('Build script finished:', fmt.relativePath(path));
+  }),
 );
 
 await Promise.all(
@@ -42,47 +41,46 @@ await Promise.all(
         await Bun.$`cd ${category} && bun i`.quiet();
         console.log('Installed dependencies:', fmt.h1(categoryName));
 
-        const categoryInfo = info[categoryName] = {} as any;
+        const categoryInfo = (info[categoryName] = {} as any);
 
         await Promise.all(
-          scanFiles('*.case.ts', category)
-            .map(async (casePath, caseIndex) => {
-              const caseName = basename(casePath, '.case.ts');
-              if (!config.include.case(categoryName, caseName)) {
-                console.info('Ignored:', fmt.relativePath(casePath));
-                return;
-              }
+          scanFiles('*.case.ts', category).map(async (casePath, caseIndex) => {
+            const caseName = basename(casePath, '.case.ts');
+            if (!config.include.case(categoryName, caseName)) {
+              console.info('Ignored:', fmt.relativePath(casePath));
+              return;
+            }
 
-              try {
-                // Load initial content
-                const entry = resolve(`${BUNDLED_DIR}/${categoryIndex}_${caseIndex}.js`);
-                await writeFile(entry, runtimeFileContent(casePath));
-                categoryInfo[caseName] = entry;
+            try {
+              // Load initial content
+              const entry = resolve(`${BUNDLED_DIR}/${categoryIndex}_${caseIndex}.js`);
+              await writeFile(entry, runtimeFileContent(casePath));
+              categoryInfo[caseName] = entry;
 
-                // Build
-                await build({
-                  input: entry,
-                  logLevel: 'silent',
-                  transform: {
-                    target: 'esnext'
+              // Build
+              await build({
+                input: entry,
+                logLevel: 'silent',
+                transform: {
+                  target: 'esnext',
+                },
+                output: {
+                  inlineDynamicImports: true,
+                  file: entry,
+                  postBanner: '// @bun',
+                  minify: {
+                    compress: false,
+                    mangle: true,
                   },
-                  output: {
-                    inlineDynamicImports: true,
-                    file: entry,
-                    postBanner: '// @bun',
-                    minify: {
-                      compress: false,
-                      mangle: true
-                    }
-                  }
-                });
+                },
+              });
 
-                console.log('Built:', fmt.relativePath(casePath), '--->', fmt.relativePath(entry));
-              } catch (e) {
-                console.error('Failed to build:', fmt.relativePath(casePath));
-                console.error(e);
-              }
-            })
+              console.log('Built:', fmt.relativePath(casePath), '--->', fmt.relativePath(entry));
+            } catch (e) {
+              console.error('Failed to build:', fmt.relativePath(casePath));
+              console.error(e);
+            }
+          }),
         );
 
         console.log('Built:', fmt.h1(categoryName));
@@ -90,7 +88,7 @@ await Promise.all(
         console.error('Failed to build:', fmt.relativePath(category));
         console.error(e);
       }
-    })
+    }),
 );
 
 tryWriteAsync(BUNDLED_DIR + '/info.json', JSON.stringify(info, null, 2));

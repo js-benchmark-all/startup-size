@@ -15,5 +15,5 @@ export default Compile(
       bool: boolean;
     };
     items: number[];
-  }`)
+  }`),
 );

@@ -45,5 +45,5 @@ export default Compile(
       is_active: boolean;
       last_login?: string;
     };
-  `).Project
+  `).Project,
 );

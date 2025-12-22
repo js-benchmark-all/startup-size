@@ -1,4 +1,5 @@
 Benchmark startup time, minified size and gzipped size.
+
 ```sh
 # Install all dependencies
 bun i

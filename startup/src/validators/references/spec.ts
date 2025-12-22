@@ -7,7 +7,7 @@ export interface Project {
   created_at: string;
   description?: string;
   tags: string[];
-};
+}
 
 type UUID = string;
 type UserRole = 'admin' | 'manager' | 'developer' | 'viewer';
@@ -19,7 +19,7 @@ interface Comment {
   content: string;
   created_at: string;
   updated_at?: string;
-};
+}
 
 interface Task {
   id: string;
@@ -30,7 +30,7 @@ interface Task {
   created_at: string;
   description?: string;
   due_date?: string;
-};
+}
 
 interface User {
   id: UUID;
@@ -39,4 +39,4 @@ interface User {
   role: UserRole;
   is_active: boolean;
   last_login?: string;
-};
+}
