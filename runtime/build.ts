@@ -18,14 +18,6 @@ mkdirSync(BUNDLED_DIR, { recursive: true });
 const info: any = {};
 
 await Promise.all(
-  scanFiles('**/*.build.ts', SRC_DIR).map(async (path) => {
-    console.log('Running build script:', fmt.relativePath(path));
-    await Bun.$`bun run ${path}`;
-    console.log('Build script finished:', fmt.relativePath(path));
-  }),
-);
-
-await Promise.all(
   scanFiles('**/package.json', SRC_DIR)
     .filter((pkgPath) => !pkgPath.includes('/node_modules/'))
     .map(async (pkgPath, categoryIndex) => {
@@ -40,6 +32,14 @@ await Promise.all(
       try {
         await Bun.$`cd ${category} && bun i`.quiet();
         console.log('Installed dependencies:', fmt.h1(categoryName));
+
+        await Promise.all(
+          scanFiles('**/*.build.ts', category).map(async (path) => {
+            console.log('Running build script:', fmt.relativePath(path));
+            await Bun.$`bun run ${path}`;
+            console.log('Build script finished:', fmt.relativePath(path));
+          }),
+        );
 
         const categoryInfo = (info[categoryName] = {} as any);
 
