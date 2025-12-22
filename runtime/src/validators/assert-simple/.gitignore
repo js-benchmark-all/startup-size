@@ -1,0 +1,8 @@
+/tests.json
+
+# Hide AOT compilation results
+/*/aot.ts
+
+# Hide typia compilation results
+/typia/schema.js
+/typia/schema.d.ts

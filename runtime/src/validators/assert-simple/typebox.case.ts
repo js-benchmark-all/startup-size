@@ -2,7 +2,7 @@ import { register } from './spec.ts';
 import { Check } from './typebox/aot.ts';
 import schema from './typebox/schema.ts';
 import { Compile } from 'typebox/compile';
-import { Assert } from 'typebox/value';
+import Value from 'typebox/value';
 
 const assert = Compile(schema);
 register('typebox (jit)', (o) => {
@@ -14,5 +14,5 @@ register('typebox (aot)', (o) => {
 });
 
 register('typebox', (o) => {
-  Assert(schema, o);
+  if (!Value.Check(schema, o)) throw new Error()
 });

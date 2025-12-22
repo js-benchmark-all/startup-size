@@ -3,11 +3,16 @@
   "dependencies": {
     "@badrap/valita": "^0.4.6",
     "@effect/schema": "^0.75.5",
+    "@ryoppippi/unplugin-typia": "^2.6.5",
     "arktype": "^2.1.29",
     "stnl": "^2.0.1",
     "sury": "^11.0.0-alpha.4",
     "typebox": "1.0.64",
+    "typia": "^10.1.0",
     "valibot": "^1.2.0",
     "zod": "^4.2.1"
+  },
+  "scripts": {
+    "prepare": "ts-patch install"
   }
 }
