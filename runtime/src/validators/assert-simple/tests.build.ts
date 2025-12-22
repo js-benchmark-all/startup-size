@@ -1,7 +1,7 @@
 import { rand } from '../../../../lib/rand.ts';
 import type { Type } from './spec.ts';
 
-const valids: Type[] = new Array(1000).fill(0).map(() => ({
+const valids: Type[] = new Array(5000).fill(0).map(() => ({
   id: rand.int(0, 128),
   displayName: rand.chance(0.9) ? rand.string(rand.ENGLISH_ALPHABET, rand.int(3, 10)) : undefined,
   health: rand.float(0, 100),

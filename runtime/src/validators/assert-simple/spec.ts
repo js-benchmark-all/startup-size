@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { bench } from 'mitata';
 import valids from './tests.json';
 
@@ -67,12 +68,9 @@ export const register = (name: string, fn: (item: any) => void | never) => {
     }
   }
 
-  bench(name, function* () {
-    yield {
-      [0]: () => valids,
-      bench: (data: typeof valids) => {
-        for (let i = 0; i < data.length; i++) fn(data[i]);
-      },
-    };
+  // Its ok to do this cuz fn can throw so
+  // this part wont be optimized out
+  bench(name, () => {
+    valids.forEach(fn);
   }).gc('inner');
 };
