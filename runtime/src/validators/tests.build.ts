@@ -9,7 +9,9 @@ import type { Type } from './assert-simple.spec.ts';
     health: rand.float(0, 100),
     inventory: rand.array(rand.int(0, 30), () => ({
       id: rand.int(0, 128),
-      displayName: rand.chance(0.9) ? rand.string(rand.ENGLISH_ALPHABET, rand.int(3, 10)) : undefined,
+      displayName: rand.chance(0.9)
+        ? rand.string(rand.ENGLISH_ALPHABET, rand.int(3, 10))
+        : undefined,
       tags: rand.array(rand.int(0, 2), () => rand.item(['melee', 'projectile'])),
     })),
   }));

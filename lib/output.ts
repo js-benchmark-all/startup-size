@@ -8,13 +8,14 @@ export const startupFileContent = (file: string) => `
 `;
 
 export const runtimeFileContent = (file: string) => `
-  import { run } from 'mitata';
+  import { run, do_not_optimize } from 'mitata';
   import { filterProps } from '${import.meta.dir}/utils/runtime.js';
-  import ${JSON.stringify(file)};
 
-  run({ format: { json: { debug: false } } }).then((result) => {
+  (async () => {
+    await import(${JSON.stringify(file)});
+    const result = await run({ format: { json: { debug: false } } });
     console.log('$' + JSON.stringify(filterProps(result)));
-  });
+  })(do_not_optimize);
 `;
 
 export const readFileOutput = (fileOutput: string) =>

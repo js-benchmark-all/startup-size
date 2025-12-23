@@ -4,9 +4,7 @@
     "prepare": "ts-patch install"
   },
   "dependencies": {
-    "@badrap/valita": "^0.4.6",
-    "@effect/schema": "^0.75.5",
-    "@ryoppippi/unplugin-typia": "^2.6.5",
+    "effect": "^3.19.13",
     "arktype": "^2.1.29",
     "stnl": "^2.0.1",
     "sury": "^11.0.0-alpha.4",

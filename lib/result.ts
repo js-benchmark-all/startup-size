@@ -62,13 +62,20 @@ import RESULTS from '../result.json';
  * @example
  * await using results = getCategoryResults('startup time', 'bun');
  */
-export const getCategoryResults = (name: string, runtimeId: string): Record<string, {
-  labels: string[]
-  datasets: {
-    label: string,
-    data: number[]
-  }[]
-}> & AsyncDisposable => {
+export const getCategoryResults = (
+  name: string,
+  runtimeId: string,
+): Record<
+  string,
+  {
+    labels: string[];
+    datasets: {
+      label: string;
+      data: number[];
+    }[];
+  }
+> &
+  AsyncDisposable => {
   // @ts-ignore
   const ALL_RUNTIME_RESULTS = (RESULTS[name] ??= {} as Record<string, any>);
   // @ts-ignore
@@ -78,4 +85,4 @@ export const getCategoryResults = (name: string, runtimeId: string): Record<stri
   results[Symbol.asyncDispose] = async () => writeCategoryResult(name, ALL_RUNTIME_RESULTS);
   // @ts-ignore
   return results;
-}
+};
