@@ -13,8 +13,8 @@ bun i
 
 ## Methodology
 - Each `.case.ts` is bundled & minified with [`rolldown`](https://rolldown.rs), their content is preprocessed before bundling with [`output.ts`](./lib/output.ts).
-+ In runtime benchmark, each case can register sub-categories,
++ In runtime benchmark, each case can register sub-categories.
 + Startup time case files can't as they must not introduce noises.
 - Runtime benchmarks are done with [`mitata`](https://github.com/evanwashere/mitata).
-- Startup times are directly measured in the running code (see startup preprocessed code).
+- Startup times are directly measured in the running code (see startup preprocessed code in [`output.ts`](./lib/output.ts)).
 - [Results](./result.json) are ChartJS compatible data.
