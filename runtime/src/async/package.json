@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "ciorent": "^1.0.6"
+  }
+}
