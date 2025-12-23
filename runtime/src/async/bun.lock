@@ -5,7 +5,6 @@
     "": {
       "dependencies": {
         "async-mutex": "^0.5.0",
-        "async-sema": "^3.1.1",
         "ciorent": "^1.0.6",
         "limit-concur": "^4.0.0",
         "mutexify": "^1.4.0",
@@ -15,8 +14,6 @@
   },
   "packages": {
     "async-mutex": ["async-mutex@0.5.0", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA=="],
-
-    "async-sema": ["async-sema@3.1.1", "", {}, "sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg=="],
 
     "ciorent": ["ciorent@1.0.6", "", {}, "sha512-4Y6QSrFlZcZvxlfIgNzq/aJ8pJrTr5jdGAGNMkfghyNey+NDDXxKhxc2fyJQRELyiRzxyyi0u16UIuWob+4o9w=="],
 

@@ -8,7 +8,7 @@
         "effect": "^3.19.13",
         "stnl": "^2.0.1",
         "sury": "^11.0.0-alpha.4",
-        "typebox": "1.0.64",
+        "typebox": "1.0.66",
         "typia": "^10.1.0",
         "valibot": "^1.2.0",
         "zod": "^4.2.1",
@@ -152,7 +152,7 @@
 
     "type-fest": ["type-fest@0.21.3", "", {}, "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w=="],
 
-    "typebox": ["typebox@1.0.64", "", {}, "sha512-U6quDhQMzQRzBX8jvlE5mZlUnlMRTaZrG/QMAhOYVJ0D0rhq1iOXBQVSzBX0JgAh55jXQ7fWIv24i+lVimXcDw=="],
+    "typebox": ["typebox@1.0.66", "", {}, "sha512-dL2vPWkqPCjdd0QK2vO/JNYkGFE47t2gTSLxNpXBkVYHG8tMWLt0HKeBpsxBDnSi29TvHb2gIZgKh2kWs31Khw=="],
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
