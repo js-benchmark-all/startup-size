@@ -1,6 +1,11 @@
 {
   "type": "module",
   "dependencies": {
-    "ciorent": "^1.0.6"
+    "async-mutex": "^0.5.0",
+    "async-sema": "^3.1.1",
+    "ciorent": "^1.0.6",
+    "limit-concur": "^4.0.0",
+    "mutexify": "^1.4.0",
+    "p-limit": "^7.2.0"
   }
 }

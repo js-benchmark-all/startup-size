@@ -8,13 +8,15 @@ const schema = z.object({
   id: Id,
   displayName: DisplayName,
   health: z.number().min(0).max(100),
-  inventory: z.array(
-    z.object({
-      id: Id,
-      displayName: DisplayName,
-      tags: z.optional(z.array(z.string())),
-    })
-  ).max(30)
+  inventory: z
+    .array(
+      z.object({
+        id: Id,
+        displayName: DisplayName,
+        tags: z.optional(z.array(z.string())),
+      }),
+    )
+    .max(30),
 });
 
 assertSimple('zod', (o) => {
