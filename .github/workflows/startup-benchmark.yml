@@ -3,8 +3,8 @@ on:
     branches:
       - dev
     paths:
-      - "runtime/**/*.ts"
-      - "runtime/**/package.json"
+      - "startup/**/*.ts"
+      - "startup/**/package.json"
 
 jobs:
   update-results:
@@ -31,27 +31,27 @@ jobs:
         run: bun i
 
       - name: Build benchmark files
-        run: bun runtime:build
+        run: bun startup:build
 
       - name: Node 22 setup
         uses: actions/setup-node@v4
         with:
           node-version: "22.x"
       - name: Node 22 benchmark
-        run: bun runtime:start --runtime node
+        run: bun startup:start --runtime node
 
       - name: Node 24 setup
         uses: actions/setup-node@v4
         with:
           node-version: "24.x"
       - name: Node 24 benchmark
-        run: bun runtime:start --runtime node
+        run: bun startup:start --runtime node
 
       - name: Bun benchmark
-        run: bun runtime:start --runtime bun
+        run: bun startup:start --runtime bun
 
       - name: Deno benchmark
-        run: bun runtime:start --runtime deno
+        run: bun startup:start --runtime deno
 
       - name: Update result.json
         env:
