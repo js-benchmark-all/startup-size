@@ -3,8 +3,8 @@ on:
     branches:
       - dev
     paths:
-      - "startup/**/*.ts"
-      - "startup/**/package.json"
+      - 'startup/**/*.ts'
+      - 'startup/**/package.json'
 
 jobs:
   update-results:
@@ -38,14 +38,14 @@ jobs:
       - name: Node 22 setup
         uses: actions/setup-node@v4
         with:
-          node-version: "22.x"
+          node-version: '22.x'
       - name: Node 22 benchmark
         run: bun startup:start --runtime node
 
       - name: Node 24 setup
         uses: actions/setup-node@v4
         with:
-          node-version: "24.x"
+          node-version: '24.x'
       - name: Node 24 benchmark
         run: bun startup:start --runtime node
 

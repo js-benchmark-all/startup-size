@@ -3,7 +3,7 @@ import { Mutex, Semaphore } from 'async-mutex';
 
 await concurrency('async-mutex', (task, c) => {
   if (c === 1) {
-    const mu = new Mutex()
+    const mu = new Mutex();
     return () => mu.runExclusive(task);
   }
 
