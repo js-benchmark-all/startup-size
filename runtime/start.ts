@@ -3,14 +3,17 @@ import { benchFile, runtimeId } from '../lib/runtime.ts';
 import { getCategoryResults, SpeedCategoryResults } from '../lib/result.ts';
 import { fmt } from '../lib/format.ts';
 import { math } from '../lib/math.ts';
+import config from './config.ts';
 
 await using results = getCategoryResults('runtime', runtimeId);
 const allCategoryResults: Dict<SpeedCategoryResults> = {};
 
 for (const categoryName in INFO) {
+  if (!config.include.category(categoryName)) continue;
   const category = INFO[categoryName as keyof typeof INFO];
 
   for (const caseName in category) {
+    if (!config.include.case(categoryName, caseName)) continue;
     console.log('  case:', fmt.h1(categoryName + ' - ' + caseName));
 
     for (

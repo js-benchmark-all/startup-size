@@ -8,10 +8,12 @@ import { math } from '../lib/math.ts';
 await using results = getCategoryResults('startup time', runtimeId);
 
 for (const categoryName in INFO) {
+  if (!config.include.category(categoryName)) continue;
   const category = INFO[categoryName as keyof typeof INFO];
   const categoryResults = new SpeedCategoryResults();
 
   for (const caseName in category) {
+    if (!config.include.case(categoryName, caseName)) continue;
     console.log('  case:', fmt.h1(categoryName + ' - ' + caseName));
 
     const values = [];
