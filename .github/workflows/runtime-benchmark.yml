@@ -28,7 +28,7 @@ jobs:
       - name: Build benchmark files
         run: |
           bun i --production
-          bun startup:build
+          bun runtime:build
 
       - name: Node 22 setup
         uses: actions/setup-node@v4

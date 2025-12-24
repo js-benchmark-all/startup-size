@@ -25,10 +25,11 @@ for (const categoryName in INFO) {
         i++
       ) {
         const trial = trials[i];
-        const values = trial.runs.flatMap((run) => run.stats!.samples);
-        const alias = trial.alias;
 
+        const alias = trial.alias;
         console.log('    bench:', fmt.h2(alias));
+
+        const values = trial.runs.flatMap((run) => run.stats!.samples);
 
         if (alias.includes('/')) {
           const separatorIdx = alias.lastIndexOf('/');
