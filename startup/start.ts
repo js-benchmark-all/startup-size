@@ -12,9 +12,10 @@ import config from './config.ts';
 await using results = getCategoryResults('startup time', runtimeId);
 
 const progress = new SingleBar({
-  format: '    {bar} | {value}/{total}',
-  barCompleteChar: '\u2588',
-  barIncompleteChar: '\u2591'
+  format: '    [{bar}] {value}/{total}',
+  barCompleteChar: '#',
+  barIncompleteChar: '-',
+  clearOnComplete: true
 });
 
 for (const categoryName in INFO) {
@@ -30,10 +31,9 @@ for (const categoryName in INFO) {
 
     try {
       progress.start(config.runs, 0);
-      for (let i = 1; i <= config.runs; i++) {
+      for (let i = 1; i <= config.runs; i++, progress.increment()) {
         Bun.gc(true);
         values.push(runFile(category[caseName as keyof typeof category]));
-        progress.increment();
       }
     } catch (e) {
       console.error('  skipping case:', fmt.h1(categoryName + ' - ' + caseName));
