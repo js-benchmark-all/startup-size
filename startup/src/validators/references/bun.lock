@@ -4,9 +4,9 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "arktype": "^2.1.29",
-        "stnl": "^2.0.1",
-        "typebox": "1.0.64",
+        "arktype": "2.1.29",
+        "stnl": "2.0.1",
+        "typebox": "1.0.66",
       },
     },
   },
@@ -21,6 +21,6 @@
 
     "stnl": ["stnl@2.0.1", "", {}, "sha512-rRfaERnPZ5CO0IPMiEHay8THAXnWmPRlzRZF5GbSGUC84XiLvGQe/iizXymP8Ev8tYLfGhtsjGIoX+QmF6oNRg=="],
 
-    "typebox": ["typebox@1.0.64", "", {}, "sha512-U6quDhQMzQRzBX8jvlE5mZlUnlMRTaZrG/QMAhOYVJ0D0rhq1iOXBQVSzBX0JgAh55jXQ7fWIv24i+lVimXcDw=="],
+    "typebox": ["typebox@1.0.66", "", {}, "sha512-dL2vPWkqPCjdd0QK2vO/JNYkGFE47t2gTSLxNpXBkVYHG8tMWLt0HKeBpsxBDnSi29TvHb2gIZgKh2kWs31Khw=="],
   }
 }

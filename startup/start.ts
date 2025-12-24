@@ -1,5 +1,7 @@
 import INFO from './.out/info.json';
 
+import { SingleBar } from 'cli-progress';
+
 import { fmt } from '../lib/format.ts';
 import { getCategoryResults, SpeedCategoryResults } from '../lib/result.ts';
 import { runFile, runtimeId } from '../lib/runtime.ts';
@@ -8,6 +10,12 @@ import { math } from '../lib/math.ts';
 import config from './config.ts';
 
 await using results = getCategoryResults('startup time', runtimeId);
+
+const progress = new SingleBar({
+  format: '    {bar} | {value}/{total}',
+  barCompleteChar: '\u2588',
+  barIncompleteChar: '\u2591'
+});
 
 for (const categoryName in INFO) {
   if (!config.include.category(categoryName)) continue;
@@ -21,13 +29,17 @@ for (const categoryName in INFO) {
     const values = [];
 
     try {
+      progress.start(config.runs, 0);
       for (let i = 1; i <= config.runs; i++) {
         Bun.gc(true);
         values.push(runFile(category[caseName as keyof typeof category]));
+        progress.increment();
       }
     } catch (e) {
       console.error('  skipping case:', fmt.h1(categoryName + ' - ' + caseName));
       console.error(e);
+    } finally {
+      progress.stop();
     }
 
     console.log('    average:', fmt.duration(categoryResults.addAndSort(caseName, values)));

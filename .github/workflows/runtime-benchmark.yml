@@ -6,14 +6,16 @@ on:
       - "runtime/**/*.ts"
       - "runtime/**/package.json"
       - "lib/**/*"
+      - "package.json"
+
+concurrency:
+  group: benchmark
 
 jobs:
   update-results:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    concurrency:
-      group: benchmark
     steps:
       - name: Checkout
         uses: actions/checkout@v4
