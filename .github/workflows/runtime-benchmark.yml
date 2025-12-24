@@ -38,14 +38,14 @@ jobs:
         with:
           node-version: '22.x'
       - name: Node 22 benchmark
-      - run: bun runtime:start --runtime node
+        run: bun runtime:start --runtime node
 
-      - name: Node 23 setup
+      - name: Node 24 setup
         uses: actions/setup-node@v4
         with:
           node-version: '24.x'
       - name: Node 24 benchmark
-      - run: bun runtime:start --runtime node
+        run: bun runtime:start --runtime node
 
       - name: Bun benchmark
         run: bun runtime:start --runtime bun
