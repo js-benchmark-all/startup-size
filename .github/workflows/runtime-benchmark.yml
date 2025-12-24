@@ -7,7 +7,7 @@ on:
       - "runtime/**/package.json"
 
 jobs:
-  update-results:
+  update-node-results:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -27,32 +27,25 @@ jobs:
         with:
           deno-version: lts
 
-      - name: Setup fnm
-        run: |
-          curl -fsSL https://fnm.vercel.app/install | bash
-          echo "$HOME/.fnm/bin:$PATH" >> $GITHUB_ENV
-        shell: bash
-
       - name: Install dependencies
         run: bun i
 
       - name: Build benchmark files
         run: bun runtime:build
 
+      - name: Node 22 setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
       - name: Node 22 benchmark
-        run: |
-          fnm use 22 --install-if-missing
-          bun runtime:start --runtime node
+      - run: bun runtime:start --runtime node
 
-      - name: Node 23 benchmark
-        run: |
-          fnm use 23 --install-if-missing
-          bun runtime:start --runtime node
-
+      - name: Node 23 setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
       - name: Node 24 benchmark
-        run: |
-          fnm use 24 --install-if-missing
-          bun runtime:start --runtime node
+      - run: bun runtime:start --runtime node
 
       - name: Bun benchmark
         run: bun runtime:start --runtime bun
