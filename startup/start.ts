@@ -15,7 +15,7 @@ const progress = new SingleBar({
   format: '    [{bar}] {value}/{total}',
   barCompleteChar: '#',
   barIncompleteChar: '-',
-  clearOnComplete: true
+  clearOnComplete: true,
 });
 
 for (const categoryName in INFO) {
