@@ -17,13 +17,14 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - run: git pull origin HEAD:${{ github.ref_name }}
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
@@ -32,22 +33,19 @@ jobs:
           bun i --production
           bun runtime:build
 
-      - name: Node 22 setup
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "22.x"
       - name: Node 22 benchmark
         run: bun runtime:start --runtime node
 
-      - name: Node 24 setup
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "24.x"
       - name: Node 24 benchmark
         run: bun runtime:start --runtime node
 
-      - name: Node latest setup
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: latest
       - name: Node latest benchmark
@@ -56,15 +54,13 @@ jobs:
       - name: Bun benchmark
         run: bun runtime:start --runtime bun
 
-      - name: Setup Deno LTS
-        uses: denoland/setup-deno@v2.0.3
+      - uses: denoland/setup-deno@v2.0.3
         with:
           deno-version: lts
       - name: Deno LTS benchmark
         run: bun runtime:start --runtime deno
 
-      - name: Setup Deno latest
-        uses: denoland/setup-deno@v2.0.3
+      - uses: denoland/setup-deno@v2.0.3
         with:
           deno-version: latest
       - name: Deno latest benchmark
