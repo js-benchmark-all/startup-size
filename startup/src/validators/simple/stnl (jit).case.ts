@@ -1,6 +1,6 @@
-import { t, toJSONAssert } from 'stnl';
+import { t, toJSONCheck } from 'stnl';
 
-export default toJSONAssert.compile(
+export default toJSONCheck.compile(
   t.dict({
     number: t.float,
     negNumber: t.float,

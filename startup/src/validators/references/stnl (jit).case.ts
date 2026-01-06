@@ -1,4 +1,4 @@
-import { t, toJSONAssert } from 'stnl';
+import { t, toJSONCheck } from 'stnl';
 
 const schema = t.scope(
   t.dict(

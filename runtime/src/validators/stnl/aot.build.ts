@@ -1,7 +1,7 @@
-import { toJSONAssert } from 'stnl';
+import { toJSONCheck } from 'stnl';
 import schema from './schema.ts';
 
 await Bun.write(
   import.meta.dir + '/aot.ts',
-  `// @ts-nocheck\nexport default (()=>{${toJSONAssert.code(schema)}})()`,
+  `// @ts-nocheck\nlet d;${toJSONCheck.code(schema, 'd' as any)}export default d`,
 );

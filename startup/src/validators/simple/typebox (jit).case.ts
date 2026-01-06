@@ -1,5 +1,5 @@
 import { Type } from 'typebox';
-import { Value } from 'typebox/value';
+import { Compile } from 'typebox/compile';
 
 const schema = Type.Object({
   number: Type.Number(),
@@ -16,4 +16,4 @@ const schema = Type.Object({
   items: Type.Array(Type.Number()),
 });
 
-export default (value: any) => Value.Check(schema, value);
+export default Compile(schema);
