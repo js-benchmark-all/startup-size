@@ -62,4 +62,4 @@ const schema = t.scope(
   },
 );
 
-export default toJSONAssert.compile(schema);
+export default toJSONCheck.compile(schema);
