@@ -4,7 +4,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@mapl/web": "0.5.4",
+        "@mapl/web": "0.6.0",
         "elysia": "1.4.19",
         "hono": "4.11.1",
         "itty-router": "5.0.22",
@@ -12,9 +12,9 @@
     },
   },
   "packages": {
-    "@mapl/router": ["@mapl/router@0.8.1", "", {}, "sha512-EWROreN6iLF8ZKZdKySWzji1RIf+6C+8hqNDVRZfzADSKmZLlwTXT6DhsCl+Rbyl7wm6XzicPaid6uvPNEa5fA=="],
+    "@mapl/router": ["@mapl/router@0.8.2", "", {}, "sha512-boPO8EKzbhGHKzLjFLKF587TJPE+4j5M3C/5136oBeaFh+/My9voosdnlFbjmss//quoKm4vdy7k+jjQhBBCeQ=="],
 
-    "@mapl/web": ["@mapl/web@0.5.4", "", { "dependencies": { "@mapl/router": "^0.8.1", "@safe-std/error": "^2.0.4", "runtime-compiler": "^2.1.2" } }, "sha512-GychcNq2bhNFsoYxdhl+uEYqY+y7dlxvmAJw6VdaRLIFgKYXOBaJ+xOLxlXuRLxJ7daQLHFjyulPsRDkmdmuXg=="],
+    "@mapl/web": ["@mapl/web@0.6.0", "", { "dependencies": { "@mapl/router": "^0.8.2", "@safe-std/error": "^2.0.4", "runtime-compiler": "^3.0.9" } }, "sha512-VH1x5O3bqo0P52GU6ruuJX2AFHlJ9ZcMHXVrswxIHkU5q5zpuDhGL5FVLCWx0LD+s2zSR4Fr71xVC5niNZ4iTQ=="],
 
     "@safe-std/error": ["@safe-std/error@2.0.4", "", {}, "sha512-O/yUTZJvA+NiZv+xDBFOazeyrbUOJ0flup2avJxqKoEVXRLoA97YoI4Z/J9Prhua9Rfpka1GRkSIMKOYFczsNA=="],
 
@@ -50,7 +50,7 @@
 
     "openapi-types": ["openapi-types@12.1.3", "", {}, "sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw=="],
 
-    "runtime-compiler": ["runtime-compiler@2.1.2", "", {}, "sha512-7dTibAgRx7mlb9iB+gK3Sjzy/RZOy9q4E73wKArqgwSio62mZPzGsoJfynPrtTgKvSlAV92j8j2GHx3eDKEMzg=="],
+    "runtime-compiler": ["runtime-compiler@3.0.9", "", {}, "sha512-LaS8YcEMiHbTwcEddA+Hc5F8LZO5kLG+Aw5pR27LgcvYBemjY42cFer0K6xmj7iZNDD6gevIZKeaaiEWY+24Lw=="],
 
     "strtok3": ["strtok3@10.3.2", "", { "dependencies": { "@tokenizer/token": "^0.3.0" } }, "sha512-or9w505RhhY66+uoe5YOC5QO/bRuATaoim3XTh+pGKx5VMWi/HDhMKuCjDLsLJouU2zg9Hf1nLPcNW7IHv80kQ=="],
 

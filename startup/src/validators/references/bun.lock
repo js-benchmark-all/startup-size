@@ -5,7 +5,7 @@
     "": {
       "dependencies": {
         "arktype": "2.1.29",
-        "stnl": "2.0.1",
+        "stnl": "2.2.1",
         "typebox": "1.0.66",
       },
     },
@@ -19,7 +19,7 @@
 
     "arktype": ["arktype@2.1.29", "", { "dependencies": { "@ark/schema": "0.56.0", "@ark/util": "0.56.0", "arkregex": "0.0.5" } }, "sha512-jyfKk4xIOzvYNayqnD8ZJQqOwcrTOUbIU4293yrzAjA3O1dWh61j71ArMQ6tS/u4pD7vabSPe7nG3RCyoXW6RQ=="],
 
-    "stnl": ["stnl@2.0.1", "", {}, "sha512-rRfaERnPZ5CO0IPMiEHay8THAXnWmPRlzRZF5GbSGUC84XiLvGQe/iizXymP8Ev8tYLfGhtsjGIoX+QmF6oNRg=="],
+    "stnl": ["stnl@2.2.1", "", {}, "sha512-BqZSSfJCfCE1umCZ8jH1V1Ihf3OGZTk4WT9lCI413n8bejynOZRWje9vKcXJAT6i/hxOcO5M6bEm08fHuwAZ/w=="],
 
     "typebox": ["typebox@1.0.66", "", {}, "sha512-dL2vPWkqPCjdd0QK2vO/JNYkGFE47t2gTSLxNpXBkVYHG8tMWLt0HKeBpsxBDnSi29TvHb2gIZgKh2kWs31Khw=="],
   }
