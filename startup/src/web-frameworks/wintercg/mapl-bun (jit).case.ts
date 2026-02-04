@@ -1,9 +1,9 @@
 import { router, send } from '@mapl/web';
-import { request, build } from '@mapl/web/generic';
+import { request, build } from '@mapl/web/bun';
 import { getDependency } from 'runtime-compiler';
 
 export const app = {
-  fetch: getDependency(
+  routes: getDependency(
     build(
       router.init(
         [],
