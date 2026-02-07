@@ -17,7 +17,7 @@ addRoute(router, 'POST', '/event/:a/comment', (map) => '7' + map.a);
 addRoute(router, 'GET', '/map/:a/event', (map) => '8' + map.a);
 addRoute(router, 'GET', '/status', () => '9');
 addRoute(router, 'GET', '/very/deeply/nested/route/hello/there', () => '10');
-addRoute(router, 'GET', '/static/:a{.+}', (map) => '11' + map.a);
+addRoute(router, 'GET', '/static/**:a', (map) => '11' + map.a);
 
 spec('rou3 (tree)', (o) => {
   const result = findRoute(router, o.method, o.url);

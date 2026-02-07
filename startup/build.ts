@@ -112,6 +112,7 @@ await Promise.all(
         );
 
         categoryResults.sort((a, b) => a.size.minified - b.size.minified);
+
         // @ts-ignore
         SIZE_RESULT[categoryName] = {
           labels: categoryResults.map((v) => v.caseName),
