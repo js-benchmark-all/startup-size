@@ -16,9 +16,12 @@ export const app = {
             '/user/*',
             send.raw((id) => id),
           ),
-          router.post('/body', send.json(async (req) => req.json(), request)),
+          router.post(
+            '/body',
+            send.json(async (req) => req.json(), request),
+          ),
         ],
       ),
     ),
-  )
+  ),
 };

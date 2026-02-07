@@ -6,7 +6,7 @@
       "dependencies": {
         "arktype": "2.1.29",
         "effect": "3.19.13",
-        "stnl": "2.2.1",
+        "stnl": "2.2.2",
         "sury": "11.0.0-alpha.4",
         "typebox": "1.0.73",
         "typia": "10.1.0",
@@ -134,7 +134,7 @@
 
     "signal-exit": ["signal-exit@3.0.7", "", {}, "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ=="],
 
-    "stnl": ["stnl@2.2.1", "", {}, "sha512-BqZSSfJCfCE1umCZ8jH1V1Ihf3OGZTk4WT9lCI413n8bejynOZRWje9vKcXJAT6i/hxOcO5M6bEm08fHuwAZ/w=="],
+    "stnl": ["stnl@2.2.2", "", {}, "sha512-gBQ+TBwQLxPH08TU+r6g0SRWBYgkNYsDgGA8mvVqeE6IFDnlQDiJfjABjJGa8DKBV91NzW3pbdq0BSRPoW2Aew=="],
 
     "string-width": ["string-width@4.2.3", "", { "dependencies": { "emoji-regex": "^8.0.0", "is-fullwidth-code-point": "^3.0.0", "strip-ansi": "^6.0.1" } }, "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="],
 
