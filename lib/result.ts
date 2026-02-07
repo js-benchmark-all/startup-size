@@ -8,6 +8,8 @@ export const writeCategoryResult = async (name: string, result: any) => {
   await Bun.write(FILE, JSON.stringify(results, null, 2));
 };
 
+const TIME_UNIT = ['ns', 'µs', 'ms', 's'];
+
 export class SpeedCategoryResults {
   results: {
     caseName: string;
@@ -39,17 +41,30 @@ export class SpeedCategoryResults {
     const categoryResults = this.results;
     categoryResults.sort((a, b) => a.avg - b.avg);
 
+    // Select appropriate units to display data
+    let unitIndex = 0, div = 1;
+    {
+      let max = categoryResults.at(-1)?.avg;
+      if (max)
+        while (max > 1e3 && unitIndex < TIME_UNIT.length) {
+          unitIndex++;
+          div *= 1e3;
+          max /= 1e3;
+        }
+    }
+    const unit = TIME_UNIT[unitIndex];
+
     return {
       labels: categoryResults.map((v) => v.caseName),
       datasets: [
         {
-          label: 'average (ms)',
+          label: `average (${unit})`,
           // Ns to ms
-          data: categoryResults.map((v) => +(v.avg / 1e6).toFixed(2)),
+          data: categoryResults.map((v) => +(v.avg / div).toFixed(2)),
         },
         ...[0.5, 0.75, 0.99, 0.999].map((p) => ({
-          label: `p${p * 100} (ms)`,
-          data: categoryResults.map((v) => +(math.percentile(v.values, p) / 1e6).toFixed(2)),
+          label: `p${p * 100} (${unit})`,
+          data: categoryResults.map((v) => +(math.percentile(v.values, p) / div).toFixed(2)),
         })),
       ],
     };
