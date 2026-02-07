@@ -40,7 +40,7 @@ import spec from './.spec.ts';
     getDependency(
       exportScope(
         scope,
-        `(o)=>{${compile(router, 'o.method', `let ${PATH}=o.url;`, 1)}return ''}` as any,
+        `(o)=>{var ${PATH}=o.url;${compile(router, 'o.method', '', 1)}return ''}` as any,
       ),
     ),
   );

@@ -42,7 +42,8 @@ export class SpeedCategoryResults {
     categoryResults.sort((a, b) => a.avg - b.avg);
 
     // Select appropriate units to display data
-    let unitIndex = 0, div = 1;
+    let unitIndex = 0,
+      div = 1;
     {
       let max = categoryResults.at(-1)?.avg;
       if (max)
