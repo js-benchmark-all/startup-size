@@ -7152,5 +7152,1329 @@
         ]
       }
     }
+  },
+  "size": {
+    "validators/references": {
+      "labels": [
+        "stnl (jit)",
+        "typebox (jit)",
+        "typebox-script (jit)",
+        "arktype (jit)"
+      ],
+      "datasets": [
+        {
+          "label": "minified (kB)",
+          "data": [
+            2.76,
+            107.64,
+            130.77,
+            152.81
+          ]
+        },
+        {
+          "label": "gzipped (kB)",
+          "data": [
+            1.17,
+            29.28,
+            33.74,
+            45.85
+          ]
+        }
+      ]
+    },
+    "web-frameworks/wintercg": {
+      "labels": [
+        "itty-router",
+        "mapl-bun (jit)",
+        "mapl (jit)",
+        "hono-tiny",
+        "hono-quick",
+        "elysia"
+      ],
+      "datasets": [
+        {
+          "label": "minified (kB)",
+          "data": [
+            1.11,
+            3.28,
+            4.64,
+            10.9,
+            16.3,
+            332.21
+          ]
+        },
+        {
+          "label": "gzipped (kB)",
+          "data": [
+            0.68,
+            1.52,
+            2.05,
+            4.54,
+            6.5,
+            89.73
+          ]
+        }
+      ]
+    },
+    "validators/simple": {
+      "labels": [
+        "stnl (jit)",
+        "valibot",
+        "sury (jit)",
+        "zod",
+        "typebox (jit)",
+        "typebox-script (jit)",
+        "arktype (jit)",
+        "effect-schema"
+      ],
+      "datasets": [
+        {
+          "label": "minified (kB)",
+          "data": [
+            2.29,
+            3.8,
+            38.31,
+            59.73,
+            107.69,
+            130.74,
+            152.34,
+            161.45
+          ]
+        },
+        {
+          "label": "gzipped (kB)",
+          "data": [
+            0.97,
+            1.35,
+            13.35,
+            16.31,
+            29.2,
+            33.57,
+            45.66,
+            50.57
+          ]
+        }
+      ]
+    }
+  },
+  "startup time": {
+    "node-22.22.0": {
+      "validators/references": {
+        "labels": [
+          "stnl (jit)",
+          "typebox (jit)",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.9,
+              13.39,
+              37.06,
+              139.48
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.8,
+              13.4,
+              37.57,
+              139.06
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.82,
+              13.6,
+              38.67,
+              140.19
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              2.69,
+              14.19,
+              40.84,
+              147.37
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              2.73,
+              14.68,
+              42.3,
+              148.26
+            ]
+          }
+        ]
+      },
+      "web-frameworks/wintercg": {
+        "labels": [
+          "itty-router",
+          "hono-quick",
+          "mapl-bun (jit)",
+          "hono-tiny",
+          "mapl (jit)",
+          "elysia"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.48,
+              0.61,
+              0.81,
+              0.82,
+              1.08,
+              6.18
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.38,
+              0.6,
+              0.8,
+              0.81,
+              1.06,
+              6.2
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.39,
+              0.61,
+              0.81,
+              0.82,
+              1.08,
+              6.39
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              2.3,
+              0.7,
+              0.87,
+              0.9,
+              1.2,
+              8.06
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              2.37,
+              2.09,
+              2.14,
+              2.58,
+              2.7,
+              8.82
+            ]
+          }
+        ]
+      },
+      "validators/simple": {
+        "labels": [
+          "valibot",
+          "stnl (jit)",
+          "sury (jit)",
+          "zod",
+          "typebox (jit)",
+          "effect-schema",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.36,
+              0.43,
+              3.23,
+              5.89,
+              8.55,
+              11.47,
+              22.2,
+              139.65
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.27,
+              0.4,
+              3.17,
+              5.65,
+              8.55,
+              11.38,
+              20.62,
+              139.22
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.29,
+              0.41,
+              3.22,
+              6.46,
+              8.63,
+              11.52,
+              25.34,
+              141.03
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              2.51,
+              2.26,
+              4.8,
+              7.5,
+              9,
+              12.68,
+              26.49,
+              147.35
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              2.58,
+              2.47,
+              4.91,
+              8.16,
+              9.04,
+              12.73,
+              27.61,
+              152.41
+            ]
+          }
+        ]
+      }
+    },
+    "node-24.13.0": {
+      "validators/references": {
+        "labels": [
+          "stnl (jit)",
+          "typebox (jit)",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              2.23,
+              14.11,
+              37.14,
+              134.32
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.77,
+              13.77,
+              37.06,
+              134.26
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              3.91,
+              14.29,
+              39.57,
+              135.98
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              6.1,
+              17.31,
+              42.81,
+              142.27
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              7.11,
+              17.57,
+              43.71,
+              145.71
+            ]
+          }
+        ]
+      },
+      "web-frameworks/wintercg": {
+        "labels": [
+          "mapl-bun (jit)",
+          "itty-router",
+          "mapl (jit)",
+          "hono-tiny",
+          "hono-quick",
+          "elysia"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.88,
+              2.2,
+              2.36,
+              3.33,
+              4.08,
+              7.98
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.86,
+              2.36,
+              1.13,
+              3.85,
+              4.07,
+              7.95
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.87,
+              3.91,
+              4.04,
+              3.97,
+              4.2,
+              8.07
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              0.95,
+              5.61,
+              4.49,
+              4.24,
+              4.83,
+              9.9
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              2.77,
+              6.03,
+              6.39,
+              4.49,
+              6.64,
+              11.19
+            ]
+          }
+        ]
+      },
+      "validators/simple": {
+        "labels": [
+          "valibot",
+          "stnl (jit)",
+          "sury (jit)",
+          "zod",
+          "typebox (jit)",
+          "effect-schema",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.41,
+              0.43,
+              4.62,
+              6.26,
+              9.53,
+              12.42,
+              20.04,
+              128.32
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.28,
+              0.4,
+              4.62,
+              6.32,
+              9.46,
+              12.01,
+              19.5,
+              127.93
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.3,
+              0.41,
+              6,
+              6.57,
+              9.66,
+              12.53,
+              21.43,
+              130.21
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              2.51,
+              2.36,
+              7.82,
+              9.79,
+              12.5,
+              15.54,
+              24.2,
+              138.19
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              2.53,
+              2.64,
+              9.11,
+              10.04,
+              12.85,
+              15.56,
+              25.03,
+              146.37
+            ]
+          }
+        ]
+      }
+    },
+    "node-25.6.0": {
+      "validators/references": {
+        "labels": [
+          "stnl (jit)",
+          "typebox (jit)",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              2.06,
+              13.13,
+              35.9,
+              132.67
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.78,
+              13.11,
+              35.39,
+              132.49
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              3.72,
+              13.67,
+              37.34,
+              134.3
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              4.53,
+              15.16,
+              42.39,
+              142.51
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              6.15,
+              16.17,
+              42.82,
+              145.71
+            ]
+          }
+        ]
+      },
+      "web-frameworks/wintercg": {
+        "labels": [
+          "mapl-bun (jit)",
+          "mapl (jit)",
+          "itty-router",
+          "hono-quick",
+          "hono-tiny",
+          "elysia"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.88,
+              1.14,
+              1.98,
+              3.58,
+              3.73,
+              6.83
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.86,
+              1.11,
+              2.74,
+              3.8,
+              3.76,
+              6.79
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.87,
+              1.12,
+              3.43,
+              3.93,
+              3.88,
+              6.97
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              1.06,
+              2.77,
+              3.79,
+              4.32,
+              4.96,
+              7.79
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              3.97,
+              2.9,
+              5.12,
+              6.27,
+              6.18,
+              9.22
+            ]
+          }
+        ]
+      },
+      "validators/simple": {
+        "labels": [
+          "valibot",
+          "stnl (jit)",
+          "sury (jit)",
+          "zod",
+          "typebox (jit)",
+          "effect-schema",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.33,
+              0.41,
+              5.37,
+              6.29,
+              8.67,
+              12.19,
+              18.69,
+              124.58
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.26,
+              0.4,
+              5.39,
+              6.32,
+              8.79,
+              11.74,
+              18.69,
+              124.51
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.28,
+              0.41,
+              5.51,
+              6.48,
+              8.98,
+              12.03,
+              19.06,
+              125.82
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              2.26,
+              0.46,
+              5.89,
+              7.04,
+              9.55,
+              15.09,
+              21.4,
+              129.79
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              2.34,
+              1.95,
+              6,
+              7.29,
+              10.15,
+              15.22,
+              23.48,
+              132.42
+            ]
+          }
+        ]
+      }
+    },
+    "bun-1.3.8": {
+      "validators/references": {
+        "labels": [
+          "stnl (jit)",
+          "typebox (jit)",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.66,
+              14.32,
+              37.35,
+              147.06
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.66,
+              14.36,
+              36.75,
+              144.99
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.68,
+              14.67,
+              38.22,
+              150.92
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              0.93,
+              15.34,
+              42.15,
+              167.79
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              0.99,
+              15.47,
+              42.51,
+              173.97
+            ]
+          }
+        ]
+      },
+      "web-frameworks/wintercg": {
+        "labels": [
+          "itty-router",
+          "hono-quick",
+          "mapl-bun (jit)",
+          "hono-tiny",
+          "mapl (jit)",
+          "elysia"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.34,
+              0.66,
+              0.76,
+              0.92,
+              1.01,
+              4.85
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.34,
+              0.66,
+              0.76,
+              0.92,
+              1,
+              4.8
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.36,
+              0.67,
+              0.78,
+              0.93,
+              1.02,
+              4.88
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              0.4,
+              0.72,
+              0.84,
+              0.98,
+              1.09,
+              5.25
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              0.43,
+              0.75,
+              0.86,
+              0.99,
+              1.59,
+              5.28
+            ]
+          }
+        ]
+      },
+      "validators/simple": {
+        "labels": [
+          "valibot",
+          "stnl (jit)",
+          "sury (jit)",
+          "zod",
+          "typebox (jit)",
+          "typebox-script (jit)",
+          "effect-schema",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.18,
+              0.4,
+              2.23,
+              2.87,
+              6.85,
+              18.93,
+              20.6,
+              137.66
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.17,
+              0.39,
+              2.23,
+              2.86,
+              6.81,
+              18.79,
+              20.54,
+              134.93
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.18,
+              0.42,
+              2.24,
+              2.9,
+              6.94,
+              19.8,
+              20.74,
+              143.53
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              0.25,
+              0.5,
+              2.39,
+              3.04,
+              7.55,
+              20.54,
+              21.65,
+              157.64
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              0.26,
+              0.6,
+              2.42,
+              3.31,
+              7.62,
+              20.8,
+              23.53,
+              158.51
+            ]
+          }
+        ]
+      }
+    },
+    "deno-2.5.7": {
+      "validators/references": {
+        "labels": [
+          "stnl (jit)",
+          "typebox (jit)",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              3.83,
+              14.12,
+              36.4,
+              130.78
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              3.62,
+              13.97,
+              36.89,
+              130.54
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              3.71,
+              14.61,
+              37.69,
+              132.34
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              6.85,
+              17.37,
+              40.88,
+              137.1
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              7.09,
+              18.03,
+              42.96,
+              138.78
+            ]
+          }
+        ]
+      },
+      "web-frameworks/wintercg": {
+        "labels": [
+          "itty-router",
+          "hono-quick",
+          "hono-tiny",
+          "mapl-bun (jit)",
+          "mapl (jit)",
+          "elysia"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              3.55,
+              3.75,
+              3.88,
+              3.93,
+              4.14,
+              7.28
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              3.38,
+              3.64,
+              3.75,
+              3.79,
+              4,
+              7.15
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              3.47,
+              3.71,
+              3.87,
+              3.87,
+              4.07,
+              7.24
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              6.6,
+              6.78,
+              7.04,
+              7.06,
+              7.33,
+              10.36
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              6.7,
+              7.21,
+              7.25,
+              7.17,
+              7.38,
+              10.56
+            ]
+          }
+        ]
+      },
+      "validators/simple": {
+        "labels": [
+          "valibot",
+          "stnl (jit)",
+          "sury (jit)",
+          "zod",
+          "typebox (jit)",
+          "effect-schema",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              3.39,
+              3.48,
+              5.5,
+              6.6,
+              8.88,
+              12.68,
+              18.39,
+              124.41
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              3.32,
+              3.39,
+              5.38,
+              6.5,
+              8.72,
+              12.53,
+              17.97,
+              123.93
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              3.41,
+              3.44,
+              5.5,
+              6.62,
+              8.93,
+              12.77,
+              18.97,
+              125.92
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              6.38,
+              6.59,
+              8.59,
+              9.72,
+              12.11,
+              15.83,
+              22.67,
+              130.95
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              6.56,
+              6.7,
+              8.9,
+              9.92,
+              12.21,
+              16.2,
+              23.97,
+              140.24
+            ]
+          }
+        ]
+      }
+    },
+    "deno-2.6.8": {
+      "validators/references": {
+        "labels": [
+          "stnl (jit)",
+          "typebox (jit)",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.8,
+              13.44,
+              35.84,
+              130.9
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.8,
+              13.28,
+              35.59,
+              130.73
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.81,
+              13.59,
+              39.84,
+              132.5
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              0.83,
+              15.17,
+              42.18,
+              136.78
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              0.84,
+              15.4,
+              42.76,
+              139.27
+            ]
+          }
+        ]
+      },
+      "web-frameworks/wintercg": {
+        "labels": [
+          "itty-router",
+          "hono-quick",
+          "hono-tiny",
+          "mapl-bun (jit)",
+          "mapl (jit)",
+          "elysia"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.48,
+              0.71,
+              0.88,
+              0.89,
+              1.15,
+              5.02
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.48,
+              0.7,
+              0.86,
+              0.89,
+              1.15,
+              5.01
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.49,
+              0.71,
+              0.88,
+              0.9,
+              1.16,
+              5.07
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              0.53,
+              0.8,
+              0.94,
+              0.93,
+              1.2,
+              5.34
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              0.54,
+              2.55,
+              2.85,
+              0.96,
+              1.24,
+              5.55
+            ]
+          }
+        ]
+      },
+      "validators/simple": {
+        "labels": [
+          "valibot",
+          "stnl (jit)",
+          "sury (jit)",
+          "zod",
+          "typebox (jit)",
+          "effect-schema",
+          "typebox-script (jit)",
+          "arktype (jit)"
+        ],
+        "datasets": [
+          {
+            "label": "average (ms)",
+            "data": [
+              0.33,
+              0.45,
+              3,
+              5.59,
+              8.26,
+              11.89,
+              18.07,
+              125.12
+            ]
+          },
+          {
+            "label": "p50 (ms)",
+            "data": [
+              0.32,
+              0.45,
+              2.99,
+              6.09,
+              8.18,
+              11.8,
+              18.02,
+              124.82
+            ]
+          },
+          {
+            "label": "p75 (ms)",
+            "data": [
+              0.34,
+              0.47,
+              3.01,
+              6.21,
+              8.29,
+              11.92,
+              18.4,
+              127.12
+            ]
+          },
+          {
+            "label": "p99 (ms)",
+            "data": [
+              0.37,
+              0.49,
+              3.09,
+              6.82,
+              11.09,
+              14.87,
+              19.2,
+              133.82
+            ]
+          },
+          {
+            "label": "p99.9 (ms)",
+            "data": [
+              0.38,
+              0.5,
+              4.49,
+              7.24,
+              11.38,
+              16.03,
+              19.46,
+              134.22
+            ]
+          }
+        ]
+      }
+    }
   }
 }
