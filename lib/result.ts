@@ -63,7 +63,7 @@ export class SpeedCategoryResults {
           // Ns to ms
           data: categoryResults.map((v) => +(v.avg / div).toFixed(2)),
         },
-        ...[0.5, 0.75, 0.99, 0.999].map((p) => ({
+        ...[0.5, 0.75, 0.99].map((p) => ({
           label: `p${p * 100} (${unit})`,
           data: categoryResults.map((v) => +(math.percentile(v.values, p) / div).toFixed(2)),
         })),
