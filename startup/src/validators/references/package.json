@@ -2,7 +2,7 @@
   "type": "module",
   "dependencies": {
     "arktype": "2.1.29",
-    "stnl": "2.2.1",
-    "typebox": "1.0.66"
+    "stnl": "2.2.2",
+    "typebox": "1.0.81"
   }
 }

@@ -65,7 +65,7 @@ await Promise.all(
                   target: 'esnext',
                 },
                 output: {
-                  inlineDynamicImports: true,
+                  codeSplitting: false,
                   file: entry,
                   postBanner: '// @bun',
                   minify: {

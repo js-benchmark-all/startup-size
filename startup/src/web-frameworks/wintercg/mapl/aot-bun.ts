@@ -1,4 +1,4 @@
-import { id } from './target/bun.ts';
+import { id } from './.out/bun.js';
 import { getDependency } from 'runtime-compiler';
 
 export const app = {

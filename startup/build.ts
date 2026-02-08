@@ -37,13 +37,6 @@ await Promise.all(
         }
 
         const CONFIG = ((await import(configPath)).default as CasesConfig)(runtimeId);
-        const CATEGORY_INFO = (INFO[categoryName] = {} as any);
-        const CATEGORY_RESULTS: {
-          caseName: string;
-          size: Record<string, number> & {
-            minified: number;
-          };
-        }[] = [];
         const CONCURRENT_TASKS: Promise<void>[] = [];
 
         // Build cases
@@ -64,36 +57,7 @@ await Promise.all(
                 try {
                   // Load initial content
                   const entry = resolve(`${BUNDLED_DIR}/${categoryIndex}_${caseIndex}.js`);
-                  const tmpFile = resolve(`${BUNDLED_DIR}/${categoryIndex}_${caseIndex}_tmp.js`);
-
-                  {
-                    const actualCode = (
-                      await build({
-                        input: casePath,
-                        logLevel: 'silent',
-                        transform: {
-                          target: 'esnext',
-                        },
-                        output: {
-                          inlineDynamicImports: true,
-                          file: tmpFile,
-                          minify: true,
-                        },
-                      })
-                    ).output[0].code;
-
-                    // Load to results
-                    CATEGORY_INFO[caseName] = entry;
-                    CATEGORY_RESULTS.push({
-                      caseName,
-                      size: {
-                        minified: Buffer.from(actualCode).byteLength,
-                        gzipped: Bun.gzipSync(actualCode).byteLength,
-                      },
-                    });
-                  }
-
-                  await writeFile(entry, startupFileContent(tmpFile, runtimeId));
+                  await writeFile(entry, startupFileContent(casePath, runtimeId));
 
                   // Build
                   await build({
@@ -103,7 +67,7 @@ await Promise.all(
                       target: 'esnext',
                     },
                     output: {
-                      inlineDynamicImports: true,
+                      codeSplitting: false,
                       file: entry,
                       postBanner: '// @bun',
                       minify: {
@@ -131,7 +95,6 @@ await Promise.all(
         // Wait for the results
         await Promise.all(CONCURRENT_TASKS);
 
-        CATEGORY_RESULTS.sort((a, b) => a.size.minified - b.size.minified);
         console.log('Built:', fmt.h1(categoryName));
       } catch (e) {
         console.error('Failed to build:', fmt.relativePath(categoryPath));

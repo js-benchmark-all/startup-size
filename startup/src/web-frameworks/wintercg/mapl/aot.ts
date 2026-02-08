@@ -1,6 +1,6 @@
-import { id } from './target/bun.ts';
+import { id } from './.out/generic.js';
 import { getDependency } from 'runtime-compiler';
 
 export const app = {
-  routes: getDependency(id),
+  fetch: getDependency(id),
 };
