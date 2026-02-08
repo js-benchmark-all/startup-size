@@ -15,7 +15,7 @@ try {
 } catch {}
 mkdirSync(BUNDLED_DIR, { recursive: true });
 
-const info: any = {};
+const INFO: any = {};
 
 await Promise.all(
   scanFiles('**/package.json', SRC_DIR)
@@ -41,7 +41,7 @@ await Promise.all(
           }),
         );
 
-        const categoryInfo = (info[categoryName] = {} as any);
+        const CATEGORY_INFO = {} as Record<string, string>;
 
         await Promise.all(
           scanFiles('*.case.ts', category).map(async (casePath, caseIndex) => {
@@ -55,7 +55,6 @@ await Promise.all(
               // Load initial content
               const entry = resolve(`${BUNDLED_DIR}/${categoryIndex}_${caseIndex}.js`);
               await writeFile(entry, runtimeFileContent(casePath));
-              categoryInfo[caseName] = entry;
 
               // Build
               await build({
@@ -76,6 +75,7 @@ await Promise.all(
               });
 
               console.log('Built:', fmt.relativePath(casePath), '--->', fmt.relativePath(entry));
+              CATEGORY_INFO[caseName] = entry;
             } catch (e) {
               console.error('Failed to build:', fmt.relativePath(casePath));
               console.error(e);
@@ -84,6 +84,7 @@ await Promise.all(
         );
 
         console.log('Built:', fmt.h1(categoryName));
+        INFO[categoryName] = CATEGORY_INFO;
       } catch (e) {
         console.error('Failed to build:', fmt.relativePath(category));
         console.error(e);
@@ -91,4 +92,4 @@ await Promise.all(
     }),
 );
 
-tryWriteAsync(BUNDLED_DIR + '/info.json', JSON.stringify(info, null, 2));
+tryWriteAsync(BUNDLED_DIR + '/info.json', JSON.stringify(INFO, null, 2));

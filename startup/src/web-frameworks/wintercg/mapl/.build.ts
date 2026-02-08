@@ -15,12 +15,14 @@ const buildAOT = async (target: string) => {
   await import(file);
 
   const outputFile = `${OUTPUT}${target}.js`;
+  const statements = getStatements();
+
   await Bun.write(
     outputFile,
     `
     export * from '${file}';
     import { $ } from 'runtime-compiler';
-    ${getStatements()}
+    ${statements}
   `,
   );
 
@@ -59,4 +61,6 @@ const buildAOT = async (target: string) => {
   });
 };
 
-await Promise.all([buildAOT('bun'), buildAOT('deno'), buildAOT('generic')]);
+await buildAOT('bun');
+await buildAOT('deno');
+await buildAOT('generic');
