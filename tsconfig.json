@@ -17,5 +17,6 @@
     // Best practices
     "strict": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["*/.out/**/*"]
 }

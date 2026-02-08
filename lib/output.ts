@@ -1,7 +1,5 @@
-import { run } from 'mitata';
-
-export const startupFileContent = (file: string) => `
-  import { now, start } from '${import.meta.dir}/utils/startup.js';
+export const startupFileContent = (file: string, runtime: string) => `
+  import { now, start } from '${import.meta.dir}/utils/startup${runtime.startsWith('node') ? '-node' : ''}.js';
   import ${JSON.stringify(file)};
   var end = now();
   console.log('$' + (end - start));
@@ -15,7 +13,7 @@ export const runtimeFileContent = (file: string) => `
     await import(${JSON.stringify(file)});
     const result = await run({ format: { json: { debug: false } } });
     console.log('$' + JSON.stringify(filterProps(result)));
-  })(do_not_optimize);
+  })();
 `;
 
 export const readFileOutput = (fileOutput: string) =>

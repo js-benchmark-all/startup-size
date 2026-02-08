@@ -24,48 +24,63 @@ jobs:
           fetch-depth: 0
       - run: git pull origin HEAD:${{ github.ref_name }}
 
+      # Install deps
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+      - name: Install dependencies
+        run: bun i --production
 
-      - name: Build benchmark files
-        run: |
-          bun i --production
-          bun startup:build
+      # Node
+      - name: Build benchmark for Node
+        run: bun startup:build --runtime node
 
+      ## Node 22
       - uses: actions/setup-node@v4
         with:
           node-version: '22.x'
       - name: Node 22 benchmark
         run: bun startup:start --runtime node
 
+      ## Node 24
       - uses: actions/setup-node@v4
         with:
           node-version: '24.x'
       - name: Node 24 benchmark
         run: bun startup:start --runtime node
 
+      ## Node latest
       - uses: actions/setup-node@v4
         with:
           node-version: latest
       - name: Node latest benchmark
         run: bun startup:start --runtime node
 
+      # Bun
+      - name: Build benchmark for Bun
+        run: bun startup:build --runtime bun
       - name: Bun benchmark
         run: bun startup:start --runtime bun
 
+      # Deno
+      - name: Build benchmark for deno
+        run: bun startup:build --runtime deno
+
+      ## Deno LTS
       - uses: denoland/setup-deno@v2.0.3
         with:
           deno-version: lts
       - name: Deno LTS benchmark
         run: bun startup:start --runtime deno
 
+      ## Deno latest
       - uses: denoland/setup-deno@v2.0.3
         with:
           deno-version: latest
       - name: Deno latest benchmark
         run: bun startup:start --runtime deno
 
+      ## Update result
       - name: Update result.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
