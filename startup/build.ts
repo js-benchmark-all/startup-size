@@ -37,6 +37,7 @@ await Promise.all(
         }
 
         const CONFIG = ((await import(configPath)).default as CasesConfig)(runtimeId);
+        const CATEGORY_INFO = {} as Record<string, string>;
         const CONCURRENT_TASKS: Promise<void>[] = [];
 
         // Build cases
@@ -83,6 +84,8 @@ await Promise.all(
                     '--->',
                     fmt.relativePath(entry),
                   );
+
+                  CATEGORY_INFO[caseName] = entry;
                 } catch (e) {
                   console.error('Failed to build:', fmt.relativePath(casePath));
                   console.error(e);
@@ -96,6 +99,7 @@ await Promise.all(
         await Promise.all(CONCURRENT_TASKS);
 
         console.log('Built:', fmt.h1(categoryName));
+        INFO[categoryName] = CATEGORY_INFO;
       } catch (e) {
         console.error('Failed to build:', fmt.relativePath(categoryPath));
         console.error(e);
