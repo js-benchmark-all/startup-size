@@ -6,6 +6,7 @@ export default {
   } as const,
 };
 
+// Utils
 export type Cases = Record<string, string>;
 export interface CasesConfig {
   (runtime: string): {

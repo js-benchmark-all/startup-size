@@ -3,10 +3,10 @@ on:
     branches:
       - dev
     paths:
-      - 'startup/**/*.ts'
-      - 'startup/**/package.json'
-      - 'lib/**/*'
-      - 'package.json'
+      - "startup/**/*.ts"
+      - "startup/**/package.json"
+      - "lib/**/*"
+      - "package.json"
 
 concurrency:
   group: benchmark
@@ -31,30 +31,32 @@ jobs:
       - name: Install dependencies
         run: bun i --production
 
-      # Node
-      - name: Build benchmark for Node
-        run: bun startup:build --runtime node
-
       ## Node 22
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: "22.x"
       - name: Node 22 benchmark
-        run: bun startup:start --runtime node
+        run: |
+          bun startup:build --runtime node
+          bun startup:start --runtime node
 
       ## Node 24
       - uses: actions/setup-node@v4
         with:
-          node-version: '24.x'
+          node-version: "24.x"
       - name: Node 24 benchmark
-        run: bun startup:start --runtime node
+        run: |
+          bun startup:build --runtime node
+          bun startup:start --runtime node
 
       ## Node latest
       - uses: actions/setup-node@v4
         with:
           node-version: latest
       - name: Node latest benchmark
-        run: bun startup:start --runtime node
+        run: |
+          bun startup:build --runtime node
+          bun startup:start --runtime node
 
       # Bun
       - name: Build benchmark for Bun
@@ -62,23 +64,23 @@ jobs:
       - name: Bun benchmark
         run: bun startup:start --runtime bun
 
-      # Deno
-      - name: Build benchmark for deno
-        run: bun startup:build --runtime deno
-
       ## Deno LTS
       - uses: denoland/setup-deno@v2.0.3
         with:
           deno-version: lts
       - name: Deno LTS benchmark
-        run: bun startup:start --runtime deno
+        run: |
+          bun startup:build --runtime deno
+          bun startup:start --runtime deno
 
       ## Deno latest
       - uses: denoland/setup-deno@v2.0.3
         with:
           deno-version: latest
       - name: Deno latest benchmark
-        run: bun startup:start --runtime deno
+        run: |
+          bun startup:build --runtime deno
+          bun startup:start --runtime deno
 
       ## Update result
       - name: Update result.json
