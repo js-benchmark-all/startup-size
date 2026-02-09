@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "@mapl/web": "0.6.5",
+    "@mapl/web": "0.6.6",
     "elysia": "1.4.22",
     "hono": "4.11.9",
     "itty-router": "5.0.22"
