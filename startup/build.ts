@@ -1,9 +1,13 @@
 import { basename, dirname, join, relative, resolve } from 'node:path';
 import { existsSync, mkdirSync, rmSync } from 'node:fs';
-import { build } from 'rolldown';
 import { writeFile } from 'node:fs/promises';
-import { scanFiles, tryWriteAsync } from '../lib/fs.ts';
+
+import { build } from 'rolldown';
+import swc from 'unplugin-swc';
+
 import config, { type CasesConfig } from './config.ts';
+
+import { scanFiles, tryWriteAsync } from '../lib/fs.ts';
 import { fmt } from '../lib/format.ts';
 import { startupFileContent } from '../lib/output.ts';
 import { runtimeId } from '../lib/runtime.ts';
@@ -17,6 +21,19 @@ try {
 mkdirSync(BUNDLED_DIR, { recursive: true });
 
 const INFO: any = {};
+
+const BUNDLER_PLUGINS = [
+  swc.rolldown({
+    jsc: {
+      minify: {
+        mangle: false,
+        compress: {
+          passes: 3
+        }
+      }
+    }
+  })
+];
 
 await Promise.all(
   scanFiles('**/*/.config.ts', SRC_DIR)
@@ -70,12 +87,9 @@ await Promise.all(
                     output: {
                       codeSplitting: false,
                       file: entry,
-                      postBanner: '// @bun',
-                      minify: {
-                        compress: false,
-                        mangle: true,
-                      },
+                      postBanner: '// @bun'
                     },
+                    plugins: BUNDLER_PLUGINS
                   });
 
                   console.log(

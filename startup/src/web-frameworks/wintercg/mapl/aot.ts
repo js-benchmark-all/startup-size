@@ -1,6 +1,3 @@
-import { id } from './.out/generic.js';
-import { getDependency } from 'runtime-compiler';
+import fetch from './.out/generic.js';
 
-export const app = {
-  fetch: getDependency(id),
-};
+export const app = { fetch };

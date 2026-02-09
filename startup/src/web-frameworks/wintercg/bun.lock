@@ -4,7 +4,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@mapl/web": "0.6.4",
+        "@mapl/web": "0.6.6",
         "elysia": "1.4.22",
         "hono": "4.11.9",
         "itty-router": "5.0.22",
@@ -16,7 +16,7 @@
 
     "@mapl/router": ["@mapl/router@0.8.4", "", {}, "sha512-CG8FWeLR/g1zW95aAfi/Bj5hSnGL9riYfLXVxmf/YBA4PsgOMORNLXO3B2zuv9kHnRCO9nMZYq3LLNtmk+7OMg=="],
 
-    "@mapl/web": ["@mapl/web@0.6.4", "", { "dependencies": { "@mapl/router": "^0.8.4", "@safe-std/error": "^2.0.4", "runtime-compiler": "^3.1.1" } }, "sha512-P6mk3JFoQuOdSjdjSnxf4rmqMr0hIHDNyiafmhahk9e90Xzi2YfVINId+xxF60XPq/1fUYnt0FS753A5vk7u5g=="],
+    "@mapl/web": ["@mapl/web@0.6.6", "", { "dependencies": { "@mapl/router": "^0.8.4", "@safe-std/error": "^2.0.4", "runtime-compiler": "^3.1.1" } }, "sha512-ugmd4vzQxPwohQ6QSUvRx9MzQ8VVcyhLYyRfDHne3SDe3VHLvU7HaKKomjZckPlRdjO6xPQiILx9e7JJZkK1Zg=="],
 
     "@safe-std/error": ["@safe-std/error@2.0.4", "", {}, "sha512-O/yUTZJvA+NiZv+xDBFOazeyrbUOJ0flup2avJxqKoEVXRLoA97YoI4Z/J9Prhua9Rfpka1GRkSIMKOYFczsNA=="],
 

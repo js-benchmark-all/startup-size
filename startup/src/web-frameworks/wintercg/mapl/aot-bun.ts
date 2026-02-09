@@ -1,6 +1,3 @@
-import { id } from './.out/bun.js';
-import { getDependency } from 'runtime-compiler';
+import routes from './.out/bun.js';
 
-export const app = {
-  routes: getDependency(id),
-};
+export const app = { routes };
