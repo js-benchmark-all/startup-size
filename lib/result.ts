@@ -10,7 +10,13 @@ export const writeCategoryResult = async (name: string, result: any) => {
 
 const TIME_UNIT = ['ns', 'µs', 'ms', 's'];
 
-export class SpeedCategoryResults {
+namespace SpeedCategoryResults {
+  export type All = {
+    [key: string]: SpeedCategoryResults | All;
+  };
+}
+
+class SpeedCategoryResults {
   results: {
     caseName: string;
     values: number[];
@@ -70,9 +76,30 @@ export class SpeedCategoryResults {
       ],
     };
   }
+
+  static serializeToChartJS = (results: SpeedCategoryResults.All) =>
+    JSON.stringify(
+      results,
+      (_, value) => (value instanceof SpeedCategoryResults ? value.toChartJS() : value),
+      2,
+    );
 }
 
+export { SpeedCategoryResults };
+
 import RESULTS from '../result.json';
+
+type CategoryResults = {
+  [key: string]:
+    | CategoryResults
+    | {
+        labels: string[];
+        datasets: {
+          label: string;
+          data: number[];
+        }[];
+      };
+};
 
 /**
  * @example
@@ -81,17 +108,7 @@ import RESULTS from '../result.json';
 export const getCategoryResults = (
   name: string,
   runtimeId: string,
-): Record<
-  string,
-  {
-    labels: string[];
-    datasets: {
-      label: string;
-      data: number[];
-    }[];
-  }
-> &
-  AsyncDisposable => {
+): CategoryResults & AsyncDisposable => {
   // @ts-ignore
   const ALL_RUNTIME_RESULTS = (RESULTS[name] ??= {} as Record<string, any>);
   // @ts-ignore

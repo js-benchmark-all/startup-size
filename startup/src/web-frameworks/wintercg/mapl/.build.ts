@@ -20,18 +20,13 @@ const buildAOT = async (target: string) => {
   await Bun.write(
     outputFile,
     `
-    export * from '${file}';
-    import { $ } from 'runtime-compiler';
-    ${statements}
-  `,
+      export * from '${file}';
+      import { $ } from 'runtime-compiler';
+      ${statements}
+    `,
   );
 
-  await Bun.write(
-    `${OUTPUT}${target}.d.ts`,
-    `
-    export * from '${file}';
-  `,
-  );
+  await Bun.write(`${OUTPUT}${target}.d.ts`, `export * from '${file}';`);
 
   await build({
     input: outputFile,

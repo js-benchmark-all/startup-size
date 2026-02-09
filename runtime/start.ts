@@ -7,8 +7,8 @@ import { math } from '../lib/math.ts';
 
 import config from './config.ts';
 
-await using results = getCategoryResults('runtime', runtimeId);
-const allCategoryResults: Dict<SpeedCategoryResults> = {};
+await using RESULTS = getCategoryResults('runtime', runtimeId);
+const ALL_CATEGORIES_RESULTS: SpeedCategoryResults.All = {};
 
 for (const categoryName in INFO) {
   if (!config.include.category(categoryName)) continue;
@@ -20,11 +20,11 @@ for (const categoryName in INFO) {
 
     try {
       for (
-        let i = 0, trials = benchFile(category[caseName as keyof typeof category]);
-        i < trials.length;
+        let i = 0, TRIALS = benchFile(category[caseName as keyof typeof category]);
+        i < TRIALS.length;
         i++
       ) {
-        const trial = trials[i];
+        const trial = TRIALS[i];
 
         const alias = trial.alias;
         console.log('    bench:', fmt.h2(alias));
@@ -32,22 +32,28 @@ for (const categoryName in INFO) {
         const values = trial.runs.flatMap((run) => run.stats!.samples);
 
         if (alias.includes('/')) {
+          const PARENT_CATEGORY_RESULTS = (ALL_CATEGORIES_RESULTS[categoryName] ??= {});
+          if (PARENT_CATEGORY_RESULTS instanceof SpeedCategoryResults)
+            throw new Error('Cannot have subcategories of ' + categoryName);
+
           const separatorIdx = alias.lastIndexOf('/');
           console.log(
             '      average:',
             fmt.duration(
-              (allCategoryResults[categoryName + ' (' + alias.slice(0, separatorIdx) + ')'] ??=
-                new SpeedCategoryResults()).addAndSort(alias.slice(separatorIdx + 1), values),
+              (
+                (PARENT_CATEGORY_RESULTS[alias.slice(0, separatorIdx)] ??=
+                  new SpeedCategoryResults()) as SpeedCategoryResults
+              ).addAndSort(alias.slice(separatorIdx + 1), values),
             ),
           );
         } else {
           console.log(
             '      average:',
             fmt.duration(
-              (allCategoryResults[categoryName] ??= new SpeedCategoryResults()).addAndSort(
-                alias,
-                values,
-              ),
+              (
+                (ALL_CATEGORIES_RESULTS[categoryName] ??=
+                  new SpeedCategoryResults()) as SpeedCategoryResults
+              ).addAndSort(alias, values),
             ),
           );
         }
@@ -60,5 +66,4 @@ for (const categoryName in INFO) {
   }
 }
 
-for (const category in allCategoryResults)
-  results[category] = allCategoryResults[category]!.toChartJS();
+Object.assign(RESULTS, SpeedCategoryResults.serializeToChartJS(ALL_CATEGORIES_RESULTS));

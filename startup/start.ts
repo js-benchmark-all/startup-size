@@ -9,9 +9,9 @@ import { math } from '../lib/math.ts';
 
 import config from './config.ts';
 
-await using results = getCategoryResults('startup time', runtimeId);
+await using RESULTS = getCategoryResults('startup time', runtimeId);
 
-const progress = new SingleBar({
+const PROGRESS_BAR = new SingleBar({
   format: '    [{bar}] {value}/{total}',
   barCompleteChar: '#',
   barIncompleteChar: '-',
@@ -30,8 +30,8 @@ for (const categoryName in INFO) {
     const values = [];
 
     try {
-      progress.start(config.runs, 0);
-      for (let i = 1; i <= config.runs; i++, progress.increment()) {
+      PROGRESS_BAR.start(config.runs, 0);
+      for (let i = 1; i <= config.runs; i++, PROGRESS_BAR.increment()) {
         Bun.gc(true);
         values.push(runFile(category[caseName as keyof typeof category]));
       }
@@ -39,12 +39,12 @@ for (const categoryName in INFO) {
       console.error('  skipping case:', fmt.h1(categoryName + ' - ' + caseName));
       console.error(e);
     } finally {
-      progress.stop();
+      PROGRESS_BAR.stop();
     }
 
     console.log('    average:', fmt.duration(categoryResults.addAndSort(caseName, values)));
     console.log('    variance:', fmt.percentage(math.rsd(values)));
   }
 
-  results[categoryName] = categoryResults.toChartJS();
+  RESULTS[categoryName] = categoryResults.toChartJS();
 }
