@@ -77,12 +77,14 @@ class SpeedCategoryResults {
     };
   }
 
-  static serializeToChartJS = (results: SpeedCategoryResults.All) =>
-    JSON.stringify(
-      results,
-      (_, value) => (value instanceof SpeedCategoryResults ? value.toChartJS() : value),
-      2,
-    );
+  static serializeToChartJS = (results: SpeedCategoryResults.All) => {
+    const o = {} as CategoryResults;
+    for (const key in results) {
+      const result = results[key];
+      o[key] = result instanceof SpeedCategoryResults ? result.toChartJS() : this.serializeToChartJS(result);
+    }
+    return o;
+  }
 }
 
 export { SpeedCategoryResults };
