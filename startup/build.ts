@@ -1,6 +1,7 @@
 import { dirname, join, relative, resolve } from 'node:path';
 import { existsSync, mkdirSync, rmSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
+import { parseArgs } from 'node:util';
 
 import { build } from 'rolldown';
 import swc from 'unplugin-swc';
@@ -22,15 +23,36 @@ mkdirSync(BUNDLED_DIR, { recursive: true });
 
 const INFO: any = {};
 
+const IS_DEBUG = !!parseArgs({
+  options: {
+    debug: {
+      type: 'boolean',
+      multiple: false,
+    },
+  },
+  strict: false
+}).values.debug;
+IS_DEBUG && console.log(fmt.h1('DEBUG BUILD'));
+
 const BUNDLER_PLUGINS = [
   swc.rolldown({
     jsc: {
-      minify: {
-        mangle: false,
-        compress: {
-          passes: 3
+      minify: IS_DEBUG
+        ? {
+          mangle: false,
+          compress: {
+            defaults: false,
+            dead_code: true,
+            passes: 5
+          }
         }
-      }
+        : {
+          mangle: true,
+          compress: {
+            const_to_let: true,
+            passes: 5
+          }
+        }
     }
   })
 ];

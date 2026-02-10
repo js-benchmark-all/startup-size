@@ -14,6 +14,7 @@ export const runtimeFileContent = (file: string) => `
     await import(${JSON.stringify(file)});
     const result = await run({ format: { json: { debug: false } } });
     console.log('$' + JSON.stringify(filterProps(result)));
+    process.exit();
   })();
 `;
 

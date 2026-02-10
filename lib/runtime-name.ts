@@ -8,5 +8,5 @@ export default parseArgs({
       multiple: false,
     },
   },
-  strict: true,
+  strict: false
 }).values.runtime as any;
