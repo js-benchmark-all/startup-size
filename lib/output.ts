@@ -1,8 +1,9 @@
 export const startupFileContent = (file: string, runtime: string) => `
   import { now, start } from '${import.meta.dir}/utils/startup${runtime.startsWith('node') ? '-node' : ''}.js';
-  export * from ${JSON.stringify(file)};
+  export * as __ from ${JSON.stringify(file)};
   var end = now();
   console.log('$' + (end - start));
+  process.exit();
 `;
 
 export const runtimeFileContent = (file: string) => `
