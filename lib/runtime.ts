@@ -1,7 +1,7 @@
 import { $, spawnSync } from 'bun';
-import { parseArgs } from 'node:util';
 import { readFileOutput } from './output.ts';
 import { fmt } from './format.ts';
+import runtimeName from './runtime-name.ts';
 
 const createStartupRunner =
   (...commands: string[]) =>
@@ -62,16 +62,6 @@ const runtimes: Record<
   },
 };
 
-// Detect runtime from args
-const runtimeName = parseArgs({
-  options: {
-    runtime: {
-      type: 'string',
-      multiple: false,
-    },
-  },
-  strict: true,
-}).values.runtime as any;
 const runtime = runtimes[runtimeName];
 if (runtime == null) {
   console.error('Unrecognized runtime:', runtimeName);

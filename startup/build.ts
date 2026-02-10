@@ -1,4 +1,4 @@
-import { basename, dirname, join, relative, resolve } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { existsSync, mkdirSync, rmSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 
@@ -10,7 +10,7 @@ import config, { type CasesConfig } from './config.ts';
 import { scanFiles, tryWriteAsync } from '../lib/fs.ts';
 import { fmt } from '../lib/format.ts';
 import { startupFileContent } from '../lib/output.ts';
-import { runtimeId } from '../lib/runtime.ts';
+import runtimeName from '../lib/runtime-name.ts';
 
 const BUNDLED_DIR = import.meta.dir + '/.out';
 const SRC_DIR = import.meta.dir + '/src';
@@ -53,7 +53,7 @@ await Promise.all(
           console.log('Installed dependencies:', fmt.h1(categoryName));
         }
 
-        const CONFIG = ((await import(configPath)).default as CasesConfig)(runtimeId);
+        const CONFIG = ((await import(configPath)).default as CasesConfig)(runtimeName);
         const CATEGORY_INFO = {} as Record<string, string>;
         const CONCURRENT_TASKS: Promise<void>[] = [];
 
@@ -75,7 +75,7 @@ await Promise.all(
                 try {
                   // Load initial content
                   const entry = resolve(`${BUNDLED_DIR}/${categoryIndex}_${caseIndex}.js`);
-                  await writeFile(entry, startupFileContent(casePath, runtimeId));
+                  await writeFile(entry, startupFileContent(casePath, runtimeName));
 
                   // Build
                   await build({

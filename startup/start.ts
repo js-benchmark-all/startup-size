@@ -31,10 +31,15 @@ for (const categoryName in INFO) {
 
     try {
       PROGRESS_BAR.start(config.runs, 0);
+
+      let totalRuntime = Bun.nanoseconds();
       for (let i = 1; i <= config.runs; i++, PROGRESS_BAR.increment()) {
         Bun.gc(true);
         values.push(runFile(category[caseName as keyof typeof category]));
       }
+      totalRuntime = Bun.nanoseconds() - totalRuntime;
+
+      console.log('    total time:', fmt.duration(totalRuntime));
     } catch (e) {
       console.error('  skipping case:', fmt.h1(categoryName + ' - ' + caseName));
       console.error(e);

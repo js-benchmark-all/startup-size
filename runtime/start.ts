@@ -18,6 +18,7 @@ for (const categoryName in INFO) {
     if (!config.include.case(categoryName, caseName)) continue;
     console.log('  case:', fmt.h1(categoryName + ' - ' + caseName));
 
+    let totalRuntime = Bun.nanoseconds();
     try {
       for (
         let i = 0, TRIALS = benchFile(category[caseName as keyof typeof category]);
@@ -63,6 +64,9 @@ for (const categoryName in INFO) {
       console.error('  skipping case:', fmt.h1(categoryName + ' - ' + caseName));
       console.error(e);
     }
+    totalRuntime = Bun.nanoseconds() - totalRuntime;
+
+    console.log('    total time:', fmt.duration(totalRuntime));
   }
 }
 
