@@ -102,14 +102,15 @@ import spec from "./.spec.ts";
   insert("GET", "/very/deeply/nested/route/hello/there", () => "10");
   insert("GET", "/static/**", (params) => "11" + params[0]);
 
-  const methodMap: Map<
-    string,
-    [Map<string, Handler>, Node<Handler>] | [Map<string, Handler>]
-  > = new Map();
+  const methods: string[] = [];
+  const matchers: (
+    [Map<string, Handler>, Node<Handler>] |
+    [Map<string, Handler>]
+  )[] = [];
   for (const method in router) {
     const methodRouter = router[method];
-    methodMap.set(
-      method,
+    methods.push(method);
+    matchers.push(
       methodRouter[0] == null
         ? [createStaticMap(methodRouter)]
         : [createStaticMap(methodRouter), methodRouter[0]],
@@ -117,8 +118,9 @@ import spec from "./.spec.ts";
   }
 
   spec("mapl (tree)", (o) => {
-    const tmp = methodMap.get(o.method);
-    if (typeof tmp !== "undefined") {
+    const id = methods.indexOf(o.method);
+    if (id > -1) {
+      const tmp = matchers[id];
       const match = tmp[0].get(o.url);
       if (match != null)
         // @ts-ignore
