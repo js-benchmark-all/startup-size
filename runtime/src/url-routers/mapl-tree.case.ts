@@ -21,7 +21,7 @@ import spec from "./.spec.ts";
         const child = node[2][path.charCodeAt(start)];
         if (child != null) {
           const part = child[0];
-          if (path.startsWith(part, start)) {
+          if (part.length === 1 || path.startsWith(part, start)) {
             const match = _matchNode(child, path, start + part.length);
             if (match != null) return match;
           }
