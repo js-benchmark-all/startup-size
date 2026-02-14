@@ -4,7 +4,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@mapl/router": "^0.8.6",
+        "@mapl/router": "^0.8.7",
         "hono": "^4.11.8",
         "rou3": "^0.7.12",
         "runtime-compiler": "^3.1.0",
@@ -12,7 +12,7 @@
     },
   },
   "packages": {
-    "@mapl/router": ["@mapl/router@0.8.6", "", {}, "sha512-L50uqZYQtD8RuNzLbhEhHlypBmC1zmJdemDbuktYJC88DEHYdEchTtJ1EltaPaK2mKY2t5yVvYaR3azMTIiy/g=="],
+    "@mapl/router": ["@mapl/router@0.8.7", "", {}, "sha512-TJPwLVIRwLqDcOnobX79rEnes5iteftwbyLY+vwAc9DNwERD8MZEjkRkcuZZP9/7qBOQ5X69gqjhIHikXTVY3A=="],
 
     "hono": ["hono@4.11.8", "", {}, "sha512-eVkB/CYCCei7K2WElZW9yYQFWssG0DhaDhVvr7wy5jJ22K+ck8fWW0EsLpB0sITUTvPnc97+rrbQqIr5iqiy9Q=="],
 

@@ -76,37 +76,41 @@ import spec from './.spec.ts';
   insert('GET', '/very/deeply/nested/route/hello/there', () => '10');
   insert('GET', '/static/**', (match, params) => '11' + match[params[0]]);
 
-  const methodMap: Map<
-    string,
-    [Map<string, Handler>] | [Map<string, Handler>, RegExp, store: typeof HANDLERS]
-  > = new Map();
+  const methods: string[] = [];
+  const staticMaps: Map<string, Handler>[] = [];
+  const regexps: (RegExp | null)[] = [];
+  const stores: (typeof HANDLERS | null)[] = [];
+
   for (const method in router) {
     const methodRouter = router[method];
+
+    methods.push(method);
+    staticMaps.push(createStaticMap(methodRouter));
 
     if (methodRouter[0] != null) {
       HANDLERS = [];
       PARAM_IDX = 1;
 
-      methodMap.set(method, [
-        createStaticMap(methodRouter),
-        new RegExp('^' + _compile(methodRouter[0], [])),
-        HANDLERS,
-      ]);
-    } else methodMap.set(method, [createStaticMap(methodRouter)]);
+      regexps.push(new RegExp('^' + _compile(methodRouter[0], [])));
+      stores.push(HANDLERS);
+    } else {
+      regexps.push(null);
+      stores.push(null);
+    };
   }
 
   spec('mapl (regexp)', (o) => {
-    const tmp = methodMap.get(o.method);
-    if (typeof tmp !== 'undefined') {
-      const match = tmp[0].get(o.url);
+    const id = methods.indexOf(o.method)
+    if (id > -1) {
+      const match = staticMaps[id].get(o.url);
       if (match != null)
         // @ts-ignore
         return match();
 
-      if (tmp.length > 1) {
-        const dmatch = tmp[1]!.exec(o.url);
+      if (regexps[id] !== null) {
+        const dmatch = regexps[id].exec(o.url);
         if (dmatch !== null) {
-          const store = tmp[2]![dmatch.indexOf('', 1)];
+          const store = stores[id]![dmatch.indexOf('', 1)];
           return store[0](dmatch, store[1]);
         }
       }

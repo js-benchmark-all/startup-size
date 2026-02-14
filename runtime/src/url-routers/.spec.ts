@@ -1,15 +1,15 @@
 import { bench, do_not_optimize } from 'mitata';
 import { rand } from '../../../lib/rand.ts';
 
-const assertEq = <T>(value: T, expected: T) => {
+const assertEq = <T>(value: T, expected: T, caseName: string) => {
   if (value !== expected)
-    throw new Error(`Expected ${JSON.stringify(expected)}, recieved: ${JSON.stringify(value)}`);
+    throw new Error(`[${caseName}] Expected ${JSON.stringify(expected)}, recieved: ${JSON.stringify(value)}`);
 };
 
 export default (name: string, fn: (input: { method: string; url: string }) => string): void => {
   const addStaticCase = (method: string, url: string, id: string) => {
     const obj = { method, url };
-    assertEq(fn(obj), id);
+    assertEq(fn(obj), id, `${method} "${url}"`);
 
     // add the ability to nest multiple subcategories in start.ts later
     bench(`${method} "${url}"/${name}`, function* () {
@@ -28,7 +28,7 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
     {
       const o = gen();
       const obj = { method, url: o.url };
-      assertEq(fn(obj), o.result);
+      assertEq(fn(obj), o.result, `${method} "${url}"`);
     }
 
     // add the ability to nest multiple subcategories in start.ts later
