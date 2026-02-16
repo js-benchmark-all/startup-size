@@ -135,7 +135,7 @@ export class MarkdownContent {
       const headerId = `${idx}_${btoa(key)}`;
 
       this.tableOfContent += `${'    '.repeat(idx - 2)}${tableIdx++}. [\`${key}\`](#${headerId})\n`;
-      this.results += `<a name="${headerId}">\n${'#'.repeat(idx)} ${key}\n`;
+      this.results += `<a name="${headerId}">\n\n${'#'.repeat(idx)} ${key}\n`;
 
       if (Array.isArray(result.labels))
         this.results += MarkdownContent.renderChart(result as any);
