@@ -132,8 +132,10 @@ export class MarkdownContent {
 
     for (const key in results) {
       const result = results[key];
-      this.tableOfContent += `${'  '.repeat(idx - 2)}${tableIdx++}. ${key}\n`;
-      this.results += `${'#'.repeat(idx)} ${key}\n`;
+      const headerId = `${idx}_${btoa(key)}`;
+
+      this.tableOfContent += `${'    '.repeat(idx - 2)}${tableIdx++}. [\`${key}\`](#${headerId})\n`;
+      this.results += `<a name="${headerId}">\n${'#'.repeat(idx)} ${key}\n`;
 
       if (Array.isArray(result.labels))
         this.results += MarkdownContent.renderChart(result as any);
@@ -151,7 +153,7 @@ export class MarkdownContent {
   static WIDTH = 50;
 
   static renderChart(chart: ChartData) {
-    let out = '';
+    let out = '```\n';
 
     // Find global max for scaling
     const allValues = chart.datasets.flatMap(d => d.data);
@@ -159,14 +161,14 @@ export class MarkdownContent {
 
     for (let i = 0; i < chart.datasets.length; i++) {
       const d = chart.datasets[i];
-      out += ` ${this.SYMBOLS[i % this.SYMBOLS.length]}  \`${d.label}\`\n`;
+      out += ` ${this.SYMBOLS[i % this.SYMBOLS.length]}  ${d.label}\n`;
     }
     out += "\n";
 
     // Render bars
     for (let labelIndex = 0; labelIndex < chart.labels.length; labelIndex++) {
       const label = chart.labels[labelIndex];
-      out += `\`${label}\`:\n`;
+      out += `${label}:\n`;
 
       for (let dsIndex = 0; dsIndex < chart.datasets.length; dsIndex++) {
         const value = chart.datasets[dsIndex].data[labelIndex];
@@ -179,6 +181,6 @@ export class MarkdownContent {
       out += "\n";
     }
 
-    return out;
+    return out + '\n```\n';
   }
 }

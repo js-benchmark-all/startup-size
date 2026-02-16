@@ -5,7 +5,8 @@
     "startup:build": "bun startup/build.ts",
     "startup:start": "bun startup/start.ts",
     "runtime:build": "bun runtime/build.ts",
-    "runtime:start": "bun runtime/start.ts"
+    "runtime:start": "bun runtime/start.ts",
+    "result": "bun render-result.ts"
   },
   "dependencies": {
     "@types/bun": "latest",
