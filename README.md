@@ -21,3 +21,5 @@ bun i
 - Runtime benchmarks are done with [`mitata`](https://github.com/evanwashere/mitata).
 - Startup times are directly measured in the running code (see startup preprocessed code in [`output.ts`](./lib/output.ts)).
 - [Results](./result.json) are ChartJS compatible data.
+
+See results as Markdown [here](./RESULTS.md).
