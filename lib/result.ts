@@ -91,16 +91,17 @@ export { SpeedCategoryResults };
 
 import RESULTS from '../result.json';
 
+interface ChartData {
+    labels: string[];
+    datasets: {
+      label: string;
+      data: number[];
+    }[];
+  }
 type CategoryResults = {
   [key: string]:
     | CategoryResults
-    | {
-        labels: string[];
-        datasets: {
-          label: string;
-          data: number[];
-        }[];
-      };
+    | ChartData
 };
 
 /**
@@ -121,3 +122,63 @@ export const getCategoryResults = (
   // @ts-ignore
   return results;
 };
+
+export class MarkdownContent {
+  tableOfContent: string = '# Results\n';
+  results: string = '\n';
+
+  _render(results: CategoryResults, idx: number = 2) {
+    let tableIdx = 1;
+
+    for (const key in results) {
+      const result = results[key];
+      this.tableOfContent += `${'  '.repeat(idx - 2)}${tableIdx++}. ${key}\n`;
+      this.results += `${'#'.repeat(idx)} ${key}\n`;
+
+      if (Array.isArray(result.labels))
+        this.results += MarkdownContent.renderChart(result as any);
+      else
+        this._render(result as any, idx + 1);
+    }
+  }
+
+  render(results: CategoryResults) {
+    this._render(results);
+    return this.tableOfContent + this.results;
+  }
+
+  static SYMBOLS = ["█", "▓", "▒", "░", "■", "●", "▲", "◆"];
+  static WIDTH = 50;
+
+  static renderChart(chart: ChartData) {
+    let out = '';
+
+    // Find global max for scaling
+    const allValues = chart.datasets.flatMap(d => d.data);
+    const maxValue = Math.max(...allValues);
+
+    for (let i = 0; i < chart.datasets.length; i++) {
+      const d = chart.datasets[i];
+      out += ` ${this.SYMBOLS[i % this.SYMBOLS.length]}  \`${d.label}\`\n`;
+    }
+    out += "\n";
+
+    // Render bars
+    for (let labelIndex = 0; labelIndex < chart.labels.length; labelIndex++) {
+      const label = chart.labels[labelIndex];
+      out += `\`${label}\`:\n`;
+
+      for (let dsIndex = 0; dsIndex < chart.datasets.length; dsIndex++) {
+        const value = chart.datasets[dsIndex].data[labelIndex];
+        const len = Math.round((value / maxValue) * this.WIDTH);
+        const bar = this.SYMBOLS[dsIndex % this.SYMBOLS.length].repeat(len || 1);
+
+        out += `  ${bar}  ${value.toFixed(2)}\n`;
+      }
+
+      out += "\n";
+    }
+
+    return out;
+  }
+}
