@@ -65,7 +65,10 @@ jobs:
       - name: Deno latest benchmark
         run: bun runtime:start --runtime deno
 
-      - name: Update result.json
+      - name: Render results
+        run: bun result
+
+      - name: Update results
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

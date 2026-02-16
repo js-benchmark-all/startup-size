@@ -81,8 +81,12 @@ jobs:
           bun startup:build --runtime deno
           bun startup:start --runtime deno
 
+      # Render results
+      - name: Render results
+        run: bun result
+
       ## Update result
-      - name: Update result.json
+      - name: Update results
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
