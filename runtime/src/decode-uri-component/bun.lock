@@ -1,0 +1,20 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "@types/fast-decode-uri-component": "^1.0.0",
+        "deuri": "^2.0.0",
+        "fast-decode-uri-component": "^1.0.1",
+      },
+    },
+  },
+  "packages": {
+    "@types/fast-decode-uri-component": ["@types/fast-decode-uri-component@1.0.0", "", {}, "sha512-xhTFpMookjiVEDxI8RBUOxZL8BQiI2+YZZoqzW/G6s3r1h60gDzGnmKP83LNuTmCqk8ZmbY5cYkByKu4t+rKhA=="],
+
+    "deuri": ["deuri@2.0.0", "", {}, "sha512-l0iHJa1TKCelBw8yqgfLCyY8XV6mhWPeAjsTWq7jzXduOil42josiQ3Pxo6mSS9WTn8Uh+d1n9fXD40l6g3Jmw=="],
+
+    "fast-decode-uri-component": ["fast-decode-uri-component@1.0.1", "", {}, "sha512-WKgKWg5eUxvRZGwW8FvfbaH7AXSh2cL+3j5fMGzUMCxWBJ3dV3a7Wz8y2f/uQ0e3B6WmodD3oS54jTQ9HVTIIg=="],
+  }
+}

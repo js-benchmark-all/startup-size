@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@types/fast-decode-uri-component": "^1.0.0",
+    "deuri": "^2.0.0",
+    "fast-decode-uri-component": "^1.0.1"
+  }
+}
