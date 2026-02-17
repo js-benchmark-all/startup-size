@@ -181,6 +181,6 @@ export class MarkdownContent {
       out += "\n";
     }
 
-    return out + '\n```\n';
+    return out + '```\n';
   }
 }
