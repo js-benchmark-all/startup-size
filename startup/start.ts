@@ -48,7 +48,7 @@ for (const categoryName in INFO) {
     }
 
     console.log('    average:', fmt.duration(categoryResults.addAndSort(caseName, values)));
-    console.log('    variance:', fmt.percentage(math.rsd(values)));
+    console.log('    variation:', fmt.percentage(math.rsd(values)));
   }
 
   RESULTS[categoryName] = categoryResults.toChartJS();

@@ -58,7 +58,7 @@ for (const categoryName in INFO) {
             ),
           );
         }
-        console.log('      variance:', fmt.percentage(math.rsd(values)));
+        console.log('      variation:', fmt.percentage(math.rsd(values)));
       }
     } catch (e) {
       console.error('  skipping case:', fmt.h1(categoryName + ' - ' + caseName));

@@ -1,5 +1,5 @@
 export default {
-  runs: 200,
+  runs: 250,
   include: {
     category: (name: string) => true,
     case: (categoryName: string, name: string) => true,
