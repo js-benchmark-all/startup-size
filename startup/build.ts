@@ -31,7 +31,7 @@ const IS_DEBUG = !!parseArgs({
       multiple: false,
     },
   },
-  strict: false
+  strict: false,
 }).values.debug;
 IS_DEBUG && console.log(fmt.h1('DEBUG BUILD'));
 
@@ -40,23 +40,23 @@ const BUNDLER_PLUGINS = [
     jsc: {
       minify: IS_DEBUG
         ? {
-          mangle: false,
-          compress: {
-            defaults: false,
-            dead_code: true,
-            passes: 5
+            mangle: false,
+            compress: {
+              defaults: false,
+              dead_code: true,
+              passes: 5,
+            },
           }
-        }
         : {
-          mangle: true,
-          compress: {
-            const_to_let: true,
-            passes: 5
-          }
-        }
-    }
+            mangle: true,
+            compress: {
+              const_to_let: true,
+              passes: 5,
+            },
+          },
+    },
   }),
-  externals
+  externals,
 ];
 
 await Promise.all(
@@ -111,9 +111,9 @@ await Promise.all(
                     output: {
                       codeSplitting: false,
                       file: entry,
-                      postBanner: '// @bun'
+                      postBanner: '// @bun',
                     },
-                    plugins: BUNDLER_PLUGINS
+                    plugins: BUNDLER_PLUGINS,
                   });
 
                   console.log(

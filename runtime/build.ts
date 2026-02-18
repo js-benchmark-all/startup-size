@@ -75,7 +75,7 @@ await Promise.all(
                     mangle: true,
                   },
                 },
-                plugins: [externals]
+                plugins: [externals],
               });
 
               console.log('Built:', fmt.relativePath(casePath), '--->', fmt.relativePath(entry));

@@ -3,7 +3,9 @@ import { rand } from '../../../lib/rand.ts';
 
 const assertEq = <T>(value: T, expected: T, caseName: string) => {
   if (value !== expected)
-    throw new Error(`[${caseName}] Expected ${JSON.stringify(expected)}, recieved: ${JSON.stringify(value)}`);
+    throw new Error(
+      `[${caseName}] Expected ${JSON.stringify(expected)}, recieved: ${JSON.stringify(value)}`,
+    );
 };
 
 export default (name: string, fn: (input: { method: string; url: string }) => string): void => {

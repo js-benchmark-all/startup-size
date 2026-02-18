@@ -38,7 +38,4 @@ const createRandomString = (): string =>
 const valid = Array.from({ length: 500 }, createRandomString);
 valid.push('%000');
 
-await Bun.write(
-  `${import.meta.dir}/data.json`,
-  JSON.stringify(valid, null, 2),
-);
+await Bun.write(`${import.meta.dir}/data.json`, JSON.stringify(valid, null, 2));

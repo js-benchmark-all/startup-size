@@ -22,19 +22,20 @@ import spec from './.spec.ts';
       str += '|($)';
     }
 
-    if (node[2] != null) {
+    if (node[3].length > 0) {
       parts++;
 
-      for (const key in node[2]) str += '|' + _compile(node[2][key], paramMap);
+      for (let i = 0, children = node[3]; i < children.length; i++)
+        str += '|' + _compile(children[i], paramMap);
     }
 
-    if (node[3] != null) {
+    if (node[4] != null) {
       parts++;
 
       str += '|([^/]+)';
       const newParamMap = paramMap.concat(PARAM_IDX++);
 
-      const params = node[3];
+      const params = node[4];
       if (params[0] != null) {
         if (params[1] != null) {
           HANDLERS[PARAM_IDX++] = [params[1], newParamMap];
@@ -46,11 +47,11 @@ import spec from './.spec.ts';
       }
     }
 
-    if (node[4] != null) {
+    if (node[5] != null) {
       parts++;
 
       const newParamMap = paramMap.concat(PARAM_IDX++);
-      HANDLERS[PARAM_IDX++] = [node[4], newParamMap];
+      HANDLERS[PARAM_IDX++] = [node[5], newParamMap];
       str += '|(.*$)()';
     }
 
@@ -76,15 +77,14 @@ import spec from './.spec.ts';
   insert('GET', '/very/deeply/nested/route/hello/there', () => '10');
   insert('GET', '/static/**', (match, params) => '11' + match[params[0]]);
 
-  const methods: string[] = [];
+  const methods: string[] = router[0];
   const staticMaps: Map<string, Handler>[] = [];
   const regexps: (RegExp | null)[] = [];
   const stores: (typeof HANDLERS | null)[] = [];
 
-  for (const method in router) {
-    const methodRouter = router[method];
+  for (let i = 0, methodRouters = router[1]; i < methodRouters.length; i++) {
+    const methodRouter = methodRouters[i];
 
-    methods.push(method);
     staticMaps.push(createStaticMap(methodRouter));
 
     if (methodRouter[0] != null) {
@@ -96,11 +96,11 @@ import spec from './.spec.ts';
     } else {
       regexps.push(null);
       stores.push(null);
-    };
+    }
   }
 
   spec('mapl (regexp)', (o) => {
-    const id = methods.indexOf(o.method)
+    const id = methods.indexOf(o.method);
     if (id > -1) {
       const match = staticMaps[id].get(o.url);
       if (match != null)

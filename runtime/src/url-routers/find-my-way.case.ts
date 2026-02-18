@@ -3,7 +3,7 @@ import spec from './.spec.ts';
 
 {
   const router = createRouter({
-    defaultRoute: () => ''
+    defaultRoute: () => '',
   });
 
   router.on('GET', '/user', (_, _1, _2) => '0');

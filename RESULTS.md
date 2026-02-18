@@ -1,202 +1,206 @@
 # Results
+
 1. [`startup time`](#2_c3RhcnR1cCB0aW1l)
-    1. [`node-22.22.0`](#3_bm9kZS0yMi4yMi4w)
-        1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
-        2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
-        3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
-    2. [`node-24.13.0`](#3_bm9kZS0yNC4xMy4w)
-        1. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
-        2. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
-        3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
-    3. [`bun-1.3.9`](#3_YnVuLTEuMy45)
-        1. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
-        2. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
-        3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
-    4. [`deno-2.5.7`](#3_ZGVuby0yLjUuNw==)
-        1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
-        2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
-        3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
-    5. [`node-25.6.1`](#3_bm9kZS0yNS42LjE=)
-        1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
-        2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
-        3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
-    6. [`deno-2.6.9`](#3_ZGVuby0yLjYuOQ==)
-        1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
-        2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
-        3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
+   1. [`node-22.22.0`](#3_bm9kZS0yMi4yMi4w)
+      1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
+      2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
+      3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
+   2. [`node-24.13.0`](#3_bm9kZS0yNC4xMy4w)
+      1. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
+      2. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
+      3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
+   3. [`bun-1.3.9`](#3_YnVuLTEuMy45)
+      1. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
+      2. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
+      3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
+   4. [`deno-2.5.7`](#3_ZGVuby0yLjUuNw==)
+      1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
+      2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
+      3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
+   5. [`node-25.6.1`](#3_bm9kZS0yNS42LjE=)
+      1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
+      2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
+      3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
+   6. [`deno-2.6.9`](#3_ZGVuby0yLjYuOQ==)
+      1. [`validators/references`](#4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz)
+      2. [`validators/simple`](#4_dmFsaWRhdG9ycy9zaW1wbGU=)
+      3. [`web-frameworks/wintercg`](#4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=)
 2. [`runtime`](#2_cnVudGltZQ==)
-    1. [`node-22.22.0`](#3_bm9kZS0yMi4yMi4w)
-        1. [`async`](#4_YXN5bmM=)
-            1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
-            2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
-            3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
-            4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
-            5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
-            6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
-            7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
-        2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
-            1. [`valid`](#5_dmFsaWQ=)
-            2. [`invalid`](#5_aW52YWxpZA==)
-        3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
-            1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
-            2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
-            3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
-            4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
-            5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
-            6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
-            7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
-            8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
-            9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
-            10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
-            11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
-            12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
-        4. [`validators`](#4_dmFsaWRhdG9ycw==)
-            1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
-    2. [`node-24.13.0`](#3_bm9kZS0yNC4xMy4w)
-        1. [`async`](#4_YXN5bmM=)
-            1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
-            2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
-            3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
-            4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
-            5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
-            6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
-            7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
-        2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
-            1. [`valid`](#5_dmFsaWQ=)
-            2. [`invalid`](#5_aW52YWxpZA==)
-        3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
-            1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
-            2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
-            3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
-            4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
-            5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
-            6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
-            7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
-            8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
-            9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
-            10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
-            11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
-            12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
-        4. [`validators`](#4_dmFsaWRhdG9ycw==)
-            1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
-    3. [`bun-1.3.9`](#3_YnVuLTEuMy45)
-        1. [`async`](#4_YXN5bmM=)
-            1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
-            2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
-            3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
-            4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
-            5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
-            6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
-            7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
-        2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
-            1. [`valid`](#5_dmFsaWQ=)
-            2. [`invalid`](#5_aW52YWxpZA==)
-        3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
-            1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
-            2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
-            3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
-            4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
-            5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
-            6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
-            7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
-            8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
-            9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
-            10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
-            11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
-            12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
-        4. [`validators`](#4_dmFsaWRhdG9ycw==)
-            1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
-    4. [`deno-2.5.7`](#3_ZGVuby0yLjUuNw==)
-        1. [`async`](#4_YXN5bmM=)
-            1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
-            2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
-            3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
-            4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
-            5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
-            6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
-            7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
-        2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
-            1. [`valid`](#5_dmFsaWQ=)
-            2. [`invalid`](#5_aW52YWxpZA==)
-        3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
-            1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
-            2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
-            3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
-            4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
-            5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
-            6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
-            7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
-            8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
-            9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
-            10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
-            11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
-            12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
-        4. [`validators`](#4_dmFsaWRhdG9ycw==)
-            1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
-    5. [`node-25.6.1`](#3_bm9kZS0yNS42LjE=)
-        1. [`async`](#4_YXN5bmM=)
-            1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
-            2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
-            3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
-            4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
-            5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
-            6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
-            7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
-        2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
-            1. [`valid`](#5_dmFsaWQ=)
-            2. [`invalid`](#5_aW52YWxpZA==)
-        3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
-            1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
-            2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
-            3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
-            4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
-            5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
-            6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
-            7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
-            8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
-            9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
-            10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
-            11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
-            12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
-        4. [`validators`](#4_dmFsaWRhdG9ycw==)
-            1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
-    6. [`deno-2.6.9`](#3_ZGVuby0yLjYuOQ==)
-        1. [`async`](#4_YXN5bmM=)
-            1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
-            2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
-            3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
-            4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
-            5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
-            6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
-            7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
-        2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
-            1. [`valid`](#5_dmFsaWQ=)
-            2. [`invalid`](#5_aW52YWxpZA==)
-        3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
-            1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
-            2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
-            3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
-            4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
-            5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
-            6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
-            7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
-            8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
-            9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
-            10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
-            11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
-            12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
-        4. [`validators`](#4_dmFsaWRhdG9ycw==)
-            1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
+   1. [`node-22.22.0`](#3_bm9kZS0yMi4yMi4w)
+      1. [`async`](#4_YXN5bmM=)
+         1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
+         2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
+         3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
+         4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
+         5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
+         6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
+         7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
+      2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
+         1. [`valid`](#5_dmFsaWQ=)
+         2. [`invalid`](#5_aW52YWxpZA==)
+      3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
+         1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
+         2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
+         3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
+         4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
+         5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
+         6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
+         7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
+         8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
+         9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
+         10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
+         11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
+         12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
+      4. [`validators`](#4_dmFsaWRhdG9ycw==)
+         1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
+   2. [`node-24.13.0`](#3_bm9kZS0yNC4xMy4w)
+      1. [`async`](#4_YXN5bmM=)
+         1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
+         2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
+         3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
+         4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
+         5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
+         6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
+         7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
+      2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
+         1. [`valid`](#5_dmFsaWQ=)
+         2. [`invalid`](#5_aW52YWxpZA==)
+      3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
+         1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
+         2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
+         3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
+         4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
+         5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
+         6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
+         7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
+         8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
+         9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
+         10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
+         11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
+         12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
+      4. [`validators`](#4_dmFsaWRhdG9ycw==)
+         1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
+   3. [`bun-1.3.9`](#3_YnVuLTEuMy45)
+      1. [`async`](#4_YXN5bmM=)
+         1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
+         2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
+         3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
+         4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
+         5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
+         6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
+         7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
+      2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
+         1. [`valid`](#5_dmFsaWQ=)
+         2. [`invalid`](#5_aW52YWxpZA==)
+      3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
+         1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
+         2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
+         3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
+         4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
+         5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
+         6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
+         7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
+         8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
+         9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
+         10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
+         11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
+         12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
+      4. [`validators`](#4_dmFsaWRhdG9ycw==)
+         1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
+   4. [`deno-2.5.7`](#3_ZGVuby0yLjUuNw==)
+      1. [`async`](#4_YXN5bmM=)
+         1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
+         2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
+         3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
+         4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
+         5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
+         6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
+         7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
+      2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
+         1. [`valid`](#5_dmFsaWQ=)
+         2. [`invalid`](#5_aW52YWxpZA==)
+      3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
+         1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
+         2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
+         3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
+         4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
+         5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
+         6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
+         7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
+         8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
+         9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
+         10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
+         11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
+         12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
+      4. [`validators`](#4_dmFsaWRhdG9ycw==)
+         1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
+   5. [`node-25.6.1`](#3_bm9kZS0yNS42LjE=)
+      1. [`async`](#4_YXN5bmM=)
+         1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
+         2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
+         3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
+         4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
+         5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
+         6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
+         7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
+      2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
+         1. [`valid`](#5_dmFsaWQ=)
+         2. [`invalid`](#5_aW52YWxpZA==)
+      3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
+         1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
+         2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
+         3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
+         4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
+         5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
+         6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
+         7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
+         8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
+         9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
+         10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
+         11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
+         12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
+      4. [`validators`](#4_dmFsaWRhdG9ycw==)
+         1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
+   6. [`deno-2.6.9`](#3_ZGVuby0yLjYuOQ==)
+      1. [`async`](#4_YXN5bmM=)
+         1. [`concurrency 1`](#5_Y29uY3VycmVuY3kgMQ==)
+         2. [`concurrency 2`](#5_Y29uY3VycmVuY3kgMg==)
+         3. [`concurrency 4`](#5_Y29uY3VycmVuY3kgNA==)
+         4. [`concurrency 8`](#5_Y29uY3VycmVuY3kgOA==)
+         5. [`concurrency 16`](#5_Y29uY3VycmVuY3kgMTY=)
+         6. [`concurrency 32`](#5_Y29uY3VycmVuY3kgMzI=)
+         7. [`concurrency 64`](#5_Y29uY3VycmVuY3kgNjQ=)
+      2. [`decode-uri-component`](#4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=)
+         1. [`valid`](#5_dmFsaWQ=)
+         2. [`invalid`](#5_aW52YWxpZA==)
+      3. [`url-routers`](#4_dXJsLXJvdXRlcnM=)
+         1. [`GET "/user"`](#5_R0VUICIvdXNlciI=)
+         2. [`GET "/user/comments"`](#5_R0VUICIvdXNlci9jb21tZW50cyI=)
+         3. [`GET "/user/avatar"`](#5_R0VUICIvdXNlci9hdmF0YXIi)
+         4. [`GET "/user/lookup/username/:username"`](#5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==)
+         5. [`GET "/user/lookup/email/:email"`](#5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==)
+         6. [`GET "/event/:id"`](#5_R0VUICIvZXZlbnQvOmlkIg==)
+         7. [`GET "/event/:id/comments"`](#5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==)
+         8. [`POST "/event/:id/comment"`](#5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==)
+         9. [`GET "/map/:location/event"`](#5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=)
+         10. [`GET "/status"`](#5_R0VUICIvc3RhdHVzIg==)
+         11. [`GET "/very/deeply/nested/route/hello/there"`](#5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==)
+         12. [`GET "/static/*"`](#5_R0VUICIvc3RhdGljLyoi)
+      4. [`validators`](#4_dmFsaWRhdG9ycw==)
+         1. [`assert-simple`](#5_YXNzZXJ0LXNpbXBsZQ==)
 
 <a name="2_c3RhcnR1cCB0aW1l">
 
 ## startup time
+
 <a name="3_bm9kZS0yMi4yMi4w">
 
 ### node-22.22.0
+
 <a name="4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz">
 
 #### validators/references
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -229,9 +233,11 @@ arktype:
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycy9zaW1wbGU=">
 
 #### validators/simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -288,9 +294,11 @@ arktype:
 
 
 ```
+
 <a name="4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=">
 
 #### web-frameworks/wintercg
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -347,12 +355,15 @@ elysia (jit):
 
 
 ```
+
 <a name="3_bm9kZS0yNC4xMy4w">
 
 ### node-24.13.0
+
 <a name="4_dmFsaWRhdG9ycy9zaW1wbGU=">
 
 #### validators/simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -409,9 +420,11 @@ arktype:
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz">
 
 #### validators/references
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -444,9 +457,11 @@ arktype:
 
 
 ```
+
 <a name="4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=">
 
 #### web-frameworks/wintercg
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -503,12 +518,15 @@ elysia (jit):
 
 
 ```
+
 <a name="3_YnVuLTEuMy45">
 
 ### bun-1.3.9
+
 <a name="4_dmFsaWRhdG9ycy9zaW1wbGU=">
 
 #### validators/simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -565,9 +583,11 @@ arktype:
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz">
 
 #### validators/references
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -600,9 +620,11 @@ arktype:
 
 
 ```
+
 <a name="4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=">
 
 #### web-frameworks/wintercg
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -659,12 +681,15 @@ elysia (jit):
 
 
 ```
+
 <a name="3_ZGVuby0yLjUuNw==">
 
 ### deno-2.5.7
+
 <a name="4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz">
 
 #### validators/references
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -697,9 +722,11 @@ arktype:
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycy9zaW1wbGU=">
 
 #### validators/simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -756,9 +783,11 @@ arktype:
 
 
 ```
+
 <a name="4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=">
 
 #### web-frameworks/wintercg
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -815,12 +844,15 @@ elysia (jit):
 
 
 ```
+
 <a name="3_bm9kZS0yNS42LjE=">
 
 ### node-25.6.1
+
 <a name="4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz">
 
 #### validators/references
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -853,9 +885,11 @@ arktype:
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycy9zaW1wbGU=">
 
 #### validators/simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -912,9 +946,11 @@ arktype:
 
 
 ```
+
 <a name="4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=">
 
 #### web-frameworks/wintercg
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -971,12 +1007,15 @@ elysia (jit):
 
 
 ```
+
 <a name="3_ZGVuby0yLjYuOQ==">
 
 ### deno-2.6.9
+
 <a name="4_dmFsaWRhdG9ycy9yZWZlcmVuY2Vz">
 
 #### validators/references
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -1009,9 +1048,11 @@ arktype:
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycy9zaW1wbGU=">
 
 #### validators/simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -1068,9 +1109,11 @@ arktype:
 
 
 ```
+
 <a name="4_d2ViLWZyYW1ld29ya3Mvd2ludGVyY2c=">
 
 #### web-frameworks/wintercg
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -1127,18 +1170,23 @@ elysia (jit):
 
 
 ```
+
 <a name="2_cnVudGltZQ==">
 
 ## runtime
+
 <a name="3_bm9kZS0yMi4yMi4w">
 
 ### node-22.22.0
+
 <a name="4_YXN5bmM=">
 
 #### async
+
 <a name="5_Y29uY3VycmVuY3kgMQ==">
 
 ##### concurrency 1
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1183,9 +1231,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMg==">
 
 ##### concurrency 2
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -1218,9 +1268,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNA==">
 
 ##### concurrency 4
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -1253,9 +1305,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgOA==">
 
 ##### concurrency 8
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1288,9 +1342,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMTY=">
 
 ##### concurrency 16
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1323,9 +1379,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMzI=">
 
 ##### concurrency 32
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1358,9 +1416,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNjQ=">
 
 ##### concurrency 64
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1393,12 +1453,15 @@ async-mutex:
 
 
 ```
+
 <a name="4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=">
 
 #### decode-uri-component
+
 <a name="5_dmFsaWQ=">
 
 ##### valid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1425,9 +1488,11 @@ native:
 
 
 ```
+
 <a name="5_aW52YWxpZA==">
 
 ##### invalid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1454,12 +1519,15 @@ native:
 
 
 ```
+
 <a name="4_dXJsLXJvdXRlcnM=">
 
 #### url-routers
+
 <a name="5_R0VUICIvdXNlciI=">
 
 ##### GET "/user"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -1522,9 +1590,11 @@ hono (pattern):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9jb21tZW50cyI=">
 
 ##### GET "/user/comments"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -1587,9 +1657,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9hdmF0YXIi">
 
 ##### GET "/user/avatar"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -1652,9 +1724,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==">
 
 ##### GET "/user/lookup/username/:username"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1717,9 +1791,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==">
 
 ##### GET "/user/lookup/email/:email"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1782,9 +1858,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkIg==">
 
 ##### GET "/event/:id"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1847,9 +1925,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==">
 
 ##### GET "/event/:id/comments"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1912,9 +1992,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==">
 
 ##### POST "/event/:id/comment"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -1977,9 +2059,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=">
 
 ##### GET "/map/:location/event"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2042,9 +2126,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdHVzIg==">
 
 ##### GET "/status"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -2107,9 +2193,11 @@ hono (pattern):
 
 
 ```
+
 <a name="5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==">
 
 ##### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2172,9 +2260,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdGljLyoi">
 
-##### GET "/static/*"
+##### GET "/static/\*"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2237,12 +2327,15 @@ rou3 (tree):
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycw==">
 
 #### validators
+
 <a name="5_YXNzZXJ0LXNpbXBsZQ==">
 
 ##### assert-simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -2311,15 +2404,19 @@ effect-schema:
 
 
 ```
+
 <a name="3_bm9kZS0yNC4xMy4w">
 
 ### node-24.13.0
+
 <a name="4_YXN5bmM=">
 
 #### async
+
 <a name="5_Y29uY3VycmVuY3kgMQ==">
 
 ##### concurrency 1
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2364,9 +2461,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMg==">
 
 ##### concurrency 2
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -2399,9 +2498,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNA==">
 
 ##### concurrency 4
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -2434,9 +2535,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgOA==">
 
 ##### concurrency 8
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2469,9 +2572,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMTY=">
 
 ##### concurrency 16
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2504,9 +2609,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMzI=">
 
 ##### concurrency 32
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2539,9 +2646,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNjQ=">
 
 ##### concurrency 64
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2574,12 +2683,15 @@ async-mutex:
 
 
 ```
+
 <a name="4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=">
 
 #### decode-uri-component
+
 <a name="5_dmFsaWQ=">
 
 ##### valid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2606,9 +2718,11 @@ native:
 
 
 ```
+
 <a name="5_aW52YWxpZA==">
 
 ##### invalid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2635,12 +2749,15 @@ native:
 
 
 ```
+
 <a name="4_dXJsLXJvdXRlcnM=">
 
 #### url-routers
+
 <a name="5_R0VUICIvdXNlciI=">
 
 ##### GET "/user"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -2703,9 +2820,11 @@ hono (pattern):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9jb21tZW50cyI=">
 
 ##### GET "/user/comments"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -2768,9 +2887,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9hdmF0YXIi">
 
 ##### GET "/user/avatar"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -2833,9 +2954,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==">
 
 ##### GET "/user/lookup/username/:username"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2898,9 +3021,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==">
 
 ##### GET "/user/lookup/email/:email"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -2963,9 +3088,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkIg==">
 
 ##### GET "/event/:id"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3028,9 +3155,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==">
 
 ##### GET "/event/:id/comments"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3093,9 +3222,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==">
 
 ##### POST "/event/:id/comment"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3158,9 +3289,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=">
 
 ##### GET "/map/:location/event"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3223,9 +3356,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdHVzIg==">
 
 ##### GET "/status"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -3288,9 +3423,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==">
 
 ##### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3353,9 +3490,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdGljLyoi">
 
-##### GET "/static/*"
+##### GET "/static/\*"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3418,12 +3557,15 @@ hono (trie):
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycw==">
 
 #### validators
+
 <a name="5_YXNzZXJ0LXNpbXBsZQ==">
 
 ##### assert-simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -3492,15 +3634,19 @@ effect-schema:
 
 
 ```
+
 <a name="3_YnVuLTEuMy45">
 
 ### bun-1.3.9
+
 <a name="4_YXN5bmM=">
 
 #### async
+
 <a name="5_Y29uY3VycmVuY3kgMQ==">
 
 ##### concurrency 1
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3545,9 +3691,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMg==">
 
 ##### concurrency 2
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -3580,9 +3728,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNA==">
 
 ##### concurrency 4
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -3615,9 +3765,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgOA==">
 
 ##### concurrency 8
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3650,9 +3802,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMTY=">
 
 ##### concurrency 16
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3685,9 +3839,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMzI=">
 
 ##### concurrency 32
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3720,9 +3876,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNjQ=">
 
 ##### concurrency 64
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3755,12 +3913,15 @@ async-mutex:
 
 
 ```
+
 <a name="4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=">
 
 #### decode-uri-component
+
 <a name="5_dmFsaWQ=">
 
 ##### valid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3787,9 +3948,11 @@ fast-decode-uri-component:
 
 
 ```
+
 <a name="5_aW52YWxpZA==">
 
 ##### invalid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -3816,12 +3979,15 @@ native:
 
 
 ```
+
 <a name="4_dXJsLXJvdXRlcnM=">
 
 #### url-routers
+
 <a name="5_R0VUICIvdXNlciI=">
 
 ##### GET "/user"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -3884,9 +4050,11 @@ hono (pattern):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9jb21tZW50cyI=">
 
 ##### GET "/user/comments"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -3949,9 +4117,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9hdmF0YXIi">
 
 ##### GET "/user/avatar"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -4014,9 +4184,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==">
 
 ##### GET "/user/lookup/username/:username"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4079,9 +4251,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==">
 
 ##### GET "/user/lookup/email/:email"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4144,9 +4318,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkIg==">
 
 ##### GET "/event/:id"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4209,9 +4385,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==">
 
 ##### GET "/event/:id/comments"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4274,9 +4452,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==">
 
 ##### POST "/event/:id/comment"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4339,9 +4519,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=">
 
 ##### GET "/map/:location/event"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4404,9 +4586,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdHVzIg==">
 
 ##### GET "/status"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -4469,9 +4653,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==">
 
 ##### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -4534,9 +4720,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdGljLyoi">
 
-##### GET "/static/*"
+##### GET "/static/\*"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4599,12 +4787,15 @@ hono (trie):
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycw==">
 
 #### validators
+
 <a name="5_YXNzZXJ0LXNpbXBsZQ==">
 
 ##### assert-simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -4673,15 +4864,19 @@ effect-schema:
 
 
 ```
+
 <a name="3_ZGVuby0yLjUuNw==">
 
 ### deno-2.5.7
+
 <a name="4_YXN5bmM=">
 
 #### async
+
 <a name="5_Y29uY3VycmVuY3kgMQ==">
 
 ##### concurrency 1
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4726,9 +4921,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMg==">
 
 ##### concurrency 2
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -4761,9 +4958,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNA==">
 
 ##### concurrency 4
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -4796,9 +4995,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgOA==">
 
 ##### concurrency 8
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4831,9 +5032,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMTY=">
 
 ##### concurrency 16
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4866,9 +5069,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMzI=">
 
 ##### concurrency 32
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4901,9 +5106,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNjQ=">
 
 ##### concurrency 64
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4936,12 +5143,15 @@ async-mutex:
 
 
 ```
+
 <a name="4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=">
 
 #### decode-uri-component
+
 <a name="5_dmFsaWQ=">
 
 ##### valid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4968,9 +5178,11 @@ native:
 
 
 ```
+
 <a name="5_aW52YWxpZA==">
 
 ##### invalid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -4997,12 +5209,15 @@ native:
 
 
 ```
+
 <a name="4_dXJsLXJvdXRlcnM=">
 
 #### url-routers
+
 <a name="5_R0VUICIvdXNlciI=">
 
 ##### GET "/user"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -5065,9 +5280,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9jb21tZW50cyI=">
 
 ##### GET "/user/comments"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -5130,9 +5347,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9hdmF0YXIi">
 
 ##### GET "/user/avatar"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -5195,9 +5414,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==">
 
 ##### GET "/user/lookup/username/:username"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5260,9 +5481,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==">
 
 ##### GET "/user/lookup/email/:email"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5325,9 +5548,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkIg==">
 
 ##### GET "/event/:id"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5390,9 +5615,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==">
 
 ##### GET "/event/:id/comments"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5455,9 +5682,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==">
 
 ##### POST "/event/:id/comment"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5520,9 +5749,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=">
 
 ##### GET "/map/:location/event"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5585,9 +5816,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdHVzIg==">
 
 ##### GET "/status"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -5650,9 +5883,11 @@ hono (pattern):
 
 
 ```
+
 <a name="5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==">
 
 ##### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5715,9 +5950,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdGljLyoi">
 
-##### GET "/static/*"
+##### GET "/static/\*"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5780,12 +6017,15 @@ hono (trie):
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycw==">
 
 #### validators
+
 <a name="5_YXNzZXJ0LXNpbXBsZQ==">
 
 ##### assert-simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -5854,15 +6094,19 @@ effect-schema:
 
 
 ```
+
 <a name="3_bm9kZS0yNS42LjE=">
 
 ### node-25.6.1
+
 <a name="4_YXN5bmM=">
 
 #### async
+
 <a name="5_Y29uY3VycmVuY3kgMQ==">
 
 ##### concurrency 1
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -5907,9 +6151,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMg==">
 
 ##### concurrency 2
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -5942,9 +6188,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNA==">
 
 ##### concurrency 4
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -5977,9 +6225,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgOA==">
 
 ##### concurrency 8
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6012,9 +6262,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMTY=">
 
 ##### concurrency 16
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6047,9 +6299,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMzI=">
 
 ##### concurrency 32
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6082,9 +6336,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNjQ=">
 
 ##### concurrency 64
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6117,12 +6373,15 @@ async-mutex:
 
 
 ```
+
 <a name="4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=">
 
 #### decode-uri-component
+
 <a name="5_dmFsaWQ=">
 
 ##### valid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6149,9 +6408,11 @@ native:
 
 
 ```
+
 <a name="5_aW52YWxpZA==">
 
 ##### invalid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6178,12 +6439,15 @@ native:
 
 
 ```
+
 <a name="4_dXJsLXJvdXRlcnM=">
 
 #### url-routers
+
 <a name="5_R0VUICIvdXNlciI=">
 
 ##### GET "/user"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -6246,9 +6510,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9jb21tZW50cyI=">
 
 ##### GET "/user/comments"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -6311,9 +6577,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9hdmF0YXIi">
 
 ##### GET "/user/avatar"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -6376,9 +6644,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==">
 
 ##### GET "/user/lookup/username/:username"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6441,9 +6711,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==">
 
 ##### GET "/user/lookup/email/:email"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6506,9 +6778,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkIg==">
 
 ##### GET "/event/:id"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6571,9 +6845,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==">
 
 ##### GET "/event/:id/comments"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6636,9 +6912,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==">
 
 ##### POST "/event/:id/comment"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6701,9 +6979,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=">
 
 ##### GET "/map/:location/event"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6766,9 +7046,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdHVzIg==">
 
 ##### GET "/status"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -6831,9 +7113,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==">
 
 ##### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6896,9 +7180,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdGljLyoi">
 
-##### GET "/static/*"
+##### GET "/static/\*"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -6961,12 +7247,15 @@ hono (trie):
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycw==">
 
 #### validators
+
 <a name="5_YXNzZXJ0LXNpbXBsZQ==">
 
 ##### assert-simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -7035,15 +7324,19 @@ effect-schema:
 
 
 ```
+
 <a name="3_ZGVuby0yLjYuOQ==">
 
 ### deno-2.6.9
+
 <a name="4_YXN5bmM=">
 
 #### async
+
 <a name="5_Y29uY3VycmVuY3kgMQ==">
 
 ##### concurrency 1
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7088,9 +7381,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMg==">
 
 ##### concurrency 2
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -7123,9 +7418,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNA==">
 
 ##### concurrency 4
+
 ```
  █  average (ms)
  ▓  p50 (ms)
@@ -7158,9 +7455,11 @@ manual:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgOA==">
 
 ##### concurrency 8
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7193,9 +7492,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMTY=">
 
 ##### concurrency 16
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7228,9 +7529,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgMzI=">
 
 ##### concurrency 32
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7263,9 +7566,11 @@ async-mutex:
 
 
 ```
+
 <a name="5_Y29uY3VycmVuY3kgNjQ=">
 
 ##### concurrency 64
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7298,12 +7603,15 @@ async-mutex:
 
 
 ```
+
 <a name="4_ZGVjb2RlLXVyaS1jb21wb25lbnQ=">
 
 #### decode-uri-component
+
 <a name="5_dmFsaWQ=">
 
 ##### valid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7330,9 +7638,11 @@ native:
 
 
 ```
+
 <a name="5_aW52YWxpZA==">
 
 ##### invalid
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7359,12 +7669,15 @@ native:
 
 
 ```
+
 <a name="4_dXJsLXJvdXRlcnM=">
 
 #### url-routers
+
 <a name="5_R0VUICIvdXNlciI=">
 
 ##### GET "/user"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -7427,9 +7740,11 @@ hono (pattern):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9jb21tZW50cyI=">
 
 ##### GET "/user/comments"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -7492,9 +7807,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9hdmF0YXIi">
 
 ##### GET "/user/avatar"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -7557,9 +7874,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvdXNlcm5hbWUvOnVzZXJuYW1lIg==">
 
 ##### GET "/user/lookup/username/:username"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7622,9 +7941,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvdXNlci9sb29rdXAvZW1haWwvOmVtYWlsIg==">
 
 ##### GET "/user/lookup/email/:email"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7687,9 +8008,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkIg==">
 
 ##### GET "/event/:id"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7752,9 +8075,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvZXZlbnQvOmlkL2NvbW1lbnRzIg==">
 
 ##### GET "/event/:id/comments"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7817,9 +8142,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_UE9TVCAiL2V2ZW50LzppZC9jb21tZW50Ig==">
 
 ##### POST "/event/:id/comment"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7882,9 +8209,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvbWFwLzpsb2NhdGlvbi9ldmVudCI=">
 
 ##### GET "/map/:location/event"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -7947,9 +8276,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdHVzIg==">
 
 ##### GET "/status"
+
 ```
  █  average (ns)
  ▓  p50 (ns)
@@ -8012,9 +8343,11 @@ hono (pattern):
 
 
 ```
+
 <a name="5_R0VUICIvdmVyeS9kZWVwbHkvbmVzdGVkL3JvdXRlL2hlbGxvL3RoZXJlIg==">
 
 ##### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -8077,9 +8410,11 @@ hono (trie):
 
 
 ```
+
 <a name="5_R0VUICIvc3RhdGljLyoi">
 
-##### GET "/static/*"
+##### GET "/static/\*"
+
 ```
  █  average (µs)
  ▓  p50 (µs)
@@ -8142,12 +8477,15 @@ rou3 (tree):
 
 
 ```
+
 <a name="4_dmFsaWRhdG9ycw==">
 
 #### validators
+
 <a name="5_YXNzZXJ0LXNpbXBsZQ==">
 
 ##### assert-simple
+
 ```
  █  average (ms)
  ▓  p50 (ms)

@@ -81,10 +81,13 @@ class SpeedCategoryResults {
     const o = {} as CategoryResults;
     for (const key in results) {
       const result = results[key];
-      o[key] = result instanceof SpeedCategoryResults ? result.toChartJS() : this.serializeToChartJS(result);
+      o[key] =
+        result instanceof SpeedCategoryResults
+          ? result.toChartJS()
+          : this.serializeToChartJS(result);
     }
     return o;
-  }
+  };
 }
 
 export { SpeedCategoryResults };
@@ -92,16 +95,14 @@ export { SpeedCategoryResults };
 import RESULTS from '../result.json';
 
 interface ChartData {
-    labels: string[];
-    datasets: {
-      label: string;
-      data: number[];
-    }[];
-  }
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+  }[];
+}
 type CategoryResults = {
-  [key: string]:
-    | CategoryResults
-    | ChartData
+  [key: string]: CategoryResults | ChartData;
 };
 
 /**
@@ -137,10 +138,8 @@ export class MarkdownContent {
       this.tableOfContent += `${'    '.repeat(idx - 2)}${tableIdx++}. [\`${key}\`](#${headerId})\n`;
       this.results += `<a name="${headerId}">\n\n${'#'.repeat(idx)} ${key}\n`;
 
-      if (Array.isArray(result.labels))
-        this.results += MarkdownContent.renderChart(result as any);
-      else
-        this._render(result as any, idx + 1);
+      if (Array.isArray(result.labels)) this.results += MarkdownContent.renderChart(result as any);
+      else this._render(result as any, idx + 1);
     }
   }
 
@@ -149,21 +148,21 @@ export class MarkdownContent {
     return this.tableOfContent + this.results;
   }
 
-  static SYMBOLS = ["█", "▓", "▒", "░", "■", "●", "▲", "◆"];
+  static SYMBOLS = ['█', '▓', '▒', '░', '■', '●', '▲', '◆'];
   static WIDTH = 50;
 
   static renderChart(chart: ChartData) {
     let out = '```\n';
 
     // Find global max for scaling
-    const allValues = chart.datasets.flatMap(d => d.data);
+    const allValues = chart.datasets.flatMap((d) => d.data);
     const maxValue = Math.max(...allValues);
 
     for (let i = 0; i < chart.datasets.length; i++) {
       const d = chart.datasets[i];
       out += ` ${this.SYMBOLS[i % this.SYMBOLS.length]}  ${d.label}\n`;
     }
-    out += "\n";
+    out += '\n';
 
     // Render bars
     for (let labelIndex = 0; labelIndex < chart.labels.length; labelIndex++) {
@@ -178,7 +177,7 @@ export class MarkdownContent {
         out += `  ${bar}  ${value.toFixed(2)}\n`;
       }
 
-      out += "\n";
+      out += '\n';
     }
 
     return out + '```\n';

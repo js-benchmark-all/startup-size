@@ -1,4 +1,4 @@
-import { bench, do_not_optimize } from "mitata";
+import { bench, do_not_optimize } from 'mitata';
 import data from './data.json';
 
 export default (name: string, decode: (str: string) => string | undefined | null) => {
@@ -14,9 +14,8 @@ export default (name: string, decode: (str: string) => string | undefined | null
     yield {
       [0]: () => data,
       bench: (d: typeof data) => {
-        for (let i = 0; i < d.length; i++)
-          do_not_optimize(decode(d[i]));
-      }
-    }
+        for (let i = 0; i < d.length; i++) do_not_optimize(decode(d[i]));
+      },
+    };
   }).gc('inner');
-}
+};

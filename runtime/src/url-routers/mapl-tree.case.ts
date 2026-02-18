@@ -1,66 +1,64 @@
-import { createRouter, insertItem } from "@mapl/router/method";
-import { createStaticMap } from "@mapl/router/path";
-import type { Node } from "@mapl/router/tree/node";
+import { createRouter, insertItem } from '@mapl/router/method';
+import { createStaticMap } from '@mapl/router/path';
+import type { Node } from '@mapl/router/tree/node';
 
-import spec from "./.spec.ts";
+import spec from './.spec.ts';
 
 {
   type Handler = (() => string) | ((params: string[]) => string);
 
   let PARAMS!: string[];
 
-  const _matchNode = (
-    node: Node<Handler>,
-    path: string,
-    start: number,
-  ): Handler | null => {
-      if (start === path.length) return node[1];
+  const _matchNode = (node: Node<Handler>, path: string, start: number): Handler | null => {
+    if (start === path.length) return node[1];
 
-      // Check the next children node
-      if (node[2] != null) {
-        const child = node[2][path.charCodeAt(start)];
-        if (child != null) {
-          const part = child[0];
-          if (part.length === 1 || path.startsWith(part, start)) {
-            const match = _matchNode(child, path, start + part.length);
-            if (match != null) return match;
-          }
+    // Check the next children node
+    if (node[2].length > 0) {
+      const childId = node[2].indexOf(path.charCodeAt(start));
+      if (childId > -1) {
+        const child = node[3][childId];
+        const part = child[0];
+
+        if (part.length === 1 || path.startsWith(part, start)) {
+          const match = _matchNode(child, path, start + part.length);
+          if (match != null) return match;
         }
       }
+    }
 
-      // Check for parameters
-      if (node[3] != null) {
-        const paramNode = node[3];
+    // Check for parameters
+    if (node[4] != null) {
+      const paramNode = node[4];
 
-        if (paramNode[0] == null) {
-          if (!path.includes("/", start)) {
+      if (paramNode[0] == null) {
+        if (!path.includes('/', start)) {
+          PARAMS.push(path.slice(start));
+          return paramNode[1];
+        }
+      } else {
+        const endIdx = path.indexOf('/', start);
+
+        if (endIdx === -1) {
+          if (paramNode[1] != null) {
             PARAMS.push(path.slice(start));
             return paramNode[1];
           }
-        } else {
-          const endIdx = path.indexOf("/", start);
+        } else if (endIdx > start) {
+          PARAMS.push(path.slice(start, endIdx));
 
-          if (endIdx === -1) {
-            if (paramNode[1] != null) {
-              PARAMS.push(path.slice(start));
-              return paramNode[1];
-            }
-          } else if (endIdx > start) {
-            PARAMS.push(path.slice(start, endIdx));
+          const match = _matchNode(paramNode[0], path, endIdx + 1);
+          if (match != null) return match;
 
-            const match = _matchNode(paramNode[0], path, endIdx + 1);
-            if (match != null) return match;
-
-            PARAMS.pop();
-          }
+          PARAMS.pop();
         }
       }
+    }
 
-      // Wildcard
-      if (node[4] != null) {
-        PARAMS.push(path.slice(start));
-        return node[4];
-      }
+    // Wildcard
+    if (node[5] != null) {
+      PARAMS.push(path.slice(start));
+      return node[5];
+    }
 
     return null;
   };
@@ -71,31 +69,30 @@ import spec from "./.spec.ts";
     insertItem(router, method, path, fn);
   };
 
-  insert("GET", "/user", () => "0");
-  insert("GET", "/user/comments", () => "1");
-  insert("GET", "/user/avatar", () => "2");
-  insert("GET", "/user/lookup/username/*", (params) => "3" + params[0]);
-  insert("GET", "/user/lookup/email/*", (params) => "4" + params[0]);
-  insert("GET", "/event/*", (params) => "5" + params[0]);
-  insert("GET", "/event/*/comments", (params) => "6" + params[0]);
-  insert("POST", "/event/*/comment", (params) => "7" + params[0]);
-  insert("GET", "/map/*/event", (params) => "8" + params[0]);
-  insert("GET", "/status", () => "9");
-  insert("GET", "/very/deeply/nested/route/hello/there", () => "10");
-  insert("GET", "/static/**", (params) => "11" + params[0]);
+  insert('GET', '/user', () => '0');
+  insert('GET', '/user/comments', () => '1');
+  insert('GET', '/user/avatar', () => '2');
+  insert('GET', '/user/lookup/username/*', (params) => '3' + params[0]);
+  insert('GET', '/user/lookup/email/*', (params) => '4' + params[0]);
+  insert('GET', '/event/*', (params) => '5' + params[0]);
+  insert('GET', '/event/*/comments', (params) => '6' + params[0]);
+  insert('POST', '/event/*/comment', (params) => '7' + params[0]);
+  insert('GET', '/map/*/event', (params) => '8' + params[0]);
+  insert('GET', '/status', () => '9');
+  insert('GET', '/very/deeply/nested/route/hello/there', () => '10');
+  insert('GET', '/static/**', (params) => '11' + params[0]);
 
-  const methods: string[] = [];
+  const methods: string[] = router[0];
   const staticMaps: Map<string, Handler>[] = [];
   const nodes: (Node<Handler> | null)[] = [];
 
-  for (const method in router) {
-    const methodRouter = router[method];
-    methods.push(method);
+  for (let i = 0, methodRouters = router[1]; i < methodRouters.length; i++) {
+    const methodRouter = methodRouters[i];
     staticMaps.push(createStaticMap(methodRouter));
     nodes.push(methodRouter[0]);
   }
 
-  spec("mapl (tree)", (o) => {
+  spec('mapl (tree)', (o) => {
     const id = methods.indexOf(o.method);
     if (id > -1) {
       const match = staticMaps[id].get(o.url);
@@ -110,6 +107,6 @@ import spec from "./.spec.ts";
       }
     }
 
-    return "";
+    return '';
   });
 }

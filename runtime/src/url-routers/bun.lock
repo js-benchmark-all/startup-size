@@ -4,7 +4,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@mapl/router": "^0.8.8",
+        "@mapl/router": "^0.9.0",
         "find-my-way": "^9.4.0",
         "hono": "^4.11.8",
         "rou3": "^0.7.12",
@@ -13,7 +13,7 @@
     },
   },
   "packages": {
-    "@mapl/router": ["@mapl/router@0.8.8", "", {}, "sha512-nwPg9bhvy0hzl3HQZtQ2pns+x2BuQvSyplY2hd+JVH+ySI38aM1cbTmGEkVsUag5LPQTBElFS4PAWRFXXMwVQw=="],
+    "@mapl/router": ["@mapl/router@0.9.0", "", {}, "sha512-zI0LVRlp5Atr5hkECtUrGjietPGLEhxzZiirz5IcCpOojHbsr7hiUH4Fjon5kKZ0QVsMAEG1Ri9YeZA6Wze5zw=="],
 
     "fast-decode-uri-component": ["fast-decode-uri-component@1.0.1", "", {}, "sha512-WKgKWg5eUxvRZGwW8FvfbaH7AXSh2cL+3j5fMGzUMCxWBJ3dV3a7Wz8y2f/uQ0e3B6WmodD3oS54jTQ9HVTIIg=="],
 

@@ -27,10 +27,13 @@ const buildAOT = async (target: string) => {
     `,
   );
 
-  await Bun.write(`${OUTPUT}${target}.d.ts`, `
+  await Bun.write(
+    `${OUTPUT}${target}.d.ts`,
+    `
     import _id from '${file}';
     export declare const id: _id['~type'];
-  `);
+  `,
+  );
 
   await build({
     input: outputFile,

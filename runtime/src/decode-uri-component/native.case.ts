@@ -5,7 +5,7 @@ const decode = (str: string) => {
   try {
     return decodeURIComponent(str);
   } catch {}
-}
+};
 
 validSpec('native', decode);
 invalidSpec('native', decode);

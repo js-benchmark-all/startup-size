@@ -47,12 +47,7 @@ const runtimes: Record<
   deno: {
     id: async () => 'deno-' + (await $`deno -v`.text()).split(' ').at(-1)!.trim(),
     run: createStartupRunner('deno', 'run', '-A', '--v8-flags=--expose-gc'),
-    bench: createBenchRunner(
-      'deno',
-      'run',
-      '-A',
-      '--v8-flags=--expose-gc,--allow-natives-syntax',
-    ),
+    bench: createBenchRunner('deno', 'run', '-A', '--v8-flags=--expose-gc,--allow-natives-syntax'),
   },
   node: {
     id: async () => 'node-' + (await $`node -v`.text()).slice(1).trim(),
