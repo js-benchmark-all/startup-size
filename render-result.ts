@@ -28,7 +28,7 @@ export class MarkdownContent {
   static SYMBOLS = [
     '█', '▓', '▒', '░'
   ];
-  static WIDTH = 90;
+  static WIDTH = 96;
 
   static renderChart(chart: ChartData) {
     let out = '```';
