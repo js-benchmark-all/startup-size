@@ -49,9 +49,7 @@ export class MarkdownContent {
 
       for (let dsIdx = 0; dsIdx < chart.datasets.length; dsIdx++) {
         const value = chart.datasets[dsIdx].data[labelIdx];
-        const len = Math.round((value / maxValue) * this.WIDTH);
-
-        out += `\n    ${this.SYMBOLS[dsIdx % this.SYMBOLS.length].repeat(len + 1)}  ${+value.toFixed(2)}`;
+        out += `\n    ${this.SYMBOLS[dsIdx % this.SYMBOLS.length].repeat(Math.floor(value * this.WIDTH / maxValue) + 1)}  ${+value.toFixed(2)}`;
       }
     }
 
