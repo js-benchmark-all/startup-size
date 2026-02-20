@@ -5,12 +5,14 @@ export class MarkdownContent {
   tableOfContent: string = '# Results\n';
   results: string = '\n';
 
+  static HEADER_ID = 0;
+
   _render(results: CategoryResults, idx: number = 2) {
     let tableIdx = 1;
 
     for (const key in results) {
       const result = results[key];
-      const headerId = `${idx}_${btoa(key)}`;
+      const headerId = '' + MarkdownContent.HEADER_ID++;
 
       this.tableOfContent += `${'    '.repeat(idx - 2)}${tableIdx++}. [\`${key}\`](#${headerId})\n`;
       this.results += `<a name="${headerId}">\n\n${'#'.repeat(idx)} ${key}\n`;
