@@ -1,0 +1,38 @@
+on:
+  push:
+    branches:
+      - dev
+    paths:
+      - "package.json"
+      - "render-result.ts"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git pull origin HEAD:${{ github.ref_name }}
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Render results
+        run: bun result
+
+      - name: Update results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "update runtime results"
+          git push origin HEAD:${{ github.ref_name }}
