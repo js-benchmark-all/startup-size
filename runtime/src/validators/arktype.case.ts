@@ -17,6 +17,6 @@ const assert = type({
     .atMostLength(30),
 }).allows;
 
-assertSimple('arktype', (o) => {
+assertSimple('arktype (jit)', (o) => {
   if (!assert(o)) throw new Error();
 });

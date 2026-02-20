@@ -1,8 +1,5 @@
 {
   "type": "module",
-  "scripts": {
-    "prepare": "ts-patch install"
-  },
   "dependencies": {
     "arktype": "2.1.29",
     "effect": "3.19.13",
