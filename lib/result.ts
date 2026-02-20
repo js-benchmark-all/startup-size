@@ -41,7 +41,7 @@ class CategoryResultsRenderer {
     return avg;
   }
 
-  toChartJS(unitData: UnitData) {
+  toChartJS(unitData: UnitData, percentiles: number[] = [0.5, 0.75, 0.99]) {
     const categoryResults = this.results;
     categoryResults.sort((a, b) => a.avg - b.avg);
 
@@ -63,11 +63,11 @@ class CategoryResultsRenderer {
       labels: categoryResults.map((v) => v.caseName),
       datasets: [
         {
-          label: `average (${unit})`,
+          label: `avg (${unit})`,
           // Ns to ms
           data: categoryResults.map((v) => +(v.avg / div).toFixed(2)),
         },
-        ...[0.5, 0.75, 0.99].map((p) => ({
+        ...percentiles.map((p) => ({
           label: `p${p * 100} (${unit})`,
           data: categoryResults.map((v) => +(math.percentile(v.values, p) / div).toFixed(2)),
         })),
@@ -75,13 +75,13 @@ class CategoryResultsRenderer {
     };
   }
 
-  static serializeToChartJS = (results: CategoryResultsRenderer.All, unitData: UnitData) => {
+  static serializeToChartJS = (results: CategoryResultsRenderer.All, unitData: UnitData, percentiles: number[] = [0.5, 0.75, 0.99]) => {
     const o = {} as CategoryResults;
     for (const key in results) {
       const result = results[key];
       o[key] =
         result instanceof CategoryResultsRenderer
-          ? result.toChartJS(unitData)
+          ? result.toChartJS(unitData, percentiles)
           : this.serializeToChartJS(result, unitData);
     }
     return o;
