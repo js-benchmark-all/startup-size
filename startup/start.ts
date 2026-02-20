@@ -3,11 +3,12 @@ import INFO from './.out/info.json';
 import { SingleBar } from 'cli-progress';
 
 import { fmt } from '../lib/format.ts';
-import { getCategoryResults, SpeedCategoryResults } from '../lib/result.ts';
+import { getCategoryResults, CategoryResultsRenderer } from '../lib/result.ts';
 import { runFile, runtimeId } from '../lib/runtime.ts';
 import { math } from '../lib/math.ts';
 
 import config from './config.ts';
+import { TIME } from '../lib/units.ts';
 
 await using RESULTS = getCategoryResults('startup time', runtimeId);
 
@@ -21,7 +22,7 @@ const PROGRESS_BAR = new SingleBar({
 for (const categoryName in INFO) {
   if (!config.include.category(categoryName)) continue;
   const category = INFO[categoryName as keyof typeof INFO];
-  const categoryResults = new SpeedCategoryResults();
+  const categoryResults = new CategoryResultsRenderer();
 
   for (const caseName in category) {
     if (!config.include.case(categoryName, caseName)) continue;
@@ -51,5 +52,5 @@ for (const categoryName in INFO) {
     console.log('    variation:', fmt.percentage(math.rsd(values)));
   }
 
-  RESULTS[categoryName] = categoryResults.toChartJS();
+  RESULTS[categoryName] = categoryResults.toChartJS(TIME);
 }

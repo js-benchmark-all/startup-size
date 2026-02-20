@@ -8,15 +8,13 @@ export const writeCategoryResult = async (name: string, result: any) => {
   await Bun.write(FILE, JSON.stringify(results, null, 2));
 };
 
-const TIME_UNIT = ['ns', 'µs', 'ms', 's'];
-
-namespace SpeedCategoryResults {
+namespace CategoryResultsRenderer {
   export type All = {
-    [key: string]: SpeedCategoryResults | All;
+    [key: string]: CategoryResultsRenderer | All;
   };
 }
 
-class SpeedCategoryResults {
+class CategoryResultsRenderer {
   results: {
     caseName: string;
     values: number[];
@@ -43,7 +41,7 @@ class SpeedCategoryResults {
     return avg;
   }
 
-  toChartJS() {
+  toChartJS(unitData: UnitData) {
     const categoryResults = this.results;
     categoryResults.sort((a, b) => a.avg - b.avg);
 
@@ -53,13 +51,13 @@ class SpeedCategoryResults {
     {
       let max = categoryResults.at(-1)?.avg;
       if (max)
-        while (max > 1e3 && unitIndex < TIME_UNIT.length) {
+        while (max > 1e3 && unitIndex < unitData.units.length) {
           unitIndex++;
           div *= 1e3;
           max /= 1e3;
         }
     }
-    const unit = TIME_UNIT[unitIndex];
+    const unit = unitData.units[unitIndex];
 
     return {
       labels: categoryResults.map((v) => v.caseName),
@@ -77,22 +75,23 @@ class SpeedCategoryResults {
     };
   }
 
-  static serializeToChartJS = (results: SpeedCategoryResults.All) => {
+  static serializeToChartJS = (results: CategoryResultsRenderer.All, unitData: UnitData) => {
     const o = {} as CategoryResults;
     for (const key in results) {
       const result = results[key];
       o[key] =
-        result instanceof SpeedCategoryResults
-          ? result.toChartJS()
-          : this.serializeToChartJS(result);
+        result instanceof CategoryResultsRenderer
+          ? result.toChartJS(unitData)
+          : this.serializeToChartJS(result, unitData);
     }
     return o;
   };
 }
 
-export { SpeedCategoryResults };
+export { CategoryResultsRenderer };
 
 import RESULTS from '../result.json';
+import { TIME, type UnitData } from './units.ts';
 
 export interface ChartData {
   labels: string[];

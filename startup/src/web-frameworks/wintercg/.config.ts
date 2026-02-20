@@ -10,8 +10,8 @@ export default defineCases((runtime) => {
 
     // hono
     hono: 'hono/base.ts',
-    'hono (quick)': 'hono/quick.ts',
-    'hono (tiny)': 'hono/tiny.ts',
+    'hono/quick': 'hono/quick.ts',
+    'hono/tiny': 'hono/tiny.ts',
 
     // itty-router
     'itty-router': 'itty-router.ts',

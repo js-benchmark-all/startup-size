@@ -3,9 +3,9 @@
   "scripts": {
     "fmt": "oxfmt",
     "startup:build": "bun startup/build.ts",
-    "startup:start": "BUN_JSC_useConcurrentJIT=0 BUN_JSC_useDFGJIT=0 bun startup/start.ts",
+    "startup:start": "BUN_JSC_useConcurrentJIT=0 bun startup/start.ts",
     "runtime:build": "bun runtime/build.ts",
-    "runtime:start": "bun runtime/start.ts",
+    "runtime:start": "BUN_JSC_useConcurrentJIT=0 bun runtime/start.ts",
     "result": "bun render-result.ts"
   },
   "dependencies": {
