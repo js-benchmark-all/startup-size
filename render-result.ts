@@ -28,7 +28,7 @@ export class MarkdownContent {
   }
 
   static SYMBOLS = [
-    '█', '▓', '▒', '░'
+    '█', '▓', '▒', '░',
   ];
   static WIDTH = 96;
 
