@@ -24,11 +24,12 @@ export class MarkdownContent {
 
   render(results: CategoryResults) {
     this._render(results);
+    MarkdownContent.HEADER_ID = 0;
     return this.tableOfContent + this.results;
   }
 
   static SYMBOLS = [
-    '█', '▓', '▒', '░',
+    '█', '▓', '▒', '░'
   ];
   static WIDTH = 96;
 
@@ -59,4 +60,5 @@ export class MarkdownContent {
   }
 }
 
-Bun.write('RESULTS.md', new MarkdownContent().render(RESULT));
+for (const key in RESULT)
+  Bun.write(`results/${key}.md`, new MarkdownContent().render(RESULT[key as keyof typeof RESULT] as CategoryResults));
