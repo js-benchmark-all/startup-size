@@ -17,7 +17,9 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
     bench(`${method} "${url}"/${name}`, function* () {
       yield {
         [0]: () => obj,
-        bench: fn,
+        bench: (e: any) => {
+          do_not_optimize(fn(e));
+        },
       };
     }).gc('inner');
   };
@@ -37,18 +39,17 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
     bench(`${method} "${url}"/${name}`, function* () {
       yield {
         [0]: () => ({ method, url: gen().url }),
-        bench: fn,
+        bench: (e: any) => {
+          do_not_optimize(fn(e));
+        },
       };
     }).gc('inner');
   };
 
-  // Deopt method access
-  for (const method of ['PATCH', 'OPTIONS', 'PUT', 'DELETE', 'TRACE', 'SUBSCRIBE', 'ANY', 'ALL'])
-    do_not_optimize(fn({ method, url: '/' }));
-
-  // Deopt path access
-  for (const url of ['/', '/stat', '/a', '/k/c', '/skajb', '/at', '/kinda/long/route', '/hello'])
-    do_not_optimize(fn({ method: 'GET', url }));
+  // Deopt
+  for (const method of ['GET', 'POST', 'PATCH', 'OPTIONS', 'PUT', 'DELETE', 'TRACE', 'SUBSCRIBE', 'ANY', 'ALL'])
+    for (const url of ['/', '/stat', '/a', '/k/c', '/skajb', '/at', '/kinda/long/route', '/hello'])
+      do_not_optimize(fn({ method, url }));
 
   addStaticCase('GET', '/user', '0');
   addStaticCase('GET', '/user/comments', '1');
