@@ -1,22 +1,14 @@
 import pc from 'picocolors';
 import { relative } from 'node:path/posix';
-import { BYTE, TIME, type UnitData } from './units.ts';
-
-const createUnitFormat = ({ units, sep }: UnitData) => (n: number) => {
-  let i = 0;
-  while (n >= sep && i < units.length - 1) {
-    i++;
-    n /= sep;
-  }
-  return pc.yellowBright(+n.toFixed(2) + units[i]);
-};
+import { BYTE, convertAuto, TIME } from './units.ts';
+import { math } from './math.ts';
 
 export const fmt = {
-  duration: createUnitFormat(TIME),
-  percentage: (value: number) => pc.yellowBright((value * 100).toFixed(2) + '%'),
-  byte: createUnitFormat(BYTE),
+  duration: (value: number) => pc.yellowBright(convertAuto(TIME, value)),
+  percentage: (value: number) => pc.yellowBright(math.truncate(value * 100) + '%'),
+  byte: (value: number) => pc.yellowBright(convertAuto(BYTE, value)),
   h2: (name: string) => pc.bold(pc.cyan(name)),
-  multiplier: (x: number) => pc.greenBright(x.toFixed(2) + 'x'),
+  multiplier: (x: number) => pc.greenBright(math.truncate(x) + 'x'),
   h1: pc.bold,
   success: pc.greenBright,
   error: pc.redBright,

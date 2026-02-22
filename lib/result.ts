@@ -45,33 +45,39 @@ class CategoryResultsRenderer {
     const categoryResults = this.results;
     categoryResults.sort((a, b) => a.avg - b.avg);
 
-    // Select appropriate units to display data
-    let unitIndex = 0,
-      div = 1;
-    {
-      let max = categoryResults.at(-1)?.avg;
-      if (max)
-        while (max > 1e3 && unitIndex < unitData.units.length) {
-          unitIndex++;
-          div *= 1e3;
-          max /= 1e3;
-        }
+    const max = categoryResults.at(-1)?.avg;
+    if (max == null) throw new Error('Category has no results');
+
+    const unitId = selectId(unitData, max);
+    const selectedUnit = unitData.units[unitId];
+    const truncateValue = truncateTo.bind(null, unitData, unitId);
+
+    const avgData: number[] = [];
+    const labels: string[] = [];
+    const datasets = [
+      {
+        label: `avg (${selectedUnit})`,
+        data: avgData,
+      }
+    ];
+
+    for (const p of percentiles)
+      datasets.push({
+        label: `p${p * 100} (${selectedUnit})`,
+        data: [],
+      });
+
+    for (const categoryResult of categoryResults) {
+      avgData.push(truncateValue(categoryResult.avg));
+      labels.push(categoryResult.caseName);
+
+      for (let i = 0; i < percentiles.length; i++)
+        datasets[i + 1].data.push(truncateValue(math.percentile(categoryResult.values, percentiles[i])));
     }
-    const unit = unitData.units[unitIndex];
 
     return {
-      labels: categoryResults.map((v) => v.caseName),
-      datasets: [
-        {
-          label: `avg (${unit})`,
-          // Ns to ms
-          data: categoryResults.map((v) => +(v.avg / div).toFixed(2)),
-        },
-        ...percentiles.map((p) => ({
-          label: `p${p * 100} (${unit})`,
-          data: categoryResults.map((v) => +(math.percentile(v.values, p) / div).toFixed(2)),
-        })),
-      ],
+      labels,
+      datasets
     };
   }
 
@@ -82,7 +88,7 @@ class CategoryResultsRenderer {
       o[key] =
         result instanceof CategoryResultsRenderer
           ? result.toChartJS(unitData, percentiles)
-          : this.serializeToChartJS(result, unitData);
+          : this.serializeToChartJS(result, unitData, percentiles);
     }
     return o;
   };
@@ -91,7 +97,7 @@ class CategoryResultsRenderer {
 export { CategoryResultsRenderer };
 
 import RESULTS from '../result.json';
-import { TIME, type UnitData } from './units.ts';
+import { selectId, TIME, truncateTo, type UnitData } from './units.ts';
 
 export interface ChartData {
   labels: string[];
