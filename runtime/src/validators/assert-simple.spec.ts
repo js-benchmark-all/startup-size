@@ -75,7 +75,7 @@ export default (name: string, fn: (item: any) => void | never) => {
       [0]: () => valids,
       bench: (data: typeof valids) => {
         data.forEach(fn);
-      }
-    }
+      },
+    };
   }).gc('inner');
 };

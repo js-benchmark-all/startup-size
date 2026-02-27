@@ -28,9 +28,7 @@ export class MarkdownContent {
     return this.tableOfContent + this.results;
   }
 
-  static SYMBOLS = [
-    '█', '▓', '▒', '░'
-  ];
+  static SYMBOLS = ['█', '▓', '▒', '░'];
   static WIDTH = 96;
 
   static renderChart(chart: ChartData) {
@@ -52,7 +50,7 @@ export class MarkdownContent {
 
       for (let dsIdx = 0; dsIdx < chart.datasets.length; dsIdx++) {
         const value = chart.datasets[dsIdx].data[labelIdx];
-        out += `\n    ${this.SYMBOLS[dsIdx % this.SYMBOLS.length].repeat(Math.floor(value * this.WIDTH / maxValue) + 1)}  ${+value.toFixed(2)}`;
+        out += `\n    ${this.SYMBOLS[dsIdx % this.SYMBOLS.length].repeat(Math.floor((value * this.WIDTH) / maxValue) + 1)}  ${+value.toFixed(2)}`;
       }
     }
 
@@ -61,4 +59,7 @@ export class MarkdownContent {
 }
 
 for (const key in RESULT)
-  Bun.write(`results/${key}.md`, new MarkdownContent().render(RESULT[key as keyof typeof RESULT] as CategoryResults));
+  Bun.write(
+    `results/${key}.md`,
+    new MarkdownContent().render(RESULT[key as keyof typeof RESULT] as CategoryResults),
+  );

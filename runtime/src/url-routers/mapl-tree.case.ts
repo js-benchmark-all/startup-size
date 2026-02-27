@@ -1,67 +1,11 @@
 import { createRouter, insertItem } from '@mapl/router/method';
-import { createStaticMap } from '@mapl/router/path';
 import type { Node } from '@mapl/router/tree/node';
+import { match, init, PARAMS } from '@mapl/router/tree/match';
 
 import spec from './.spec.ts';
 
 {
   type Handler = (() => string) | ((params: string[]) => string);
-
-  let PARAMS!: string[];
-
-  const _matchNode = (node: Node<Handler>, path: string, start: number): Handler | null => {
-    if (start === path.length) return node[1];
-
-    // Check the next children node
-    if (node[2].length > 0) {
-      const childId = node[2].indexOf(path.charCodeAt(start));
-      if (childId > -1) {
-        const child = node[3][childId];
-        const part = child[0];
-
-        if (part.length === 1 || path.startsWith(part, start)) {
-          const match = _matchNode(child, path, start + part.length);
-          if (match != null) return match;
-        }
-      }
-    }
-
-    // Check for parameters
-    if (node[4] != null) {
-      const paramNode = node[4];
-
-      if (paramNode[0] == null) {
-        if (!path.includes('/', start)) {
-          PARAMS.push(path.slice(start));
-          return paramNode[1];
-        }
-      } else {
-        const endIdx = path.indexOf('/', start);
-
-        if (endIdx === -1) {
-          if (paramNode[1] != null) {
-            PARAMS.push(path.slice(start));
-            return paramNode[1];
-          }
-        } else if (endIdx > start) {
-          PARAMS.push(path.slice(start, endIdx));
-
-          const match = _matchNode(paramNode[0], path, endIdx + 1);
-          if (match != null) return match;
-
-          PARAMS.pop();
-        }
-      }
-    }
-
-    // Wildcard
-    if (node[5] != null) {
-      PARAMS.push(path.slice(start));
-      return node[5];
-    }
-
-    return null;
-  };
 
   const router = createRouter<Handler>();
 
@@ -83,28 +27,20 @@ import spec from './.spec.ts';
   insert('GET', '/static/**', (params) => '11' + params[0]);
 
   const methods: string[] = router[0];
-  const staticMaps: Map<string, Handler>[] = [];
-  const nodes: (Node<Handler> | null)[] = [];
-
-  for (let i = 0, methodRouters = router[1]; i < methodRouters.length; i++) {
-    const methodRouter = methodRouters[i];
-    staticMaps.push(createStaticMap(methodRouter));
-    nodes.push(methodRouter[0]);
-  }
+  const staticMaps: Map<string, Handler>[] = router[2];
+  const nodes: Node<Handler>[] = router[1];
 
   spec('mapl (tree)', (o) => {
     const id = methods.indexOf(o.method);
     if (id > -1) {
-      const match = staticMaps[id].get(o.url);
-      if (match != null)
+      const smatch = staticMaps[id].get(o.url);
+      if (typeof smatch !== 'undefined')
         // @ts-ignore
-        return match();
+        return smatch();
 
-      if (nodes[id] !== null) {
-        PARAMS = [];
-        const dmatch = _matchNode(nodes[id], o.url, 1);
-        if (dmatch != null) return dmatch(PARAMS);
-      }
+      init(o.url);
+      const dmatch = match(nodes[id], 1);
+      if (dmatch != null) return dmatch(PARAMS);
     }
 
     return '';

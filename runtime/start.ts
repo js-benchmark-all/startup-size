@@ -108,7 +108,13 @@ for (const categoryName in INFO) {
 }
 
 await using RUNTIME_RESULTS = getCategoryResults('runtime', runtimeId);
-Object.assign(RUNTIME_RESULTS, CategoryResultsRenderer.serializeToChartJS(RUNTIME_CATEGORIES_RESULTS, TIME));
+Object.assign(
+  RUNTIME_RESULTS,
+  CategoryResultsRenderer.serializeToChartJS(RUNTIME_CATEGORIES_RESULTS, TIME),
+);
 
 await using HEAP_RESULTS = getCategoryResults('heap usage', runtimeId);
-Object.assign(HEAP_RESULTS, CategoryResultsRenderer.serializeToChartJS(HEAP_CATEGORIES_RESULTS, BYTE, []));
+Object.assign(
+  HEAP_RESULTS,
+  CategoryResultsRenderer.serializeToChartJS(HEAP_CATEGORIES_RESULTS, BYTE, []),
+);

@@ -3,8 +3,8 @@ on:
     branches:
       - dev
     paths:
-      - "package.json"
-      - "render-result.ts"
+      - 'package.json'
+      - 'render-result.ts'
 
 jobs:
   render:

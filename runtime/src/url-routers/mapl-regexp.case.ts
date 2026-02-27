@@ -1,5 +1,4 @@
 import { createRouter, insertItem } from '@mapl/router/method';
-import { createStaticMap } from '@mapl/router/path';
 import type { Node } from '@mapl/router/tree/node';
 
 import spec from './.spec.ts';
@@ -32,7 +31,7 @@ import spec from './.spec.ts';
     if (node[4] != null) {
       parts++;
 
-      str += '|([^/]+)';
+      str += '|([^/]+?)';
       const newParamMap = paramMap.concat(PARAM_IDX++);
 
       const params = node[4];
@@ -52,7 +51,7 @@ import spec from './.spec.ts';
 
       const newParamMap = paramMap.concat(PARAM_IDX++);
       HANDLERS[PARAM_IDX++] = [node[5], newParamMap];
-      str += '|(.*$)()';
+      str += '|(.*)($)';
     }
 
     return node[0].replace(/\//g, '\\/') + (parts > 1 ? '(?:' + str.slice(1) + ')' : str.slice(1));
@@ -78,41 +77,33 @@ import spec from './.spec.ts';
   insert('GET', '/static/**', (match, params) => '11' + match[params[0]]);
 
   const methods: string[] = router[0];
-  const staticMaps: Map<string, Handler>[] = [];
-  const regexps: (RegExp | null)[] = [];
-  const stores: (typeof HANDLERS | null)[] = [];
+  const staticMaps: Map<string, Handler>[] = router[2];
+
+  const regexps: RegExp[] = [];
+  const stores: (typeof HANDLERS)[] = [];
 
   for (let i = 0, methodRouters = router[1]; i < methodRouters.length; i++) {
     const methodRouter = methodRouters[i];
 
-    staticMaps.push(createStaticMap(methodRouter));
+    HANDLERS = [];
+    PARAM_IDX = 1;
 
-    if (methodRouter[0] != null) {
-      HANDLERS = [];
-      PARAM_IDX = 1;
-
-      regexps.push(new RegExp('^' + _compile(methodRouter[0], [])));
-      stores.push(HANDLERS);
-    } else {
-      regexps.push(null);
-      stores.push(null);
-    }
+    regexps.push(new RegExp('^' + _compile(methodRouter, [])));
+    stores.push(HANDLERS);
   }
 
   spec('mapl (regexp)', (o) => {
     const id = methods.indexOf(o.method);
     if (id > -1) {
       const match = staticMaps[id].get(o.url);
-      if (match != null)
+      if (typeof match !== 'undefined')
         // @ts-ignore
         return match();
 
-      if (regexps[id] !== null) {
-        const dmatch = regexps[id].exec(o.url);
-        if (dmatch !== null) {
-          const store = stores[id]![dmatch.indexOf('', 1)];
-          return store[0](dmatch, store[1]);
-        }
+      const dmatch = regexps[id].exec(o.url);
+      if (dmatch !== null) {
+        const store = stores[id]![dmatch.indexOf('', 1)];
+        return store[0](dmatch, store[1]);
       }
     }
 

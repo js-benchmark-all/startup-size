@@ -10,7 +10,7 @@ export default defineCases((_runtime) => {
     'typescript (jit)': 'typebox/script-jit.ts',
     valibot: 'valibot.ts',
     zod: 'zod/index.ts',
-    'zod/mini': 'zod/mini.ts'
+    'zod/mini': 'zod/mini.ts',
   };
 
   return { cases };

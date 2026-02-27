@@ -58,7 +58,7 @@ class CategoryResultsRenderer {
       {
         label: `avg (${selectedUnit})`,
         data: avgData,
-      }
+      },
     ];
 
     for (const p of percentiles)
@@ -72,16 +72,22 @@ class CategoryResultsRenderer {
       labels.push(categoryResult.caseName);
 
       for (let i = 0; i < percentiles.length; i++)
-        datasets[i + 1].data.push(truncateValue(math.percentile(categoryResult.values, percentiles[i])));
+        datasets[i + 1].data.push(
+          truncateValue(math.percentile(categoryResult.values, percentiles[i])),
+        );
     }
 
     return {
       labels,
-      datasets
+      datasets,
     };
   }
 
-  static serializeToChartJS = (results: CategoryResultsRenderer.All, unitData: UnitData, percentiles: number[] = [0.5, 0.75, 0.99]) => {
+  static serializeToChartJS = (
+    results: CategoryResultsRenderer.All,
+    unitData: UnitData,
+    percentiles: number[] = [0.5, 0.75, 0.99],
+  ) => {
     const o = {} as CategoryResults;
     for (const key in results) {
       const result = results[key];

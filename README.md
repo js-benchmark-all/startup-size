@@ -18,5 +18,6 @@ bun i
 - Startup times are directly measured in the running code (see startup preprocessed code in [`output.ts`](./lib/output.ts)).
 
 ## Results
+
 All category results are stored in [`result.json`](./result.json).
 You can also view results in Markdown in [`results`](./results) directory.

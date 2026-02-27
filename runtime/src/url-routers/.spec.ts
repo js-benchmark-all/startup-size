@@ -47,7 +47,18 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
   };
 
   // Deopt
-  for (const method of ['GET', 'POST', 'PATCH', 'OPTIONS', 'PUT', 'DELETE', 'TRACE', 'SUBSCRIBE', 'ANY', 'ALL'])
+  for (const method of [
+    'GET',
+    'POST',
+    'PATCH',
+    'OPTIONS',
+    'PUT',
+    'DELETE',
+    'TRACE',
+    'SUBSCRIBE',
+    'ANY',
+    'ALL',
+  ])
     for (const url of ['/', '/stat', '/a', '/k/c', '/skajb', '/at', '/kinda/long/route', '/hello'])
       do_not_optimize(fn({ method, url }));
 
