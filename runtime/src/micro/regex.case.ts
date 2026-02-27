@@ -1,23 +1,24 @@
-import { run, bench, summary, do_not_optimize } from 'mitata';
+import { run, bench, do_not_optimize } from 'mitata';
 
 const itd = (name: string, d: string[]) => (re: RegExp) => {
-  bench(name + '/' + re.toString(), function* () {
+  bench(`regex/${name}/${re}`, function* () {
     yield {
       [0]: () => d,
       bench: (arr: string[]) => {
         for (let i = 0; i < arr.length; i++)
-          re.exec(arr[i]);
+          do_not_optimize(re.exec(arr[i]));
       },
     }
   })
 }
 
-summary(() => {
-  const it = itd('url regexp/end', [
+{
+  const it = itd('url/end', [
     'a',
     'ab',
     'ac',
     'a',
+    'auukc',
     'a',
     'a',
     'ad',
@@ -30,10 +31,10 @@ summary(() => {
   it(/^a()$/);
   it(/^a($)$/);
   it(/^a$($)$/);
-});
+};
 
-summary(() => {
-  const it = itd('url regexp/wildcard', [
+{
+  const it = itd('url/wildcard', [
     'akbajkm',
     'akckbkal',
     'bkavja',
@@ -51,6 +52,6 @@ summary(() => {
   it(/^a(.*$)()$/);
   it(/^a(.*$)($)$/);
   it(/^a(.*)()$/);
-});
+};
 
 run();
