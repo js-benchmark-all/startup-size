@@ -14,7 +14,7 @@ const itd =
   };
 
 {
-  const it = itd(['a', 'ab', 'ac', 'a', 'auukc', 'a', 'a', 'ad', 'ax', 'a'], 'url', 'end');
+  const it = itd(['a', 'ab', 'ac', 'a', 'auukc', 'a', 'a', 'ad', 'ax', 'a', 'au'], 'url', 'end');
 
   it(/^a($)/);
   it(/^a$()/);
