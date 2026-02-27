@@ -1,4 +1,4 @@
-import { run, bench, do_not_optimize } from 'mitata';
+import { bench, do_not_optimize } from 'mitata';
 
 const itd = (name: string, d: string[]) => (re: RegExp) => {
   bench(`regex/${name}/${re}`, function* () {
@@ -53,5 +53,3 @@ const itd = (name: string, d: string[]) => (re: RegExp) => {
   it(/^a(.*$)($)$/);
   it(/^a(.*)()$/);
 };
-
-run();
