@@ -37,6 +37,7 @@ for (const categoryName in INFO) {
         const hasHeapUsages = heapUsages[0] != null;
 
         const subCategories = alias.split('|');
+        const caseName = subCategories[subCategories.length - 1];
         {
           console.log(
             '      average:',
@@ -44,8 +45,8 @@ for (const categoryName in INFO) {
               CategoryResultsRenderer.getFrom(
                 RUNTIME_CATEGORIES_RESULTS,
                 categoryName,
-                ...subCategories,
-              ).addAndSort(alias, runTimes),
+                ...subCategories.slice(0, -1),
+              ).addAndSort(caseName, runTimes),
             ),
           );
 
@@ -57,7 +58,7 @@ for (const categoryName in INFO) {
                 CategoryResultsRenderer.getFrom(
                   HEAP_CATEGORIES_RESULTS,
                   categoryName,
-                  ...subCategories,
+                  ...subCategories.slice(0, -1),
                 ).addAndSort(caseName, heapUsages as number[]),
               ),
             );
