@@ -14,7 +14,7 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
     assertEq(fn(obj), id, `${method} "${url}"`);
 
     // add the ability to nest multiple subcategories in start.ts later
-    bench(`${method} "${url}"/${name}`, function* () {
+    bench(`${method} "${url}"|${name}`, function* () {
       yield {
         [0]: () => obj,
         bench: (e: any) => {
@@ -36,7 +36,7 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
     }
 
     // add the ability to nest multiple subcategories in start.ts later
-    bench(`${method} "${url}"/${name}`, function* () {
+    bench(`${method} "${url}"|${name}`, function* () {
       yield {
         [0]: () => ({ method, url: gen().url }),
         bench: (e: any) => {

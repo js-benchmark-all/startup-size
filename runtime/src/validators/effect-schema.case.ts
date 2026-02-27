@@ -19,6 +19,6 @@ const assert = Schema.is(
   }),
 );
 
-assertSimple('effect-schema', (o) => {
+assertSimple('effect/schema', (o) => {
   if (!assert(o)) throw new Error();
 });

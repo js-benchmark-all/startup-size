@@ -5,7 +5,7 @@ export default (name: string, decode: (str: string) => string | undefined | null
   for (let i = 0; i < data.length; i++)
     if (decode(data[i]) != null) throw new Error('Expected null or undefined');
 
-  bench('invalid/' + name, function* () {
+  bench('invalid|' + name, function* () {
     yield {
       [0]: () => data,
       bench: (d: typeof data) => {

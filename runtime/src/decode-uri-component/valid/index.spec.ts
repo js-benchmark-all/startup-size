@@ -10,7 +10,7 @@ export default (name: string, decode: (str: string) => string | undefined | null
       throw new Error(`Expected ${JSON.stringify(expected)}, recieved ${JSON.stringify(data)}`);
   }
 
-  bench('valid/' + name, function* () {
+  bench('valid|' + name, function* () {
     yield {
       [0]: () => data,
       bench: (d: typeof data) => {

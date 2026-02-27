@@ -1,4 +1,5 @@
-import { createRouter, addRoute, findRoute } from 'rou3';
+import { createRouter, addRoute } from 'rou3';
+import { compileRouter } from 'rou3/compiler';
 import spec from './.spec.ts';
 
 type Handler = (params: Record<string, string>) => string;
@@ -18,8 +19,9 @@ addRoute(router, 'GET', '/status', () => '9');
 addRoute(router, 'GET', '/very/deeply/nested/route/hello/there', () => '10');
 addRoute(router, 'GET', '/static/**:a', (map) => '11' + map.a);
 
-spec('rou3', (o) => {
-  const result = findRoute(router, o.method, o.url);
+const match = compileRouter(router);
+spec('rou3 (jit)', (o) => {
+  const result = match(o.method, o.url);
   return typeof result === 'undefined'
     ? ''
     : typeof result.params === 'undefined'

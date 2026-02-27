@@ -98,6 +98,23 @@ class CategoryResultsRenderer {
     }
     return o;
   };
+
+  static getFrom(
+    results: CategoryResultsRenderer.All,
+    ...paths: string[]
+  ): CategoryResultsRenderer {
+    for (let i = 0; i < paths.length - 1; i++) {
+      // @ts-ignore
+      results = results[paths[i]] ??= {};
+      if (results instanceof CategoryResultsRenderer)
+        throw new Error('Cannot have subcategories of ' + paths[i]);
+    }
+
+    const renderer = (results[paths[paths.length - 1]] ??= new CategoryResultsRenderer());
+    if (renderer instanceof CategoryResultsRenderer) return renderer;
+
+    throw new Error('Cannot have subcategories of ' + paths[paths.length - 1]);
+  }
 }
 
 export { CategoryResultsRenderer };

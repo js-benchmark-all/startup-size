@@ -70,7 +70,7 @@ export default (name: string, fn: (item: any) => void | never) => {
 
   // Its ok to do this cuz fn can throw so
   // this part wont be optimized out
-  bench('assert-simple/' + name, function* () {
+  bench('assert-simple|' + name, function* () {
     yield {
       [0]: () => valids,
       bench: (data: typeof valids) => {
