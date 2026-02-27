@@ -32,6 +32,6 @@ export default async (
     }
     runningTasks = 0;
 
-    bench(`concurrency ${CONCURRENCY}/${name}`, () => Promise.all(TASKS.map(runner))).gc('inner');
+    bench(`concurrency ${CONCURRENCY}|${name}`, () => Promise.all(TASKS.map(runner))).gc('inner');
   }
 };
