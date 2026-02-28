@@ -3,14 +3,17 @@ import { bench, do_not_optimize } from 'mitata';
 const itd =
   (d: string[], ...cats: string[]) =>
   (re: RegExp) => {
-    bench(`${cats.join('|')}|${re}`, function* () {
-      yield {
-        [0]: () => d,
-        bench: (arr: string[]) => {
-          for (let i = 0; i < arr.length; i++) do_not_optimize(re.exec(arr[i]));
-        },
-      };
-    }).gc('inner');
+    const f = (v: string) => {
+      do_not_optimize(re.exec(v));
+    };
+
+    for (const v of d)
+      bench(`${cats.join('|')}|"${v}"|${re}`, function* () {
+        yield {
+          [0]: () => v,
+          bench: f
+        };
+      }).gc('inner');
   };
 
 {
@@ -18,59 +21,9 @@ const itd =
     [
       'a',
       'ab',
-      'ac',
-      'a',
-      'auukc',
-      'a',
-      'a',
-      'ad',
-      'ax',
-      'a',
-      'au',
-      'a',
-      'ab',
-      'ac',
-      'a',
-      'auukc',
-      'a',
-      'a',
-      'ad',
-      'ax',
-      'a',
-      'au',
-      'a',
-      'ab',
-      'ac',
-      'a',
-      'auukc',
-      'a',
-      'a',
-      'ad',
-      'ax',
-      'a',
-      'au',
-      'a',
-      'ab',
-      'ac',
-      'a',
-      'auukc',
-      'a',
-      'a',
-      'ad',
-      'ax',
-      'a',
-      'au',
-      'a',
-      'ab',
-      'ac',
-      'a',
-      'auukc',
-      'a',
-      'a',
-      'ad',
-      'ax',
-      'a',
-      'au',
+      'ba',
+      'ajobajboajnm',
+      'jaoboobjmvndks'
     ],
     'url',
     'end',
@@ -86,51 +39,11 @@ const itd =
 {
   const it = itd(
     [
-      'akbajkm',
-      'akckbkal',
-      'bkavja',
       'a',
-      'jbabuck',
-      'ajhkkcnksajhfigib',
-      'bohbohivnihggg',
-      'umvmdksjv',
-      'kbjhgsaamm',
-      'akbajkm',
-      'akckbkal',
-      'bkavja',
-      'a',
-      'jbabuck',
-      'ajhkkcnksajhfigib',
-      'bohbohivnihggg',
-      'umvmdksjv',
-      'kbjhgsaamm',
-      'akbajkm',
-      'akckbkal',
-      'bkavja',
-      'a',
-      'jbabuck',
-      'ajhkkcnksajhfigib',
-      'bohbohivnihggg',
-      'umvmdksjv',
-      'kbjhgsaamm',
-      'akbajkm',
-      'akckbkal',
-      'bkavja',
-      'a',
-      'jbabuck',
-      'ajhkkcnksajhfigib',
-      'bohbohivnihggg',
-      'umvmdksjv',
-      'kbjhgsaamm',
-      'akbajkm',
-      'akckbkal',
-      'bkavja',
-      'a',
-      'jbabuck',
-      'ajhkkcnksajhfigib',
-      'bohbohivnihggg',
-      'umvmdksjv',
-      'kbjhgsaamm',
+      'ab',
+      'ba',
+      'jajjbnakckmc',
+      'abanbancknc'
     ],
     'url',
     'wildcard',
