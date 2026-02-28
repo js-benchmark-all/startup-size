@@ -1,58 +1,28 @@
 import { bench, do_not_optimize } from 'mitata';
 
-const itd =
-  (d: string[], ...cats: string[]) =>
-  (re: RegExp) => {
-    const f = (v: string) => {
-      do_not_optimize(re.exec(v));
-    };
+const f = (re: RegExp, v: string) => {
+  do_not_optimize(re.exec(v));
+};
+
+const it = (regexes: RegExp[], d: string[], ...cats: string[]) => {
+  for (const re of regexes) {
+    const fn = f.bind(null, re);
 
     for (const v of d)
       bench(`${cats.join('|')}|"${v}"|${re}`, function* () {
         yield {
           [0]: () => v,
-          bench: f
+          bench: fn,
         };
       }).gc('inner');
-  };
+  }
+};
 
-{
-  const it = itd(
-    [
-      'a',
-      'ab',
-      'ba',
-      'ajobajboajnm',
-      'jaoboobjmvndks'
-    ],
-    'url',
-    'end',
-  );
+it([/^a($)/, /^a$()/, /^a()$/], ['a', 'ab', 'ba', 'ajobajboajnm', 'jaoboobjmvndks'], 'url', 'end');
 
-  it(/^a($)/);
-  it(/^a$()/);
-  it(/^a()$/);
-  it(/^a($)$/);
-  it(/^a$($)$/);
-}
-
-{
-  const it = itd(
-    [
-      'a',
-      'ab',
-      'ba',
-      'jajjbnakckmc',
-      'abanbancknc'
-    ],
-    'url',
-    'wildcard',
-  );
-
-  it(/^a(.*)($)/);
-  it(/^a(.*)($)$/);
-  it(/^a(.*$)($)/);
-  it(/^a(.*$)()$/);
-  it(/^a(.*$)($)$/);
-  it(/^a(.*)()$/);
-}
+it(
+  [/^a(.*)($)/, /^a(.*)($)$/, /^a(.*)($)$/, /^a(.*$)()$/, /^a(.*$)($)$/, /^a(.*)()$/],
+  ['a', 'ab', 'ba', 'jajjbnakckmc', 'abanbancknc'],
+  'url',
+  'wildcard',
+);

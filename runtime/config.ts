@@ -1,6 +1,6 @@
 export default {
   include: {
-    category: (name: string) => name.startsWith('micro'),
+    category: (name: string) => true,
     case: (categoryName: string, name: string) => true,
   } as const,
 };
