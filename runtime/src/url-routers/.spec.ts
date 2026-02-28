@@ -8,6 +8,11 @@ const assertEq = <T>(value: T, expected: T, caseName: string) => {
     );
 };
 
+const f = (fn: (input: { method: string; url: string }) => string) =>
+  (e: any) => {
+    do_not_optimize(fn(e));
+  }
+
 export default (name: string, fn: (input: { method: string; url: string }) => string): void => {
   const addStaticCase = (method: string, url: string, id: string) => {
     const obj = { method, url };
@@ -17,9 +22,7 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
     bench(`${method} "${url}"|${name}`, function* () {
       yield {
         [0]: () => obj,
-        bench: (e: any) => {
-          do_not_optimize(fn(e));
-        },
+        bench: f(fn)
       };
     }).gc('inner');
   };
@@ -39,9 +42,7 @@ export default (name: string, fn: (input: { method: string; url: string }) => st
     bench(`${method} "${url}"|${name}`, function* () {
       yield {
         [0]: () => ({ method, url: gen().url }),
-        bench: (e: any) => {
-          do_not_optimize(fn(e));
-        },
+        bench: f(fn)
       };
     }).gc('inner');
   };
