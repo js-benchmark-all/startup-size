@@ -18,11 +18,11 @@ const it = (regexes: RegExp[], d: string[], ...cats: string[]) => {
   }
 };
 
-it([/^a($)/, /^a$()/, /^a()$/], ['a', 'ab', 'ba', 'ajobajboajnm', 'jaoboobjmvndks'], 'url', 'end');
+// it([/^a($)/, /^a$()/, /^a()$/], ['a', 'ab', 'ba', 'ajobajboajnm', 'jaoboobjmvndks'], 'url', 'end');
 
-it(
-  [/^a(.*)($)/, /^a(.*)($)$/, /^a(.*)($)$/, /^a(.*$)()$/, /^a(.*$)($)$/, /^a(.*)()$/],
-  ['a', 'ab', 'ba', 'jajjbnakckmc', 'abanbancknc'],
-  'url',
-  'wildcard',
-);
+// it(
+//   [/^a(.*)($)/, /^a(.*)($)$/, /^a(.*)($)$/, /^a(.*$)()$/, /^a(.*$)($)$/, /^a(.*)()$/],
+//   ['a', 'ab', 'ba', 'jajjbnakckmc', 'abanbancknc'],
+//   'url',
+//   'wildcard',
+// );

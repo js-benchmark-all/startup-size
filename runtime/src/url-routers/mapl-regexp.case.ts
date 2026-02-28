@@ -18,7 +18,7 @@ import spec from './.spec.ts';
       parts++;
 
       HANDLERS[PARAM_IDX++] = [node[1], paramMap];
-      str += '|($)';
+      str += '|()$';
     }
 
     if (node[3].length > 0) {
@@ -38,11 +38,11 @@ import spec from './.spec.ts';
       if (params[0] != null) {
         if (params[1] != null) {
           HANDLERS[PARAM_IDX++] = [params[1], newParamMap];
-          str += '(?:($)|' + _compile(params[0], newParamMap) + ')';
+          str += '(?:()$|' + _compile(params[0], newParamMap) + ')';
         } else str += _compile(params[0], newParamMap);
       } else {
         HANDLERS[PARAM_IDX++] = [params[1], newParamMap];
-        str += '($)';
+        str += '()$';
       }
     }
 
@@ -51,7 +51,7 @@ import spec from './.spec.ts';
 
       const newParamMap = paramMap.concat(PARAM_IDX++);
       HANDLERS[PARAM_IDX++] = [node[5], newParamMap];
-      str += '|(.*)($)';
+      str += '|(.*)()$';
     }
 
     return node[0].replace(/\//g, '\\/') + (parts > 1 ? '(?:' + str.slice(1) + ')' : str.slice(1));
