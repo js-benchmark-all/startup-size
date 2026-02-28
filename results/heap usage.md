@@ -1,311 +1,316 @@
 # Results
+
 1. [`node-22.22.0`](#0)
-    1. [`micro`](#1)
-        1. [`url`](#2)
-            1. [`end`](#3)
-            2. [`wildcard`](#4)
-    2. [`async`](#5)
-        1. [`concurrency 1`](#6)
-        2. [`concurrency 2`](#7)
-        3. [`concurrency 4`](#8)
-        4. [`concurrency 8`](#9)
-        5. [`concurrency 16`](#10)
-        6. [`concurrency 32`](#11)
-        7. [`concurrency 64`](#12)
-    3. [`decode-uri-component`](#13)
-        1. [`valid`](#14)
-        2. [`invalid`](#15)
-    4. [`url-routers`](#16)
-        1. [`GET "/user"`](#17)
-        2. [`GET "/user/comments"`](#18)
-        3. [`GET "/user/avatar"`](#19)
-        4. [`GET "/user/lookup/username/:username"`](#20)
-        5. [`GET "/user/lookup/email/:email"`](#21)
-        6. [`GET "/event/:id"`](#22)
-        7. [`GET "/event/:id/comments"`](#23)
-        8. [`POST "/event/:id/comment"`](#24)
-        9. [`GET "/map/:location/event"`](#25)
-        10. [`GET "/status"`](#26)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#27)
-        12. [`GET "/static/*"`](#28)
-    5. [`validators`](#29)
-        1. [`assert-simple`](#30)
+   1. [`micro`](#1)
+      1. [`url`](#2)
+         1. [`end`](#3)
+         2. [`wildcard`](#4)
+   2. [`async`](#5)
+      1. [`concurrency 1`](#6)
+      2. [`concurrency 2`](#7)
+      3. [`concurrency 4`](#8)
+      4. [`concurrency 8`](#9)
+      5. [`concurrency 16`](#10)
+      6. [`concurrency 32`](#11)
+      7. [`concurrency 64`](#12)
+   3. [`decode-uri-component`](#13)
+      1. [`valid`](#14)
+      2. [`invalid`](#15)
+   4. [`url-routers`](#16)
+      1. [`GET "/user"`](#17)
+      2. [`GET "/user/comments"`](#18)
+      3. [`GET "/user/avatar"`](#19)
+      4. [`GET "/user/lookup/username/:username"`](#20)
+      5. [`GET "/user/lookup/email/:email"`](#21)
+      6. [`GET "/event/:id"`](#22)
+      7. [`GET "/event/:id/comments"`](#23)
+      8. [`POST "/event/:id/comment"`](#24)
+      9. [`GET "/map/:location/event"`](#25)
+      10. [`GET "/status"`](#26)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#27)
+      12. [`GET "/static/*"`](#28)
+   5. [`validators`](#29)
+      1. [`assert-simple`](#30)
 2. [`node-24.13.0`](#31)
-    1. [`async`](#32)
-        1. [`concurrency 1`](#33)
-        2. [`concurrency 2`](#34)
-        3. [`concurrency 4`](#35)
-        4. [`concurrency 8`](#36)
-        5. [`concurrency 16`](#37)
-        6. [`concurrency 32`](#38)
-        7. [`concurrency 64`](#39)
-    2. [`decode-uri-component`](#40)
-        1. [`valid`](#41)
-        2. [`invalid`](#42)
-    3. [`url-routers`](#43)
-        1. [`GET "/user"`](#44)
-        2. [`GET "/user/comments"`](#45)
-        3. [`GET "/user/avatar"`](#46)
-        4. [`GET "/user/lookup/username/:username"`](#47)
-        5. [`GET "/user/lookup/email/:email"`](#48)
-        6. [`GET "/event/:id"`](#49)
-        7. [`GET "/event/:id/comments"`](#50)
-        8. [`POST "/event/:id/comment"`](#51)
-        9. [`GET "/map/:location/event"`](#52)
-        10. [`GET "/status"`](#53)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#54)
-        12. [`GET "/static/*"`](#55)
-    4. [`validators`](#56)
-        1. [`assert-simple`](#57)
+   1. [`async`](#32)
+      1. [`concurrency 1`](#33)
+      2. [`concurrency 2`](#34)
+      3. [`concurrency 4`](#35)
+      4. [`concurrency 8`](#36)
+      5. [`concurrency 16`](#37)
+      6. [`concurrency 32`](#38)
+      7. [`concurrency 64`](#39)
+   2. [`decode-uri-component`](#40)
+      1. [`valid`](#41)
+      2. [`invalid`](#42)
+   3. [`url-routers`](#43)
+      1. [`GET "/user"`](#44)
+      2. [`GET "/user/comments"`](#45)
+      3. [`GET "/user/avatar"`](#46)
+      4. [`GET "/user/lookup/username/:username"`](#47)
+      5. [`GET "/user/lookup/email/:email"`](#48)
+      6. [`GET "/event/:id"`](#49)
+      7. [`GET "/event/:id/comments"`](#50)
+      8. [`POST "/event/:id/comment"`](#51)
+      9. [`GET "/map/:location/event"`](#52)
+      10. [`GET "/status"`](#53)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#54)
+      12. [`GET "/static/*"`](#55)
+   4. [`validators`](#56)
+      1. [`assert-simple`](#57)
 3. [`node-25.6.1`](#58)
-    1. [`async`](#59)
-        1. [`concurrency 1`](#60)
-        2. [`concurrency 2`](#61)
-        3. [`concurrency 4`](#62)
-        4. [`concurrency 8`](#63)
-        5. [`concurrency 16`](#64)
-        6. [`concurrency 32`](#65)
-        7. [`concurrency 64`](#66)
-    2. [`decode-uri-component`](#67)
-        1. [`valid`](#68)
-        2. [`invalid`](#69)
-    3. [`url-routers`](#70)
-        1. [`GET "/user"`](#71)
-        2. [`GET "/user/comments"`](#72)
-        3. [`GET "/user/avatar"`](#73)
-        4. [`GET "/user/lookup/username/:username"`](#74)
-        5. [`GET "/user/lookup/email/:email"`](#75)
-        6. [`GET "/event/:id"`](#76)
-        7. [`GET "/event/:id/comments"`](#77)
-        8. [`POST "/event/:id/comment"`](#78)
-        9. [`GET "/map/:location/event"`](#79)
-        10. [`GET "/status"`](#80)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#81)
-        12. [`GET "/static/*"`](#82)
-    4. [`validators`](#83)
-        1. [`assert-simple`](#84)
+   1. [`async`](#59)
+      1. [`concurrency 1`](#60)
+      2. [`concurrency 2`](#61)
+      3. [`concurrency 4`](#62)
+      4. [`concurrency 8`](#63)
+      5. [`concurrency 16`](#64)
+      6. [`concurrency 32`](#65)
+      7. [`concurrency 64`](#66)
+   2. [`decode-uri-component`](#67)
+      1. [`valid`](#68)
+      2. [`invalid`](#69)
+   3. [`url-routers`](#70)
+      1. [`GET "/user"`](#71)
+      2. [`GET "/user/comments"`](#72)
+      3. [`GET "/user/avatar"`](#73)
+      4. [`GET "/user/lookup/username/:username"`](#74)
+      5. [`GET "/user/lookup/email/:email"`](#75)
+      6. [`GET "/event/:id"`](#76)
+      7. [`GET "/event/:id/comments"`](#77)
+      8. [`POST "/event/:id/comment"`](#78)
+      9. [`GET "/map/:location/event"`](#79)
+      10. [`GET "/status"`](#80)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#81)
+      12. [`GET "/static/*"`](#82)
+   4. [`validators`](#83)
+      1. [`assert-simple`](#84)
 4. [`bun-1.3.9`](#85)
-    1. [`async`](#86)
-        1. [`concurrency 1`](#87)
-        2. [`concurrency 2`](#88)
-        3. [`concurrency 4`](#89)
-        4. [`concurrency 8`](#90)
-        5. [`concurrency 16`](#91)
-        6. [`concurrency 32`](#92)
-        7. [`concurrency 64`](#93)
-    2. [`decode-uri-component`](#94)
-        1. [`valid`](#95)
-        2. [`invalid`](#96)
-    3. [`url-routers`](#97)
-        1. [`GET "/user"`](#98)
-        2. [`GET "/user/comments"`](#99)
-        3. [`GET "/user/avatar"`](#100)
-        4. [`GET "/user/lookup/username/:username"`](#101)
-        5. [`GET "/user/lookup/email/:email"`](#102)
-        6. [`GET "/event/:id"`](#103)
-        7. [`GET "/event/:id/comments"`](#104)
-        8. [`POST "/event/:id/comment"`](#105)
-        9. [`GET "/map/:location/event"`](#106)
-        10. [`GET "/status"`](#107)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#108)
-        12. [`GET "/static/*"`](#109)
-    4. [`validators`](#110)
-        1. [`assert-simple`](#111)
+   1. [`async`](#86)
+      1. [`concurrency 1`](#87)
+      2. [`concurrency 2`](#88)
+      3. [`concurrency 4`](#89)
+      4. [`concurrency 8`](#90)
+      5. [`concurrency 16`](#91)
+      6. [`concurrency 32`](#92)
+      7. [`concurrency 64`](#93)
+   2. [`decode-uri-component`](#94)
+      1. [`valid`](#95)
+      2. [`invalid`](#96)
+   3. [`url-routers`](#97)
+      1. [`GET "/user"`](#98)
+      2. [`GET "/user/comments"`](#99)
+      3. [`GET "/user/avatar"`](#100)
+      4. [`GET "/user/lookup/username/:username"`](#101)
+      5. [`GET "/user/lookup/email/:email"`](#102)
+      6. [`GET "/event/:id"`](#103)
+      7. [`GET "/event/:id/comments"`](#104)
+      8. [`POST "/event/:id/comment"`](#105)
+      9. [`GET "/map/:location/event"`](#106)
+      10. [`GET "/status"`](#107)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#108)
+      12. [`GET "/static/*"`](#109)
+   4. [`validators`](#110)
+      1. [`assert-simple`](#111)
 5. [`deno-2.5.7`](#112)
-    1. [`micro`](#113)
-        1. [`url`](#114)
-            1. [`end`](#115)
-            2. [`wildcard`](#116)
-    2. [`async`](#117)
-        1. [`concurrency 1`](#118)
-        2. [`concurrency 2`](#119)
-        3. [`concurrency 4`](#120)
-        4. [`concurrency 8`](#121)
-        5. [`concurrency 16`](#122)
-        6. [`concurrency 32`](#123)
-        7. [`concurrency 64`](#124)
-    3. [`decode-uri-component`](#125)
-        1. [`valid`](#126)
-        2. [`invalid`](#127)
-    4. [`url-routers`](#128)
-        1. [`GET "/user"`](#129)
-        2. [`GET "/user/comments"`](#130)
-        3. [`GET "/user/avatar"`](#131)
-        4. [`GET "/user/lookup/username/:username"`](#132)
-        5. [`GET "/user/lookup/email/:email"`](#133)
-        6. [`GET "/event/:id"`](#134)
-        7. [`GET "/event/:id/comments"`](#135)
-        8. [`POST "/event/:id/comment"`](#136)
-        9. [`GET "/map/:location/event"`](#137)
-        10. [`GET "/status"`](#138)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#139)
-        12. [`GET "/static/*"`](#140)
-    5. [`validators`](#141)
-        1. [`assert-simple`](#142)
+   1. [`micro`](#113)
+      1. [`url`](#114)
+         1. [`end`](#115)
+         2. [`wildcard`](#116)
+   2. [`async`](#117)
+      1. [`concurrency 1`](#118)
+      2. [`concurrency 2`](#119)
+      3. [`concurrency 4`](#120)
+      4. [`concurrency 8`](#121)
+      5. [`concurrency 16`](#122)
+      6. [`concurrency 32`](#123)
+      7. [`concurrency 64`](#124)
+   3. [`decode-uri-component`](#125)
+      1. [`valid`](#126)
+      2. [`invalid`](#127)
+   4. [`url-routers`](#128)
+      1. [`GET "/user"`](#129)
+      2. [`GET "/user/comments"`](#130)
+      3. [`GET "/user/avatar"`](#131)
+      4. [`GET "/user/lookup/username/:username"`](#132)
+      5. [`GET "/user/lookup/email/:email"`](#133)
+      6. [`GET "/event/:id"`](#134)
+      7. [`GET "/event/:id/comments"`](#135)
+      8. [`POST "/event/:id/comment"`](#136)
+      9. [`GET "/map/:location/event"`](#137)
+      10. [`GET "/status"`](#138)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#139)
+      12. [`GET "/static/*"`](#140)
+   5. [`validators`](#141)
+      1. [`assert-simple`](#142)
 6. [`deno-2.6.10`](#143)
-    1. [`async`](#144)
-        1. [`concurrency 1`](#145)
-        2. [`concurrency 2`](#146)
-        3. [`concurrency 4`](#147)
-        4. [`concurrency 8`](#148)
-        5. [`concurrency 16`](#149)
-        6. [`concurrency 32`](#150)
-        7. [`concurrency 64`](#151)
-    2. [`decode-uri-component`](#152)
-        1. [`valid`](#153)
-        2. [`invalid`](#154)
-    3. [`url-routers`](#155)
-        1. [`GET "/user"`](#156)
-        2. [`GET "/user/comments"`](#157)
-        3. [`GET "/user/avatar"`](#158)
-        4. [`GET "/user/lookup/username/:username"`](#159)
-        5. [`GET "/user/lookup/email/:email"`](#160)
-        6. [`GET "/event/:id"`](#161)
-        7. [`GET "/event/:id/comments"`](#162)
-        8. [`POST "/event/:id/comment"`](#163)
-        9. [`GET "/map/:location/event"`](#164)
-        10. [`GET "/status"`](#165)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#166)
-        12. [`GET "/static/*"`](#167)
-    4. [`validators`](#168)
-        1. [`assert-simple`](#169)
+   1. [`async`](#144)
+      1. [`concurrency 1`](#145)
+      2. [`concurrency 2`](#146)
+      3. [`concurrency 4`](#147)
+      4. [`concurrency 8`](#148)
+      5. [`concurrency 16`](#149)
+      6. [`concurrency 32`](#150)
+      7. [`concurrency 64`](#151)
+   2. [`decode-uri-component`](#152)
+      1. [`valid`](#153)
+      2. [`invalid`](#154)
+   3. [`url-routers`](#155)
+      1. [`GET "/user"`](#156)
+      2. [`GET "/user/comments"`](#157)
+      3. [`GET "/user/avatar"`](#158)
+      4. [`GET "/user/lookup/username/:username"`](#159)
+      5. [`GET "/user/lookup/email/:email"`](#160)
+      6. [`GET "/event/:id"`](#161)
+      7. [`GET "/event/:id/comments"`](#162)
+      8. [`POST "/event/:id/comment"`](#163)
+      9. [`GET "/map/:location/event"`](#164)
+      10. [`GET "/status"`](#165)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#166)
+      12. [`GET "/static/*"`](#167)
+   4. [`validators`](#168)
+      1. [`assert-simple`](#169)
 7. [`node-24.13.1`](#170)
-    1. [`micro`](#171)
-        1. [`url`](#172)
-            1. [`end`](#173)
-            2. [`wildcard`](#174)
-    2. [`async`](#175)
-        1. [`concurrency 1`](#176)
-        2. [`concurrency 2`](#177)
-        3. [`concurrency 4`](#178)
-        4. [`concurrency 8`](#179)
-        5. [`concurrency 16`](#180)
-        6. [`concurrency 32`](#181)
-        7. [`concurrency 64`](#182)
-    3. [`decode-uri-component`](#183)
-        1. [`valid`](#184)
-        2. [`invalid`](#185)
-    4. [`url-routers`](#186)
-        1. [`GET "/user"`](#187)
-        2. [`GET "/user/comments"`](#188)
-        3. [`GET "/user/avatar"`](#189)
-        4. [`GET "/user/lookup/username/:username"`](#190)
-        5. [`GET "/user/lookup/email/:email"`](#191)
-        6. [`GET "/event/:id"`](#192)
-        7. [`GET "/event/:id/comments"`](#193)
-        8. [`POST "/event/:id/comment"`](#194)
-        9. [`GET "/map/:location/event"`](#195)
-        10. [`GET "/status"`](#196)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#197)
-        12. [`GET "/static/*"`](#198)
-    5. [`validators`](#199)
-        1. [`assert-simple`](#200)
+   1. [`micro`](#171)
+      1. [`url`](#172)
+         1. [`end`](#173)
+         2. [`wildcard`](#174)
+   2. [`async`](#175)
+      1. [`concurrency 1`](#176)
+      2. [`concurrency 2`](#177)
+      3. [`concurrency 4`](#178)
+      4. [`concurrency 8`](#179)
+      5. [`concurrency 16`](#180)
+      6. [`concurrency 32`](#181)
+      7. [`concurrency 64`](#182)
+   3. [`decode-uri-component`](#183)
+      1. [`valid`](#184)
+      2. [`invalid`](#185)
+   4. [`url-routers`](#186)
+      1. [`GET "/user"`](#187)
+      2. [`GET "/user/comments"`](#188)
+      3. [`GET "/user/avatar"`](#189)
+      4. [`GET "/user/lookup/username/:username"`](#190)
+      5. [`GET "/user/lookup/email/:email"`](#191)
+      6. [`GET "/event/:id"`](#192)
+      7. [`GET "/event/:id/comments"`](#193)
+      8. [`POST "/event/:id/comment"`](#194)
+      9. [`GET "/map/:location/event"`](#195)
+      10. [`GET "/status"`](#196)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#197)
+      12. [`GET "/static/*"`](#198)
+   5. [`validators`](#199)
+      1. [`assert-simple`](#200)
 8. [`node-25.7.0`](#201)
-    1. [`micro`](#202)
-        1. [`url`](#203)
-            1. [`end`](#204)
-            2. [`wildcard`](#205)
-    2. [`async`](#206)
-        1. [`concurrency 1`](#207)
-        2. [`concurrency 2`](#208)
-        3. [`concurrency 4`](#209)
-        4. [`concurrency 8`](#210)
-        5. [`concurrency 16`](#211)
-        6. [`concurrency 32`](#212)
-        7. [`concurrency 64`](#213)
-    3. [`decode-uri-component`](#214)
-        1. [`valid`](#215)
-        2. [`invalid`](#216)
-    4. [`url-routers`](#217)
-        1. [`GET "/user"`](#218)
-        2. [`GET "/user/comments"`](#219)
-        3. [`GET "/user/avatar"`](#220)
-        4. [`GET "/user/lookup/username/:username"`](#221)
-        5. [`GET "/user/lookup/email/:email"`](#222)
-        6. [`GET "/event/:id"`](#223)
-        7. [`GET "/event/:id/comments"`](#224)
-        8. [`POST "/event/:id/comment"`](#225)
-        9. [`GET "/map/:location/event"`](#226)
-        10. [`GET "/status"`](#227)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#228)
-        12. [`GET "/static/*"`](#229)
-    5. [`validators`](#230)
-        1. [`assert-simple`](#231)
+   1. [`micro`](#202)
+      1. [`url`](#203)
+         1. [`end`](#204)
+         2. [`wildcard`](#205)
+   2. [`async`](#206)
+      1. [`concurrency 1`](#207)
+      2. [`concurrency 2`](#208)
+      3. [`concurrency 4`](#209)
+      4. [`concurrency 8`](#210)
+      5. [`concurrency 16`](#211)
+      6. [`concurrency 32`](#212)
+      7. [`concurrency 64`](#213)
+   3. [`decode-uri-component`](#214)
+      1. [`valid`](#215)
+      2. [`invalid`](#216)
+   4. [`url-routers`](#217)
+      1. [`GET "/user"`](#218)
+      2. [`GET "/user/comments"`](#219)
+      3. [`GET "/user/avatar"`](#220)
+      4. [`GET "/user/lookup/username/:username"`](#221)
+      5. [`GET "/user/lookup/email/:email"`](#222)
+      6. [`GET "/event/:id"`](#223)
+      7. [`GET "/event/:id/comments"`](#224)
+      8. [`POST "/event/:id/comment"`](#225)
+      9. [`GET "/map/:location/event"`](#226)
+      10. [`GET "/status"`](#227)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#228)
+      12. [`GET "/static/*"`](#229)
+   5. [`validators`](#230)
+      1. [`assert-simple`](#231)
 9. [`bun-1.3.10`](#232)
-    1. [`micro`](#233)
-        1. [`url`](#234)
-            1. [`end`](#235)
-            2. [`wildcard`](#236)
-    2. [`async`](#237)
-        1. [`concurrency 1`](#238)
-        2. [`concurrency 2`](#239)
-        3. [`concurrency 4`](#240)
-        4. [`concurrency 8`](#241)
-        5. [`concurrency 16`](#242)
-        6. [`concurrency 32`](#243)
-        7. [`concurrency 64`](#244)
-    3. [`decode-uri-component`](#245)
-        1. [`valid`](#246)
-        2. [`invalid`](#247)
-    4. [`url-routers`](#248)
-        1. [`GET "/user"`](#249)
-        2. [`GET "/user/comments"`](#250)
-        3. [`GET "/user/avatar"`](#251)
-        4. [`GET "/user/lookup/username/:username"`](#252)
-        5. [`GET "/user/lookup/email/:email"`](#253)
-        6. [`GET "/event/:id"`](#254)
-        7. [`GET "/event/:id/comments"`](#255)
-        8. [`POST "/event/:id/comment"`](#256)
-        9. [`GET "/map/:location/event"`](#257)
-        10. [`GET "/status"`](#258)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#259)
-        12. [`GET "/static/*"`](#260)
-    5. [`validators`](#261)
-        1. [`assert-simple`](#262)
+   1. [`micro`](#233)
+      1. [`url`](#234)
+         1. [`end`](#235)
+         2. [`wildcard`](#236)
+   2. [`async`](#237)
+      1. [`concurrency 1`](#238)
+      2. [`concurrency 2`](#239)
+      3. [`concurrency 4`](#240)
+      4. [`concurrency 8`](#241)
+      5. [`concurrency 16`](#242)
+      6. [`concurrency 32`](#243)
+      7. [`concurrency 64`](#244)
+   3. [`decode-uri-component`](#245)
+      1. [`valid`](#246)
+      2. [`invalid`](#247)
+   4. [`url-routers`](#248)
+      1. [`GET "/user"`](#249)
+      2. [`GET "/user/comments"`](#250)
+      3. [`GET "/user/avatar"`](#251)
+      4. [`GET "/user/lookup/username/:username"`](#252)
+      5. [`GET "/user/lookup/email/:email"`](#253)
+      6. [`GET "/event/:id"`](#254)
+      7. [`GET "/event/:id/comments"`](#255)
+      8. [`POST "/event/:id/comment"`](#256)
+      9. [`GET "/map/:location/event"`](#257)
+      10. [`GET "/status"`](#258)
+      11. [`GET "/very/deeply/nested/route/hello/there"`](#259)
+      12. [`GET "/static/*"`](#260)
+   5. [`validators`](#261)
+      1. [`assert-simple`](#262)
 10. [`deno-2.7.1`](#263)
     1. [`micro`](#264)
-        1. [`url`](#265)
-            1. [`end`](#266)
-            2. [`wildcard`](#267)
+       1. [`url`](#265)
+          1. [`end`](#266)
+          2. [`wildcard`](#267)
     2. [`async`](#268)
-        1. [`concurrency 1`](#269)
-        2. [`concurrency 2`](#270)
-        3. [`concurrency 4`](#271)
-        4. [`concurrency 8`](#272)
-        5. [`concurrency 16`](#273)
-        6. [`concurrency 32`](#274)
-        7. [`concurrency 64`](#275)
+       1. [`concurrency 1`](#269)
+       2. [`concurrency 2`](#270)
+       3. [`concurrency 4`](#271)
+       4. [`concurrency 8`](#272)
+       5. [`concurrency 16`](#273)
+       6. [`concurrency 32`](#274)
+       7. [`concurrency 64`](#275)
     3. [`decode-uri-component`](#276)
-        1. [`valid`](#277)
-        2. [`invalid`](#278)
+       1. [`valid`](#277)
+       2. [`invalid`](#278)
     4. [`url-routers`](#279)
-        1. [`GET "/user"`](#280)
-        2. [`GET "/user/comments"`](#281)
-        3. [`GET "/user/avatar"`](#282)
-        4. [`GET "/user/lookup/username/:username"`](#283)
-        5. [`GET "/user/lookup/email/:email"`](#284)
-        6. [`GET "/event/:id"`](#285)
-        7. [`GET "/event/:id/comments"`](#286)
-        8. [`POST "/event/:id/comment"`](#287)
-        9. [`GET "/map/:location/event"`](#288)
-        10. [`GET "/status"`](#289)
-        11. [`GET "/very/deeply/nested/route/hello/there"`](#290)
-        12. [`GET "/static/*"`](#291)
+       1. [`GET "/user"`](#280)
+       2. [`GET "/user/comments"`](#281)
+       3. [`GET "/user/avatar"`](#282)
+       4. [`GET "/user/lookup/username/:username"`](#283)
+       5. [`GET "/user/lookup/email/:email"`](#284)
+       6. [`GET "/event/:id"`](#285)
+       7. [`GET "/event/:id/comments"`](#286)
+       8. [`POST "/event/:id/comment"`](#287)
+       9. [`GET "/map/:location/event"`](#288)
+       10. [`GET "/status"`](#289)
+       11. [`GET "/very/deeply/nested/route/hello/there"`](#290)
+       12. [`GET "/static/*"`](#291)
     5. [`validators`](#292)
-        1. [`assert-simple`](#293)
+       1. [`assert-simple`](#293)
 
 <a name="0">
 
 ## node-22.22.0
+
 <a name="1">
 
 ### micro
+
 <a name="2">
 
 #### url
+
 <a name="3">
 
 ##### end
+
 ```
  █  avg (b)
 
@@ -324,9 +329,11 @@
  5. /^a$($)$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.38
 ```
+
 <a name="4">
 
 ##### wildcard
+
 ```
  █  avg (b)
 
@@ -348,12 +355,15 @@
  6. /^a(.*)()$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.17
 ```
+
 <a name="5">
 
 ### async
+
 <a name="6">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -375,9 +385,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1138.87
 ```
+
 <a name="7">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -393,9 +405,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  9.23
 ```
+
 <a name="8">
 
 #### concurrency 4
+
 ```
  █  avg (mb)
 
@@ -411,9 +425,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  4.73
 ```
+
 <a name="9">
 
 #### concurrency 8
+
 ```
  █  avg (mb)
 
@@ -429,9 +445,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.48
 ```
+
 <a name="10">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -447,9 +465,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1355.62
 ```
+
 <a name="11">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -465,9 +485,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1063.76
 ```
+
 <a name="12">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -483,12 +505,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1085.84
 ```
+
 <a name="13">
 
 ### decode-uri-component
+
 <a name="14">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -501,9 +526,11 @@
  3. deuri
     █████████████████████████████████████████████████████████████████████████████████████████████████  204.74
 ```
+
 <a name="15">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -516,12 +543,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  36.48
 ```
+
 <a name="16">
 
 ### url-routers
+
 <a name="17">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -552,9 +582,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  854.59
 ```
+
 <a name="18">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -585,9 +617,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1053.15
 ```
+
 <a name="19">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -618,9 +652,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1054.82
 ```
+
 <a name="20">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -651,9 +687,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.85
 ```
+
 <a name="21">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -684,9 +722,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.93
 ```
+
 <a name="22">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -717,9 +757,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1387.34
 ```
+
 <a name="23">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (kb)
 
@@ -750,9 +792,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.7
 ```
+
 <a name="24">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (kb)
 
@@ -783,9 +827,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.67
 ```
+
 <a name="25">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (kb)
 
@@ -816,9 +862,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.67
 ```
+
 <a name="26">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -849,9 +897,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  862.9
 ```
+
 <a name="27">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -882,9 +932,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.85
 ```
+
 <a name="28">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (kb)
 
@@ -915,12 +967,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.72
 ```
+
 <a name="29">
 
 ### validators
+
 <a name="30">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 
@@ -957,15 +1012,19 @@
  11. valibot
     █████████████████████████████████████████████████████████████████████████████████████████████████  12.5
 ```
+
 <a name="31">
 
 ## node-24.13.0
+
 <a name="32">
 
 ### async
+
 <a name="33">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -987,9 +1046,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1047.93
 ```
+
 <a name="34">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -1005,9 +1066,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  9.23
 ```
+
 <a name="35">
 
 #### concurrency 4
+
 ```
  █  avg (mb)
 
@@ -1023,9 +1086,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  4.73
 ```
+
 <a name="36">
 
 #### concurrency 8
+
 ```
  █  avg (mb)
 
@@ -1041,9 +1106,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.48
 ```
+
 <a name="37">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -1059,9 +1126,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1355.15
 ```
+
 <a name="38">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -1077,9 +1146,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1000.45
 ```
+
 <a name="39">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -1095,12 +1166,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  999.89
 ```
+
 <a name="40">
 
 ### decode-uri-component
+
 <a name="41">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -1113,9 +1187,11 @@
  3. deuri
     █████████████████████████████████████████████████████████████████████████████████████████████████  198.38
 ```
+
 <a name="42">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -1128,12 +1204,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  37.05
 ```
+
 <a name="43">
 
 ### url-routers
+
 <a name="44">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -1164,9 +1243,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  826.95
 ```
+
 <a name="45">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -1197,9 +1278,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1019.53
 ```
+
 <a name="46">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -1230,9 +1313,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1028.25
 ```
+
 <a name="47">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -1263,9 +1348,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.62
 ```
+
 <a name="48">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -1296,9 +1383,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  1.65
 ```
+
 <a name="49">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -1329,9 +1418,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1235.46
 ```
+
 <a name="50">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -1362,9 +1453,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1468.03
 ```
+
 <a name="51">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -1395,9 +1488,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1484.73
 ```
+
 <a name="52">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (kb)
 
@@ -1428,9 +1523,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.51
 ```
+
 <a name="53">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -1461,9 +1558,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  830.86
 ```
+
 <a name="54">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -1494,9 +1593,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.82
 ```
+
 <a name="55">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (b)
 
@@ -1527,12 +1628,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1477.61
 ```
+
 <a name="56">
 
 ### validators
+
 <a name="57">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 
@@ -1566,15 +1670,19 @@
  10. valibot
     █████████████████████████████████████████████████████████████████████████████████████████████████  45.9
 ```
+
 <a name="58">
 
 ## node-25.6.1
+
 <a name="59">
 
 ### async
+
 <a name="60">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -1596,9 +1704,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1045.31
 ```
+
 <a name="61">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -1614,9 +1724,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  9.23
 ```
+
 <a name="62">
 
 #### concurrency 4
+
 ```
  █  avg (mb)
 
@@ -1632,9 +1744,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  4.73
 ```
+
 <a name="63">
 
 #### concurrency 8
+
 ```
  █  avg (mb)
 
@@ -1650,9 +1764,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.48
 ```
+
 <a name="64">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -1668,9 +1784,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1355.15
 ```
+
 <a name="65">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -1686,9 +1804,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1001.31
 ```
+
 <a name="66">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -1704,12 +1824,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  999.24
 ```
+
 <a name="67">
 
 ### decode-uri-component
+
 <a name="68">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -1722,9 +1845,11 @@
  3. deuri
     ████████████████████████████████████████████████████████████████████████████████████████████████  194.43
 ```
+
 <a name="69">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -1737,12 +1862,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  36.16
 ```
+
 <a name="70">
 
 ### url-routers
+
 <a name="71">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -1773,9 +1901,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  783.64
 ```
+
 <a name="72">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -1806,9 +1936,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  982.19
 ```
+
 <a name="73">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -1839,9 +1971,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  960.43
 ```
+
 <a name="74">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -1872,9 +2006,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.62
 ```
+
 <a name="75">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -1905,9 +2041,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.6
 ```
+
 <a name="76">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -1938,9 +2076,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1174.66
 ```
+
 <a name="77">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -1971,9 +2111,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1403.43
 ```
+
 <a name="78">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -2004,9 +2146,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1413.41
 ```
+
 <a name="79">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -2037,9 +2181,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1429.9
 ```
+
 <a name="80">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -2070,9 +2216,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  777.67
 ```
+
 <a name="81">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -2103,9 +2251,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  1.73
 ```
+
 <a name="82">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (b)
 
@@ -2136,12 +2286,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1414.22
 ```
+
 <a name="83">
 
 ### validators
+
 <a name="84">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 
@@ -2175,15 +2328,19 @@
  10. valibot
     █████████████████████████████████████████████████████████████████████████████████████████████████  45.99
 ```
+
 <a name="85">
 
 ## bun-1.3.9
+
 <a name="86">
 
 ### async
+
 <a name="87">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -2205,9 +2362,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  6.94
 ```
+
 <a name="88">
 
 #### concurrency 2
+
 ```
  █  avg (kb)
 
@@ -2223,9 +2382,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.73
 ```
+
 <a name="89">
 
 #### concurrency 4
+
 ```
  █  avg (kb)
 
@@ -2241,9 +2402,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.09
 ```
+
 <a name="90">
 
 #### concurrency 8
+
 ```
  █  avg (kb)
 
@@ -2259,9 +2422,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.71
 ```
+
 <a name="91">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -2277,9 +2442,11 @@
  4. ciorent (semaphore)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.62
 ```
+
 <a name="92">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -2295,9 +2462,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.53
 ```
+
 <a name="93">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -2313,12 +2482,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.54
 ```
+
 <a name="94">
 
 ### decode-uri-component
+
 <a name="95">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -2331,9 +2503,11 @@
  3. fast-decode-uri-component
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.13
 ```
+
 <a name="96">
 
 #### invalid
+
 ```
  █  avg (b)
 
@@ -2346,12 +2520,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  86.52
 ```
+
 <a name="97">
 
 ### url-routers
+
 <a name="98">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -2382,9 +2559,11 @@
  9. find-my-way
     █████████████████████████████████████████████████████████████████████████████████████████████████  3.93
 ```
+
 <a name="99">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -2415,9 +2594,11 @@
  9. find-my-way
     █████████████████████████████████████████████████████████████████████████████████████████████████  3.66
 ```
+
 <a name="100">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -2448,9 +2629,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.71
 ```
+
 <a name="101">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (b)
 
@@ -2481,9 +2664,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  20.08
 ```
+
 <a name="102">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (b)
 
@@ -2514,9 +2699,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  30.26
 ```
+
 <a name="103">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -2547,9 +2734,11 @@
  9. hono (pattern)
     █████████████████████████████████████████████████████████████████████████████████████████████████  9.1
 ```
+
 <a name="104">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -2580,9 +2769,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  92.11
 ```
+
 <a name="105">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -2613,9 +2804,11 @@
  9. rou3 (tree)
     █████████████████████████████████████████████████████████████████████████████████████████████████  10
 ```
+
 <a name="106">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -2646,9 +2839,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  10.94
 ```
+
 <a name="107">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -2679,9 +2874,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.82
 ```
+
 <a name="108">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (b)
 
@@ -2712,9 +2909,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  19.01
 ```
+
 <a name="109">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (b)
 
@@ -2745,12 +2944,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  95.8
 ```
+
 <a name="110">
 
 ### validators
+
 <a name="111">
 
 #### assert-simple
+
 ```
  █  avg (kb)
 
@@ -2784,18 +2986,23 @@
  10. effect-schema
     █████████████████████████████████████████████████████████████████████████████████████████████████  1318.91
 ```
+
 <a name="112">
 
 ## deno-2.5.7
+
 <a name="113">
 
 ### micro
+
 <a name="114">
 
 #### url
+
 <a name="115">
 
 ##### end
+
 ```
  █  avg (b)
 
@@ -2814,9 +3021,11 @@
  5. /^a$($)$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  561.62
 ```
+
 <a name="116">
 
 ##### wildcard
+
 ```
  █  avg (b)
 
@@ -2838,12 +3047,15 @@
  6. /^a(.*$)($)/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.91
 ```
+
 <a name="117">
 
 ### async
+
 <a name="118">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -2865,9 +3077,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1050.51
 ```
+
 <a name="119">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -2883,9 +3097,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  9.23
 ```
+
 <a name="120">
 
 #### concurrency 4
+
 ```
  █  avg (mb)
 
@@ -2901,9 +3117,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  4.73
 ```
+
 <a name="121">
 
 #### concurrency 8
+
 ```
  █  avg (mb)
 
@@ -2919,9 +3137,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.48
 ```
+
 <a name="122">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -2937,9 +3157,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1355.13
 ```
+
 <a name="123">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -2955,9 +3177,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1002.95
 ```
+
 <a name="124">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -2973,12 +3197,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1000.39
 ```
+
 <a name="125">
 
 ### decode-uri-component
+
 <a name="126">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -2991,9 +3218,11 @@
  3. deuri
     ████████████████████████████████████████████████████████████████████████████████████████████████  206.44
 ```
+
 <a name="127">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -3006,12 +3235,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  48.96
 ```
+
 <a name="128">
 
 ### url-routers
+
 <a name="129">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -3042,9 +3274,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  790.59
 ```
+
 <a name="130">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -3075,9 +3309,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  971.84
 ```
+
 <a name="131">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -3108,9 +3344,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  977.24
 ```
+
 <a name="132">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -3141,9 +3379,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.61
 ```
+
 <a name="133">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -3174,9 +3414,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.61
 ```
+
 <a name="134">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -3207,9 +3449,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1158.12
 ```
+
 <a name="135">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -3240,9 +3484,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1392.99
 ```
+
 <a name="136">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -3273,9 +3519,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1413.72
 ```
+
 <a name="137">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -3306,9 +3554,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1425.29
 ```
+
 <a name="138">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -3339,9 +3589,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  784.85
 ```
+
 <a name="139">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -3372,9 +3624,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.74
 ```
+
 <a name="140">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (b)
 
@@ -3405,12 +3659,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1440.96
 ```
+
 <a name="141">
 
 ### validators
+
 <a name="142">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 
@@ -3447,15 +3704,19 @@
  11. valibot
     █████████████████████████████████████████████████████████████████████████████████████████████████  46.31
 ```
+
 <a name="143">
 
 ## deno-2.6.10
+
 <a name="144">
 
 ### async
+
 <a name="145">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -3477,9 +3738,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1055.76
 ```
+
 <a name="146">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -3495,9 +3758,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.44
 ```
+
 <a name="147">
 
 #### concurrency 4
+
 ```
  █  avg (kb)
 
@@ -3513,9 +3778,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1364.26
 ```
+
 <a name="148">
 
 #### concurrency 8
+
 ```
  █  avg (kb)
 
@@ -3531,9 +3798,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1008.68
 ```
+
 <a name="149">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -3549,9 +3818,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1006.35
 ```
+
 <a name="150">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -3567,9 +3838,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1005.64
 ```
+
 <a name="151">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -3585,12 +3858,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1005.73
 ```
+
 <a name="152">
 
 ### decode-uri-component
+
 <a name="153">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -3603,9 +3879,11 @@
  3. deuri
     █████████████████████████████████████████████████████████████████████████████████████████████████  195.49
 ```
+
 <a name="154">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -3618,12 +3896,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  49.01
 ```
+
 <a name="155">
 
 ### url-routers
+
 <a name="156">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -3654,9 +3935,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  745.82
 ```
+
 <a name="157">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -3687,9 +3970,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  946.25
 ```
+
 <a name="158">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -3720,9 +4005,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  949.52
 ```
+
 <a name="159">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -3753,9 +4040,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.62
 ```
+
 <a name="160">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -3786,9 +4075,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.29
 ```
+
 <a name="161">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -3819,9 +4110,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1184.74
 ```
+
 <a name="162">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -3852,9 +4145,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  1424.77
 ```
+
 <a name="163">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -3885,9 +4180,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1433.43
 ```
+
 <a name="164">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -3918,9 +4215,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1449.09
 ```
+
 <a name="165">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -3951,9 +4250,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  788.2
 ```
+
 <a name="166">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -3984,9 +4285,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  1.73
 ```
+
 <a name="167">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (kb)
 
@@ -4017,12 +4320,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.58
 ```
+
 <a name="168">
 
 ### validators
+
 <a name="169">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 
@@ -4056,18 +4362,23 @@
  10. zod
     █████████████████████████████████████████████████████████████████████████████████████████████████  23.27
 ```
+
 <a name="170">
 
 ## node-24.13.1
+
 <a name="171">
 
 ### micro
+
 <a name="172">
 
 #### url
+
 <a name="173">
 
 ##### end
+
 ```
  █  avg (b)
 
@@ -4086,9 +4397,11 @@
  5. /^a($)/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.84
 ```
+
 <a name="174">
 
 ##### wildcard
+
 ```
  █  avg (b)
 
@@ -4110,12 +4423,15 @@
  6. /^a(.*$)($)$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.31
 ```
+
 <a name="175">
 
 ### async
+
 <a name="176">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -4137,9 +4453,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1043.85
 ```
+
 <a name="177">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -4155,9 +4473,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  9.23
 ```
+
 <a name="178">
 
 #### concurrency 4
+
 ```
  █  avg (mb)
 
@@ -4173,9 +4493,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  4.73
 ```
+
 <a name="179">
 
 #### concurrency 8
+
 ```
  █  avg (mb)
 
@@ -4191,9 +4513,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.48
 ```
+
 <a name="180">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -4209,9 +4533,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1355.14
 ```
+
 <a name="181">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -4227,9 +4553,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  999.74
 ```
+
 <a name="182">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -4245,12 +4573,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1000.1
 ```
+
 <a name="183">
 
 ### decode-uri-component
+
 <a name="184">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -4263,9 +4594,11 @@
  3. deuri
     █████████████████████████████████████████████████████████████████████████████████████████████████  207.82
 ```
+
 <a name="185">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -4278,12 +4611,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  36.37
 ```
+
 <a name="186">
 
 ### url-routers
+
 <a name="187">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -4314,9 +4650,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  843.61
 ```
+
 <a name="188">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -4347,9 +4685,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1029.7
 ```
+
 <a name="189">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -4380,9 +4720,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1017.24
 ```
+
 <a name="190">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -4413,9 +4755,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.66
 ```
+
 <a name="191">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -4446,9 +4790,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.62
 ```
+
 <a name="192">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -4479,9 +4825,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1223.75
 ```
+
 <a name="193">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -4512,9 +4860,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1443.03
 ```
+
 <a name="194">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -4545,9 +4895,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1461.31
 ```
+
 <a name="195">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -4578,9 +4930,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1469.39
 ```
+
 <a name="196">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -4611,9 +4965,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  837.8
 ```
+
 <a name="197">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -4644,9 +5000,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.78
 ```
+
 <a name="198">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (b)
 
@@ -4677,12 +5035,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1471.2
 ```
+
 <a name="199">
 
 ### validators
+
 <a name="200">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 
@@ -4719,18 +5080,23 @@
  11. valibot
     █████████████████████████████████████████████████████████████████████████████████████████████████  45.65
 ```
+
 <a name="201">
 
 ## node-25.7.0
+
 <a name="202">
 
 ### micro
+
 <a name="203">
 
 #### url
+
 <a name="204">
 
 ##### end
+
 ```
  █  avg (b)
 
@@ -4749,9 +5115,11 @@
  5. /^a()$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.75
 ```
+
 <a name="205">
 
 ##### wildcard
+
 ```
  █  avg (b)
 
@@ -4773,12 +5141,15 @@
  6. /^a(.*$)()$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  561.78
 ```
+
 <a name="206">
 
 ### async
+
 <a name="207">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -4800,9 +5171,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1046.42
 ```
+
 <a name="208">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -4818,9 +5191,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  9.23
 ```
+
 <a name="209">
 
 #### concurrency 4
+
 ```
  █  avg (mb)
 
@@ -4836,9 +5211,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  4.73
 ```
+
 <a name="210">
 
 #### concurrency 8
+
 ```
  █  avg (mb)
 
@@ -4854,9 +5231,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.48
 ```
+
 <a name="211">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -4872,9 +5251,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1355.15
 ```
+
 <a name="212">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -4890,9 +5271,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1001.77
 ```
+
 <a name="213">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -4908,12 +5291,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1000.24
 ```
+
 <a name="214">
 
 ### decode-uri-component
+
 <a name="215">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -4926,9 +5312,11 @@
  3. deuri
     ████████████████████████████████████████████████████████████████████████████████████████████████  206.18
 ```
+
 <a name="216">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -4941,12 +5329,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  36.19
 ```
+
 <a name="217">
 
 ### url-routers
+
 <a name="218">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -4977,9 +5368,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  806.55
 ```
+
 <a name="219">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -5010,9 +5403,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  972.53
 ```
+
 <a name="220">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -5043,9 +5438,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  981.46
 ```
+
 <a name="221">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -5076,9 +5473,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.62
 ```
+
 <a name="222">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -5109,9 +5508,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.58
 ```
+
 <a name="223">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -5142,9 +5543,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1162.42
 ```
+
 <a name="224">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -5175,9 +5578,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1384.09
 ```
+
 <a name="225">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -5208,9 +5613,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1408.23
 ```
+
 <a name="226">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -5241,9 +5648,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1421.3
 ```
+
 <a name="227">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -5274,9 +5683,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  790.51
 ```
+
 <a name="228">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -5307,9 +5718,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.75
 ```
+
 <a name="229">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (b)
 
@@ -5340,12 +5753,15 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1384.86
 ```
+
 <a name="230">
 
 ### validators
+
 <a name="231">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 
@@ -5382,18 +5798,23 @@
  11. valibot
     █████████████████████████████████████████████████████████████████████████████████████████████████  45.65
 ```
+
 <a name="232">
 
 ## bun-1.3.10
+
 <a name="233">
 
 ### micro
+
 <a name="234">
 
 #### url
+
 <a name="235">
 
 ##### end
+
 ```
  █  avg (b)
 
@@ -5412,9 +5833,11 @@
  5. /^a($)/
     █████████████████████████████████████████████████████████████████████████████████████████████████  12.05
 ```
+
 <a name="236">
 
 ##### wildcard
+
 ```
  █  avg (b)
 
@@ -5436,12 +5859,15 @@
  6. /^a(.*$)($)$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  0.47
 ```
+
 <a name="237">
 
 ### async
+
 <a name="238">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -5463,9 +5889,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  6.98
 ```
+
 <a name="239">
 
 #### concurrency 2
+
 ```
  █  avg (kb)
 
@@ -5481,9 +5909,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.23
 ```
+
 <a name="240">
 
 #### concurrency 4
+
 ```
  █  avg (kb)
 
@@ -5499,9 +5929,11 @@
  4. ciorent (semaphore)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.86
 ```
+
 <a name="241">
 
 #### concurrency 8
+
 ```
  █  avg (kb)
 
@@ -5517,9 +5949,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.58
 ```
+
 <a name="242">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -5535,9 +5969,11 @@
  4. ciorent (semaphore)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.89
 ```
+
 <a name="243">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -5553,9 +5989,11 @@
  4. async-mutex
     ████████████████████████████████████████████████████████████████████████████████████████████████  1.73
 ```
+
 <a name="244">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -5571,12 +6009,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.58
 ```
+
 <a name="245">
 
 ### decode-uri-component
+
 <a name="246">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -5589,9 +6030,11 @@
  3. fast-decode-uri-component
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.79
 ```
+
 <a name="247">
 
 #### invalid
+
 ```
  █  avg (b)
 
@@ -5604,12 +6047,15 @@
  3. fast-decode-uri-component
     █████████████████████████████████████████████████████████████████████████████████████████████████  49.41
 ```
+
 <a name="248">
 
 ### url-routers
+
 <a name="249">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -5640,9 +6086,11 @@
  9. hono (pattern)
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.65
 ```
+
 <a name="250">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -5673,9 +6121,11 @@
  9. find-my-way
     █████████████████████████████████████████████████████████████████████████████████████████████████  3.49
 ```
+
 <a name="251">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -5706,9 +6156,11 @@
  9. hono (pattern)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.43
 ```
+
 <a name="252">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (b)
 
@@ -5739,9 +6191,11 @@
  9. rou3
     █████████████████████████████████████████████████████████████████████████████████████████████████  26.91
 ```
+
 <a name="253">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (b)
 
@@ -5772,9 +6226,11 @@
  9. rou3
     █████████████████████████████████████████████████████████████████████████████████████████████████  14.12
 ```
+
 <a name="254">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -5805,9 +6261,11 @@
  9. rou3
     █████████████████████████████████████████████████████████████████████████████████████████████████  40.63
 ```
+
 <a name="255">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -5838,9 +6296,11 @@
  9. find-my-way
     █████████████████████████████████████████████████████████████████████████████████████████████████  10.41
 ```
+
 <a name="256">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -5871,9 +6331,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  18.67
 ```
+
 <a name="257">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -5904,9 +6366,11 @@
  9. rou3
     █████████████████████████████████████████████████████████████████████████████████████████████████  18.99
 ```
+
 <a name="258">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -5937,9 +6401,11 @@
  9. find-my-way
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.75
 ```
+
 <a name="259">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (b)
 
@@ -5970,9 +6436,11 @@
  9. find-my-way
     ████████████████████████████████████████████████████████████████████████████████████████████████  5.74
 ```
+
 <a name="260">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (b)
 
@@ -6003,12 +6471,15 @@
  9. rou3
     █████████████████████████████████████████████████████████████████████████████████████████████████  16.08
 ```
+
 <a name="261">
 
 ### validators
+
 <a name="262">
 
 #### assert-simple
+
 ```
  █  avg (kb)
 
@@ -6045,18 +6516,23 @@
  11. zod/mini
     █████████████████████████████████████████████████████████████████████████████████████████████████  288.04
 ```
+
 <a name="263">
 
 ## deno-2.7.1
+
 <a name="264">
 
 ### micro
+
 <a name="265">
 
 #### url
+
 <a name="266">
 
 ##### end
+
 ```
  █  avg (b)
 
@@ -6075,9 +6551,11 @@
  5. /^a()$/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.39
 ```
+
 <a name="267">
 
 ##### wildcard
+
 ```
  █  avg (b)
 
@@ -6099,12 +6577,15 @@
  6. /^a(.*)($)/
     █████████████████████████████████████████████████████████████████████████████████████████████████  560.24
 ```
+
 <a name="268">
 
 ### async
+
 <a name="269">
 
 #### concurrency 1
+
 ```
  █  avg (kb)
 
@@ -6126,9 +6607,11 @@
  6. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1054.34
 ```
+
 <a name="270">
 
 #### concurrency 2
+
 ```
  █  avg (mb)
 
@@ -6144,9 +6627,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  2.44
 ```
+
 <a name="271">
 
 #### concurrency 4
+
 ```
  █  avg (kb)
 
@@ -6162,9 +6647,11 @@
  4. manual
     █████████████████████████████████████████████████████████████████████████████████████████████████  1364.26
 ```
+
 <a name="272">
 
 #### concurrency 8
+
 ```
  █  avg (kb)
 
@@ -6180,9 +6667,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1009.6
 ```
+
 <a name="273">
 
 #### concurrency 16
+
 ```
  █  avg (kb)
 
@@ -6198,9 +6687,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1009.79
 ```
+
 <a name="274">
 
 #### concurrency 32
+
 ```
  █  avg (kb)
 
@@ -6216,9 +6707,11 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1008.84
 ```
+
 <a name="275">
 
 #### concurrency 64
+
 ```
  █  avg (kb)
 
@@ -6234,12 +6727,15 @@
  4. async-mutex
     █████████████████████████████████████████████████████████████████████████████████████████████████  1009.28
 ```
+
 <a name="276">
 
 ### decode-uri-component
+
 <a name="277">
 
 #### valid
+
 ```
  █  avg (kb)
 
@@ -6252,9 +6748,11 @@
  3. deuri
     █████████████████████████████████████████████████████████████████████████████████████████████████  207.46
 ```
+
 <a name="278">
 
 #### invalid
+
 ```
  █  avg (kb)
 
@@ -6267,12 +6765,15 @@
  3. native
     █████████████████████████████████████████████████████████████████████████████████████████████████  49
 ```
+
 <a name="279">
 
 ### url-routers
+
 <a name="280">
 
 #### GET "/user"
+
 ```
  █  avg (b)
 
@@ -6303,9 +6804,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  789.91
 ```
+
 <a name="281">
 
 #### GET "/user/comments"
+
 ```
  █  avg (b)
 
@@ -6336,9 +6839,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  976.44
 ```
+
 <a name="282">
 
 #### GET "/user/avatar"
+
 ```
  █  avg (b)
 
@@ -6369,9 +6874,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  939.51
 ```
+
 <a name="283">
 
 #### GET "/user/lookup/username/:username"
+
 ```
  █  avg (kb)
 
@@ -6402,9 +6909,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.62
 ```
+
 <a name="284">
 
 #### GET "/user/lookup/email/:email"
+
 ```
  █  avg (kb)
 
@@ -6435,9 +6944,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1.63
 ```
+
 <a name="285">
 
 #### GET "/event/:id"
+
 ```
  █  avg (b)
 
@@ -6468,9 +6979,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1183.4
 ```
+
 <a name="286">
 
 #### GET "/event/:id/comments"
+
 ```
  █  avg (b)
 
@@ -6501,9 +7014,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1422.93
 ```
+
 <a name="287">
 
 #### POST "/event/:id/comment"
+
 ```
  █  avg (b)
 
@@ -6534,9 +7049,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  1430.88
 ```
+
 <a name="288">
 
 #### GET "/map/:location/event"
+
 ```
  █  avg (b)
 
@@ -6567,9 +7084,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  1447.85
 ```
+
 <a name="289">
 
 #### GET "/status"
+
 ```
  █  avg (b)
 
@@ -6600,9 +7119,11 @@
  9. hono (trie)
     █████████████████████████████████████████████████████████████████████████████████████████████████  792.44
 ```
+
 <a name="290">
 
 #### GET "/very/deeply/nested/route/hello/there"
+
 ```
  █  avg (kb)
 
@@ -6633,9 +7154,11 @@
  9. hono (trie)
     ████████████████████████████████████████████████████████████████████████████████████████████████  1.73
 ```
+
 <a name="291">
 
-#### GET "/static/*"
+#### GET "/static/\*"
+
 ```
  █  avg (kb)
 
@@ -6666,12 +7189,15 @@
  9. rou3
     █████████████████████████████████████████████████████████████████████████████████████████████████  12.53
 ```
+
 <a name="292">
 
 ### validators
+
 <a name="293">
 
 #### assert-simple
+
 ```
  █  avg (mb)
 

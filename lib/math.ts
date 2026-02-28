@@ -7,12 +7,11 @@ export const math = {
 
     const index = p * (n - 1);
     const lower = Math.floor(index);
-    const upper = Math.ceil(index);
 
-    if (upper >= n) return arr[lower];
+    if (lower + 1 >= n) return arr[lower];
 
     const weight = index - lower;
-    return arr[lower] * (1 - weight) + arr[upper] * weight;
+    return arr[lower] * (1 - weight) + arr[lower + 1] * weight;
   },
 
   /**
