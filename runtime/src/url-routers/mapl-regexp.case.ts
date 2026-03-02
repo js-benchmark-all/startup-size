@@ -21,11 +21,9 @@ import spec from './.spec.ts';
       str += '|()$';
     }
 
-    if (node[3].length > 0) {
+    for (let i = 0, children = node[3]; i < children.length; i++) {
       parts++;
-
-      for (let i = 0, children = node[3]; i < children.length; i++)
-        str += '|' + _compile(children[i], paramMap);
+      str += '|' + _compile(children[i], paramMap);
     }
 
     if (node[4] != null) {
@@ -90,6 +88,8 @@ import spec from './.spec.ts';
 
     regexps.push(new RegExp('^' + _compile(methodRouter, [])));
     stores.push(HANDLERS);
+
+    //console.log(methods[i], regexps[i]);
   }
 
   spec('mapl (regexp)', (o) => {
