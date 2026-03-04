@@ -10,7 +10,7 @@ import spec from './.spec.ts';
   let HANDLERS!: [value: Handler, paramMap: number[]][];
   let PARAM_IDX!: number;
 
-  const _compile = (node: Node<any>, paramMap: number[]): string => {
+  const _compile = (node: Node<any>, paramMap: number[], skipFirstChar: boolean): string => {
     let str = '';
     let parts = 0;
 
@@ -23,7 +23,7 @@ import spec from './.spec.ts';
 
     for (let i = 0, children = node[3]; i < children.length; i++) {
       parts++;
-      str += '|' + _compile(children[i], paramMap);
+      str += '|' + _compile(children[i], paramMap, false);
     }
 
     if (node[4] != null) {
@@ -36,8 +36,8 @@ import spec from './.spec.ts';
       if (params[0] != null) {
         if (params[1] != null) {
           HANDLERS[PARAM_IDX++] = [params[1], newParamMap];
-          str += '(?:()$|' + _compile(params[0], newParamMap) + ')';
-        } else str += _compile(params[0], newParamMap);
+          str += '(?:()$|' + _compile(params[0], newParamMap, true) + ')';
+        } else str += _compile(params[0], newParamMap, true);
       } else {
         HANDLERS[PARAM_IDX++] = [params[1], newParamMap];
         str += '()$';
@@ -52,7 +52,7 @@ import spec from './.spec.ts';
       str += '|(.*)()$';
     }
 
-    return node[0].replace(/\//g, '\\/') + (parts > 1 ? '(?:' + str.slice(1) + ')' : str.slice(1));
+    return (skipFirstChar ? '.' + node[0].slice(1).replace(/\//g, '\\/') : node[0].replace(/\//g, '\\/')) + (parts > 1 ? '(?:' + str.slice(1) + ')' : str.slice(1));
   };
 
   const router = createRouter<Handler>();
@@ -86,7 +86,7 @@ import spec from './.spec.ts';
     HANDLERS = [];
     PARAM_IDX = 1;
 
-    regexps.push(new RegExp('^' + _compile(methodRouter, [])));
+    regexps.push(new RegExp('^' + _compile(methodRouter, [], true)));
     stores.push(HANDLERS);
 
     //console.log(methods[i], regexps[i]);
