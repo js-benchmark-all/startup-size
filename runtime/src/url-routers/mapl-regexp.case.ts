@@ -29,7 +29,7 @@ import spec from './.spec.ts';
     if (node[4] != null) {
       parts++;
 
-      str += '|([^/]+?)';
+      str += '|([^/]+)';
       const newParamMap = paramMap.concat(PARAM_IDX++);
 
       const params = node[4];
