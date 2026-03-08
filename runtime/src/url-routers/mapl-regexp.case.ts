@@ -88,8 +88,6 @@ import spec from './.spec.ts';
 
     regexps.push(new RegExp('^' + _compile(methodRouter, [], true)));
     stores.push(HANDLERS);
-
-    //console.log(methods[i], regexps[i]);
   }
 
   spec('@mapl/router (regexp)', (o) => {
@@ -102,7 +100,7 @@ import spec from './.spec.ts';
 
       const dmatch = regexps[id].exec(o.url);
       if (dmatch !== null) {
-        const store = stores[id]![dmatch.indexOf('', 1)];
+        const store = stores[id]![dmatch.lastIndexOf('')];
         return store[0](dmatch, store[1]);
       }
     }

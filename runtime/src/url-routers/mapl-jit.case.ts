@@ -13,7 +13,7 @@ import { PARAMS, PATH } from '@mapl/router/constants';
 import spec from './.spec.ts';
 
 {
-  const scope: Scope = ['', 0];
+  const scope: Scope = ['', 0, ''] as any;
   const router = createRouter<string>();
 
   const insert = (method: string, path: string, fn: (...args: string[]) => string) => {

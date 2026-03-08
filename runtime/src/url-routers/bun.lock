@@ -8,7 +8,7 @@
         "find-my-way": "^9.4.0",
         "hono": "^4.12.0",
         "rou3": "^0.7.12",
-        "runtime-compiler": "^3.1.0",
+        "runtime-compiler": "^3.1.7",
       },
     },
   },
@@ -29,7 +29,7 @@
 
     "rou3": ["rou3@0.7.12", "", {}, "sha512-iFE4hLDuloSWcD7mjdCDhx2bKcIsYbtOTpfH5MHHLSKMOUyjqQXTeZVa289uuwEGEKFoE/BAPbhaU4B774nceg=="],
 
-    "runtime-compiler": ["runtime-compiler@3.1.0", "", {}, "sha512-gvMC2R50bR4dNgn7wOBL1uyu12JS5zgPDINKWzZKM2bg22uqCkGxa2SSk8xRDZskb4XX7Xjy+6Nl8oDIwwzmhQ=="],
+    "runtime-compiler": ["runtime-compiler@3.1.7", "", {}, "sha512-tElaJBsa9lwB/HGy3s/8R6GyhzXuse7dHKnv5yhjY8I4rfASgYTd5zEmT5PVNjKH9LCpExTMAwc3Lz5MwWU9Og=="],
 
     "safe-regex2": ["safe-regex2@5.0.0", "", { "dependencies": { "ret": "~0.5.0" } }, "sha512-YwJwe5a51WlK7KbOJREPdjNrpViQBI3p4T50lfwPuDhZnE3XGVTlGvi+aolc5+RvxDD6bnUmjVsU9n1eboLUYw=="],
   }
