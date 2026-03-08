@@ -70,8 +70,8 @@ for (const categoryName in INFO) {
       console.error('  skipping case:', fmt.h1(categoryName + ' - ' + caseName));
       console.error(e);
     }
-    totalRuntime = Bun.nanoseconds() - totalRuntime;
 
+    totalRuntime = Bun.nanoseconds() - totalRuntime;
     console.log('    total time:', fmt.duration(totalRuntime));
   }
 }

@@ -44,14 +44,14 @@ const BUNDLER_PLUGINS = [
             compress: {
               defaults: false,
               dead_code: true,
-              passes: 5,
+              passes: 3,
             },
           }
         : {
             mangle: true,
             compress: {
               const_to_let: true,
-              passes: 5,
+              passes: 3,
             },
           },
     },
