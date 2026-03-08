@@ -13,6 +13,9 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
 
@@ -65,15 +68,29 @@ jobs:
       - name: Render results
         run: bun result
 
-      - name: Update results
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add .
           git commit -m "update runtime results"
-          git fetch
-          git rebase ${{ github.ref_name }}
-          git push origin ${{ github.ref_name }}
+
+      - name: Push with retry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for i in {1..10}; do
+            git pull --rebase origin ${{ github.ref_name }}
+
+            if git push origin HEAD:${{ github.ref_name }}; then
+              echo "Push succeeded"
+              exit 0
+            fi
+
+            echo "Push failed, retry $i..."
+            sleep 3
+          done
+
+          echo "Push failed after retries"
+          exit 1
