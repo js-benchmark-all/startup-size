@@ -45,7 +45,6 @@ await Promise.all(
         );
 
         const CATEGORY_INFO = {} as Record<string, string>;
-
         await Promise.all(
           scanFiles('*.case.ts', category).map(async (casePath, caseIndex) => {
             const caseName = basename(casePath, '.case.ts');

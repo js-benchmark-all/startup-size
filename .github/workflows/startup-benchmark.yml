@@ -3,13 +3,13 @@ on:
     branches:
       - dev
     paths:
-      - 'startup/**/*.ts'
-      - 'startup/**/package.json'
-      - 'lib/**/*'
+      - "startup/**/*.ts"
+      - "startup/**/package.json"
+      - "lib/**/*"
 
 jobs:
   update-results:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: write
@@ -30,7 +30,7 @@ jobs:
       ## Node 22
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: "22.x"
       - name: Node 22 benchmark
         run: |
           bun startup:build --runtime node
@@ -39,7 +39,7 @@ jobs:
       ## Node 24
       - uses: actions/setup-node@v4
         with:
-          node-version: '24.x'
+          node-version: "24.x"
       - name: Node 24 benchmark
         run: |
           bun startup:build --runtime node
