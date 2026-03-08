@@ -3,12 +3,12 @@ on:
     branches:
       - dev
     paths:
-      - 'package.json'
-      - 'render-result.ts'
+      - "package.json"
+      - "render-result.ts"
 
 jobs:
   render:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:

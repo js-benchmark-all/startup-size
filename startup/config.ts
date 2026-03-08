@@ -13,4 +13,5 @@ export interface CasesConfig {
     cases: Cases;
   };
 }
+
 export const defineCases = (config: CasesConfig): CasesConfig => config;
