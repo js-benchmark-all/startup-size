@@ -3,8 +3,8 @@ on:
     branches:
       - dev
     paths:
-      - 'package.json'
-      - 'render-result.ts'
+      - "package.json"
+      - "render-result.ts"
 
 jobs:
   render:
@@ -36,5 +36,5 @@ jobs:
           git add .
           git commit -m "update runtime results"
           git fetch
-          git rebase HEAD:${{ github.ref_name }}
-          git push origin HEAD:${{ github.ref_name }}
+          git rebase ${{ github.ref_name }}
+          git push origin ${{ github.ref_name }}

@@ -93,5 +93,5 @@ jobs:
           git add .
           git commit -m "update startup results"
           git fetch
-          git rebase HEAD:${{ github.ref_name }}
-          git push origin HEAD:${{ github.ref_name }}
+          git rebase ${{ github.ref_name }}
+          git push origin ${{ github.ref_name }}
