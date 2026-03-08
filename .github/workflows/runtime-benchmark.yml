@@ -3,9 +3,9 @@ on:
     branches:
       - dev
     paths:
-      - "runtime/**/*.ts"
-      - "runtime/**/package.json"
-      - "lib/**/*"
+      - 'runtime/**/*.ts'
+      - 'runtime/**/package.json'
+      - 'lib/**/*'
 
 concurrency:
   group: benchmark
@@ -21,7 +21,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: git pull origin HEAD:${{ github.ref_name }}
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -34,13 +33,13 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.x"
+          node-version: '22.x'
       - name: Node 22 benchmark
         run: bun runtime:start --runtime node
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "24.x"
+          node-version: '24.x'
       - name: Node 24 benchmark
         run: bun runtime:start --runtime node
 
@@ -77,4 +76,5 @@ jobs:
 
           git add .
           git commit -m "update runtime results"
+          git pull origin HEAD:${{ github.ref_name }} --rebase
           git push origin HEAD:${{ github.ref_name }}

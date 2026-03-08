@@ -49,11 +49,9 @@ const invalids = [
   { id: 18, displayName: 'X', health: 50, inventory: [] },
 ];
 
-const f = (fn: (item: any) => void | never) =>
-  (data: typeof valids) => {
-    for (let i = 0; i < data.length; i++)
-      fn(data[i]);
-  }
+const f = (fn: (item: any) => void | never) => (data: typeof valids) => {
+  for (let i = 0; i < data.length; i++) fn(data[i]);
+};
 
 export default (name: string, fn: (item: any) => void | never) => {
   for (let i = 0; i < invalids.length; i++) {
@@ -79,7 +77,7 @@ export default (name: string, fn: (item: any) => void | never) => {
   bench('assert-simple|' + name, function* () {
     yield {
       [0]: () => valids,
-      bench: f(fn)
+      bench: f(fn),
     };
   }).gc('inner');
 };

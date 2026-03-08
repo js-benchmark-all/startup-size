@@ -3,8 +3,8 @@ on:
     branches:
       - dev
     paths:
-      - "package.json"
-      - "render-result.ts"
+      - 'package.json'
+      - 'render-result.ts'
 
 jobs:
   render:
@@ -17,7 +17,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: git pull origin HEAD:${{ github.ref_name }}
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -35,4 +34,5 @@ jobs:
 
           git add .
           git commit -m "update runtime results"
+          git pull origin HEAD:${{ github.ref_name }} --rebase
           git push origin HEAD:${{ github.ref_name }}

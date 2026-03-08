@@ -15,7 +15,7 @@ export default defineCases((runtime) => {
     'itty-router': 'itty-router.ts',
 
     // @mapl/web
-    '@mapl/web (jit)': 'mapl/jit.ts'
+    '@mapl/web (jit)': 'mapl/jit.ts',
   };
 
   return { cases };

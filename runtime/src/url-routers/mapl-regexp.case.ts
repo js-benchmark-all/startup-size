@@ -7,8 +7,14 @@ import spec from './.spec.ts';
   type Handler = (() => string) | ((match: string[], paramMap: number[]) => string);
 
   // Compiler
-  let HANDLERS!: [value: Handler, paramMap: number[]][];
-  let PARAM_IDX!: number;
+  const EMPTY_HANDLER = [() => '', [] as number[]] as const;
+  let HANDLERS!: (readonly [value: Handler, paramMap: number[]])[];
+
+  const _addHandler = (handler: (typeof HANDLERS)[number]) => {
+    HANDLERS.push(handler);
+  };
+
+  const _addParam = (paramMap: number[]) => paramMap.concat(HANDLERS.push(EMPTY_HANDLER) - 1);
 
   const _compile = (node: Node<any>, paramMap: number[], skipFirstChar: boolean): string => {
     let str = '';
@@ -17,7 +23,7 @@ import spec from './.spec.ts';
     if (node[1] != null) {
       parts++;
 
-      HANDLERS[PARAM_IDX++] = [node[1], paramMap];
+      _addHandler([node[1], paramMap]);
       str += '|()$';
     }
 
@@ -30,16 +36,16 @@ import spec from './.spec.ts';
       parts++;
 
       str += '|([^/]+)';
-      const newParamMap = paramMap.concat(PARAM_IDX++);
+      const newParamMap = _addParam(paramMap);
 
       const params = node[4];
       if (params[0] != null) {
         if (params[1] != null) {
-          HANDLERS[PARAM_IDX++] = [params[1], newParamMap];
+          _addHandler([params[1], newParamMap]);
           str += '(?:()$|' + _compile(params[0], newParamMap, true) + ')';
         } else str += _compile(params[0], newParamMap, true);
       } else {
-        HANDLERS[PARAM_IDX++] = [params[1], newParamMap];
+        _addHandler([params[1], newParamMap]);
         str += '()$';
       }
     }
@@ -47,12 +53,15 @@ import spec from './.spec.ts';
     if (node[5] != null) {
       parts++;
 
-      const newParamMap = paramMap.concat(PARAM_IDX++);
-      HANDLERS[PARAM_IDX++] = [node[5], newParamMap];
+      _addHandler([node[5], _addParam(paramMap)]);
       str += '|(.*)()$';
     }
 
-    return (skipFirstChar ? '.' + node[0].slice(1).replace(/\//g, '\\/') : node[0].replace(/\//g, '\\/')) + (parts > 1 ? '(?:' + str.slice(1) + ')' : str.slice(1));
+    return (
+      (skipFirstChar
+        ? '.' + node[0].slice(1).replace(/\//g, '\\/')
+        : node[0].replace(/\//g, '\\/')) + (parts > 1 ? '(?:' + str.slice(1) + ')' : str.slice(1))
+    );
   };
 
   const router = createRouter<Handler>();
@@ -83,9 +92,7 @@ import spec from './.spec.ts';
   for (let i = 0, methodRouters = router[1]; i < methodRouters.length; i++) {
     const methodRouter = methodRouters[i];
 
-    HANDLERS = [];
-    PARAM_IDX = 1;
-
+    HANDLERS = [EMPTY_HANDLER];
     regexps.push(new RegExp('^' + _compile(methodRouter, [], true)));
     stores.push(HANDLERS);
   }
@@ -100,7 +107,7 @@ import spec from './.spec.ts';
 
       const dmatch = regexps[id].exec(o.url);
       if (dmatch !== null) {
-        const store = stores[id]![dmatch.lastIndexOf('')];
+        const store = stores[id]![dmatch.indexOf('', 2)];
         return store[0](dmatch, store[1]);
       }
     }
