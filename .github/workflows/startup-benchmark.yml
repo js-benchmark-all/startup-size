@@ -7,9 +7,6 @@ on:
       - "startup/**/package.json"
       - "lib/**/*"
 
-concurrency:
-  group: benchmark
-
 jobs:
   update-results:
     runs-on: ubuntu-slim
