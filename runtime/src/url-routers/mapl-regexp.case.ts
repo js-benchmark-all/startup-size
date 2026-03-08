@@ -13,7 +13,6 @@ import spec from './.spec.ts';
   const _addHandler = (handler: (typeof HANDLERS)[number]) => {
     HANDLERS.push(handler);
   };
-
   const _addParam = (paramMap: number[]) => paramMap.concat(HANDLERS.push(EMPTY_HANDLER) - 1);
 
   const _compile = (node: Node<any>, paramMap: number[], skipFirstChar: boolean): string => {

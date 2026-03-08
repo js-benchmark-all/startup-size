@@ -12,7 +12,8 @@ concurrency:
 
 jobs:
   update-results:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
+    timeout-minutes: 60
     permissions:
       contents: write
     steps:
