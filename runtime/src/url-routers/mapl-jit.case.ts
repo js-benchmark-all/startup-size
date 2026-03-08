@@ -36,7 +36,7 @@ import spec from './.spec.ts';
   insert('GET', '/static/**', (rest) => '11' + rest);
 
   spec(
-    'mapl (jit)',
+    '@mapl/router (jit)',
     getDependency(
       exportScope(
         scope,

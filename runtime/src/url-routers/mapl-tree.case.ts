@@ -30,7 +30,7 @@ import spec from './.spec.ts';
   const staticMaps: Map<string, Handler>[] = router[2];
   const nodes: Node<Handler>[] = router[1];
 
-  spec('mapl (tree)', (o) => {
+  spec('@mapl/router (tree)', (o) => {
     const id = methods.indexOf(o.method);
     if (id > -1) {
       const smatch = staticMaps[id].get(o.url);

@@ -12,7 +12,10 @@ export default defineCases((runtime) => {
     'hono/tiny': 'hono/tiny.ts',
 
     // itty-router
-    'itty-router': 'itty-router.ts'
+    'itty-router': 'itty-router.ts',
+
+    // @mapl/web
+    '@mapl/web (jit)': 'mapl/jit.ts'
   };
 
   return { cases };

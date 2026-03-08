@@ -92,7 +92,7 @@ import spec from './.spec.ts';
     //console.log(methods[i], regexps[i]);
   }
 
-  spec('mapl (regexp)', (o) => {
+  spec('@mapl/router (regexp)', (o) => {
     const id = methods.indexOf(o.method);
     if (id > -1) {
       const match = staticMaps[id].get(o.url);
