@@ -86,7 +86,6 @@ await Promise.all(
           let currentCaseIndex = 0;
 
           const CASES = CONFIG.cases;
-
           for (const caseName in CASES) {
             const casePath = join(categoryPath, CASES[caseName]);
             if (!config.include.case(categoryName, caseName)) {
