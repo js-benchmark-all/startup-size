@@ -17,7 +17,7 @@ import spec from './.spec.ts';
   const router = createRouter<string>();
 
   const insert = (method: string, path: string, fn: (...args: string[]) => string) => {
-    let str = `return ${declareLocal(scope, injectExternal(fn))}(`;
+    let str = `return ${declareLocal(scope, injectExternal(fn) + ';')}(`;
     for (let i = 0; i < fn.length; i++) str += PARAMS + i + ',';
     insertItem(router, method, path, str + ')');
   };
